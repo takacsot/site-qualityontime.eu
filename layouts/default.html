@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>A Brand New nanoc Site - <%= @item[:title] %></title>
+    <title>QualityOnTime.eu - <%= @item[:title] %></title>
     <link rel="stylesheet" href="/style.css">
 
     <!-- you don't need to keep this, but it's cool for stats! -->
@@ -10,8 +10,8 @@
   </head>
   <body>
     <div id="main">
+	  <h1><%= @item[:title] %></h1>
       <%= yield %>
-	  <p><%= random_text %></p>
     </div>
     <div id="sidebar">
       <h2>Documentation</h2>

@@ -30,15 +30,10 @@ preprocess do
 	  )
 	end
   end
-	paginate_articles
-end
-
-layout '/pagination_page/', :erb
-
-
-compile '/' do
-  filter :kramdown
-  layout 'default'
+  paginate_articles
+  # Paginate
+  #create_pages
+  
 end
 
 compile '/stylesheet/' do
@@ -50,18 +45,24 @@ compile '/page/*/' do
   layout '/default/'
 end
 
+
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-	filter :erb
-	case item[:extension]
+	ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+	case ext
     when 'md'
+	  filter :erb
       filter :kramdown
     when 'haml'
       filter :haml
+    else
+      filter :erb
 	end
-	#filter :relativize_paths
+	#item[:layout] = "default" unless item[:layout]
+    #layout item[:layout] unless item[:layout] == "none"
 	layout 'default'
   end
 end
@@ -80,4 +81,5 @@ route '*' do
   end
 end
 
+layout '/pagination_page/', :erb
 layout '*', :erb
