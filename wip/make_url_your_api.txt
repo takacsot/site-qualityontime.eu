@@ -1,0 +1,3 @@
+Make URL you API
+
+Ha az client side Javascript módosulásaid a az URL-en keresztülvalóstod meg, ezérltal azoldalad kinézete URL függo lesz (még akkor is ha single pagewebapp) akkor ki tudod használni a böngészo hisztoriját a navigációra.
