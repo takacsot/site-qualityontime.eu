@@ -12,7 +12,7 @@ module Paginate
 	  @items << Nanoc::Item.new(
 		"<%= render 'pagination_page', :item_id => #{i} %>",
 		{ :title => "Archive (articles #{first} to #{last})" },
-		"/page/#{i+1}/"
+		"/archive/page/#{i+1}/"
 	  )
 	end
   end
