@@ -1,0 +1,25 @@
+﻿---
+title: "Speed of EP"
+kind: article
+created_at: 2013-05-27 19:30:00
+author: "Takács Ottó"
+published: true
+tags: productivity
+---
+
+Hogyan pazarol az Europai Parlamant.
+
+1. Ma beugrottak, hogy ellenőrizzék a hálózat sebességét. Mindenből ki kellett lépnem, hog yők be tudjanak jelentkezni (__hiszen inaktiválva volt, hogy több felhasználó párhuzamosan tudjon dolgozni__)
+2. Ketten jöttek (bár az egyik nem csinált semmit sem) és szépen 5-10 perc alatt lefuttattak pár diagnosztikát. Eredmény: minden rendben. Kérdezem is, hogy tulajdonképpen miért jöttek, hiszen én nem panaszkodtam semmi ilyesmire. Előveszik a papírjukat, ami __nyomtatott email oldal (noha nekem minden kommunikációt egy hasznavehetetlenül fapados weboldalon kell csinálnom__), amin ott áll, hogy én, Takács Ottó panaszkodtam a sebességre (még egy dátum sem volt a papíron). És akkor beugrott. Bizony ám, panaszkodtam én, __majd egy évvel ezelőtt__! Azóta már új gépet is kaptam. Az új gép óta nem volt gondom, szóval nem a hálózat sebességével volt a gond, hanem a géppel magával. Összes időtartam: 2 ember X 15 perc. Plusz, amit nekem kellett, hogy újra dolgozni tudjak.
+3. Mivel, akármilyen erős gépem is van (sokezer megahertz, 8 giga RAM, stb.) a bejelentkezés (és a bootolás is) sokkal lassabb, mint bármelyik otthoni gépemen, noha azok jóval gyengébbek. Az ok az, hogy mindenféle rejtélyes scripteket futtatnak. Hálózati terheltségtől függően __5-15 perc, amíg dolgozni tudok a gép bekapcsolása után__. Persze hibernálni, vagy bekapcsolva hagyni nem lehet, mert este automatikusan kikapcsolják mindet.
+4. Ma még emailt is kaptam, hogy van egy régi ügyem velük, ami a részükről már megoldódott (monitorcserét/dual monitor rendszert szeretnék, mert most egy régi és kicsi (20 col) van). Persze irom nekik vissza, hogy a __"ticket feladása" óta (kb 4 hónap)__, nem történt semmi. Visszakoztak, hogy ez csak véletlen, de azt is mondták, hogy cserélni általában csak 20-nál kisebb monitorokat szokták.
+
+Na nézzük csak, hogy milyen kiadást jelent a egy duál monitor rendszer ténylegesen. 
+
+- 2 db 23 col monitor (amazon.de) 2X132 eur = 264 eur 
+- tegyük fel, hogy dolgozni is kell vele, akkor legyen 400 eur
+- mai napi veszteség: kb 45 perc (lásd fentebb), ami havi 20 munkanappal számolva (és becsült bérköltséget figyelembe véve): kb 20 eur
+
+Teljesen biztos vagyok abban, hogy nem csak nálam vesztegették el ezt az időt. Ha csak a napi bootolási időveszteséget is nézem egy tartós befektetésnek tekinthető dual monitor rendszer semmit nem jelent. (sajnos a dual monitor rendszer hatékonyságnövekedését nem tudom mérni, de mások szerint akár [42% hatékonyságnövelés](http://www.webdesignerdepot.com/2009/05/advantages-and-disadvantages-of-working-with-multiple-screens/) is lehetséges).
+
+Disclaimer: Mielőtt akár csak a gyanú is felmerülne, hogy valami bizalmas adatokat adok ki, akkor azt kell mondanom, hogy minden EP project publikus, csak senki sem tudja, hogy hol lehet megtalálni. Elvégre közalkalmazottak ők is, szóval az, hogyan pazarolják a mi pénzünket az teljesen publikus.
