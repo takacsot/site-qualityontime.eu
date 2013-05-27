@@ -1,5 +1,6 @@
 <% pages = sorted_articles.slice(@item_id*@config[:page_size], @config[:page_size]) %>
 <% pages.each do |article| %>
-  <h1><%= article[:title] %></h1>
+  <h1><%=link_to(article[:title],article) %></h1>
   <%= article.compiled_content %>
+  <hr/>
 <% end %>
