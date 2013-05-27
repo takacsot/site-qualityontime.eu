@@ -10,13 +10,12 @@ module Paginate
 	  last  = (i+1)*config[:page_size]
 
 	  @items << Nanoc::Item.new(
-		"<%= render 'pagination_page', :item_id => #{i} %>",
+		"<%= render 'pagination_page', :item_id => #{i}, :nr_pages=> #{article_groups.size} %>",
 		{ :title => "Archive (articles #{first} to #{last})" },
 		"/archive/page/#{i+1}/"
 	  )
 	end
   end
-  
 end
 
 include Paginate

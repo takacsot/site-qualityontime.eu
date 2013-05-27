@@ -1,1 +1,4 @@
-nanoc-toolbox project might have good scripts
+- nanoc-toolbox project might have good scripts
+- RSS feed
+- Integrate Comment
+- Integrate statistics

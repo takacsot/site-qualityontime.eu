@@ -4,3 +4,6 @@
   <%= article.compiled_content %>
   <hr/>
 <% end %>
+<%= (0 == @item_id ? 'No previous' : link_to('Prev', item_by_identifier("/archive/page/#{@item_id}/"))) %>
+|
+<%= (@nr_pages == @item_id+1 ? 'No older' : link_to('Next', item_by_identifier("/archive/page/#{@item_id+2}/"))) %>
