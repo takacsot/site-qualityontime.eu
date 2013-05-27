@@ -33,7 +33,7 @@ compile '*' do
   else
 	ext = item[:extension].nil? ? nil : item[:extension].split('.').last
 	case ext
-    when 'md'
+    when 'md', 'txt'
 	  filter :erb
       filter :kramdown
     when 'haml'
@@ -44,6 +44,8 @@ compile '*' do
 	#item[:layout] = "default" unless item[:layout]
     #layout item[:layout] unless item[:layout] == "none"
 	layout 'default'
+	filter :relativize_paths, :type => :html
+	
   end
 end
 
