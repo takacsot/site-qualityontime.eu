@@ -1,0 +1,35 @@
+különbüző okokbül statiks site generáló megoldásokat kerestem
+
+A technikai limitáltjág miatt Java alapú jöhetet csak számításba. 
+
+Amilyen sok megoldás van ruby vagy [Python]() nyelvhez annyira nehéz használhatót találni Java-hoz.
+
+Vannak a régi site generáló megoldások. Például az ami a mavennek is van, de hát az dolgozzon azokkal, akikenek két anyja van. Ráadásul alapigényem, hogy kezelje markdown-t és egyébként is a tököm kivan a mavennel (a dependencz kezelésén kívűl az egész egy nagy kalap szar).
+
+volt valami groovz alapú is, de az csak amolyan hobbiscript volt, ami egy paraszt egyszerű dolgot le tud kezelni.
+
+Kicsit fejlettebb a Scala alapú Monkeyman. A mostani verzja 0.4-es , de már használható. Kicsi scaml scripteléssel gyakrolatilag alaklamas használható. Mondjuk anniy gondom volt, hogy a korábbi verziót is letöltöttme elsőre és annak utf-8 enkóding gondjai voltak.
+
+MEg volt pár Java implementáció, de azok tényleg csak a Groovy-hoz mérhető kezdemények. Konkrétan egy délután alatt már én is összehoztam egy ezekhez hasonló megoldást. Komolyabb, felxibilisebb eredményhez azért kell vele munk. 
+
+Persze még voltak a blog generálók is. De azok a static site generálóknak csak a részhalmazát dolgozzák fel. Csak akkor, ha blogot írsz. Nekem egy teljes site kell és pont. 
+
+És szigorúbban vett Java ezzel véget is ért.
+
+De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy JRuby. Igaz, hogy telepiteni vagy akár csak ltölteni nem tudok semmit ezzel kapcsolatban a céges környezetben, de van megoldás.  Lássuk hogy megy ez nanoc-val.
+
+1. Tölts le a Jruby comple kiadását (jelenleg jruby-complete-1.7.4.jar)
+2. Másold le mint jruby-complete.jar (hidd el párszor újra fogod csinálni)
+3. És atrükk az, hogy ezzel már bármit tudzs csinálni, mert ez maga a teljesn distribúció. Akkor fogd és kez el letölteni a gem-eket. (Itt elbukhat a dolog, mert a C kiterjesztéseket használó gem-ek értelem szerűen nem igazán lesznek jük. De a tisztán Ruby már igen. Egyébként jelenleg a Jruby a leggyorsabb Ruby implementáció - a startuőot leszámítva)
+	java -jar jruby-complete.jar -S gem install -i ./nanoc-gems nanoc kramdown
+Azaz a nanoc-gems könyvtárba (TODO forrás referencia) tegye le a nanoc és függőségeit és kramdown Markdown parsert.
+4. `jar uf jruby-complete.jar -C nanoc-gems/ .`. Azaz tedd pele mindazokat a gem állományokat amiket letöltött a jruby jar-jába.
+5. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
+
+De ezzel még nincs vége, mert nanoc-ot feltehetőleg amerikai csinálta, mert minden input esetében a op rendszer encódingot használja. (nem az utf-8 az alapértelmezett! 21. század! Érted?) De ott van `nanoc.yaml`, amiben kicsit hackelni. (FONTOS: figyelj oda, hogy spacekkel vagy tab-val dolgozol, mert érzékeny ár. Notepad++-ban kapcsold be a rejtett karakterek megjelenitését!) És állíts be az enkódingot (1 sor a megfelelő helyre, meg fogod találni)
+
+    type: filesystem_unified
+	# ez az új sor
+    encoding: utf-8
+	
+És már dolgozhatsz is az egyik legszuperebb static site generálóval. Csak vidd be a jar-t aholvá akarod....

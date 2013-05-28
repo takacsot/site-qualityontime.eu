@@ -1,0 +1,51 @@
+%Title: Administrator 1x1
+
+Rendszergazdág és fejlesztpk viszonya rotkén harmónikus. Amit ritkén láttam az a teljesen harmóniukus együttmuködés. Részben érteto is, hiszen érdekeik néha teljesen mások. Én is többszörd dolgoztam "ellenséges" rendszergazdákkal, mint együttmuködokkel. De az Eurpai Parlamentben dolgozó redszergazdák eliviszik a prímet.
+És nem félek megkritizálni oket, hiszen tevékenyésguk a teljes EU pénzébol van finanszírozva. És az EU az én adóforitnjaimból üzemel. 
+
+
+Az elmúlt hetekben olyan mértéku amatorséggel találkoztam, hogy hirtelen felindulásomban kb 5 perc alatt összehaoztam az alábbi gondolatsort, ami ha meg lenne valósítva, akkor a teljes 3 hetet meg tudtuk volna úszni. És nem csak errol a 3 hétrol van szó, hanem további három hetekrol is, mivel kollégáimtól hallom, hogy minidg is így dolgoztak, ahogy én látom.
+
+Mindig is alcsony volt a türelmem olyan emberekkel szemben,akik saját szakmályukban nem hoznak megfelelo szinvonalat. Hajam égnek áll az olyan fejlesztotol, aki alap máveleteket is eérrel végez. "Kedvencem" egy kolléga, aki a file mentéséhez kereste(!) a save gombot eclipse-ben. Az olyan rendszergazdát sem szeretem, akinek számítógép kezelési gondjai vannak, vagy adott esetben nem tud olvasni. Például volt olyan remote telepitési supportom, amit amin azért kellet részt vennem, mert nem tudták megcsinálni. Úhysupportaltam, hogy remoteban néztem a képernyoját, hogy mit csinál. közben telefonon beszélgettunk. Én azzal kezdtem, hogy vegyük elo a telepitési leirást. És menjünk az alapján. És csoodák csodája az alapján ment a telepités. Amikor rá kellett szólnom az mondog az volt, hogy kihagyott lépseket a lairásbúl. De mokor szóltam és megnéztük, akkor kiderlt, hogy "jé tényleg és ez tényleg szar...".
+
+Esettanulmány 
+--------------
+
+Alaprobléma: adott 1 majd 2 java alapú webalkalmazás, amit preproduction környezetre kell telepiteni. Maga a környezet létrehozása és megszervezése is 2 hetet vett igénybe, ami röhej. Maga a vebalkalmazások nem nem olyan bonyolultak.  Én magam a  DEV környezet telepitését teljese egészében automatizáltam (némi script és Hudson segitségével) Mivel a DEV-et is ok szolgáltatták és EP standard telepitéseket használnak feltételeztem,hogy ha valamit megcsinálok, ltesztelek a DEV-en, akkor azt a PREPROD környezeten is ugyan úgy fogják csinálni (devre van rálátásom, de pp-re semmi!)
+
+Szóval adtam nekik a war filokat és template context filokat a JNDI beállításához (az adatbázis paraméterek miatt kell nekik saját context file, ami titkos, emiatt én nem tudom szállítani és nem is akarom). Valamit ezek mellé adtam egy installációs leirást is.
+
+És innetol kezdodtek a gondok:
+
+- bizonyitani tudom, hogy nem olvasták el az isntallációs leirást, mert olyan gondokba ütköztek, amik fel sem merültek volna ha be van állitva minden
+- attól, hogy DEV és PP ugyan olyan szerkezeto teljesen máshogy végzik a telepitést, mint ahgy leirtam (mert igy szokták - !!!). Az o telepitési folymatuk komplikáltabb, mint amit én leirtam. pl nem tudják újraidnnitás nélkül upgradelni a webalkalmatást, amit én DEV-en megoldottam automatizálva.
+- maga az upgrade és konfigurációt elore láthatatlan idoben váégzik, emi gondot is okozott, mert ugyan az egyik alaklmazás muködött a másik nem a kliensek elkezdték volna a tesztelést. És nem tudták. ráadásul ránk voltak mérgesek és nem a rendszergazdákra....
+- Indoklás nélkül megváltoztatták a JDBC drivert THIN-rol OCI-ra. ennek egyrészt semmi szakmai indoka sem volt, ám ez a váltás gondokat okozott a futtatásnál (bizonyiték DEV muködik, PP nem)
+- A probléma forrásának lenyomozására kértem konkrét tételes informáiókat a környezetrol (környzetei változók, rekurziv filelista, konkrét konfirugárciós fileok - persze titkos infó kisatirozásával)
+- egyszermég az is megtörtétn, hogy a sablon context file felhasználásták és elküldték, hogy miért nem jó, és tisztán látszott, hogy XML komment részben módosítottak...... aargh.....
+- Van egy ticketing rendszerul, ami egy szar. Például arról ok semi értesitést nem kapnak, ah én adok komment. Én bezzeg kapok emailt. Ok nem. Emiatt úgy kell értesiteni oket, hogy comment megirva és utánna telefonos helpdesk vagy direkt email irás, hogy helló kommenteztem, kérlek nézzetek rá. Tapasztalat azt  mutatja, hogy enélkül napokig(!) meg semnézik a választ, npha ok kérdeztek.....
+- Specialistáik vannak. Magyarán egyetlen rendszerhez telepitésében több embert vonnak be, mert nem értenek hozzá.
+- mikor telepitenek vagy változtatnak valamit, akkor nekemszólnak, hogy ellenorizzok már le. De mér oda jutottam, hogy csak megnyitom a logfileokat és havan exceptions, akkor bemásolom nekik. Az ilyen harmadik lealázós bemásolás utánm már megnézi, de biztos vagyok benne, hogy legközelebb elefelejtik.
+- Legutolsó kedvencem, mikor nem sikerült a telepités (másik webalkalmazás, amit már én is tudtam hogyan kell a szályukba rágni, szóval a fentiekkel már nem lehetett gond). ÉS nem ment. Aztán megbeszéltük, hogy megyek as találkozok a felelõs rendszergazdával. És õ szépen memgutatta, hogyan is dolgozik. És pesze nem csinálta jól. Ám a cselekedetibõl kiderült, hogy nem érti a Java alapú webalkalmazásokmáködését és a Tomcat konfigurációját. Noha ez a feladata. Miután odamnetem és rámutattam, hogy hol hibás a konfig 5 perc után vigan muzsikált az egész.
+
+##Megoldási javaslat
+
+na ez a,ami 5 perc alatt jött kia fejembol ésazóta már sokat gondolkodtam rajta és arra jutottam, hogy ha ez meglenne, akor nem lenne gond és egy titkárno is megoldaná a problémákat.
+
+- Minden rendszer, minden önálló komponensénérol, minden környeztehez kell egy dokumentum, (önálló komponens. Pl db önálló kompoens, webfront, middle tier, server apps, client aps, admin scripts, etc), ami tartalmazza a következoket:
+- neve, szerepe
+- felelosök, kontaktok
+- telepités helye
+- telepités paraméterei (db, etc)
+- telepités leirása, step-by-step
+- upgrade menete (megévo redszser frissitése)
+- upgrade menetének leirása
+- logok elérhetosége
+- application health check (pl readonly intengrációs teszt futtatás, weben ez könnyu, de akár a nyitóképernpoy megjelentitése is OK lehet)
+- upgrade és/vagy telepités sikerességének ellenorzése (pl logfilok no expcetion, és megjelenik a nyotóképernyo)
+- Rendszereres karbantartások és folyamata )eg, log filel archive, delete, backup, stb)
+- rendkivuli karbantartási és folyamatának leirása ( a rendkivuli nem azt jelenti, hogy ismeretlen. Azt jelenti, hogy nem rendszeres pl emergency restore a backup-ból)
+
+
+Persze nem kell ragaszkodni a dokumentumhoz. Lehet wiki page, lehet konkrét program script, hiszen a fentiek közül az adhoc karbantartáson kivul nincs semmi, amit nem lehetne automatizálni. De kell egy központi hely, ahona ki lehet indulni. Pl a dokumentumben egy referencia, hogy ezt az SVN-ben itt meg itt található script végni el.
+

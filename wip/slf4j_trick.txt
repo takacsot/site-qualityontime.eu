@@ -1,0 +1,56 @@
+Otthoni helyesiras ellenorzes
+
+Logo keretrendszerekbol lassan dunát lehetrekeszteni. Van java-ban.
+
+
+
+Mindegyik end user API-ja valami olyasmi, hogy log.debug(String msg).
+
+Már régen tudjuk, de ha nem akkor nem kell nagy ész,hogy rájöjjünk ez roppant hatékonytalan tud lenni, ha részletes objektum információt akarunk kilogolni (`log.debug("some info "+myObj)`). Azért hatékonytalan, mert a myObj toString metódusa akkor is meghívódik, ha fizikaileg nem is kerül logolásra. És az objektum komplexitásától függoen ez igencsak drága muladság lehet. Erre lettek az elolekérdezésk mint log.isDebugEnabled(), ami egy olcsó lekérdezés eredményeként megspórolunk egy viszonylag drága muveletet. De ez a struktóra elképesztoen csúnya. 3 sor egy nyanvadt log üzelnetért és annyira tönkreteszi a kód képét, hogy szinte olvashatatattlanná válik. 
+
+Vannak fejlettem megoldások, mint a slf4j, ami már elrejt ilyen múkát és mégsem terheli túl a rendszert. 
+Lásd: log.debug("some info {}",myObj). Nagyon szép és elegáns. 
+
+Igasság szerint ma már nem is kellene más log framwrok, mint ez. 
+
+De még ennek is vannak nehézségei. Például vegyünk egy komplex objektumot
+
+```
+class ComplexType{
+	String interesting;
+	//.... lots of other currently irrelevant attrobute
+}
+
+...
+Collection<ComplexType> col=.....
+```
+
+Adott a complexType aminek jelen pillanatában csak egyetlen (interesting) attrbutumára vagy kíváncsi.
+A log.debug("{}", col) nem elég jó, mert az ki fogja írni sok olyan attrobútumot, ami most nem kell. 
+
+Adja magát, hogy akkor projektáljuk le logolás elott(pl Guava Collections2.transform), de akkor visszaérünk az eredeti problémára.  Az hatékony megoldás a deffered projektálás. A trükk az, hogy toString minde objektumnak van:
+
+```java
+log.debug("{}",new Object(){
+	public String toString(){
+		return Iterables.transform(col, BeanFieldValueExtractor.byField("interesting"))
+	}
+});
+...
+
+public class BeanFieldValueExtractor<T> implements Function<Object, T> {
+  private final String attr;
+  //... constructor omited
+  public T apply(Object input) {
+    return (T) ReflectionUtil.getField(input, attr);
+  }
+  public static <T> BeanFieldValueExtractor<T> byField(String attr) {
+    return new BeanFieldValueExtractor<T>(attr);
+  }
+
+}
+```
+
+Persze magá az anonym osztályt is ki lehet emelni hogy az egész egyetlen sor legyen a hivás helyén. A lényeg, hogy létrehozunk olcsón egy objektumot és csak akkor hajtjuk végre a muveletet, amikor tényleg kell. 
+
+Bezzeg, ha lenne már java 8 closure-okkal....!

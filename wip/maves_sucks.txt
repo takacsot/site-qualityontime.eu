@@ -1,0 +1,3 @@
+Alapeset, aditt war project. Semmi gond. vannak benne static resourse. to make it faster. De ha warban publicalod, akkor az szopas. mert akkor is tomct fogja kisyolgalni. But during developmebnt it is neccessery to use tomcat as serving static content.
+
+How do you solve this baseic scennario with maven? But with custom build system, like and, or gradel you can resolve it easyly to p create two artifact abd publish in different places.
