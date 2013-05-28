@@ -1,0 +1,89 @@
+#Web view
+
+## HTML
+
+Basic HTML (more precisely JSP) should not be a serious problem. Read examples and learn all basic tab and their basic behaviour.
+
+## CSS
+
+CSS is for formatting HTML. I have to say there is no easy way of learn and master CSS. 
+
+thebest strategy can be start the development some good looking CSS template like [Bootstrap](#bootstrap) and then add your own extension if needed.
+
+As you are tweaking existing CSS and check the result in Firebug or in chrome development tools you can learn what is the effect of specific changes. 
+
+I have found [Stackoverflow](http://stackoverflow.com/) and [w3schools](http://www.w3schools.com/css/) really usefull to find information. But in general, if you can describe your problem and put into Google you will find the solution withing one or two pages.
+
+##JavaScript
+
+JavaScript is not evil. JavaScript is not bad programming language. It is just different. It has it own semantics which make sense to learn as developing. 
+
+Rule of thumb: if you are applying the same software development technics as for Java you will got the same level of clear and easy to maintain code as it would be developed in Java.
+
+If you need any material I (Otto) could provide e-books (PDF) which helps to learn JavaScript in details.
+
+[Patterns For Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript/)
+is an extramely good artile with lots of usefull references what kind of patterns and practices should be applied to JavaScript based development.
+
+>Decouple app. architecture w/module,facade & mediator patterns. Mods publish msgs, mediator acts as pub/sub mgr & facade handles security
+
+##JQuery
+
+> JS is perfect, it's just DOM API in browsers that sucks!
+
+[JQuery](http://jquery.com/) is framwork which helps to manipulate webpages and develop  browser independent JavaScript applications. Quete complex ui manipulation can be surprisingly easy with JQuery.
+
+It have lots of plugins to extend base functionality.
+
+##JQuery UI
+
+[JQuery UI](http://jqueryui.com/) framework over [JQuery](#jquery). Provide a consistent, simple and easy to use widget library.
+
+It have lots of plugins to extend base functionality.
+
+##Real MVC
+
+The key to develop easy to maintain web application is to apply the same design patterns as in fat client (Pericles client is not the best example for that).  The key pattern is the MVC, but not the MVC applied in web application but the real, old, traditional, Smalltalk originated MVC.
+
+In article 
+[MVC Architecture for JavaScript Applications](http://michaux.ca/articles/mvc-architecture-for-javascript-applications)
+you could learn how it is working and what how to implement in JavaScript.
+
+After reading and understanding MVC you could optimize it. 
+
+The _Controller_ part of MVC is responsible for decising which entity (or entities) should handle the UI event.
+
+> The controller is a decision maker. When a user clicks in the view, the view forwards that event on to the controller so the controller can decide what needs doing.
+
+In several cases one UI event is handled by one entity or multiple independent entities. In this case the whole controller can be simplified by introducing [Message Bus](#messagebus)
+
+## MessageBus
+
+Message bus theory:
+
+- [Event Collaboration](http://www.martinfowler.com/eaaDev/EventCollaboration.html)
+- [Message Bus](http://msdn.microsoft.com/en-us/library/ff647328.aspx)
+- [Client-side Messaging Essentials](http://freshbrewedcode.com/jimcowart/2013/02/07/client-side-messaging-essentials/)
+- [Message Bus vs "Pub Sub"](https://github.com/postaljs/postal.js/wiki/Message-Bus-vs-%22Pub-Sub%22)
+- [Deprecating the Observer Pattern](http://lampwww.epfl.ch/~imaier/pub/DeprecatingObserversTR2010.pdf)
+- [Why should the observer pattern be deprecated?](http://stackoverflow.com/questions/11619680/why-should-the-observer-pattern-be-deprecated)
+- [Event Notifier, a Pattern for Event Notification](http://www.marco.panizza.name/dispenseTM/slides/exerc/eventNotifier/eventNotifier.html)
+
+In PLI we are using [AmplifyJS](http://amplifyjs.com/) as message bus implementation.
+
+Publish an event example:
+
+```javascript
+	pli_event_bus.publish("clipboard/changed", instance);
+```
+
+Subscribe example:
+
+```javascript
+	pli_event_bus.subscribe("clipboard/changed", on_clipboard_changed);
+		...
+		
+	function on_clipboard_changed(clipboard) {
+		....
+	}
+```

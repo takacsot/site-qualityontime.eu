@@ -1,0 +1,34 @@
+# Project structure
+
+Setting up multiproject maven project is not a trivial task.
+
+you must understand the difference between sub-modules, parent-child projects.
+
+References:
+
+- [Maven Best Practices](http://mestachs.wordpress.com/2012/05/17/maven-best-practices/)
+- [Good section about multi-module vs. inheritance](http://www.sonatype.com/books/mvnref-book/reference/pom-relationships-sect-pom-best-practice.html)
+- [Best practices for multi-module project organisation](http://maventweaks.blogspot.com/2010/10/best-practices-for-multi-module-project.html)
+
+Organizing maven modules are not the question of numbers. The key is the well organized project structure.
+
+A (probably) good example:
+
+- toolbox: general, reusable components
+- data: all basic business entities, hibernate mapping, simple and reusable DAO-s.
+- project-service: the core business functionality
+- project-web/front: front-end components only.
+
+Of course you could have more or less. Depending on the project.
+
+It is easier to show how not to organize it. Examples:
+
+-	All the Pericles modules need some API to access user authentication and authorization data. All these API is included into MeetingSubsystem. Meeting subsystem is depending on  additional one which are also depending on additional modules. It would be more practical to extract certain aspects of MeetingSubsystem and make it reusable. 
+-	periclesascommons project would be a reusable part of the Pericles system But it is  not. It has several totally different concern/responsibility:
+	- general utilities: these are intend to be reusable
+	- database components
+	- reusable business entities/dto-s.
+
+	All these should be reorganized into separate modules.
+
+	

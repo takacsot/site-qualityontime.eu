@@ -1,0 +1,28 @@
+Got the solution to my pb.
+ 
+As you know, we have 2 app context:
+ - the root web app context loaded by the ContextLoaderListener (spring.xml)
+ - the Dispatcher servlet one (spring-servlet.xml) which become a child app context of the first one. 
+ 
+From the dispatcher servlet context, you can see beans defined in the root context (a Service can be injected to a Controller).
+But not the other way, that's the way the parent - child app context is working in Spring.
+ 
+Now:
+ 
+I defined my "Pli" bean in the spring-servlet context file.
+In my jsp, I was loading the wrong app context file using the 
+org.springframework.web.context.support.WebApplicationContextUtils.getWebApplicationContext
+
+This loads the root app context...
+
+To have access to the Dispatcher servlet one, I had to use the 
+
+org.springframework.web.servlet.support.RequestContextUtils.getWebApplicationContext
+
+which return the dispatcher serlvet context.
+
+Something to put on the wiki...
+
+Et voilà!
+
+Eric

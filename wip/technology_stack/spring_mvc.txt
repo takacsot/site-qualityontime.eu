@@ -1,0 +1,399 @@
+# Spring MVC 
+
+Version: Spring 3.1
+
+The goal is not to explain how Spring MVC is working because everyone 
+can read. I would like to emphasis certain aspects of the library and 
+best practices 
+
+## Keep it short 
+
+Spring controller has only 3 responsibilities: 
+
+1. parse request to convert to object model 
+2. delegate operation to services 
+3. format response (HTML, JSON, PDF) 
+
+No any further responsibilities should be included. It means that 
+controller code should be really short. not dealing with any of business 
+related functionality. 
+
+## Parsing date 
+
+Spring MVC provide lots of functionality to parse request to business 
+object. There is no any problem parsing simple attributes and populating 
+into objects. But sometimes it is not enough. for example when you want 
+to accept Date and times you expect to got `java.util.Data`. In that 
+case you must register custom editor: 
+
+```java
+	  @InitBinder
+	  protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	  }
+```
+
+## Use the power of naming convention 
+
+When you implement mapping of URL to a method name use certain naming 
+convention which **helps** you navigating in the code. 
+
+Example of not so useful naming convention: 
+
+```java
+	  @RequestMapping(value = "searchinterpreter.do")
+	  public String displayForm(...) {
+		...
+	  }
+```
+
+What is the problem? From pure implementation point of view nothing. 
+this code just maps `searchinterpreter.do` to call `displayForm` method. 
+But for long term is cause navigation overhead. To be effective it is 
+needed to jump to the proper code segment to do stuffs. But not knowing 
+where to jump you could not jump there directly but have to search. 
+
+See the following, **better naming convention**: 
+
+```java
+	  @RequestMapping(value = "remove_all.do")
+	  public String remove_all(...) {
+		...
+	  }
+```
+
+This naming convention will help to jump to the proper function just after having a look at the URL.
+
+Another convention to **indicate AJAX calls**. this example using underscore to indicate that the function is used in AJAX requests:
+
+```java
+	  @RequestMapping(value = "_clean.do")
+	  @ResponseBody
+	  public String _clean(...) {
+		...
+	  }
+```
+
+## Use Redirect 
+
+After performing any operation which modifies a business entities (e.g: 
+`save`) you have an option to render response from that controller 
+(controller will be responsible to render the result). Using this 
+solution your URL will be changed to (in this case) `save.do` there are 
+problems: 
+
+- have a risk that after browser refresh the whole operation will be 
+executed again. (press F5 after such an operation) 
+- mixing 
+responsibilities: responsibility of controller `save` becoming responsible 
+for the display too. 
+
+Better solution to use **redirect**. 
+
+```java
+	  @RequestMapping(value = "remove_all.do")
+	  public String remove_all(ModelMap model) {
+		Clipboard c = ClipboardHelper.get();
+		c.clearAllItems();
+		return "redirect:list.do";
+	  }
+```
+
+In this example after executing the business it will send back a `redirect` response to the browser. After getting the response the browser will make a new request to the server with URL `list.do`. in this example the controller mapped to `list.do` is responsible for displaying the business model.
+
+If you want to publish some message when redirecting you can use `RedirectAttributes` of the Spring framework.
+
+```java
+	  @RequestMapping(value = "remove_all.do")
+	  public String remove_all(ModelMap model, RedirectAttributes redirect) {
+		Clipboard c = ClipboardHelper.get();
+		c.clearAllItems();
+		redirect.addAttribute("message", "Message to display after redirect");
+		return "redirect:list.do";
+	  }
+```
+
+## JSON response
+
+Producing JSON response is easy. Either let Spring serializing response object or you can compose your own response using `Gson` library.
+
+Example 1:
+
+```java
+  @RequestMapping(value = "add.do")
+	  public @ResponseBody
+	  GenericResponse add(@ModelAttribute ClipboardData data, HttpServletRequest req, ModelMap model) {
+		...
+	  }
+```
+
+Example 2:
+
+```java
+	@RequestMapping(value = "clean.do")
+	  @ResponseBody
+	  public String _clean(@RequestParam(value = "ids[]", required = true) List<Long> ids, ModelMap model) {
+		...
+		return new Gson().toJson(ImmutableMap.of("status","OK"));
+	  }
+```
+
+## JSON request
+
+When working on dynamic user interface you might face the problem of composing complex request objects. such a complex objects are difficult to map to java beans using plain HTML forms and field names. Just too complex.
+
+In that case you can parse input string directly using Gson:
+
+```java
+	  @RequestMapping(value = "save_assignment.do", method = RequestMethod.POST)
+	  @ResponseBody
+	  public String save_assignment(@RequestParam(value = "data", required = true) String data, ModelMap model) {
+		log.debug("AssignmentRequest:{}", data);//which is in json string format
+		AssignmentRequest req = GsonHelper.fromJson(jsonString, AssignmentRequest.class);
+		...
+```
+
+## Tiles of webpage
+
+Purpose, advantages and disadvantages of Tiles can be found in documentation.
+
+but you can use tiles effectively buy applying the following concepts
+
+### tiles naming convention
+
+Use the same naming convention as mentioned before in spring controller.
+
+Controller:
+
+```java
+	@Controller
+	@RequestMapping(value = "/session")
+	public class SessionController {
+
+	  @RequestMapping(value = "list.do")
+	  public String list(...) {
+		...
+	    return "list-session";
+	  }
+	...
+	}
+```
+	
+Tiles config:
+
+```xml
+	  <definition name="list-session" extends="base.definition">
+		<put-attribute name="body" value="/view/session/list-session.jsp" />
+		...
+	  </definition>
+```
+
+You can see how the phrase `list` is displaying everywhere to find all components in a simple and straightforward way. when using such a convention you do not need to think about which jsp page to open even if you just now about the URL only.
+
+### Include dynamic CSS and JS dependency.
+
+When developing complex pages it is normal that for certain pages you need some extra library or CSS to include. But when using tiles you have a framework to setup all core JS or CSS dependencies. But there are solution to that. 
+
+Base tiles template definition:
+
+```xml
+	  <definition name="base.definition" template="/view/application.jsp">
+		<put-attribute name="header" value="/view/header.jsp" />
+		<put-attribute name="menu" value="/view/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/view/footer.jsp" />
+		<put-list-attribute name="js_files"></put-list-attribute>
+		<put-list-attribute name="css_files"></put-list-attribute>
+	  </definition>
+```
+
+Specific page definition:
+
+```xml
+	  <definition name="view-session" extends="base.definition">
+		<put-attribute name="title" value="View Session" />
+		<put-attribute name="body" value="/view/session/view-session.jsp" />
+		<put-list-attribute name="js_files">
+			<add-attribute>/js/view-session.js</add-attribute>
+		</put-list-attribute>
+		<put-list-attribute name="css_files">
+		  <add-attribute>/view/assets/multiselect/jquery.multiselect.css</add-attribute>
+		  <add-attribute>/view/assets/multiselect/jquery.multiselect.filter.css</add-attribute>
+		</put-list-attribute>    
+	  </definition>
+```
+
+And the main JSP page (call it `application.jsp`)
+
+```html
+		...
+		<!-- CSS which need for all the pages -->
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/view/assets/app/css/app.css" />
+		<!-- css files needed for specifc pages only-->
+		<tiles:useAttribute name="css_files" id="csslist" classname="java.util.List" />
+		<c:forEach var="fileName" items="${csslist}">
+			<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%><c:out value='${fileName}' />" />
+		</c:forEach>
+		<!-- javascript required by all the pages -->
+		<jwr:script src="/js/common.js" useRandomParam="false" />
+		<!-- JS libraries needed for specific pages only -->
+		<tiles:useAttribute name="js_files" id="jslist" classname="java.util.List" />
+		<c:forEach var="fileName" items="${jslist}">
+			<script type="text/javascript" src="<%=request.getContextPath()%><c:out value='${fileName}' />"></script>
+		</c:forEach>
+		<!-- remainng tiles template -->
+		<title><tiles:insertAttribute name="title" ignore="true" /></title>
+		</head>
+		<body>
+			<div class="main">
+				<div class="content">
+					<tiles:insertAttribute name="body" />
+				</div>
+				<tiles:insertAttribute name="footer" />
+			</div>
+		</body>
+		</html>
+```
+
+## Tips and Tricks
+
+### IE in Compatibility View
+
+Doesn't matter how good you web application is if it is not working in EP environment. 
+Our experience that in EP Internet Explorer settings all EP domains is set up for using Compatibility View (see Tools -> Compatibility View).
+
+In Compatibility View you shine and perfect application
+
+- looks ugly
+- not working because of some mysterious JavaScript errors
+- incorrect layout
+
+To ensure switching of Compatibility View you have to put one line into the header of HTML page:
+
+```html
+	<meta http-equiv="X-UA-Compatible" content="IE=8" /> 
+```
+
+### Keep session alive
+
+HTTP sessions are expiring after a while. That is normal. After session timeout re-authentication is needed. in most cases the default timeout is 30 minutes. If this period is not enough you could extend it by modifying server settings. But it still can be frustrating. 
+
+Solution: ping the server periodically.
+
+Create an empty controller function:
+
+```java
+	  @RequestMapping(value = "/ping.do")
+	  @ResponseBody
+	  public String ping(HttpSession session) {
+		assert null != session;
+		return "ping";
+	  }
+```
+
+Call this controller periodically (e.g.: every 25 minutes):
+
+```javascript
+	function keepSessionAlive() {
+	  $.get(CTX + '/ping.do');
+	}
+	$().ready(function() {
+	  setInterval(function() {
+		keepSessionAlive();
+	  }, 25 * 60 * 1000);
+	});
+```
+
+### Spring test, spring file organize best practice
+
+It is a good idea to split spring files into smaller chunks. It can help to reuse and separate configuration. 
+
+For example we have split spring config into several files:
+
+- spring-cache.xml
+- spring-datasource.xml
+- spring-job.xml
+- spring-persistence.xml
+- spring-security.xml
+- spring-servlet.xml
+- spring-tiles.xml
+- spring-violations.xml
+- spring-web.xml
+- spring.xml
+
+Majority of `spring.xml` is just including other files like `<import resource="spring-tiles.xml" />`.
+
+When setting up testing environment we could reuse these configuration. For example in the same project in `test/resources` we have the following files *only*:
+
+- spring-datasource.xml
+- spring-test.xml
+
+`spring-test.xml` is the counterpart of `spring.xml`. Contains less include because they are not relevant while running test (e.g. `spring-security.xml` is not included), but reusing all other spring configurations (cache, web, violations, etc). But when running unit test we cannot `DataSource` provided by the servlet container. We have to override it (`spring-datasource.xml` in `test/resources`).
+
+And finally we need our parent Spring test class:
+
+```java
+	@RunWith(SpringJUnit4ClassRunner.class)
+	@ContextConfiguration(locations = { "classpath:spring-test.xml" })
+	@TransactionConfiguration
+	@Transactional
+	public abstract class ASpringWebTest {}
+	...
+	public class SessionModifiedViolationFormatterTest extends ASpringWebTest {
+	...
+	}
+```
+
+### Character Encoding
+
+We are working in multilibual environment.
+
+Set chacacter encoding in `web.xml`
+
+```xml
+	  <filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+		  <param-name>encoding</param-name>
+		  <param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+		  <param-name>forceEncoding</param-name>
+		  <param-value>true</param-value>
+		</init-param>
+	  </filter>
+	  <filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	  </filter-mapping>
+```
+
+But it is still not enough for `JSON`. You musf extend the annotation of ajax methods with `produces` parameter:
+
+```java
+	  @RequestMapping(value = "preassign.do", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+	  @ResponseBody
+	  public String preassign(@RequestParam(value = "data", required = true) String data, ModelMap model) {
+```
+
+### SEssion scoped object
+
+If you need an always available object in session scope it might be more easy to use Session scoped bean instead of manul session management.
+
+```java 
+@Component
+@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class Clipboard {
+}
+
+@Controller
+//@Scope("prototype")
+public class NotificationController {
+  @Autowired
+  private Clipboard clipboard;
+}
+```
+
+In the bacground it will create a clipboard proxy instance which will be injetced into controller singleton (one instace always). When in a na actual request the proxy class will take care of which (session level ) instance of target class to use.

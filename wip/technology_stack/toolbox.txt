@@ -1,0 +1,774 @@
+
+Toolbox
+========
+
+Various tools and technologies which are useful.
+
+## Guava
+
+[guava-libraries](http://code.google.com/p/guava-libraries/wiki/GuavaExplained)
+
+> The Guava project contains several of Google's core libraries that we rely on in our Java-based projects: collections, caching, primitives support, concurrency libraries, common annotations, string processing, I/O, and so forth. Each of these tools really do get used every day by Googlers, in production services.
+
+### Preconditions
+
+In PLI you can find in a wrapper implementation. Use a precondition checking utilities.
+
+```java
+Preconditions.checkArgument(i >= 0, "Argument was %s but expected nonnegative", i);
+Preconditions.checkArgument(i < j, "Expected i < j, but %s > %s", i, j);
+```
+
+### Throwables
+
+For Exception propagation. Several of the Java API forces us to handle checked Exceptions even if we could do not do anything with that. Most of the times we just log, wrap into RuntimeException then throw again and let calling process to deal with it.  Lots of repetitive steps.
+
+It will shorten it.
+
+~~~java
+	  public static String getProperty(Object bean, String name) {
+		try {
+		  return delege.getProperty(bean, name);
+		}
+		catch (InvocationTargetException e) {
+		  throw Throwables.propagate(e);
+		}
+	  }
+~~~
+
+### Immutable collections
+
+Immutable collections are faster to use in multithreaded environment.  Majority of the operations are just more clear using immutable (value) objects. Using immutable collections is more memory efficient than using mutable counterpart.
+
+Plus lost of useful function to make life more easy when dealing with collections. 
+
+~~~java
+		Map<?, ?> ret = ImmutableMap.of("status", "OK", "data", resp);
+~~~
+
+Imagine when you want to filter a collections - getting a subset based on certain conditions
+
+~~~java
+		List<InterpreterDto> relevantInterpreters = Collections2.filter(interpreters, new Predicate<InterpreterDto>() {
+		  public boolean apply(InterpreterDto input) {
+			for (InterpreterBoothDto b : input.getBooths()) {
+			  if (langs.contains(b.getLanguage())) {
+				return true;
+			  }
+			}
+			return false;
+		  }
+		});
+~~~
+
+Of course you could reuse that Predicate. Imagine when you get a list of object and want to lookup based on some `id` of that object.
+
+~~~java
+	Function<Unavailability, Long> interp_pers_uid_extractor = new Function<Unavailability, Long>() {
+		@Override
+		public Long apply(Unavailability input) {
+		  return input.getPers_pers_uid();
+		}
+	  }; 
+	...
+	List<Unavailability> unavs = search(s)
+	ListMultimap<Long, Unavailability> res = groupBy(unavs, interp_pers_uid_extractor)
+~~~
+
+Where the `interp_pers_uid_extractor` can be reused in multiple places. In this example the `groupBy` is synonym for `Multimaps.index`.
+
+Using functional programing idioms can produce shorter and simpler programs. 
+
+### Strings
+
+#### Joiner
+
+~~~java
+	Joiner joiner = Joiner.on("; ").skipNulls();
+	return joiner.join("Harry", null, "Ron", "Hermione");
+~~~
+
+#### Splitter
+
+Typical problem o splitting String. I java you could use `Spring.split` which can be difficult because you have to deal with regex; or `StringTokenizer` which is failing when want split by multiple characters.
+
+But you can feel the difference: 
+
+~~~java
+	List<String> tokens = copyOf(Splitter.on(CharMatcher.WHITESPACE).omitEmptyStrings().trimResults().split(prop));
+~~~
+
+### EventBus
+
+In PLI it is not used but in Pericles Client it would be extremely useful.
+
+~~~java
+	// Class is typically registered by the container.
+	class EventBusChangeRecorder {
+	  @Subscribe public void recordCustomerChange(ChangeEvent e) {
+		recordChange(e.getChange());
+	  }
+	}
+	// somewhere during initialization
+	eventBus.register(new EventBusChangeRecorder());
+	// much later
+	public void changeCustomer() {
+	  ChangeEvent event = getChangeEvent();
+	  eventBus.post(event);
+	}
+~~~
+
+## mockito
+
+[mockito](http://code.google.com/p/mockito/)
+
+> Mockito is a mocking framework that tastes really good. It lets you write beautiful tests with clean & simple API.
+
+In practice: Imagine when you want to test a business logic which is relying on database access. Reading from database. to test such a code you need to mock out that part of the system because database behavior can be indeterministic. Mock frameworks are good example for that.
+
+Example use in PLI:
+
+~~~java
+	public class SessionFinderTest {
+	  String username = "SessionFinderTest";
+	  SessionFinder finder;
+	  IPliSessionDao pliSessionDao;
+
+	  @Before
+	  public void before() {
+		finder = new SessionFinder();
+		ReflectionTestUtils.setField(finder, "pliSessionDao", pliSessionDao = mock(IPliSessionDao.class));
+		when(pliSessionDao.searchBy(any(SessionSearchCriteria.class))).thenReturn(
+			asList(SessionDto(1L, 10), SessionDto(2L, 10), SessionDto(3L, 10)));
+		...
+		ListMultimap<Long, DateRange> shifts = ...
+		when(pliSessionDao.findShifts(asList(1L, 2L, 3L))).thenReturn(shifts);
+		...
+		Map<Pair<Long, DateRange>, List<LanguageCoverageInfo>> lci = ....
+		when(pliSessionDao.getLanguageCoverageInformation(username, shifts)).thenReturn(lci);
+	  }
+
+	  @Test
+	  public void testFind() {
+		PagedResult<SessionDto> res = finder.find(username, new SessionSearchCriteria());
+		Assert.assertEquals(10, res.getCounter());
+		Assert.assertEquals(Long.valueOf(1), res.getResult().get(0).getSess_uid());
+		Assert.assertEquals(1, res.getResult().get(0).getLang_coverage_info().size());
+	  }
+	}
+~~~
+
+Advantages:
+
+- full control on mocked out result. It is possible to test such a scenarios which are extremely rare.
+- high speed of execution because we do not need to call a real (in this case database) implementation.
+
+## Generic hibernate Dao
+
+[hibernate-generic-dao](http://code.google.com/p/hibernate-generic-dao/)
+
+> We had worked on a project where we hand-coded all of our DAOs. This produced four irksome difficulties: (1) Method names and implementations were not altogether consistent. (2) It was a pain to make additional columns sortable or filterable, and as a result, a lot of pages lacked good sorting and filtering. (3) Making additional DAOs was tedious and took a fair amount of time. (4) Writing tests for DAOs is tricky and tedious, so no one really did.
+
+What we use: 
+
+- Generic DAO: with lots of useful implementation like, get, save, remove, search (see later), etc.
+- powerful search API
+
+Examples - Generic dao interface:
+
+~~~java
+	public interface ProjectDAO extends GenericDAO<Project, Long> {}
+	public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements ProjectDAO {}
+~~~
+
+Example - search:
+Search search = new Search(Project.class);
+
+~~~java
+	//filtering
+	search.addFilterEqual("name", "hibernate-generic-dao");
+	search.addFilterLessThan("completionDate", new Date());
+	search.addFilterOr(
+		Filter.equal("name", "Jack"),
+		Filter.and(
+			Filter.equal("name", "Jill"),
+			Filter.like("location", "%Chicago%"),
+			Filter.greaterThan("age", 5)
+		)
+	);
+	search.addFilterIn("name", "Jack", "Jill", "Bob");
+	//paging
+	search.setMaxResults(15); //a.k.a. results per page
+	search.setPage(3);
+~~~
+
+And if any of the features are suitable to your need you still have access to hibernate session.
+
+## iText and table builder
+
+[iText](http://itextpdf.com/)
+
+Within the team we have an electronic book (ask Otto) which contains lots of really good examples of using iText. (iText in Action)
+
+iText is a really low level API for building PDF. Low level and, that is the why, flexible.
+
+But to make it effective you have to build your high level API to use that. For example when creating complex layouts you have to use tables and cells in the PDF document. For building up you could use `TableBuilder`
+
+Example use of TableBuilder:
+
+```java
+		TableBuilder table = new TableBuilder();
+		//@formatter:off
+	   table
+		 .attr("totalWidth", 1842F)
+		 .attr("headerRows", 1)
+		 .newRow()
+		   .newHeaderCell().text(i18n.get("pdf.table.name"),"header")
+						   .attr("colspan", Integer.valueOf(2))
+						   .attr("verticalAlignment", ALIGN_BOTTOM)
+						   .attr("backgroundColor", "header")
+						   ;
+	   List<Date> valueDates = data.getValueDates();
+	   for(Date valueDate: valueDates){
+		 table
+		   .newHeaderCell().text(dayNameOfWeek(valueDate).toUpperCase(),"header").text("\n")
+						   .text(formatIfNotNull(valueDate, DATE_FORMAT),"header")
+						   .attr("horizontalAlignment", ALIGN_CENTER)
+						   .attr("backgroundColor", "header")
+						   ;
+	   }
+	   table.endRow();
+	   //@formatter:on
+```
+
+After building up an abstract table you could apply a visitor which will interpret this abstract table to specific implementation. For example: this table can be rendered in both HTML and PDF.
+
+```java
+	public class ITextTableVisitor extends ReflectiveVisitor {
+	  private static final Map<String, Font> fonts = Map();
+	  static {
+		fonts.put("default", new Font(Font.HELVETICA, 8, Font.NORMAL, Color.BLACK));
+		fonts.put("error", new Font(Font.HELVETICA, 8, Font.NORMAL, Color.RED));
+		fonts.put("header", new Font(Font.HELVETICA, 8, Font.NORMAL, Color.YELLOW));
+		fonts.put("title", new Font(Font.HELVETICA, 16, Font.NORMAL, Color.BLACK));
+		fonts.put("title-emph", new Font(Font.HELVETICA, 16, Font.BOLD, Color.BLACK));
+	  }
+	  private static final Map<String, Color> colors = Map();
+	  static {
+		colors.put("header", new Color(0, 0, 128));
+		colors.put("plain", Color.WHITE);
+	  }
+
+	  static Color getColor(String color) {
+		return colors.get(color);
+	  }
+
+	  static Font getFont(String fontDesc) {
+		Font res = fonts.get(fontDesc);
+		if (null == res) {
+		  res = fonts.get("default");
+		}
+		return res;
+	  }
+
+	  private Image getImage(String image) throws Exception {
+		if ("eu_logo".equals(image)) {
+		  return Image.getInstance(this.getClass().getResource("/img/eu_flag.jpg"));
+		}
+		return null;
+	  }
+
+	  private PdfPTable table;
+
+	  public void visitTTable(TTable t) throws DocumentException {
+		table = new PdfPTable(t.getMaxColOfRows());
+		table.setWidthPercentage(100);
+		if (null != t.getWidthPercentage()) {
+		  table.setWidthPercentage(t.getWidthPercentage());
+		}
+		...
+		for (TRow r : t.getRows()) {
+		  r.accept(this);
+		}
+	  }
+
+	  public void visitTCell(TCell c) throws Exception {
+		PdfPCell cell = new PdfPCell();
+		cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell.setBackgroundColor(Color.LIGHT_GRAY);
+		cell.setBorderColor(Color.GRAY);
+		cell.setPadding(2);
+		if (null != c.getHorizontalAlignment()) {
+		  cell.setHorizontalAlignment(c.getHorizontalAlignment());
+		}
+		if (null != c.getVerticalAlignment()) {
+		  cell.setVerticalAlignment(c.getVerticalAlignment());
+		}
+		cell.setColspan(c.getColspan());
+		...
+
+		for (TTable t : c.getTables()) {
+		  ITextTableVisitor innerVisitor = new ITextTableVisitor();
+		  t.accept(innerVisitor);
+		  PdfPTable innerTable = innerVisitor.getTable();
+		  cell.addElement(innerTable);
+		}
+		table.addCell(cell);
+	  }
+
+	  public void visitTRow(TRow r) {
+		for (TCell c : r.getCells()) {
+		  c.accept(this);
+		}
+	  }
+
+	  public PdfPTable getTable() {
+		return table;
+	  }
+
+	  public void setTable(PdfPTable table) {
+		this.table = table;
+	  }
+	}
+```
+
+	
+## jGrowl
+
+[jGrowl](http://stanlemon.net/pages/jgrowl)
+
+Useful visual utility for displaying message. 
+
+![How jGrowl looks like](img/jgrowl.png "sdfsdfsdf")
+
+Usage example:
+
+```java
+	// Sample 1
+	$.jGrowl("Hello world!");
+	// Sample 2
+	$.jGrowl("Stick this!", { sticky: true });
+	// Sample 3
+	$.jGrowl("A message with a header", { header: 'Important' });
+	// Sample 4
+	$.jGrowl("A message that will live a little longer.", { life: 10000 });
+	// Sample 5
+	$.jGrowl("A message with a beforeOpen callback and a different opening animation.", {
+		beforeClose: function(e,m) {
+			alert('About to close this notification!');
+		},
+		animateOpen: {
+			height: 'show'
+		}
+	});
+```
+	
+## Bootstrap
+
+[Bootstrap](http://twitter.github.com/bootstrap/index.html)
+
+> Sleek, intuitive, and powerful front-end framework for faster and easier web development.
+
+Bootstrap is a CSS and JavaScript framework to make initial website development easy and as a result having a consistent look and feel. 
+
+By applying Bootstrap we can have good looking website without any effort and lots of really useful visual effect which can spice up the look of certain components.
+
+You must review [Base CSS](http://twitter.github.com/bootstrap/base-css.html), [Components](http://twitter.github.com/bootstrap/components.html) and [JavaScript](http://twitter.github.com/bootstrap/javascript.html) sections.
+	
+## Underscore.js
+
+[Underscore.js](http://underscorejs.org/)
+
+> Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
+
+Really useful utility library for JavaScript.
+
+Learn and apply utilities to make you JavaScript code shorter and simpler.
+
+```javascript
+    var interp = _.find(_self.interpreters, function(interp) {
+      return assignment_line_uid == interp.assignment_line_uid;
+    });
+	...
+    _self.interpreters = _.reject(_self.interpreters, function(interp) {
+      return assignment_line_uid == interp.assignment_line_uid;
+    });
+```
+	
+
+## Templates
+
+Templating when you take a spring the put values into certain places to produce a final string result.
+
+By default you could implement with string concatenation. But after just a few variables to concatenate into string it become a really painful experience to read that source code. 
+
+Most of the time we want to generate some HTML fragment.
+
+### Teamplating in Java
+
+#### Commons StrSubstitutor
+
+[Commons lang](http://commons.apache.org/lang/)
+
+```java
+    String template = "  public ${baseClass} build(){\n" +
+        "    ${baseClass} inst = new ${baseClass}();\n" +
+        "${assignments}\n    return inst;\n" +
+        "  }\n";
+    StrSubstitutor.replace(template, 
+			ImmutableMap.of("baseClass", baseClass, 
+							"assignments", buildBuilderAssignments()));
+```
+
+#### JATL
+
+[JATL](http://code.google.com/p/jatl/)
+
+```java
+    final Html html = new Html(that) {
+      {
+        Map<DateRange, List<LanguageCoverageInfo>> li = dto.getLang_coverage_info();
+        for (DateRange range : li.keySet()) {
+          div().id(dto.getSess_uid() + "-" + cssId(range));
+          span().classAttr("label").text(timeInfo(range)).end();
+          new LanguageCoverageFormatter(li.get(range)).format(this);
+          end();
+        }
+        endAll();
+        done();
+      }
+    };
+```
+
+### Templating in JavaScript
+
+#### Simple templating
+
+[See](#underscore.js). 
+
+Underscore.js has utility called [template](http://underscorejs.org/#template).
+
+#### Jaml
+
+[jaml](https://github.com/edspencer/jaml)
+
+```java
+	Jaml.register('simple', function() {
+	  div(
+		h1("Some title"),
+		p("Some exciting paragraph text"),
+		br(),
+
+		ul(
+		  li("First item"),
+		  li("Second item"),
+		  li("Third item")
+		)
+	  );
+	});
+	...
+	Jaml.render('simple');
+```
+
+## QUnit - JavaScript unit test
+
+[QUnit](http://qunitjs.com)
+
+Setup unit test page:
+
+```html
+	<link rel="stylesheet" href="../assets/unittest/qunit.css">
+	<script src="../assets/unittest/qunit.js"></script>
+	<script src="../assets/jquery/js/jquery-1.8.2.js"></script>
+	<script src="../assets/underscore/js/underscore.js"></script>
+	<script src="../assets/amplify/js/amplify.js"></script>
+	<script src="../assets/app/js/message-bus.js"></script>
+	<script src="../assets/app/js/booth.js"></script>
+	<script src="../assets/app/js/session.js"></script>
+	<script src="test.js"></script>
+	</head>
+	<body>
+	  <div id="qunit"></div>
+	  <div id="qunit-fixture">test markup</div>
+	</body>
+```
+
+Then write unit test in JavaScript
+
+```javascript
+	test("hello test", function() {
+	  ok(1 == "1", "Passed!");
+	});
+
+	// before this you need som setup code - see documentation
+	test('booth.findInterpByAssignmentLineUid not found', function() {
+	  var interp = booth.findInterpByAssignmentLineUid(-1);
+	  ok(_.isNull(interp));
+	});
+
+	test('booth.findInterpByAssignmentLineUid found', function() {
+	  var interp = booth.findInterpByAssignmentLineUid(1);
+	  ok(interp);
+	  equal('should find',interp.name);
+	});
+```
+
+EP Eclipse distribution prevent us installing plugins which can help to run these test in Eclipse while developing.
+
+But there are solutions:
+
+1. open the `test.html` in the browser.
+2. User browser plugin or some kind of bookmarklet to automatically refresh page
+3. Write `test.js`
+4. After saving file the result will be reflected in the browser after the next refresh.
+
+	
+## JQGrid
+
+jqGrid is a JavaScript third party library based on jQuery UI which can provides quite advanced functionalities.
+
+One of the main reason to select this component is the possibility to have frozen columns like in Excel and
+which is convenient when displaying the timeline.
+
+It can work with local JavaScript data or remote datasource (using XML or JSON formats), supports sorting, 
+pagination, tree grid / sub grid, cell editing, search within the table, custom formatting...
+
+When using remote datasources, the grid configuration permit to define readers (XML, JSON) to easily interface
+the data format returned by the server. You only specify the path to the different data required by the grid.
+
+### PLI integration
+
+#### How it works
+
+It is used in PLI for the interpreters search results. Given that the grid configuration is depending on the 
+search criteria (period and time unit for the timeline), the search form triggers an Ajax requests which:
+
+- renders the results table with the proper column
+- the server URL for the results table takes as parameters the results page request parameters
+
+As a result, submitting a search triggers 2 HTTP requests, one for rendering the results table and another 
+for feeding the table with JSON data. When navigating using the pager, only one request is sent.
+
+#### Row/cell selection
+
+Row selection is supported by default (even multiple row selection with a checkbox column) and provides 
+row highlighting, API for getting/setting the selection, events... 
+
+The row API works only on the visible grid when using pagination. Keeping the selection across pages has 
+to be handled programmatically (use of the "gridComplete" event to set the selection).
+
+However, cell selection is not fully supported (only events). So cell selection set/get/highlighting has to be handle
+programmatically. Also preventing that a cell selection select / deselect the whole row...
+
+#### Drag and drop
+
+Drag and drop of records from one table to another is also supported by the library but we did not use
+it.
+
+Indeed, DnD is implemented in the interpreters replace / swap view, one picks up an interpreter from results grid
+and drag it to one of the "replace slot". But we changing the search parameters (e.g. modifying the period / unit of 
+the timeline, then the "replace slot" should also be refreshed and the jqGrid DnD is not enough.  
+
+The DnD is then handled programmatically using the jQuery dragable and dropable methods. When dropping, the 
+grid is fetching explicitly the interpreter from the server.
+
+#### Frozen columns
+
+Are simply defined in the column configuration (one flag to set per column and a method to call to enable the freezing).
+Straightforward.
+
+#### Table layout
+
+The jqGrid table is used either with fixed width or adapted to the window width. The last is achieved by binding to the
+grid container's resize event (not the window which cause some perf issue on IE) the resize of the grid.
+
+```javascript
+	// Resize grid to the browser window
+	$('#'+params.slot_id).resize(function() {
+	  $(params.target).setGridWidth($(window).width()-260);
+	}).trigger('resize');
+```
+
+#### Header grouping
+
+One nice feature of jqGrid is to provided header column grouping (one level only). You simply specify for each 
+group of column the start column, the number of column for the group and the group title.
+
+### Example
+
+```javascript
+	$(function(){ 
+	  $("#list").jqGrid({
+		url:'example.php',
+		datatype: 'xml',
+		mtype: 'GET',
+		colNames:['Inv No','Date', 'Amount','Tax','Total','Notes'],
+		colModel :[ 
+		  {name:'invid', index:'invid', width:55}, 
+		  {name:'invdate', index:'invdate', width:90}, 
+		  {name:'amount', index:'amount', width:80, align:'right'}, 
+		  {name:'tax', index:'tax', width:80, align:'right'}, 
+		  {name:'total', index:'total', width:80, align:'right'}, 
+		  {name:'note', index:'note', width:150, sortable:false} 
+		],
+		pager: '#pager',
+		rowNum:10,
+		rowList:[10,20,30],
+		sortname: 'invid',
+		sortorder: 'desc',
+		viewrecords: true,
+		gridview: true,
+		caption: 'My first grid'
+	  }); 
+	}); 
+```
+
+### References  
+
+[Demo](http://trirand.com/blog/jqgrid/jqgrid.html)
+
+API:  
+
+- [options for grid config](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options)
+- [methods](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods)
+- [events](http://www.trirand.com/jqgridwiki/doku.php?id=wiki%3aevents)
+
+## Spring SpEL
+
+Cases:
+
+- accessing object attributes (even if nested) dynamically.
+- accessing nested, potentitally null intermediate objects
+
+You might write several of the following code in you life:
+
+```java
+    if (getPersonnelNumber() != null) {
+      persNumberId = getPersonnelNumber().getPersNumberId();
+    }
+    if (getBooth() != null) {
+      boothId = getBooth().getBoothId();
+    }
+    if (getProfDomicile() != null) {
+      profDomId = getProfDomicile().getAddrId();
+    }
+```
+
+Common attribute is that you intend to access a nested attribute but for not throwing `NullPointerException` you have to check the presence of intermediate object.
+
+Lets simplify:
+
+```java
+    Long persNumberId = AppBean.get(this, "personnelNumber?.persNumberId", Long.class);
+    Long boothId = AppBean.get(this, "booth?.boothId", Long.class);
+    Long profDomId = AppBean.get(this, "profDomicile?.addrId", Long.class);
+```
+
+The construct if `?.` is called [Safe Navigation operator](http://groovy.codehaus.org/Operators#Operators-SafeNavigationOperator) whihc become popular with Groovy. We could use the same concept in Java with Spring:
+
+```java
+  public static <T> T get(Object o, String property, Class<T> desiredReturnType) {
+    Expression exp = parser.parseExpression(property);
+    EvaluationContext context = new StandardEvaluationContext(o);
+    return exp.getValue(context, desiredReturnType);
+  }
+```
+
+Of course [Spring expressions](http://static.springsource.org/spring/docs/3.1.0.RELEASE/spring-framework-reference/html/expressions.html) are much more powerfull than using for this purposes. Van be used for validation or in complex formatting in JSP.
+
+## Logging
+
+Use slf4j only. And in the bacground you could still use log4j configs as before.
+
+Do you need asingle reason why using slf4j?
+
+Before:
+
+```java
+if(log.isDebugEnamled()){
+	log.debug("Some text "+something+" and other to log);
+}
+```
+
+After:
+
+```java
+log.debug("Some text {} and other to log", something);
+```
+
+## JodaTime
+
+[Joda Time](http://joda-time.sourceforge.net/)
+
+> Joda-Time provides a quality replacement for the Java *date* and *time* classes.
+
+Once you have to use `java.util.Date` intensively you will understand how painfull it can be.
+
+Just remove the pain by using Joda Time.
+
+> **Easy to Use**. Calendar makes accessing 'normal' dates difficult, due to the lack of simple methods. Joda-Time has straightforward field accessors such as getYear() or getDayOfWeek().\
+> **Easy to Extend**. The JDK supports multiple calendar systems via subclasses of Calendar. This is clunky, and in practice it is very difficult to write another calendar system. Joda-Time supports multiple calendar systems via a pluggable system based on the Chronology class.\
+> **Comprehensive Feature Set**. The library is intended to provide all the functionality that is required for date-time calculations. It already provides out-of-the-box features, such as support for oddball date formats, which are difficult to replicate with the JDK.\
+> **Up-to-date Time Zone calculations.** The time zone implementation is based on the public tz database, which is updated several times a year. New Joda-Time releases incorporate all changes made to this database. Should the changes be needed earlier, manually updating the zone data is easy.\
+> **Calendar support.** The library currently provides 8 calendar systems. More will be added in the future.\
+> **Easy interoperability.** The library internally uses a millisecond instant which is identical to the JDK and similar to other common time representations. This makes interoperability easy, and Joda-Time comes with out-of-the-box JDK interoperability.\
+> **Better Performance Characteristics.** Calendar has strange performance characteristics as it recalculates fields at unexpected moments. Joda-Time does only the minimal calculation for the field that is being accessed.\
+
+Simple and expressive.
+
+**Should I exmplain the following code?**
+
+```java
+  public static boolean betweenOpenEnd(Date d, Date from, Date to) {
+    AppPreconditions.checkNotNull(d, from, to);
+    return new Interval(new DateTime(from), new DateTime(to)).contains(new DateTime(d));
+  }
+```
+
+It is possible to use in hibernate mapping:
+
+```{.java}
+@Column
+@Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
+private DateTime fromDate;
+```
+
+## Autocomplete Javascript solutions
+
+Intelligent dropdown:
+
+- http://harvesthq.github.com/chosen/
+Candidate tools:
+- http://code.drewwilson.com/entry/autosuggest-jquery-plugin
+- http://www.devthought.com/projects/jquery/textboxlist/ (commercial)
+- http://harvesthq.github.com/chosen/ Looks really good, but ajax is only with http://stackoverflow.com/questions/12044330/jquery-chosen-plugin-dynamically-populate-list-by-ajax
+- http://ivaynberg.github.com/select2 also impressive
+- http://loopj.com/jquery-tokeninput/ good old...
+
+## Maps with default values or on the fly init values
+
+Jakarta commons way: [Lazy Map](http://commons.apache.org/proper/commons-collections/apidocs/org/apache/commons/collections/map/LazyMap.html)
+
+```java
+ Factory<Date> factory = new Factory<Date>() {
+     public Date create() {
+         return new Date();
+     }
+ }
+ Map<String, Date> lazy = LazyMap.lazyMap(new HashMap<String, Date>(), factory);
+ Date date = lazy.get("NOW");
+```
+
+Big differ
+
+#TODO
+
+
+http://code.google.com/p/spock/wiki/SpockBasics
+
+
+
+
+
+
+
