@@ -1,0 +1,36 @@
+﻿A KKV-k informatikai problémái
+
+Egyetlen sikeres vállalt semtud meglenni egy erős, munkafolyamataikat támogaó, hatékony informttikai rendszer nélkül. nem azonnal merül fel az igény rá. Kicsiben minden tud menni papíron, majd az adatmenniység növekedésével jönneka kisebb nagyobb kartotékok és táblázatok. ezek esetleg már számítógépen is megtalálhatóak. Ha a prosperál eljut arra a szintre hogy több emberrel kell közösen dolgozni. Az első munkatárs, első alkalmazott, első csapattag. egy darabig tudjáok kezelni a feladatokat, de el fogtiok oda jutni, hogy elvesznek információk. itt jön be az informatikai rendszer. A számítógép nem felejt, nem fárad el és akkor is dolgozik, amikor mi már nem tudunk.
+
+Iformatika rendszer altt nem a fizikai számítógépet és a rá telepített programokat értem. Azok igazából nem is kellenek. Igazából a nyers szó szerinti jelentése az ami leírja miről is van szó: Az információk rendszere.
+
+Nem tudom, hogy milyen informatikussal fogsz először találkozni.Lehet hogy a szomszéd gyerek, aki fel tud telepíteni pár programot és ha kell legépel ezt-azt. Ha van vagy tucatnyi számítógép, akkor már jön egy rendszergazda is. Vagy a rendszergazda vagy egy direkt erre felvett ember, a programozó elkezdi az első programok elkészítését, ami meg fogják könnyíteni a cég életét. ALig kapsz észbe máris 3-12 informatikus lesz a cég életében. a gondok nem ekkor kezdődnek, de ekkor márbiztosan csúcsosodni fognak.
+
+Nem tudod, hogy mit csinálnak
+nem tudod, hogy jól csinálják
+nem tudod, hogy htékonyan csinálják
+nem tudod, hogy elég jók-e, lehetne-e olcsóbban
+Azt csinálják, amit kell?
+
+..TODO fenti probléká kifejteni
+
+Kell föléjük egy főnök. ez a leginkább magát adó válasz arra, hogy miként kezeld ezeket a problémákat. És ezzel a lépéssel fogod saját magad nyomorba dönteni. Fére ne értsd lehet, hogy nem megy tönkre a céged, de hogy nem is lesz hatékony az szinte biztos. Mik az elternatívák? fogsz egy üzleti embert, akinek bízol a munkájában és ő lesz az It vezető. Vagy kiemeled a legbizalomgerjesztőbb It-st és ő fogja vezetni a csapatot.
+
+Trivialis prbléma, hogy kiemelsz és nem lesz elismert vezető. Vagy biztos, h elismert lesz, mert lehet, hogy a munkatársai nem ismerik el megfeleő szakembernek. Elismerés hiánya teljesen meg tudja akadájozni a vezetp eredményességét.
+
+Persze kivűlről is hozhatsz embereket, ami ezt talán megoldja, de a másikat és tulajdonképeni fontosabb propblémát nem.
+
+.. Kifejteni annak az embernek a problémájt, aki nem híd az informatika és business között.
+
+Egszerű megoldás nincs.
+
+.. Drucker idézete a tudásmunkás saját feleősségéről.
+.. eredményorientált teljesítménymérés.
+.. csak az üzleti eredmény számít
+.. kommunikálj veleúgy ahogy kell
+.. nagymama specifikáció
+.. mérhető célok
+.. eredmény és tevékenység muatószámok
+.. külső szakértők
+.. legmegfelelőbb infromatikust vezsed fel
+.. legmegfelelőbb informatikai vezetőt veszed fel

@@ -1,0 +1,14 @@
+2011.08.29. 
+A kérdések amiket fel kell tennünk sorrend fotnosságban:
+
+1. A sprogram kielégíti -e az üzleti attribútumukat, igényeket ma megfelelõ szinten
+2. Szép elegeéns, statikus ellenõrzésen szép pontszámot ért el.
+
+A sorrend is számít.
+
+Lásd Jege mánioáját. Statikus kódellenõrzés nagyon hasznos eszköz, de azért legyen tiszta, hogy nem az a cél hanem az üzleti alkalmazás. A kódmetrikákk  kielégítése csakmsádolagos.
+
+Msol odlar aOO principle-k betartása. Egyrész azok nem szabályok. Közismert, hogy asok szabály azért létezik, mert Java*t ahsználunk ms nyelve esetében fel sem merül ennek a kérdése. Vagy éppen nem az adott helyzetben a legoptimálisabb. û
+
+pls nem encapsiláció a getter/setter. mivel az ugya azt az attribútumot teszi írhatóv olvashatóv csak éppen metódusok eresztül Tökéletese egy publikus mezõ is, ha mindt a getter mind a setter public és final lehet.
+

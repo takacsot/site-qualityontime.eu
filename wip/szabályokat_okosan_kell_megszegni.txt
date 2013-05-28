@@ -1,0 +1,5 @@
+﻿%szabályokat okosan kell megszegni
+%
+%
+
+Van egy szabáluynk, hogy PM írja meg RS-t. Mivel gyakran elhanagolták szabályoztuk.  és megkövetelzük, hogy meglegyen az írásos RS. (közös megállapodás) De ez blokkolta is a munkéát, mert csak odajöttek és kértek, de nem írtak semmit és mi meg csakazért sem csináltuk meg.  jogosan elkergettük őket. Mellékelesen gyakran rövidebb elírni, mint elmondani :( Ám volt, hogy nem ment a dolog. nem voltak hajlandóak leírni a dolgot.  Én adtama megoldást azzal, hogy felvettem a Pm kalapot és megírtam a RS-t. a fejlesztős i felvehette voln ezt akaplot. ez meg is zsegi a szabályt, de valójában nem. hiszen fejlesztpként nem szegi meg.  Hoyan adjam át ezt a kaalap gondolkodást a fejlesztpknek anélkül, hogy a szabályszegésre buzditsam őkeét a a vlaódi PM-ek ne lustuljanak el?

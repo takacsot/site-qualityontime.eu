@@ -1,0 +1,23 @@
+Programozási nyelvek hatékonysága
+=================================
+
+SOkáig éltem abban hitben, hogy a programozási nyelvek között nem lehet érdemben arról beszélni, hogy hatékonyabb-e vagy sem, mint a másik. Most már tudom, hogy tévedtem.
+
+A programozási nyelvek hatékonysága két részbõl tevédõk össze: 
+
+- nyelvi hatékonyság
+- API hatékonyság
+
+A nyelvi hatékonyság magáról a nyelvi szintaktikai elemek hatékonyságáról szól. Magyarán arról, hogy mennyit is kell ténylegesen gépelni. Milyen bonyolultan lehet bizonyos programozási truktúrákat megvalósítani.
+
+A nyelvi elemek száma egyenesen arányos a nyelv bonyolutlságával. A foglalt szavak szintén. Egyéltalán nem miondegy hogy `begin .. end` vagy `{ .. }`.
+
+A szelvi elemek közé tartozik a nyelvfelépítése és képességei is. Vegyünk egy nálam gyakran elõforduló megvalósítást. Logikailag arról van szó, hogy egy függvény-t adok át egy másik eljárásnak. Iskolapélda az, amikor egy rendezõ függvényke átadod azt a speciális függvényt, ami összehasonlítha az elemeket. Ezt C-ben függvény-pointernek, manapság divatasona closuroknak nevezki. A funcionális nyelvek álltalában alapból támogatják. Jelen van Python-ban és Ruby-ban is. De vegyük csak az egyik legelterjedtebb nyelvet: Java. Természetesen itt is meg lehet csinálni, hiszen turing-teljes nyelv De azért nem mindegy, hogy mennyi. Fogsz egy interfészt, majd leszármaztatod (mondjuk anonymus class) és overridol-od a szükséges funkciót. Borzalmas.
+
+TODO: ruby és java példa ugyan arra.
+
+A másik az API hatákonysága. Ennek is két esete van. A base api és az third-party api.
+
+A base-api szempontból iskolapélda a PL/SQL és a Java. Éppen a aminap kelet egyetlen kis utility. Maga amegoldás egy nem túl bonyolult szövegmanipulálsról szólt. Mivel alapvetõen java és delphi kliensból is használtuk volna jött a tribiális megoldás, hogy plsql tárolt lejárásba tesszük. De eztután jött a feket leves. Javaban konrétan funckionálisan megvalósított 2 soros függvény plsql rémálomnak bozonyult. A plssqlben egyszeráen nincs elegendõ és jó minõségû sztrin kezelõ mûvelet. (Igazából a plsqlnek egyetlen elõnye van gyakorlatilag a most populáris progrmaozási nyelvekhez képest: az adatok mellett fut emiatt egyedülállóan alkalmas nagy tömegû adat átmozgatására)
+
+És a thord party api. Igazából ennek a szekciónak eredménye roppant válátozatos. Nem is vendorokról szóll, hanem arról, hogy milyenmértékben kerül egy standardizált mániás ember kezébe az adott api. Igazából a Java api-jai illetve azok fejlõdésea legjobb példa arra, hogy miként kerül képbe egy standardizálásmániás megoldás, madj azt hogyan szoritja a ki a a piaci, hatékony api és válik végül standarddá: XML, EJB, adatbázis könyvtárak. 
