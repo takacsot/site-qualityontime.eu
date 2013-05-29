@@ -1,11 +1,4 @@
 http://www.qualityontime.eu/review/30-ok-amiert-utaljak-fonokot/
 Gyereklapokat belinkelni (lehetőleg automatikusan, monjuk tag alapján)
 
-http://www.qualityontime.eu/review/google-sztori-david-vise/
-broken link
-
-http://www.qualityontime.eu/articles/mit-varjunk-el-egy-szerzodeses-programozotol/
-http://www.qualityontime.eu/extracts/kirugni-gyengeden/
-http://www.qualityontime.eu/review/az-egyperces-menedzser-erore-kap-kenneth-blanchard/  Formázási dolog
-http://www.qualityontime.eu/review/elveszitettem-vezetosegbe-vetett-bizalmamat/  Comment szöveg formatting
-http://www.qualityontime.eu/review/nem-mondjak-meg-amit-tudnom-kellene-munkamhoz/ Comment formázás
+Sok sok gyereklap van, amit le kellene kezelni.

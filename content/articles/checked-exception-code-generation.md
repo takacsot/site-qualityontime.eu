@@ -6,7 +6,6 @@ author: "Takács Ottó"
 published: true
 tags: java,development,productivity,articles
 ---
-<h1 id="from-checked-exception-to-code-generation">From checked Exception to code generation</h1>
 <p>Mi is ez? Nyavajgás és picsogás mennyire fárasztó a Java, ha már ismersz más koncepciókat is</p>
 <p>Többféle vélemény van arról, hogy miként kell kivételeket (polgári néven Exception) kezelni. Java-ban két fő kivétel van:</p>
 <ul>

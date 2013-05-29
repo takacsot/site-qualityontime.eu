@@ -74,7 +74,7 @@ Amíg az ember fiatal, pénzért feláldozza az egészségét... Később aztán
 A testedzés __nem önsanyargatás!__
 
 
-__Ha__ az egészségesebb emberek jobb dolgozók, __és_ a jobb dolgozók több nyereséget hoznak a szervezetnek, __akkor__ az egészségesebb emberek több nyereséget hoznak a szervezetnek.
+__Ha az egészségesebb emberek jobb dolgozók, és a jobb dolgozók több nyereséget hoznak a szervezetnek, akkor az egészségesebb emberek több nyereséget hoznak a szervezetnek.__
 
 
 Az egyperces menedzser ellátogat egy életmód oktatásra is. Van egy gyakorlat: Párokat kell alkotni. Majd 1 percig megfigyelni a másikat. Meg kell figyelni a ruházatát, hajviseletét, arcát. Ezt igen feszengve hajtották végre. Az idő lejárta után hátat fordítottak, hogy ne lássák egymást. Mindkettőjüknek 5 dolgot meg kellett magukon változtatni. Mikor elkészültek, akkor a másiknak észre kellett venni e a változtatásokat. Majd megint hátat fordítottak újabb 10 változtatást kellet magukon eszközölniük. Azaz összesen 15-öt. Sokan gondolták azt, hogy ez lehetetlen. Mi az előző gyakorlat tanulsága?

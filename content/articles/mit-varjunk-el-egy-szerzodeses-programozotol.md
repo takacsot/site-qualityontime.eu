@@ -6,7 +6,7 @@ author: "Takács Ottó"
 published: true
 tags: it,management,quality,articles
 ---
-Most olvastam egy elgondolkodtató írást ([Hogyan indítsd be a növekedésed motorját](http://hun2.org/blog/teljes/hogyan_inditsd_be_a_novekedesed_motorjat/) ), ami arról szól, hogy egy webes kereskedő miért ne szervezné ki a munkát, hiszen nem ez az elsődleges dolga. Nem nagy, de legalább serkentő írás. A megjegyzésekben viszont felmerült egy érdekes kérdés, mégpedig hogyan válasszuk ki azt az egyszerű programozó, aki meg is tudja csinálni a munkát. Itt van az én hozzászólásom (remélem a moderátor hóvá hagyja és meg is jelenik mire ezt olvassátok.)
+Most olvastam egy elgondolkodtató írást (Hogyan indítsd be a növekedésed motorját(http://hun2.org/blog/teljes/hogyan_inditsd_be_a_novekedesed_motorjat/) lap megszünt), ami arról szól, hogy egy webes kereskedő miért ne szervezné ki a munkát, hiszen nem ez az elsődleges dolga. Nem nagy, de legalább serkentő írás. A megjegyzésekben viszont felmerült egy érdekes kérdés, mégpedig hogyan válasszuk ki azt az egyszerű programozó, aki meg is tudja csinálni a munkát. Itt van az én hozzászólásom (remélem a moderátor hóvá hagyja és meg is jelenik mire ezt olvassátok.)
 
 Akire nektek szükségetek van az a fejlesztő, ami [nem egyezik meg a programozóval](http://www.ericsink.com/No_Programmers.html).
 

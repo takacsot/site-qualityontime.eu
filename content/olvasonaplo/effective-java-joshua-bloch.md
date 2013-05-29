@@ -104,6 +104,4 @@ Item 57: Provide a readResolve method when necessar
 
 [Original reading 2007](http://takacsot.freeblog.hu/archives/2007/12/28/Joshua_Bloch_Effective_Java_Programming_Language_Guide/)
 
-[Moly](http://moly.hu/konyvek/joshua-bloch-effective-java-second-edition)
-
-<div class='old-comments'></div>
+[Moly](http://moly.hu/konyvek/joshua-bloch-effective-java)

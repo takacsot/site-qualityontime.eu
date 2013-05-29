@@ -31,7 +31,6 @@ Semmi különös titokra nem fog fény derülni. Itt csak össze van foglalva a 
 <p>A teljes képhez vannak más linkek is:</p>
 <ul>
     <li><a href="http://miyazakijun.hu/keresomarketing/a-google-sztori-konyvreszlet.seo">könyvrészlet </a></li>
-    <li><a href="http://digiport.hu/cikk/technofile/a_google_sztori">egy másik történet</a></li>
 </ul>
 <p>
 Hivatalos ajánló:</p>

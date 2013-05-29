@@ -38,7 +38,7 @@ Otto, ha valaki tojik a cegre es melora az is megkapja a fizeteset, meg az is, a
 		<div class='one-old-comment'>
 			<span class='comment-date'>2009-11-02 22:52:21</span>
 			<span class='commenter-name'>Takács.Ottó</span>
-			<div class='comment-body'>
+			<div class='comment-body' markdown="1">
 				<span class='comment-title'>Osztozzunk meg a nyereségen!</comment>
 				Ami gond, hogy a nyereségen __akkor lehet osztozni, ha a munka mérhető__. Azaz egyértelmű és tiszta metrikák vannak arra, hogy mikor jó/jobb a teljesítménye.
 
