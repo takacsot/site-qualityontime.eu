@@ -13,8 +13,4 @@ Atlassian’s “FedEx Day” is time set aside for developers to work on whatev
 - Spike.
 - Have fun.
 
-[Atlassian FedEx Days - original](http://confluence.atlassian.com/display/DEV/Atlassian+FedEx+Days)
-
-<!--break-->
-
-<div class='old-comments'></div>
+Atlassian FedEx Days - original (http://confluence.atlassian.com/display/DEV/Atlassian+FedEx+Days) Link Site is not available
