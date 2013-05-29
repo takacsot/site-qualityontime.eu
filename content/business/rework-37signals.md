@@ -16,7 +16,7 @@ Első benyomásom azért érdekes volt, mivel [azzal nyitott](http://37signals.c
 
 Mielőtt bármit mondanék tudnod kell, hogy a [37signals](http://37signals.com/)-nak már van egy másik [Getting Real](http://gettingreal.37signals.com/) című ingyenesen is elérhető könyve. Az arról szól, hogyan tudj hatékonyan és eredményesen szoftverfejlesztést végezni. Erősen informatikai szemléletű. De a [Rework](http://37signals.com/rework/) ezzel szemben csak utalgat informatikai irányokba ([van aki nem látja][1]). A könyv általános üzleti könyv. Ám a környezet, amit feltételez informatikai cégeknél könnyebben előfordul, mint más jellegű vállalkozásoknál. A lényeg itt, hogy leginkább az információs kor tudásalapú munkakörnyezetére igaz.
 
->könyv mellékterméke a vállalkozásuk tevékenysége. Kiváló melléktermékről van szó: a könyv a cégek működésének egyszerűsítéséről, a munka és a piac világának újragondolásáról szól. Egy fejezet egy oldal. Akár két metrómegálló között is érdemes elővenni.  -- [humanrobot](http://humanrobot.biz/0002.htm)
+>könyv mellékterméke a vállalkozásuk tevékenysége. Kiváló melléktermékről van szó: a könyv a cégek működésének egyszerűsítéséről, a munka és a piac világának újragondolásáról szól. Egy fejezet egy oldal. Akár két metrómegálló között is érdemes elővenni.  -- humanrobot
 
 A [Rework](http://37signals.com/rework/) formailag nagyon emészthető. Gyakorlatilag minden oldal egy-egy gondolat kifejtése. Ideális arra, hogy falatonként jót átgondoltan fel tudd dolgozni.
 
@@ -120,17 +120,7 @@ Lássuk az érintett témákat és az azokból készített kivonatomat! Ezek az 
 
 [1]: http://weblabor.hu/konyvek/rework "Áttekinthető, érdekes, könnyen feldolgozható példákon keresztül mutatja be, hogy miként változott meg az Internet elterjedése és a nyílt forráskódú fejlesztések eredményeként az egész üzleti világ, hogy mennyi előnyünk származhat ezekből a változásokból, és leginkább, hogy hogyan tudjuk mindezt a saját hasznunkra fordítani."
 
-
-<div class='old-comments'>
-		<div class='one-old-comment'>
-			<span class='comment-date'>2010-09-16 07:20:45</span>
-			<span class='commenter-name'>Takács.Ottó</span>
-			<div class='comment-body'>
-				<span class='comment-title'>Más review-k</comment>
-				Jó reviewkat találtak a következő linkeken:
+Jó reviewkat találtak a következő linkeken:
 
 - http://www.mediocrebutarrogant.com/book-review-rework-by-jason-fried-and-david-heinemeier-hansson/
 - http://www.pagebreakpodcast.com/podcast/episode-1-rework/
-			</div>
-		</div>
-		</div>

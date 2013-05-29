@@ -16,7 +16,6 @@ Vélemény:
 
 * [http://konyvmolyok.blogspot.com/2009/01/stephenie-meyer-burok.html](http://konyvmolyok.blogspot.com/2009/01/stephenie-meyer-burok.html)
 * [http://ekultura.hu/olvasnivalo/ajanlok/cikk/2009-02-19/stephenie-meyer-a-burok](http://ekultura.hu/olvasnivalo/ajanlok/cikk/2009-02-19/stephenie-meyer-a-burok)
-* [http://borostyan.multiply.com/reviews/item/51](http://borostyan.multiply.com/reviews/item/51)
 
 Részlet:
 

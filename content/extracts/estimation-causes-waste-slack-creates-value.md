@@ -13,6 +13,4 @@ tags: extracts
 - Manager's measurement #5: By week 2 have you deployed something for your top two release priorities? By week 8 of this release, have you deployed a subset of all key features for this release to paying customers?
 - Manager's measurement #6: How many hours of creative slack did your team do this week?
 
-[Estimation causes waste, slack creates value](http://www.management30.com/posts/2010/5/9/estimation-causes-waste-slack-creates-value.html)
-
-<div class='old-comments'></div>
+Estimation causes waste, slack creates value (http://www.management30.com/posts/2010/5/9/estimation-causes-waste-slack-creates-value.html) - Page is not avaialble

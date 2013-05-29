@@ -54,8 +54,4 @@ tags: extracts
         </li>
     </ul>
     
-    <p><a href="http://marriage.about.com/cs/time/ht/qualitytime.htm">Original</a>&nbsp;</p>
-    <p>&nbsp;</p>
-<!--break-->
-
-<div class='old-comments'></div>
+[Original](http://marriage.about.com/cs/time/ht/qualitytime.htm)

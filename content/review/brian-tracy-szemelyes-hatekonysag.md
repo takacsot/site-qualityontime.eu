@@ -34,6 +34,4 @@ Tartalomjegyzék:
 20. Fejlessz ki magadban egy sürgősségi érzéket!
 21. Egyszerre csak egy dologgal foglalkozz!
 
-[Személyes hatékonyság elektronikusan](http://www.scribd.com/doc/19780861/Brian-Tracy-Szemelyes-Hatekonysag)
-
-<div class='old-comments'></div>
+[Személyes hatékonyság elektronikusan](http://www.scribd.com/doc/50055854/Brian-Tracy-Szemelyes-Hatekonysag)

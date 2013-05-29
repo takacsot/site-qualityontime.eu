@@ -14,7 +14,6 @@ Leírja, hogyan ismerd fel és mikét bánj az ilyen emberekkel. Megtudd, hogyan
 
 - [Zseniálisan jó kivonat](http://www.firstlady.hu/filemellekletek/Kivonatok.pdf)
 - [Előző oldalról személyiségteszt, angolul](http://www.firstlady.hu/filemellekletek/Kivonatok.pdf)
-- [Van azért magyar teszt is](http://www.sorsod.hu%2Ftesztek%2Fszemelyisegteszt-2.xls&ei=awgKTNTrEZacOI2GqdEM&usg=AFQjCNGsiYOxbUHpglWr7yMHCnJfhAonNQ&sig2=tn3qkodgdBtP424w7OIgJQ)
 - [Personality plus könyvről angolul](http://en.wikipedia.org/wiki/Personality_Plus)
 - [Egy kis személyiségteszt](http://home.sch.bme.hu/~ntamas/eneagram/)
 - [Moly-on is figyeld a könyvet](http://moly.hu/konyvek/florence-littauer-szemelyisegunk-rejtett-tartalekai)
