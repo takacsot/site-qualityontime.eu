@@ -22,6 +22,4 @@ So In The End
 - It's the off critical path items that will kill your project when they get on the critical path because you weren't watching them. Watch everything, all the time.
 - Use Monte Carlo - all project numbers are random numbers. Knowing the Probability Distribution Function is the start, then knowing the drivers - things that push other things - and their PDF's provide decision points about keeping things off the path.
 
-[Showing Up On Time](http://herdingcats.typepad.com/my_weblog/2012/04/showing-up-on-time.htm)
-
-<div class='old-comments'></div>
+[Showing Up On Time](http://herdingcats.typepad.com/my_weblog/2012/04/showing-up-on-time.html)

@@ -59,7 +59,7 @@ De ehelyett java-ban a nyelv szintaxisát buherálták meg és ezzel növelték 
 Nagy különbség van API és nyelvi komplexitás növelésben. Mert míg az API esetén választási lehetőséged van, hogy melyiket használod, addig a nyelv esetén már nincs.
 
 
-[Handling More Than One Type of Exception](Catching Multiple Exception Types and Rethrowing Exceptions with Improved Type Checking)
+Handling More Than One Type of Exception
 -----------------
 
 <pre  class="brush: java;toolbar: false;tab-size:2" >

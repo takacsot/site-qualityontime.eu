@@ -36,7 +36,7 @@ Chapter 21: HOW LONG IS A PIECE OF STRING? The Black Art of Software Timescale E
 </a>
 </p>
 <p>
-<a href="http://www.qualityontime.eu/extracts/chapter-3-what%E2%80%99s-name">
+<a href="http://www.qualityontime.eu/extracts/chapter-3-whats-name">
 Chapter 3: WHAT’S IN A NAME?
 </a>
 </p>
