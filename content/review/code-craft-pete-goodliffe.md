@@ -50,7 +50,7 @@ Chapter 9: FINDING FAULT Debugging: What to Do When Things Go Wrong
 <p><br />
 <strong><a href="http://www.qualityontime.eu/extracts/chapter2-best-laid-plans">Chapter2: THE BEST LAID PLANS</a></strong><br />
 &nbsp;</p>
-<p><strong><a href="http://www.qualityontime.eu/extracts/chapter-3-what%E2%80%99s-name">Chapter 3: WHAT&rsquo;S IN A NAME?</a></strong><br />
+<p><strong><a href="http://www.qualityontime.eu/extracts/chapter-3-whats-name">Chapter 3: WHAT&rsquo;S IN A NAME?</a></strong><br />
 
 </p>
 <p><a href="http://www.qualityontime.eu/extracts/chapter-4-write-stuff"><strong>Chapter 4: THE WRITE STUFF</strong></a></p>

@@ -18,6 +18,10 @@
 - Valami vastag footert odatenni, jobb is görgetni, meg sok linket is tud tartalmazni.
 - Egy jó header-t is oda kéne tenni
 - Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
+- Speed of EP kommentekt manuálisan átmásolni
+http://www.qualityontime.eu/review/30-ok-amiert-utaljak-fonokot/
+Gyereklapokat belinkelni (lehetőleg automatikusan, monjuk tag alapján)
 
+Sok sok gyereklap van, amit le kellene kezelni.
 Broken link check
 http://www.brokenlinkcheck.com/broken-links.php#status
