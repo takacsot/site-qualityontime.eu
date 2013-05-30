@@ -12,7 +12,7 @@ __Sajnos szarban leszünk__, hamarosan, mivel egyre többen mennek nyugdíjba.
 
 <!--break-->
 
-Most olvasom Kiyosaki egyik könyvét, a [Gazdag papa próféciáját](http://moly.hu/konyvek/r-t-kiyosaki-sharon-l-lechter-gazdag-papa-profeciaja). Még nem értem a végére, de már formálódnak a gondolatok. alapvetően arról szól, hogy a nagyon fogunk sírni, amikor mostani generáció nyugdíjba fog menni. Na lássuk milyen gondolat merültek fel bennem.
+Most olvasom Kiyosaki egyik könyvét, a [Gazdag papa próféciáját](http://moly.hu/konyvek/robert-t-kiyosaki-sharon-l-lechter-gazdag-papa-profeciaja). Még nem értem a végére, de már formálódnak a gondolatok. alapvetően arról szól, hogy a nagyon fogunk sírni, amikor mostani generáció nyugdíjba fog menni. Na lássuk milyen gondolat merültek fel bennem.
 
 Tény: Magyarország __lakossága csökken__. Egyre kevesebb a munkavállaló és egyre több a nyugdíjas. Mivel nem vagyunk bevándorlási célország nem kell aggódnunk, hogy elönt a török ár és ezzel duzzasztva fel apadó lakosságunkat.
 

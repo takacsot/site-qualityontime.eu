@@ -5,3 +5,5 @@ Most, hogymigráltam az oldalt azt találtam, hogy rengeteg akkor élő link egy
 Tulajdonképpen annak idejáán amitt szoktam le a linkek gyüjtéséről. Először csak bookmarkab, majd del.icio.us-ban (azt egy nem praktikus UI változtatás után hagytam el). Majd Jött Firefoy wiremarked. És most Evernote és a blog. Ha ezekben kiemelem a lényeget, akkor legalább nem vesznek el. Ugyanis el fognak tűnni. tényleg nagyon kevés oldal van, ami hosszú évekig megmarad. Még a saját blogom sem. Elég egyszer elfelejtenem befizetni a hoszting költséget.
 
 Irény egy Archivot letoltni az Internet archive-ba.
+
+Másik bosszantó, mikor megvan az oldal, de átneveztődött. Néha technikai okok vannak, mitn pl nállam, ahol pár URL egyszeráen nem volt jó barátságban a Nanoc-val. De példáula moly-on rendzseresen lehet találkozni azzal, hogy 2010-ben belinkeltem egy oldalt, majd (egyébként helyesen) korrigálták a címet/szerzőt és emiatt az egész URL megvéltozott. És nincs semmilyen redirect, ami figyelmeztetne, erre.

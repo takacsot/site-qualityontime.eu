@@ -187,7 +187,7 @@ DE Sok mindenről beszél, emiatt a témákat nem fejti ki.
 
 Ár érték arányban silány.
 
-###[Nyelvhack kézikönyv](http://moly.hu/konyvek/benny-lewis-nyelvhack-kezikonyv)
+###[Nyelvhack kézikönyv](http://otevotnyelv.blog.hu/2010/10/05/legyel_te_is_nyelvhacker_nyelvhack_kezikonyv)
 
 Új ország és új nyelv. Korábban csak közoktatási és egy fél évnyi nyelvsuliba járásból van nyelvtanulási tapasztalatom. Újra nekiálltam egy komoly tanulási lépésnek. Hiszen ez nem rövid, nem praktikus megszakítani és tényleg sokáig fog tartani. Noha nem kötelező, de Luxembourgban (egy köpésre Franciaországtól) gyakorlatilag szükséges.
 

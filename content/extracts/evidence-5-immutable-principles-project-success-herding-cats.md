@@ -12,6 +12,4 @@ tags: extracts
 
 [Evidence of 5 Immutable Principles of Project Success](http://herdingcats.typepad.com/my_weblog/2012/04/evidence-of-5-immutable-principles-of-project-success.html)
 
-[Performance Based Management](http://herdingcats.typepad.com/my_weblog/2012/03/performance-based-management.htm)
-
-<div class='old-comments'></div>
+[Performance Based Management](http://herdingcats.typepad.com/my_weblog/2012/03/performance-based-management.html)
