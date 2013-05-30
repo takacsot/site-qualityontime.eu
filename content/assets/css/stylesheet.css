@@ -23,7 +23,7 @@ a:hover {
 }
 
 #main {
-  position: absolute;
+  /*position: absolute;*/
 
   top: 40px;
   left: 280px;
@@ -31,14 +31,14 @@ a:hover {
   max-width: 800px;
 }
 
-#main h1 {
+/*#main h1 {
   font-size: 40px;
   font-weight: normal;
 
   line-height: 40px;
 
   letter-spacing: -1px;
-}
+}*/
 
 #main p {
   margin: 20px 0;
@@ -63,7 +63,7 @@ a:hover {
 }
 
 #sidebar {
-  position: absolute;
+  /*position: absolute;*/
 
   top: 40px;
   left: 20px;
@@ -76,7 +76,7 @@ a:hover {
   text-align: right;
 }
 
-#sidebar h2 {
+#sidebar h2 { /*TODO this params would be good for left side menu*/
   text-transform: uppercase;
 
   font-size: 13px;

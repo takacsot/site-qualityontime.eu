@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= @item[:title] %> QualityOnTime.eu</title>
+    <title><%= @item[:title] + " - " if @item[:title]%>QualityOnTime.eu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/stylesheet.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/bootstrap-responsive.css">
@@ -20,16 +21,22 @@
 	</script>
   </head>
   <body>
-    <div id="main">
-	  <h1><%= @item[:title] %></h1>
-      <%= yield %>
-    </div>
-    <div id="sidebar">
-      <h2>Documentation</h2>
-      <ul>
-        <li><a href="http://nanoc.ws/docs/">Documentation</a></li>
-        <li><a href="http://nanoc.ws/docs/tutorial/">Getting Started</a></li>
-      </ul>
-    </div>
+	<header></header>
+	<div class="row"><div class="span12"><!--QualityOnTime.eu Akarmilyen header cucc--> </div></div>
+	<div class="row">
+		<div id="sidebar" class="span3 hidden-phone">
+		  <h2>Documentation</h2>
+		  <ul>
+			<li><a href="http://nanoc.ws/docs/">Documentation</a></li>
+		  </ul>
+		</div>
+		<div id="main" class="span9">
+		  <h1><%= @item[:title] %></h1>
+		  <%= yield %>
+		  <div class="created_at"><%= @item[:created_at] %></div>
+		</div>
+	</div>
+	<div class="row">
+	</div>
   </body>
 </html>
