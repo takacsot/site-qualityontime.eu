@@ -1,5 +1,4 @@
 - nanoc-toolbox project might have good scripts
-- RSS feed
 - Integrate Comment
 - Google keresőt beintegrálni
 - https://github.com/snusmumrik/nanoc/blob/master/lib/helper.rb
@@ -19,6 +18,7 @@ Done:
 - Speed of EP kommentekt manuálisan átmásolni
 - https://github.com/mgutz/nanoc3_blog/tree/master/lib (még van tag-val kapcsolatos, amit nem néztem meg)
 - site map vagy miacsuda xml-t csinálni
+- RSS feed
 
 Broken link check
 http://www.brokenlinkcheck.com/broken-links.php#status

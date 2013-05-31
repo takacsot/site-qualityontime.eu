@@ -19,6 +19,12 @@ end
 compile '/assets/css/*' do
   # don’t filter or layout
 end
+compile '/htaccess/*' do
+  # don’t filter or layout
+end
+compile '/rss/' do
+  filter :erb
+end
 
 compile '/page/*/' do
   filter :erb
@@ -55,6 +61,12 @@ route '/robots/' do
 end
 route '/sitemap/' do
     item.identifier.chop+'.xml'
+end
+route '/htaccess/' do
+  '/.htaccess'
+end
+route '/rss/' do
+  '/rss.xml'
 end
 
 route '*' do
