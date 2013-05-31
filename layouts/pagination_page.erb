@@ -2,6 +2,7 @@
 <% pages.each do |article| %>
   <h1><%=link_to(article[:title],article) %></h1>
   <%= article.compiled_content %>
+  <div class="created_at"><%= pretty_time(article[:created_at]) %></div>
   <hr/>
 <% end %>
 <%= (0 == @item_id ? 'No previous' : link_to('Prev', item_by_identifier("/archive/page/#{@item_id}/"))) %>

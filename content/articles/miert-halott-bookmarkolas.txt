@@ -1,0 +1,25 @@
+﻿---
+title: "Miért halott a bookmarkolás"
+created_at: 2013-05-31 15:30
+kind: article
+---
+
+Miért halott a bookmarkolás vagy magyar nevén weboldalak könyvjelzőzése? Mert az Internet nagyon messze van attól, hogy stabil legyen.
+
+Eredetileg azt kezdtem el írni, hogy miért is vezess blogot. De nem is igazán a blogolás körül jártak a gondolataim. Hiszen, mikor első alkalommal elkezdtem blogot írni, sokkal inkább a saját gyűjtéseim rendszerezéséről szólt, semmint arról, hogy ezt valaki érdemben olvasni fogja. És azóta sem nagyon változott. A célom, hogy saját magam rendszerezzem. És mellékesen nyilvános is, hagy okuljanak tapasztalataimból mások is.
+
+Az adatok gyűjtése nekem is (mint sokan másoknak is) a könyvjelzők gyűjtésével kezdődött. Mi sem egyszerűbb, mint megnyomni egy gombot és már meg is marad a link. Hamar kiderült, hogy rendszerezés nélkül nem nagyon használható. Ráadásul elenyésző extra információ mentődik le, hogy később hatékonyan vissza lehessen keresni. Másik ok, hogy többlaki életet éltem. Nem csak egyetlen számítógép volt, amit rendszeresen használtam. (És akkor még nem létezett felhő alapú backup)
+
+Hamar megtaláltam az online bookmarking szolgáltatásokat és nagyon sokáig aktív [Delicious](https://delicious.com/) felhasználó voltam. Teljesen elégedett voltam. Szinte automatikusan tudtam gyűjteni a linkeket és automatikusan szedett egy kis kivonatot az oldalról, ami nagyban segítette a későbbi keresést is. És persze online volta is elképesztően hasznos volt. Igazából egy baja volt: __eltűntek a linkek mögül az oldalak__.
+
+Most (kis ugrás) migráltam az oldalamat [Drupal](https://drupal.org/)-ról statikus lapokra és nem sajnáltam az időt és átnéztem minden lapot. És elképesztett az, hogy ugyan a legrégebbi lap 2009-es (magyarul nem is tűnik olyan réginek) mégis rengeteg olyan linket gyűjtöttem bele, amik már nem léteznek (broken, dead links). Van ahol, ugyan a forrás megmaradt, de az oldal más URL-re került. De legrosszabb, mikor teljesen és nyom nélkül szűnt meg az egész site. De ami nem is szűnt az meg, az is gyakran csak eltüntette a tartalmat (lehet, hogy jogi okokból kellett levennie), de van ahol megvolt csak még egyszer rá kellett keresni (legutálatosabb az volt, mikor ott volt az oldal, csak korábban `htm` kiterjesztesse, most meg `html`-vel - csak néztem és néztem, de nem találtam meg mi nem stimmelt, nem gondoltam a végződésre).
+
+Erre a problémára csak egy érdemi választ van: saját magadnak kell gondoskodnod arról, hogy a számodra fontos tartalmak megmaradjanak. 
+
+Én magam a következő megoldásokkal dolgoztam:
+
+- [Evernote](http://evernote.com/) (és barátai): bármiről készíthetsz egy mentést. Nagyon jó böngésző pluginek vannak. Öröm használni. Hátránya az, hogy a mobil kliens (ingyenes verzió) erősen internet igényes és emiatt ok nélkül tud lassú lenni, míg a desktop kliens villámgyors.
+- [Wired-marker](http://www.wired-marker.org/en/): Maga nemében egyedülálló [böngésző plugin](https://addons.mozilla.org/en-us/firefox/addon/wired-marker/)  (egyetlen hátránya, hogy csak Firefox-ban működik, pedig önállóan és Chrome böngészőben is el tudnám képzelni). Használata csodálatos. Csak olvasod a lapot és ez érdekes gondolatot egyszerűen kijelölöd. [Wired-marker](http://www.wired-marker.org/en/) pedig szépen lementi a kijelölést (a teljes weblapos tartalommal együtt). Majd ha később visszatérsz az oldalra a [Wired-marker](http://www.wired-marker.org/en/) megint kijelöli a korábban megjelölt szekciót. (részben az Evernote [Clearly](http://evernote.com/clearly/) is képes erre). Egyszerűen imádtam. A gépek közötti szinkronizációt saját magamnak kellett megoldanom [Dropbox](http://db.tt/worwMr8a)-on keresztűl.
+- Blog: mit ahogy a saját site-omon is sok hivatkozás van más oldalakra. Kiemelve az számomra érdekes, és belinkelem az eredeti. Ha el is tűnik az eredetei, akkor is meglesz a legértékesebb gondolat (gondold csak végig, hogy egy átlagos weboldal mennyi érdemi információt tartalmaz és mennyi a helyfoglaló körítés - a 80-20-as szabály működik!)
+
+

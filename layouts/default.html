@@ -33,7 +33,7 @@
 		<div id="main" class="span9">
 		  <h1><%= @item[:title] %></h1>
 		  <%= yield %>
-		  <div class="created_at"><%= @item[:created_at] %></div>
+		  <div class="created_at"><%= pretty_time(@item[:created_at]) %></div>
 		</div>
 	</div>
 	<div class="row">
