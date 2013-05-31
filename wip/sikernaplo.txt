@@ -1,0 +1,40 @@
+2012 Március
+Elmúlt másfél hónapban munkát találtam és egy prpjektet megjavitottam.
+A projekt egy alig-alig működő kis projektből áll.. Ez az EuropaSearchv5. Relative egyszerű felület, ami alig máködött. A fő funkcionalitás, amit én buheráltam az annyi volt, hogy a user interfészből bevett adatok alapján egy mURL épiteni, A rendszer ttöbbi része igazából jól ment. mert a választ felparsolta és elküldte az UI-naka mi megjelenitette.
+
+Emit elértem:
+Az alig működ felületet funckionálisan teljessé tettem. Azaza az eredeti célko szerint máködő szoftvert hoztam össze
+A teljes kódsorokat 1/3-ra csökkentettem, úgy hogy ebben a hozzáadaott unit tesztek és extra builder komponensek is benne vannak. És még van benn lehetőség, hogy további duplikációkat elimináljuk. Éppen mostanra jutottam el odáig. 
+A hátralévő open issuek mind vizuális jellegő (szinek, layout, accessibility)
+A rendszer fő funkionalitása 9 helyen volt implementálva. Ezt egyetlen helyre hoztam össze. Ezzel a lépéssel látszik csak iagazán, hogy milyen egyzserű a rendszer
+Query result cache-vel potenciálisan megnüveltem a teljesitményét. 
+A page átstrutúrálással a response timot legalább a 2X-vel gyorsitottam meg.
+Page load time 3x-os sebességnövekedést értem el.
+Teljesen elhibázot architektúrális tervezést (session-ben tárolt dolgok, amik session timout illetve multipbe browser winso esetén elég kiszámíthatattlanul működtek)
+
+Hibáim: nem igazán. Az alap projekt annyira gyenge volt, hogy rontani nem lehetett rajta
+
+Amit tanultam:
+Ne keverd a javascript eszküzrendszereket. 
+JQuerz sokkal stabilabb és megbizhatóbb,a  mootools.
+Page load improvement by ehcache
+Pageload improvement by bundling js é CSS filokat
+jakarta commons lang utilitz dolgait sokkal jobban megismertem. Rendkivűl hasznosak
+JNDI konfiguráciban Tomcat alatt jártasságot szereztem
+Megismertem egy java alapu markup buildert, ami nagyon haszon HTML és egyéb hasonló struktúrált dokumentumok programból épitésénél. Sokkal jobb, mint a sima string összeépités
+Slf4j logger rendszert is megismertem és azt kell mondanom, hogy jó. Érdemes használni.
+ 
+2012 Április
+------------
+
+Bevezettem az AJAXOt a RDP projektben. Nagyon hasznos és usable felhasználói felületet kszitettem. 
+Megismertem és aktivan fejlesztem az RDP-t
+Drasztikusan növeltem a unit tesztek számát.
+beazonositottam teljesitmény buktatókat
+Kigondoltam az automatikus deplozment folymaatot
+Átszerveztem a SVn rdp strukturat valami sokkal rugalmasabbra, mint volt.
+Periklész technikai review web felületre. Nem én csináltam egyedül. De sokat érszt vettem benne.
+Funkcionális specifikáció szempontjából az RDP teljes (kivéve a nyomtatást)
+Mostantól már csak usability funckiókon dolgozom. ami alap Funkcional specben nem is szerepelnek.
+Alapos barátságot kötöttem a a Spring MVC-vel.
+
