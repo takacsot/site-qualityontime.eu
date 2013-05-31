@@ -53,6 +53,9 @@ end
 route '/robots/' do
     item.identifier.chop+'.txt'
 end
+route '/sitemap/' do
+    item.identifier.chop+'.xml'
+end
 
 route '*' do
   if item.binary?

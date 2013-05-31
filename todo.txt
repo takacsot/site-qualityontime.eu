@@ -1,24 +1,26 @@
 - nanoc-toolbox project might have good scripts
 - RSS feed
 - Integrate Comment
-- site map vagy miacsuda xml-t csinálni
 - Google keresőt beintegrálni
-- Megformázni a régi commenteket
 - https://github.com/snusmumrik/nanoc/blob/master/lib/helper.rb
 - https://github.com/avdgaag/nanoc-template/tree/master/lib
-- https://github.com/mgutz/nanoc3_blog/tree/master/lib
 - https://github.com/kamui/nanoc-fuel
-- Éves havi bontásos archivumot készíteni
 - tag-oknak saját oldalt generálni
-- blockquote stylet- adni, hogy látványosabb legyen
 - syntax highlight ahol csak kell.
 - Valami vastag footert odatenni, jobb is görgetni, meg sok linket is tud tartalmazni.
 - Egy jó header-t is oda kéne tenni
 - Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
-- Speed of EP kommentekt manuálisan átmásolni
-http://www.qualityontime.eu/review/30-ok-amiert-utaljak-fonokot/
-Gyereklapokat belinkelni (lehetőleg automatikusan, monjuk tag alapján)
+- Sok sok gyereklap van, amit le kellene kezelni.
 
-Sok sok gyereklap van, amit le kellene kezelni.
+Done:
+- Megformázni a régi commenteket
+- Éves havi bontásos archivumot készíteni
+- blockquote stylet- adni, hogy látványosabb legyen
+- Speed of EP kommentekt manuálisan átmásolni
+- https://github.com/mgutz/nanoc3_blog/tree/master/lib (még van tag-val kapcsolatos, amit nem néztem meg)
+- site map vagy miacsuda xml-t csinálni
+
 Broken link check
 http://www.brokenlinkcheck.com/broken-links.php#status
+
+
