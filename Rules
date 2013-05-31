@@ -39,16 +39,19 @@ compile '*' do
     else
       filter :erb
 	end
-	#item[:layout] = "default" unless item[:layout]
-    #layout item[:layout] unless item[:layout] == "none"
-	layout 'default'
+	lyt = 'default'
+	lyt = item[:layout] if item[:layout]  
+	layout lyt
 	filter :relativize_paths, :type => :html
-	
   end
 end
 
 route '/assets/css/*/' do
   item.identifier.chop + '.css'
+end
+
+route '/robots/' do
+    item.identifier.chop+'.txt'
 end
 
 route '*' do
