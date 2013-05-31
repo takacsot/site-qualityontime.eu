@@ -23,3 +23,16 @@ Na nézzük csak, hogy milyen kiadást jelent a egy duál monitor rendszer tény
 Teljesen biztos vagyok abban, hogy nem csak nálam vesztegették el ezt az időt. Ha csak a napi bootolási időveszteséget is nézem egy tartós befektetésnek tekinthető dual monitor rendszer semmit nem jelent. (sajnos a dual monitor rendszer hatékonyságnövekedését nem tudom mérni, de mások szerint akár [42% hatékonyságnövelés](http://www.webdesignerdepot.com/2009/05/advantages-and-disadvantages-of-working-with-multiple-screens/) is lehetséges). (További linkek [1](http://www.dell.com/downloads/global/products/monitors/en/dual_monitors_boost_productivity_whitepaper.pdf), [2](http://www.sandglaz.com/blog_posts/76-Workspace-Productivity-One-Large-Monitor-vs-Dual-Monitors), [3](http://www.corecommunication.ca/4-studies-which-show-that-using-a-second-monitor-can-boost-productivity/), [4](http://www.codinghorror.com/blog/2008/03/does-more-than-one-monitor-improve-productivity.html), )
 
 Disclaimer: Mielőtt akár csak a gyanú is felmerülne, hogy valami bizalmas adatokat adok ki, akkor azt kell mondanom, hogy minden EP project publikus, csak senki sem tudja, hogy hol lehet megtalálni. Elvégre közalkalmazottak ők is, szóval az, hogyan pazarolják a mi pénzünket az teljesen publikus.
+
+<div class='old-comments'>
+		<div class='one-old-comment'>
+			<span class='comment-date'>2010-05-31 10:43:26</span>
+			<span class='commenter-name'>ZL</span>
+			<div class='comment-body' markdown="1">
+
+Az ilyen kis költségekről még meetingelni sem kell, megtérülnek. Ha másképp nem, a kényelmed és elégedettséged okán.
+
+Az én EUs sztorim.. megbecsültek egy közepes méretű projektet, az összegek magasak (mondjuk az otthoniakat fel kell szorozni öttel), a túlbecslés a normális duplája. A külsős független cég felmérte a terepet (ez a projekt 30%-át elvitte) és úgy találta, hogy az összeget alulbecsülték, kb duplaannyiba kerülne az egész. A projektet ezért lelőtték, de a heti 8 órát dolgozó projektasszisztens (meetinget szervez és jegyzetel, meg körbeküldi) maradt.
+			</div>
+		<div>
+<div>
