@@ -1,17 +1,18 @@
 - nanoc-toolbox project might have good scripts
 - Integrate Comment
-- Google keresőt beintegrálni
 - https://github.com/snusmumrik/nanoc/blob/master/lib/helper.rb
 - https://github.com/avdgaag/nanoc-template/tree/master/lib
 - https://github.com/kamui/nanoc-fuel
 - tag-oknak saját oldalt generálni
 - syntax highlight ahol csak kell.
 - Valami vastag footert odatenni, jobb is görgetni, meg sok linket is tud tartalmazni.
-- Egy jó header-t is oda kéne tenni
 - Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
 - Sok sok gyereklap van, amit le kellene kezelni.
+- archive lapozas linkeket jol megformalni
 
 Done:
+- Egy jó header-t is oda kéne tenni
+- Google keresőt beintegrálni
 - Megformázni a régi commenteket
 - Éves havi bontásos archivumot készíteni
 - blockquote stylet- adni, hogy látványosabb legyen
