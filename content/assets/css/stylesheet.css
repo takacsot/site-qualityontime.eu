@@ -99,3 +99,8 @@ a:hover {
 
   line-height: 20px;
 }
+
+.header_title{
+	font-size: 60px;
+	margin: 20px;
+}
