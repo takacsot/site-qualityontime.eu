@@ -19,7 +19,7 @@ Magyarországon vezetőként dolgoztam. A saját magam elő tűzött karriercél
 
 Ezzel el is értünk oda, hogy miért fontos a többszörös önéletrajz. Képzeld el, mikor az önéletrajzodban több évnyi menedzseri, vezetői tapasztalattal és látványos beosztások figyelnek. Büszke vagy az eredményeidre. (De csakis az igazság. Számos önéletrajzot láttam vezetői tapasztalattal teletűzdelve, de mikor rákérdeztem kiderült, hogy csak annyi történt, hogy a kutya se nézet az illetőre, emiatt mindent nekik kellett egyedül megcsinálnia). __DE__! 
 
-Az írott kommunikáció alapszabálya: __Az olvasónak írjál, de saját magadnak!___
+Az írott kommunikáció alapszabálya: __Az olvasónak írjál, ne saját magadnak!__
 
 Mit is látszik az ilyen önéletrajzból: egy ember aki vezető volt. 
 Feltehetően ([assumption](<%=item_by_identifier('/articles/assume-ass-you-and-me/').path%>)) itt is vezető akar lenni. De ha Te, tudatosan, egy alacsonyabb pozíciót pályáztál meg?
