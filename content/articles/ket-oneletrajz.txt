@@ -1,0 +1,33 @@
+﻿---
+title: "Két önéletrajz kell!"
+kind: article
+created_at: 2013-06-02 16:00:00
+author: "Takács Ottó"
+published: true
+tags: cv, oneletrajz, resume
+---
+
+Mindenhol azt javasolják, hogy a megpályázott pozíciónak megfelelő önéletrajzot adjál be. Miért nem teszi ezt mégsem egy átlagos munkakereső? Miért csodálkozik, ha nem az elvárásai szerint folyik az álláskeresés?
+
+Vezetői életszakaszom során (most külföldön építem újra magam :) ) több száz önéletrajzzal találkoztam és rengeteg állásinterjút vezettem le. De mikor nekem kellett munkát keresnem Luxembourgban azt azzal kezdtem, hogy elolvastam egy könyvet a témáról ([101 Great Resumes](http://moly.hu/konyvek/ron-fry-101-great-resumes))
+
+Maga a könyv persze nem ültethető át az én napi gyakorlatomba. Ki kellett mazsoláznom az én helyzetemnek és országomnak megfelelő tanácsokat.
+
+A legfontosabb tanács az volt, hogy __legyen több változata az önéletrajzodnak__. Attól függően, hogy mit pályázol meg mást és mást kell kihangsúlyoznod. De nem csak a pozíció, hanem a saját tapasztalataid miatt is.
+
+Magyarországon vezetőként dolgoztam. A saját magam elő tűzött karriercélt elértem. Aztán jött az új ország. Minden vezetői álláshirdetés után kb. 15  perccel kaptam hívásokat. Franciául akkor semennyire sem beszéltem (most sem tárgyalóképes még), emiatt hamar kiábrándultak és elköszöntek. De ennek a hátrányomnak tudatában voltam és tudatosan kerestem "csak" szoftverfejlesztői munkát is.
+
+Ezzel el is értünk oda, hogy miért fontos a többszörös önéletrajz. Képzeld el, mikor az önéletrajzodban több évnyi menedzseri, vezetői tapasztalattal és látványos beosztások figyelnek. Büszke vagy az eredményeidre. (De csakis az igazság. Számos önéletrajzot láttam vezetői tapasztalattal teletűzdelve, de mikor rákérdeztem kiderült, hogy csak annyi történt, hogy a kutya se nézet az illetőre, emiatt mindent nekik kellett egyedül megcsinálnia). __DE__! 
+
+Az írott kommunikáció alapszabálya: __Az olvasónak írjál, de saját magadnak!___
+
+Mit is látszik az ilyen önéletrajzból: egy ember aki vezető volt. 
+Feltehetően ([assumption](<%=item_by_identifier('/articles/assume-ass-you-and-me/').path%>)) itt is vezető akar lenni. De ha Te, tudatosan, egy alacsonyabb pozíciót pályáztál meg?
+
+Én emiatt csináltam [két önéletrajzot](<%=item_by_identifier("/takacs-otto-resume-profiles/").path%>).  Egz olyat, amiben a vezetői, menedzseri eredményeimet emeltem ki és egy másikat, amiben a technikai, technológiai és architect képességeimet hangsúlyoztam. Természetesen nagy az átfedés a kettő között. Nem hallgatok el semmit sem. Igazából mindkettő teljes egész (persze lehetséges, hogy nem sikerült elég hangsúlyosság tennem a különbséget - de a koncepció akkor is áll).
+
+Summa: Legyen több variációd az önéletrajzodból
+
+- minden megpályázott beosztásra
+- technikai, technológiai variációra és
+- iparágra

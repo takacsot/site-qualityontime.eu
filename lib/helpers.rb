@@ -18,7 +18,6 @@ def item_by_identifier(identifier)
   items.find { |item| item.identifier == identifier }
 end
 
-
 def is_front_page?
     @item.identifier == '/'
 end
