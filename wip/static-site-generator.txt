@@ -21,6 +21,8 @@ Persze voltak a blog-generálók is. A blog generáló az a jószág, ami egy á
 
 A szigorúan vett Java megoldások ezzel véget is értek.
 
+--- Innen még finomitani kell. ---------
+
 De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](). Igaz, hogy telepiteni vagy akár csak letölteni nem tudok semmit ezzel kapcsolatban a céges környezetben, de van megoldás.  Lássuk hogy megy ez nanoc-val.
 
 1. Tölts le a Jruby comple kiadását (jelenleg jruby-complete-1.7.4.jar)
@@ -47,4 +49,4 @@ De ezzel még nincs vége, mert nanoc-ot feltehetőleg amerikai csinálta, mert 
 	
 És már dolgozhatsz is az egyik legszuperebb static site generálóval. 
 
-Ha kíváncsi vagy, hogyan is generálom ezt a site-ot, akkor kezdj el böngészni a [Githun-on](https://github.com/takacsot/site-qualityontime.eu)
+Ha kíváncsi vagy, hogyan is generálom ezt a site-ot, akkor kezdj el böngészni a [Github-on](https://github.com/takacsot/site-qualityontime.eu)
