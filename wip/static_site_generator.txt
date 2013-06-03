@@ -1,22 +1,27 @@
-különbüző okokbül statiks site generáló megoldásokat kerestem
+---
+title: "Nem Java, de mégis java static site generáló - avagy Nanoc Java-ban"
+created_at: 2013-06-xx 11:11:11
+---
 
-A technikai limitáltjág miatt Java alapú jöhetet csak számításba. 
+Szóval static site [generaló alkalmazást keresek](<%=item_by_identifier("/articles/miert-nincs-jo-static-site-generalo-es-jo-web-alapu-help-rendszer/").path%>). Ponstosabban olyat, ami Java alatt is működik és elég rugalmas az igényeimhez. És megtaláltam.
 
-Amilyen sok megoldás van ruby vagy [Python]() nyelvhez annyira nehéz használhatót találni Java-hoz.
+Mint korábban is említettem, különféle okokból, de csak Java alapú megoldás jöhetett számításba (leginkább telepitési/futtatási korlátoltságom van).
 
-Vannak a régi site generáló megoldások. Például az ami a mavennek is van, de hát az dolgozzon azokkal, akikenek két anyja van. Ráadásul alapigényem, hogy kezelje markdown-t és egyébként is a tököm kivan a mavennel (a dependencz kezelésén kívűl az egész egy nagy kalap szar).
+Amilyen sok megoldás van [Python](http://python.org/) vagy [Ruby](http://www.ruby-lang.org/) nyelven, hogy az a csodálatos, hogy mennyire nincs Java alapú megoldás.
 
-volt valami groovz alapú is, de az csak amolyan hobbiscript volt, ami egy paraszt egyszerű dolgot le tud kezelni.
+Vannak régi site generáló megoldások (akár a [Maven](http://maven.apache.org/) beépített megoldását is nézhetjük), de annyira fapadosak, hogy az dolgozzon velük, akinek két anyja van.
 
-Kicsit fejlettebb a Scala alapú Monkeyman. A mostani verzja 0.4-es , de már használható. Kicsi scaml scripteléssel gyakrolatilag alaklamas használható. Mondjuk anniy gondom volt, hogy a korábbi verziót is letöltöttme elsőre és annak utf-8 enkóding gondjai voltak.
+Találtam egyetlen egy Groovy alapú  megoldást, de az valami elképesztpen kezdetleges volt.
 
-MEg volt pár Java implementáció, de azok tényleg csak a Groovy-hoz mérhető kezdemények. Konkrétan egy délután alatt már én is összehoztam egy ezekhez hasonló megoldást. Komolyabb, felxibilisebb eredményhez azért kell vele munk. 
+Én saját magam is elkezdtem egy csükevényt [QSiteGen](https://github.com/takacsot/QSiteGen) néven. De ez inkább azt bizonyítaná, hogy egy célimplementációt milyen egyszerűen meg lehetne valósítani. (Lehet, hogy ez az ok, miért is nincs Javaban egy kiforrott project erre.)
 
-Persze még voltak a blog generálók is. De azok a static site generálóknak csak a részhalmazát dolgozzák fel. Csak akkor, ha blogot írsz. Nekem egy teljes site kell és pont. 
+Jóval fejlettebb a [Scala](http://www.scala-lang.org/)-ban implementált [Monkeyman](https://github.com/wspringer/monkeyman). Teljesen használható a 0.4-es verziója. De még vannak gyermekbetegségei. Például egy kicsit korábbi verziójában még alap UTF-8 kódolási gondok voltak.
 
-És szigorúbban vett Java ezzel véget is ért.
+Persze voltak a blog-generálók is. A blog generáló az a jószág, ami egy álltalános static site generáló egy specializált funkcióját képviselik. Természetes limitációjuk, hogy blog készítésére vannak kihegyezve. De ha nem blogra van szükséged....
 
-De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy JRuby. Igaz, hogy telepiteni vagy akár csak ltölteni nem tudok semmit ezzel kapcsolatban a céges környezetben, de van megoldás.  Lássuk hogy megy ez nanoc-val.
+A szigorúan vett Java megoldások ezzel véget is értek.
+
+De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](). Igaz, hogy telepiteni vagy akár csak letölteni nem tudok semmit ezzel kapcsolatban a céges környezetben, de van megoldás.  Lássuk hogy megy ez nanoc-val.
 
 1. Tölts le a Jruby comple kiadását (jelenleg jruby-complete-1.7.4.jar)
 2. Másold le mint jruby-complete.jar (hidd el párszor újra fogod csinálni)
@@ -26,10 +31,20 @@ Azaz a nanoc-gems könyvtárba (TODO forrás referencia) tegye le a nanoc és f�
 4. `jar uf jruby-complete.jar -C nanoc-gems/ .`. Azaz tedd pele mindazokat a gem állományokat amiket letöltött a jruby jar-jába.
 5. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
 
+Szerintem minimum szükséges gem-ek listája:
+- nanoc
+- adsf
+- builder
+- colored
+- kramdown
+- nokogiri
+
 De ezzel még nincs vége, mert nanoc-ot feltehetőleg amerikai csinálta, mert minden input esetében a op rendszer encódingot használja. (nem az utf-8 az alapértelmezett! 21. század! Érted?) De ott van `nanoc.yaml`, amiben kicsit hackelni. (FONTOS: figyelj oda, hogy spacekkel vagy tab-val dolgozol, mert érzékeny ár. Notepad++-ban kapcsold be a rejtett karakterek megjelenitését!) És állíts be az enkódingot (1 sor a megfelelő helyre, meg fogod találni)
 
     type: filesystem_unified
 	# ez az új sor
     encoding: utf-8
 	
-És már dolgozhatsz is az egyik legszuperebb static site generálóval. Csak vidd be a jar-t aholvá akarod....
+És már dolgozhatsz is az egyik legszuperebb static site generálóval. 
+
+Ha kíváncsi vagy, hogyan is generálom ezt a site-ot, akkor kezdj el böngészni a [Githun-on](https://github.com/takacsot/site-qualityontime.eu)
