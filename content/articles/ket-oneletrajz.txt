@@ -4,8 +4,10 @@ kind: article
 created_at: 2013-06-02 16:00:00
 author: "Takács Ottó"
 published: true
+updated_at: 2013-06-09 19:00:00
 tags: cv, oneletrajz, resume
 ---
+
 
 Mindenhol azt javasolják, hogy a megpályázott pozíciónak megfelelő önéletrajzot adjál be. Miért nem teszi ezt mégsem egy átlagos munkakereső? Miért csodálkozik, ha nem az elvárásai szerint folyik az álláskeresés?
 

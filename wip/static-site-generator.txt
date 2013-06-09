@@ -3,7 +3,7 @@ title: "Nem Java, de mégis java static site generáló - avagy Nanoc Java-ban"
 created_at: 2013-06-xx 11:11:11
 ---
 
-Szóval static site [generaló alkalmazást keresek](<%=item_by_identifier("/articles/miert-nincs-jo-static-site-generalo-es-jo-web-alapu-help-rendszer/").path%>). Ponstosabban olyat, ami Java alatt is működik és elég rugalmas az igényeimhez. És megtaláltam.
+Szóval static site [generaló alkalmazást keresek](<%=item_by_identifier("/articles/miert-nincs-jo-static-site-generalo-es-jo-web-alapu-help-rendszer/").path%>). Ponstosabban olyat, ami __Java alatt is működik és elég rugalmas az igényeimhez. És megtaláltam__.
 
 Mint korábban is említettem, különféle okokból, de csak Java alapú megoldás jöhetett számításba (leginkább telepitési/futtatási korlátoltságom van).
 
@@ -11,9 +11,9 @@ Amilyen sok megoldás van [Python](http://python.org/) vagy [Ruby](http://www.ru
 
 Vannak régi site generáló megoldások (akár a [Maven](http://maven.apache.org/) beépített megoldását is nézhetjük), de annyira fapadosak, hogy az dolgozzon velük, akinek két anyja van.
 
-Találtam egyetlen egy Groovy alapú  megoldást, de az valami elképesztpen kezdetleges volt.
+Találtam egyetlen egy Groovy alapú megoldást, de az valami elképesztpen kezdetleges volt.
 
-Én saját magam is elkezdtem egy csükevényt [QSiteGen](https://github.com/takacsot/QSiteGen) néven. De ez inkább azt bizonyítaná, hogy egy célimplementációt milyen egyszerűen meg lehetne valósítani. (Lehet, hogy ez az ok, miért is nincs Javaban egy kiforrott project erre.)
+Én saját magam is elkezdtem egy csökevényt [QSiteGen](https://github.com/takacsot/QSiteGen) néven. De ez inkább azt bizonyítaná, hogy egy cél-implementációt milyen egyszerűen meg lehetne valósítani. (Lehet, hogy ez az ok, miért is nincs Javaban egy kiforrott project erre.)
 
 Jóval fejlettebb a [Scala](http://www.scala-lang.org/)-ban implementált [Monkeyman](https://github.com/wspringer/monkeyman). Teljesen használható a 0.4-es verziója. De még vannak gyermekbetegségei. Például egy kicsit korábbi verziójában még alap UTF-8 kódolási gondok voltak.
 
@@ -21,14 +21,16 @@ Persze voltak a blog-generálók is. A blog generáló az a jószág, ami egy á
 
 A szigorúan vett Java megoldások ezzel véget is értek.
 
---- Innen még finomitani kell. ---------
+De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](http://jruby.org/). Igaz, hogy  a futtató környezetet telepiteni vagy akár csak letölteni nem tudok kis otthoni barkácsolással van megoldás.  Lássuk hogy megy ez [nanoc](http://nanoc.ws/)-val.
 
-De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](). Igaz, hogy telepiteni vagy akár csak letölteni nem tudok semmit ezzel kapcsolatban a céges környezetben, de van megoldás.  Lássuk hogy megy ez nanoc-val.
+1. Tölts le a [JRuby](http://jruby.org/)  comple [kiadását](http://jruby.org/download) (jelenleg jruby-complete-1.7.4.jar). Ez egyetlen egy darab jar, ami tartalmazza a teljesen [Ruby](http://www.ruby-lang.org/) interpretert és alap library-t.
+2. Másold le mint `jruby-complete.jar` (hidd el, párszor  meg fogod ismételni, mire elkészíted a saját verziódat).
+3. A trükk az, hogy ezzel a distribúcióval bármit tudsz csinálni. Fogod magad és letöltöd a neked tetsző gem-eket és élvezed. Persze vannak korlátok, hiszen a C kiterjesztéssel működő gem-ek nem fognak simán működni, de a tisztán [Ruby](http://www.ruby-lang.org/)-ban implementált gem-ekkel nem szabad, hogy gond legyen. (Egyébként jelenleg ez a leggyorsabb [Ruby](http://www.ruby-lang.org/) implementáció, ha a startup időt nem számítjuk.)
+4. 
+```java
+java -jar jruby-complete.jar -S gem install -i ./nanoc-gems nanoc kramdown
+```
 
-1. Tölts le a Jruby comple kiadását (jelenleg jruby-complete-1.7.4.jar)
-2. Másold le mint jruby-complete.jar (hidd el párszor újra fogod csinálni)
-3. És atrükk az, hogy ezzel már bármit tudzs csinálni, mert ez maga a teljesn distribúció. Akkor fogd és kez el letölteni a gem-eket. (Itt elbukhat a dolog, mert a C kiterjesztéseket használó gem-ek értelem szerűen nem igazán lesznek jük. De a tisztán Ruby már igen. Egyébként jelenleg a Jruby a leggyorsabb Ruby implementáció - a startuőot leszámítva)
-	java -jar jruby-complete.jar -S gem install -i ./nanoc-gems nanoc kramdown
 Azaz a nanoc-gems könyvtárba (TODO forrás referencia) tegye le a nanoc és függőségeit és kramdown Markdown parsert.
 4. `jar uf jruby-complete.jar -C nanoc-gems/ .`. Azaz tedd pele mindazokat a gem állományokat amiket letöltött a jruby jar-jába.
 5. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
