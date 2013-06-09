@@ -23,12 +23,8 @@ a:hover {
 }
 
 #main {
-  /*position: absolute;*/
-
   top: 40px;
   left: 280px;
-
-  max-width: 800px;
 }
 
 /*#main h1 {
@@ -100,7 +96,15 @@ a:hover {
   line-height: 20px;
 }
 
+@media (max-width: 767px) {
+.header_title{
+	font-size: 20px;
+	margin: 20px;
+}
+}
+@media (min-width: 767px) {
 .header_title{
 	font-size: 40px;
 	margin: 20px;
+}
 }

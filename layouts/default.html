@@ -24,15 +24,12 @@
   <body>
 	<header></header>
 	<div class="row">
-		<div class="span8">
+		<div class="span12">
 			<div class='header_title' style="float:left;">QualityOnTime.eu</div>
-		</div>
-		<div class="span4">
 		</div>
 	</div>
 	<div class="row">
-		<div id="sidebar" class="span3 hidden-phone">
-		  <div id="searchbox">
+		<div class="span9 offset3" id="searchbox">
 			<script>
 			  (function() {
 				var cx = '011360665873565987445:q7ag7me4oaq';
@@ -46,7 +43,10 @@
 			  })();
 			</script>
 			<gcse:search></gcse:search>
-		  </div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="sidebar" class="span3 hidden-phone">
 		  <h2>Links</h2>
 		  <ul>
 			<li><%=link_to("Archives", item_by_identifier("/archives/"))%></li>
