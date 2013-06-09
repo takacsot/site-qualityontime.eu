@@ -1,41 +1,44 @@
----
+﻿---
 title: "Nem Java, de mégis java static site generáló - avagy Nanoc Java-ban"
-created_at: 2013-06-xx 11:11:11
+created_at: 2013-06-09 11:11:11
+kind: article
 ---
 
-Szóval static site [generaló alkalmazást keresek](<%=item_by_identifier("/articles/miert-nincs-jo-static-site-generalo-es-jo-web-alapu-help-rendszer/").path%>). Ponstosabban olyat, ami __Java alatt is működik és elég rugalmas az igényeimhez. És megtaláltam__.
+Szóval static site [generaló alkalmazást keresek](<%=item_by_identifier("/articles/miert-nincs-jo-static-site-generalo-es-jo-web-alapu-help-rendszer/").path%>). Pontosabban olyat, ami __Java alatt is működik és elég rugalmas az igényeimhez. És megtaláltam__.
 
-Mint korábban is említettem, különféle okokból, de csak Java alapú megoldás jöhetett számításba (leginkább telepitési/futtatási korlátoltságom van).
+Mint korábban is említettem, különféle okokból, de csak Java alapú megoldás jöhetett számításba (leginkább telepítési/futtatási korlátoltságom van).
 
 Amilyen sok megoldás van [Python](http://python.org/) vagy [Ruby](http://www.ruby-lang.org/) nyelven, hogy az a csodálatos, hogy mennyire nincs Java alapú megoldás.
 
 Vannak régi site generáló megoldások (akár a [Maven](http://maven.apache.org/) beépített megoldását is nézhetjük), de annyira fapadosak, hogy az dolgozzon velük, akinek két anyja van.
 
-Találtam egyetlen egy Groovy alapú megoldást, de az valami elképesztpen kezdetleges volt.
+Találtam egyetlen egy Groovy alapú megoldást, de az valami elképesztően kezdetleges volt.
 
-Én saját magam is elkezdtem egy csökevényt [QSiteGen](https://github.com/takacsot/QSiteGen) néven. De ez inkább azt bizonyítaná, hogy egy cél-implementációt milyen egyszerűen meg lehetne valósítani. (Lehet, hogy ez az ok, miért is nincs Javaban egy kiforrott project erre.)
+Én saját magam is elkezdtem egy csökevényt [QSiteGen](https://github.com/takacsot/QSiteGen) néven. De ez inkább azt bizonyítaná, hogy egy cél-implementációt milyen egyszerűen meg lehetne valósítani. (Lehet, hogy ez az ok, miért is nincs Java-ban egy kiforrott projekt erre.)
 
 Jóval fejlettebb a [Scala](http://www.scala-lang.org/)-ban implementált [Monkeyman](https://github.com/wspringer/monkeyman). Teljesen használható a 0.4-es verziója. De még vannak gyermekbetegségei. Például egy kicsit korábbi verziójában még alap UTF-8 kódolási gondok voltak.
 
-Persze voltak a blog-generálók is. A blog generáló az a jószág, ami egy álltalános static site generáló egy specializált funkcióját képviselik. Természetes limitációjuk, hogy blog készítésére vannak kihegyezve. De ha nem blogra van szükséged....
+Persze voltak a blog-generálók is. A blog generáló az a jószág, ami egy általános static site generáló egy specializált funkcióját képviselik. Természetes limitációjuk, hogy blog készítésére vannak kihegyezve. De ha nem blogra van szükséged....
 
 A szigorúan vett Java megoldások ezzel véget is értek.
 
-De mint említettm az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](http://jruby.org/). Igaz, hogy  a futtató környezetet telepiteni vagy akár csak letölteni nem tudok kis otthoni barkácsolással van megoldás.  Lássuk hogy megy ez [nanoc](http://nanoc.ws/)-val.
+De mint említettem az igazi nagyágyúk scripting nyelvek alatt érhetőek el. És hát van nekünk olyan, hogy [JRuby](http://jruby.org/). Igaz, hogy  a futtató környezetet telepíteni vagy akár csak letölteni nem tudok kis otthoni barkácsolással van megoldás.  Lássuk hogy megy ez [nanoc](http://nanoc.ws/)-val.
 
-1. Tölts le a [JRuby](http://jruby.org/)  comple [kiadását](http://jruby.org/download) (jelenleg jruby-complete-1.7.4.jar). Ez egyetlen egy darab jar, ami tartalmazza a teljesen [Ruby](http://www.ruby-lang.org/) interpretert és alap library-t.
+1. Tölts le a [JRuby](http://jruby.org/)  `complete.jar` [kiadását](http://jruby.org/download) (jelenleg jruby-complete-1.7.4.jar). Ez egyetlen egy darab jar, ami tartalmazza a teljesen [Ruby](http://www.ruby-lang.org/) interpretert és alap library-t.
 2. Másold le mint `jruby-complete.jar` (hidd el, párszor  meg fogod ismételni, mire elkészíted a saját verziódat).
-3. A trükk az, hogy ezzel a distribúcióval bármit tudsz csinálni. Fogod magad és letöltöd a neked tetsző gem-eket és élvezed. Persze vannak korlátok, hiszen a C kiterjesztéssel működő gem-ek nem fognak simán működni, de a tisztán [Ruby](http://www.ruby-lang.org/)-ban implementált gem-ekkel nem szabad, hogy gond legyen. (Egyébként jelenleg ez a leggyorsabb [Ruby](http://www.ruby-lang.org/) implementáció, ha a startup időt nem számítjuk.)
-4. 
-```java
+3. A trükk az, hogy ezzel a disztribúcióval bármit tudsz csinálni. Fogod magad és letöltöd a neked tetsző gem-eket és élvezed. Persze vannak korlátok, hiszen a C kiterjesztéssel működő gem-ek nem fognak simán működni, de a tisztán [Ruby](http://www.ruby-lang.org/)-ban implementált gem-ekkel nem szabad, hogy gond legyen. (Egyébként jelenleg ez a leggyorsabb [Ruby](http://www.ruby-lang.org/) implementáció, ha a start-up időt nem számítjuk.)
+4. töltsd le a szükséges gem-eket, nanoc és függőségeit: (pl.: kramdown)
+```
 java -jar jruby-complete.jar -S gem install -i ./nanoc-gems nanoc kramdown
 ```
-
-Azaz a nanoc-gems könyvtárba (TODO forrás referencia) tegye le a nanoc és függőségeit és kramdown Markdown parsert.
-4. `jar uf jruby-complete.jar -C nanoc-gems/ .`. Azaz tedd pele mindazokat a gem állományokat amiket letöltött a jruby jar-jába.
-5. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
+5. Updateld a [JRuby](http://jruby.org/) jar filet:
+```
+jar uf jruby-complete.jar -C nanoc-gems/ .
+```
+6. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
 
 Szerintem minimum szükséges gem-ek listája:
+
 - nanoc
 - adsf
 - builder
@@ -43,7 +46,7 @@ Szerintem minimum szükséges gem-ek listája:
 - kramdown
 - nokogiri
 
-De ezzel még nincs vége, mert nanoc-ot feltehetőleg amerikai csinálta, mert minden input esetében a op rendszer encódingot használja. (nem az utf-8 az alapértelmezett! 21. század! Érted?) De ott van `nanoc.yaml`, amiben kicsit hackelni. (FONTOS: figyelj oda, hogy spacekkel vagy tab-val dolgozol, mert érzékeny ár. Notepad++-ban kapcsold be a rejtett karakterek megjelenitését!) És állíts be az enkódingot (1 sor a megfelelő helyre, meg fogod találni)
+De ezzel még nincs vége, mert [nanoc](http://nanoc.ws/)-ot feltehetőleg amerikai csinálta, mert minden input esetében az operációs rendszer karakterkódolását használja. (21. század! Érted?) De ott van `nanoc.yaml`, amiben kis módosítással megkaphatjuk a hőn áhított magyar ékezeteket. (FONTOS: figyelj oda, hogy spacekkel vagy tab-val dolgozol, mert érzékeny rá. Notepad++-ban kapcsold be a rejtett karakterek megjelenését!) És állíts be az enkódingot (1 sor a megfelelő helyre, meg fogod találni)
 
     type: filesystem_unified
 	# ez az új sor
