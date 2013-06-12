@@ -1,3 +1,5 @@
+- Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
+
 - nanoc-toolbox project might have good scripts
 - Integrate Comment
 - https://github.com/snusmumrik/nanoc/blob/master/lib/helper.rb
@@ -6,20 +8,10 @@
 - tag-oknak saját oldalt generálni
 - syntax highlight ahol csak kell.
 - Valami vastag footert odatenni, jobb is görgetni, meg sok linket is tud tartalmazni.
-- Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
 - Sok sok gyereklap van, amit le kellene kezelni.
 - archive lapozas linkeket jol megformalni
+- book-okat egyben kinyomtatható formátumban is elkészíteni (persze előtte kitalálni)
 
-Done:
-- Egy jó header-t is oda kéne tenni
-- Google keresőt beintegrálni
-- Megformázni a régi commenteket
-- Éves havi bontásos archivumot készíteni
-- blockquote stylet- adni, hogy látványosabb legyen
-- Speed of EP kommentekt manuálisan átmásolni
-- https://github.com/mgutz/nanoc3_blog/tree/master/lib (még van tag-val kapcsolatos, amit nem néztem meg)
-- site map vagy miacsuda xml-t csinálni
-- RSS feed
 
 Broken link check
 http://www.brokenlinkcheck.com/broken-links.php#status
