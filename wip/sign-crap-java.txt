@@ -1,0 +1,3 @@
+Amikor van egy külön dokumentum arról, hogy a gui milyen objektumokkal épül fel, mert magából a forráskódbol csk az tudja,akinek két anja van.
+
+Amikor repo funkcióbal keverve van hibernate plain jdc-vel ésdeclerative transaction management explicite commit/rollbac utasításokkal. És ebbol kell kitalálnom, hogy a (ha csak pain pojo-k lennének) ha adott egy oársor kód ami ugyan módosítja az az objektumot, de a kontroll logik alapján nem kellene módosúlni, de amint kiderül,hogy egy hibernate objektum, akkor akkor már lehetséges (lást hibernate shitti behaviour), de közvetlenül utánna explicite commit és rollback utasítások találhatóak.És én nem vagyok aniyra jó,hogy csak a kód olvasása alapján meg tudjammondani, hogy mi fog történni.
