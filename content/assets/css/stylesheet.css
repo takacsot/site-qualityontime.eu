@@ -12,6 +12,9 @@ body {
 a {
   text-decoration: none;
 }
+em{
+   font-weight: bold;
+}
 
 a:link,
 a:visited {

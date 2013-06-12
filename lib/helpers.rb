@@ -13,6 +13,12 @@ def partial(identifier_or_item)
   item.compiled_content(:snapshot => :pre)
 end
 
+#Assuming: some part (e.g. filename itself) unique enough
+def item_by_id(identifier)
+  items ||= @items
+  items.find { |item| item.identifier.include? identifier }
+end
+
 def item_by_identifier(identifier)
   items ||= @items
   items.find { |item| item.identifier == identifier }
