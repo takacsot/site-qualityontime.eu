@@ -1,0 +1,19 @@
+Végtelen ciklus tesztelése mindig is trükkös volt.
+
+végtelen ciklus van szerve alkalmazásokban  illetve ui kérõ alkalmaázoskban mindenk a leleke egy cégtelen ciklus
+
+végtelen ciklust visznt piszik nehéz tesztelni
+
+unit testelés esetén fontos, hogy determinisztikusan fusson a dolog, meiat ugyan le lehe tinditani sé interrupttal(?) le lehet kõni, de akkor sem lesz determinisztikus.
+
+Megoldást lehet egy loop invalidant (mi lehet a hivatalos neve?)
+
+LoopVariant object eval() ami mindig true
+OneVaraiant 
+Decremental varainat, ami visszafelé számol.
+Conditional varainat
+
+Mivel obejktumok lettek lehet õket cserélgetni,a kár futás közben is :)
+
+Különo9sen jó test könyzet eés dependecz injektion bevetésével.
+

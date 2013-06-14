@@ -1,0 +1,14 @@
+#Calling another bacth file
+
+call aotherBatch.bat
+
+# Calling another program in background
+
+Sometimes use batch file start to setup environemnt then start the real papplication. but you notinted to display the console window
+
+START command
+
+# passing all command line parameter to caled application
+
+%*
+

@@ -1,0 +1,15 @@
+PowerPoint ésopen office barátai
+
+Opera presentation
+
+https://github.com/schacon/showoff
+
+http://bartaz.github.com/impress.js/#/step-2
+
+Prezi
+
+http://lea.verou.me/csss/sample-slideshow.html#slide3
+
+Collection: http://en.wikipedia.org/wiki/Web-based_slideshow
+
+http://paulrouget.com/dzslides/

@@ -1,0 +1,2 @@
+CTRL S:
+	quick search in the panel

@@ -1,0 +1,25 @@
+Using multiplse language isn big and moloitzic projects (
+
+kindulópont: http://kirkwylie.blogspot.com/2011/01/scala-considered-harmful-for-large.html
+
+Egyik érv, hogy kell-e nekünk többnylevû programozó.
+
+
+Tudom mirõl beszél, hiszen nekem is van tapasztalatom, hogy prpgramozsi nyelv emntél szeparálódnak acsapatok (ez mondjuk magába foglalta a modulismeretüket is) És nem igazán volt átjárás. Pontosabban csak kicsi.
+
+A fenti két  dolgoból fakadt:
+
+1. a fejlesztp környezet (delphi, java) pénzes volt. Tök más volt a kötöttség és módszer, hogy azokat hasznélni ikelleltt
+
+2. FEjelsztõ környzet egyszerûen nem volt elég rugalmas, túl céleszköz vlt (java vs pl/sql)
+
+De miért kifogás a többnyelvû szoftverfejlesztõ, nem tudom miért:
+
+- a legutóbbi projeten a következõ alap programozás nyelveket használtuk, mint java-sok: java, javascript, html, css
+-  keretrendszerek, amik magukban is anniymegtanulni,mint egy nyelvet: ant, maven, hibernate, struts, spring (fõleg a configurációjuk)(még egy érv amelett, hogy egy egy konkrté programozási nyelve a konfigurációs és build nyelv is - lásd [The Productive Programmer](http://www.qualityontime.eu/review/productive-programmer-neal-ford))
+
+Szóval miért ne várhatnánk el, hogy többnyelvüséget gyorsan megtanulja? simán elvárható... akr Scala, akár Jruby akár valami komponens. 
+
+Nem az a lényeg mit tud, hanem milyen az alapismerete és hogy milyen hatákonyan tanulja meg a z új szükséges iemretet.
+
+
