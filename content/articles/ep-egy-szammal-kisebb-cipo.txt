@@ -1,0 +1,33 @@
+﻿---
+title: "EP és az egy számmal kisebb cipő"
+kind: article
+created_at: 2013-06-20 21:11:00
+tags: ep,productivity
+---
+__Az EP-ben olyan dolgozni, mint amikor az ember egy számmal kisebb cipőt hord.__ Ha csak ülsz a fotelban és nem sétálsz 12 méternél többet egy nap, akkor teljesen mindegy. egy kicsit szorít és kényelmetlen, de csak egy kicsit. Cserébe vígan mutogathatod, hogy milyen szép csuka van a lábadon. De ha elkezded használni, akkor egyből előjön a legnagyobb problémája, hiszen szorít.
+
+Ezen héten kapott mindenki szép új Windows 7-es gépeket. Mivel nekem már volt gey erősebb gépem (mivel csak 32 bites WinXP futott rajta csak töredékét tudtam kihasználni, de mégis jobb volt mint előtte) és egy nappal hamarabb kaptam meg, mint a többiek. Ez elvileg jó, de a gyakorlatban nem:
+
+1. __Saját magamnak kellett mentést csinálnom.__ Arra hivatkoztak, hogy túl nagy a drive-om. Ami meglepő, hiszen a gép és ezáltal a drive ugyan az, csak az oprendszert cserélik le, ami egy másik partíción van. Én meg is csináltam __saját külső vinyóra__.
+2. __Tervezetthez képest egy nappal hamarabb frissítettek.__ Ez elvileg jó, de a gyakorlatban teljesen meg voltam hallva. hiszen nem volt nálam a mentés. A gépen pedig __semmi sem maradt meg az előző gép beállításaiból__. Az ég egy adta világon semmi.
+3. __Nulláról kellett feltelepíteni a gépet.__ (Pontosabban titkárnőknek való programok voltak - office). Már hónapokkal korábban össze kellett állítani egy listát a szoftverekről, amikből semmi sem volt telepítve.
+	1. Szükségesen a fejlesztéshez
+	2. EP hivatalos listáján szerepel
+
+    Na ebből nem volt meg semmi sem. És akkor még nem is beszéltünk azokról, amik egy fejlesztőnek kellenek. Mégis ki tud egy rendes fájlkezelő nélkül élni (totalcommander) vagy UnixUtils vagy RegexCoach nélkül. És a böngésző pluginekkel mi van. hiába van akár Chromom, akár Firefoxom, akkor olyan fapadosak, mint az IE9 (az sem jobb, mint elődjei). ÉS pluginok telepítésére sincs jogosultságunk.
+
+4. Egyik kollégámnak egyébként __egyszerűen félbehagyták a gép telepítését__ és egy olyan gépet kapott, amin nem volt operációs rendszer.
+5. Az új windows 7 rendszeren olyan szabályokat léptettek életbe, __megakadályozta mindenféle nem engedélyezett exe futtatását__. A gyakorlatban azt jelentette, hogy Java futott és még az Eclipse is és ezzel véget is ért az öröm.
+6. Egy nappal később pár egyéb programot is engedélyeztek. Például, már el tudtunk indítani egy SQL Developert, hogy be tudjunk kukkantani az adatbázisba.
+7. Az új rendszeren csak az EP legfrissebb Eclipset lehetett telepíteni (sajnos én nem mentettem le azokat a toolokat, amikről úgy gondoltam, hogy majd telepítem EP eszközeivel), amit még nem teszteltünk a projekten. Fontos megjegyezni, hogy EP saját verziókat eszkábál össze Eclipse-ből, ami nem mindig működik simán minden eszközzel. Eddig 3.7-est használtunk, mert a 3.8-as nem ment a kedvenc JBoss szerverünkkel. Emiatt nem is ugrottuk át, hanem megpihentünk ennél a verziónál.
+8. Az __eclipse nem tudta a maven alapú projectet simán be importálni__, mert...
+9. Kiderült, hogy van két részleg, aminek két külön hálózati (pontosabban proxy) konfigurációval rendelkezik. És mi mind a két részleggel kapcsolatban vagyunk. Ám attól függően, hogy melyik irényból fújt a szél __vagy volt rendes hálózati kapcsolatunk vagy nem__. Végül is mindenhol manuálisan beállított proxy-val már elboldogultunk. Elvileg 2 éve ismert jelenség!!!
+10. Emiatt nem minden maven dependency töltődött le rendesen és nem tudtam, hogy mi a baja. Csak azt mondta, hogy nincs meg. Sőt később még a file is ott volt, de akkor sem. Ez már inkább az eclipse maven plugin lelki világával kapcsolatos dolog volt, amiről sokkal több dolgot tanultam meg az elmúlt napokban, mint amit valaha is akartam.
+11. A proxy gondok miatt __néha elértük az SVN szervert, néha nem__. És sokáig nem tudtuk, hogy miért.
+12. A jóárasított EP Eclipsembe __nem tudtam elindítani sem egy Tomcat-et, se egy JBoss-t__. Mint kiderült a csodálatos EP telepítő alkalmazás hibás konfigurációs filet generált, amiből hibásan telepítette az programot. Éppen ma délután voltak itt, hogy egy ezt kinyomozzák. (erre a szintre márt nem ért fel a szakértelmem, ennyire én még szándékosan sem tudok dolgot elbonyolítani) 
+13. Még a __környezeti változókat sem tudjuk szerkeszteni__. Próbáltál már parancssorból mavennel buildelni, hogy mindig teljesen elérési úttal kell dolgoznod minden paraméternél? Vagy csak simán egy classpath beállítás?
+14. Parancssorból még a maven build sem megy, mert a test fázisban elszáll a temp folderbe való íráskor!!! Ez momentán csak az én gépemen gond. Mindenki másnál megy. Erre még nincs megoldás...
+
+Hétfő reggeltől csütörtök estig eljutottam oda, hogy fejlesztési szempontból elvileg ugyan ott vagyok, mint múlt péntek este. 
+
+De még az egyéb fejlesztéshez hasznos programocskák utilitik sehol sincsenek. Totalcommander, regexcoach, unixutil, notepad++, stb. Úgy hiányoztok!
