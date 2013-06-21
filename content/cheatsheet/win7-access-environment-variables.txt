@@ -1,0 +1,6 @@
+
+Ha nem férzs hozzá a `MyComputer > properties`-hez, hogy beállítst a környezeti változókat. Még mindig ellérheted egy trükkel:
+
+	rundll32 sysdm.cpl,EditEnvironmentVariables
+
+Nekem az életemet mentette meg.
