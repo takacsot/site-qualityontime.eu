@@ -31,3 +31,5 @@ Ezen héten kapott mindenki szép új Windows 7-es gépeket. Mivel nekem már vo
 Hétfő reggeltől csütörtök estig eljutottam oda, hogy fejlesztési szempontból elvileg ugyan ott vagyok, mint múlt péntek este. 
 
 De még az egyéb fejlesztéshez hasznos programocskák utilitik sehol sincsenek. Totalcommander, regexcoach, unixutil, notepad++, stb. Úgy hiányoztok!
+
+Update: Azóta kiderült, hogy még további gondok is vannak az Eclipse telepítéssel, amit most már úgy kerültem meg, hogy otthn összedobtam ugyan azt az eclipse-t és pluginokat és valamilyen rejtéjes okból ez már gond nélkül működik...

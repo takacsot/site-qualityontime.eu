@@ -9,3 +9,4 @@ tmp/
 crash.log
 jruby*.jar
 mediacenter.groovy
+upload.groovy

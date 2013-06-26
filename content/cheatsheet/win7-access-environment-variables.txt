@@ -1,4 +1,8 @@
-
+---
+title: "Win7 environment variable"
+kind: article
+created_at: 2013-06-26 22:37:00
+---
 Ha nem férzs hozzá a `MyComputer > properties`-hez, hogy beállítst a környezeti változókat. Még mindig ellérheted egy trükkel:
 
 	rundll32 sysdm.cpl,EditEnvironmentVariables
