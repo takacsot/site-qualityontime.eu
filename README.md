@@ -17,5 +17,5 @@ Nanoc features demonstrated:
 - archive pages, paginated archives
 - Custom layout
 - google analytics integration
-- 
+- scheduled publication
 

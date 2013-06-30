@@ -1,9 +1,0 @@
-## Selenium and webdriver
-
-Technics:
-## Junit test 
-
-
-## Less(CSS)
-
-TODO: there is no enough experience to include

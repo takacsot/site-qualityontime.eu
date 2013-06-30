@@ -23,8 +23,9 @@ ftp_user="xxx"
 ftp_pass="xxx"
 ftp_dir='xxx'
 
-checksumFile = new File("../tmp/gchecksum.json")
-base_dir = new File("../output")
+scriptDir = new File(getClass().protectionDomain.codeSource.location.path).parent
+checksumFile = new File(scriptDir, "../tmp/gchecksum.json")
+base_dir = new File(scriptDir, "../output")
 println base_dir
 
 def allFiles(File dir){

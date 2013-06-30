@@ -71,32 +71,25 @@ def parse_time(t)
 end
 
 #=> { 2010 => { 12 => [item0, item1], 3 => [item0, item2]}, 2009 => {12 => [...]}}
-def articles_by_year_month
+def articles_by_year_month(l_articles=sorted_articles)
   result = {}
   current_year = current_month = year_h = month_a = nil
-
-  sorted_articles.each do |item|
-	#puts 'Article: '+item[:title]
-	#puts "Before parse #{item[:created_at]}"
-	#puts "Is type Time? #{item[:created_at].is_a? Time}"
-    #d = Time.parse(item[:created_at])
+  l_articles.each do |item|
 	d = parse_time(item[:created_at])
-	#puts d
-	#puts "Current year is #{current_year}"
-	#puts "d.year is #{d.year}"
 	if current_year != d.year
       current_month = nil
       current_year = d.year
       year_h = result[current_year] = {}
     end
-
     if current_month != d.month
       current_month = d.month
       month_a = year_h[current_month] = [] 
     end
-
     month_a << item
   end
-
   result
+end
+
+def past_sorted_articles
+	sorted_articles.select{|a| parse_time(a[:created_at]) < Time.new}
 end

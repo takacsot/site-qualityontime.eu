@@ -1,0 +1,22 @@
+﻿---
+title: "Technology stack"
+kind: article
+created_at: 2013-06-30 21:21
+book: technology_stack
+---
+
+Egy prototípus projekt után megkértek, hogy gyűjtsem össze a tapasztalataimat: A használt technológia miért volt jó, mi mindent lehet megvalósítani vele? Ügyfél oldalról a pilot project során milyen pozitív és negatív tapasztalataink voltak. Azaz, amolyan retrospektive, vagy project kiértékelés. Meglepő volt, hiszen életem első olyan esete, mikor hivatalosan is igény volt erre. Más kérdés, hogy csak "házon belül" használtuk.
+
+A technológiai szekció írásakor elszaladt velem ló. Rájöttem, hogy rengeteg olyan technológiai "szokásom" van, ami megéri az árát, mert kemény évek tapasztalata adta meg. És egy külön fejezet is készült arról, amit én csak úgy neveztem el, hogy „toolbox”. Azon lib-ek, tool-ok, technológiák, technikák módszerek a fejlesztésben, amik nem feltétlenül legjobbak, hanem egyszerűen hasznosak, mikor szükség van rájuk. 
+
+Persze ennek a visszatekintésnek voltak egyéb aspektusai is. Véleményeznem kellett hogy mi mindent kellhet még fejleszteni project management szempontból. Hosszabb távon mindenképpen az az érdekes. De kevésbé megfogható, mert mélyen hiszek abban, hogy az ilyen tanulmányok nem jutnak el a megfelelő fülekhez az EP-n belül. 
+
+NB: Érdekel megjegyezni, hogy az EP könyvtárában elképesztően sok könyv van, ami arról szól hogyan kell embereket  és projekteket vezetni. Sokkal nagyobb az aránya, a többi témához képest. következtetés: olyanok kerülnek vezető pozícióba, akik nem tudják még közelről sem hogy mit kell csinálni. Következtetés nem 
+teljesítményük és képességeik alapján kerülnek kinevezésre. De ezt végül is mindenki tudja.
+
+
+__Mindenkinek kell a saját listája, mert évek és évtizedek alatt megtanul, és tapasztal dolgokat, amiket pár év üresjárat után újra fel kell fedeznie. Na én ezt el akarom kerülni és emiatt elhatároztam, hogy alaposabban kifejtem és karbantartom.__
+
+Az elkövetkezőkben az eddig összegyűjtött anyagot pofoztam publikus formára (néhány erősen belsős infót eltávolítottam).
+
+(Jó néhány gondolat teljesen triviális. Lehet, hogy ez inkább azt mutattja, hogy a csapat programozási gyakorlata mennyire fejlett. Egyébként kb 10 éves, folyamatosan fejlesztett rendszerről van szó. maga a pilot project egy új modullal kapcsolataod fejlesztés volt "új" technológiákkal)

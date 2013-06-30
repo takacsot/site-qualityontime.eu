@@ -1,3 +1,10 @@
+---
+title: "Web view"
+kind: article
+created_at: 2014-06-29 00:00
+book: technology_stack
+---
+
 #Web view
 
 ## HTML

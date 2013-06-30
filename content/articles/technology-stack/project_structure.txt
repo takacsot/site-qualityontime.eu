@@ -1,0 +1,41 @@
+﻿---
+title: "Physical software project structure"
+kind: article
+created_at: 2013-07-01 17:00
+book: technology_stack
+book_page: 1
+---
+##Higher level folder hierarchy
+
+Golden rule: __Those artifact which's lifecycle is the same must be stored in the same place.__
+
+With other words: all source code, documentation, helper must be stored in the version management system in the same place, under a common folder structure. The lifecycle of that folder structure must be the same. You have to avoid keeping a java folder structure independently from the database and test scripts. In any other case you have double release related maintenance (branching, merging)
+
+## Maven folder structure
+
+Setting up multiproject maven environment is not a trivial task.
+
+You must understand the difference between sub-modules, parent-child projects.
+
+References:
+
+- [Maven Best Practices](http://mestachs.wordpress.com/2012/05/17/maven-best-practices/)
+- [Good section about multi-module vs. inheritance](http://www.sonatype.com/books/mvnref-book/reference/pom-relationships-sect-pom-best-practice.html)
+- [Best practices for multi-module project organisation](http://maventweaks.blogspot.com/2010/10/best-practices-for-multi-module-project.html)
+
+Organizing maven modules are not the question of numbers. The key is the well organized project structure.
+
+A (probably) good example:
+
+- toolbox: general, reusable components
+- data: all basic business entities, hibernate mapping, simple and reusable DAO-s.
+- project-service: the core business functionality
+- project-web/front: front-end components only.
+
+Of course you could have more or less. Depending on the project.
+
+Smells:
+
+1. so called "common" project which contains 2/3 of the total source code of the project
+2. module represented in subproject, but the project is not standalone. Have several seriouse dependency on such a projects which are is logically independent from that. 
+3. subproject with only a very few number of classes. Especially if they are not independent components.

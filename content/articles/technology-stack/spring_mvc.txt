@@ -1,3 +1,9 @@
+---
+title: "Spring MVC"
+kind: article
+created_at: 2014-06-29 00:00:00
+book: technology_stack
+---
 # Spring MVC 
 
 Version: Spring 3.1
@@ -229,18 +235,18 @@ And the main JSP page (call it `application.jsp`)
 ```html
 		...
 		<!-- CSS which need for all the pages -->
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/view/assets/app/css/app.css" />
+		<link rel="stylesheet" type="text/css" href="<%%=request.getContextPath()%>/view/assets/app/css/app.css" />
 		<!-- css files needed for specifc pages only-->
 		<tiles:useAttribute name="css_files" id="csslist" classname="java.util.List" />
 		<c:forEach var="fileName" items="${csslist}">
-			<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%><c:out value='${fileName}' />" />
+			<link rel="stylesheet" type="text/css" href="<%%=request.getContextPath()%><c:out value='${fileName}' />" />
 		</c:forEach>
 		<!-- javascript required by all the pages -->
 		<jwr:script src="/js/common.js" useRandomParam="false" />
 		<!-- JS libraries needed for specific pages only -->
 		<tiles:useAttribute name="js_files" id="jslist" classname="java.util.List" />
 		<c:forEach var="fileName" items="${jslist}">
-			<script type="text/javascript" src="<%=request.getContextPath()%><c:out value='${fileName}' />"></script>
+			<script type="text/javascript" src="<%%=request.getContextPath()%><c:out value='${fileName}' />"></script>
 		</c:forEach>
 		<!-- remainng tiles template -->
 		<title><tiles:insertAttribute name="title" ignore="true" /></title>
@@ -397,3 +403,4 @@ public class NotificationController {
 ```
 
 In the bacground it will create a clipboard proxy instance which will be injetced into controller singleton (one instace always). When in a na actual request the proxy class will take care of which (session level ) instance of target class to use.
+
