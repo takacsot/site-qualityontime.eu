@@ -1,6 +1,5 @@
 module Paginate
   def paginate_articles
-    puts Time.new
 	articles_to_paginate = past_sorted_articles
 	article_groups = []
 	until articles_to_paginate.empty?
