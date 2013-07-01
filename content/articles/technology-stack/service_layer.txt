@@ -1,14 +1,10 @@
 ---
 title: "Service layer"
 kind: article
-created_at: 2014-06-29 00:00
+created_at: 2013-07-02 00:00
 book: technology_stack
 ---
-#Service Layer
 
-TODO Externalite SQL if too long an complex using @value
-
-## Purpose of service layer
 
 **All individual business operation must be placed into a service**. One method call per business functionality.
 
@@ -79,11 +75,11 @@ For more detail read spring manual.
 
 ## Separate finder service from operations
 
-You could qualify service into two categories: finder and operation. 
+You could qualify service into two categories: __finder__ and __operation__. 
 
-Operations has a strict declared transaction management around it
+Operations must have a strict declared transaction management around it.
 
-Finder service are providing readonly functionalities. no transaction management expected to be effect on these operation.
+Finder service are providing readonly functionalities. No transaction management expected to be effect on these services.
 
 ```java
 	@Service
@@ -92,7 +88,7 @@ Finder service are providing readonly functionalities. no transaction management
 	...
 ```
 
-#Cache
+##Cache
 
 Most of the time it is enough to use declerative cache what Spring(3.1) provides ou of the box.
 
@@ -121,9 +117,9 @@ This XML confign is the simplest solution (mainly for prototype or testing purpo
 
 This annotation can be applied to both `dao` and `service` level.
 
-## Cache  problem - not caching when internal method is called
+### Cache  problem - not caching when internal method is called
 
-This cache is easy to use and easy to missuse. Bu the problem is not about the cache but howSpring handling proxied bean insances.
+This cache is easy to use and easy to missuse. Bu the problem is not about the cache but how Spring handling proxied bean insances.
 
 You might notice that the method call is not cached even if it has the annotation on it. Typical case when the annotated method is called internally. Example:
 
@@ -144,14 +140,14 @@ Solution?
 2. use explicite cache
 3. Resolve in an other way
 
-## Cache problem - not caching even if I call externally
+### Cache problem - not caching even if I call externally
 
 The origin of the problem can be related to the default `KeyGenerator`  implementation. It does not support:
 
 - collection, array, custom bean (other than primitive): it extensively usign hashcode and equals method. So custom types should override these methods but but onfortunatelly when using collection you might not able to do that. For example you could not override array hashcode function.
 - variable length arguments like `String... arg`: each time you call such a method a new array object is created and array objects are not supported
 
-### Home made KeyGenerator
+#### Home made KeyGenerator
 
 Solution: use your own implemenation.
 
@@ -194,276 +190,11 @@ And add to spring xml:
 	<bean id="app_key_generator" class="ep.pericles.cache.AppKeyGenerator" />
 ```
 
-### Use the KEY
+#### Use the KEY
 
 Not so lazy solution.
 
 See [27.3.1.2 Custom Key Generation Declaration](http://static.springsource.org/spring/docs/3.1.0.M1/spring-framework-reference/html/cache.html)
 
 Warning: SPEL might have serious perfomance concequences. 
-
-#Data access layer
-
-Plain resource related operations. most of the time these resources are database related ones (hibernate, stored procedure, plain sql) but sometimes it is something else (like accessing a third party service).
-
-Dao do not take care of transactional boundaries.  Dao is not responsible for any business operation. 
-
-It is taking care of 
-
-1. converting input to make it easy to use for database
-2. access database
-3. transform raw database result to more business oriented one.
-
-
-##Spring JDBC
-
-Spring JDBC support simplifies database access dramatically. Less code and safer implementation.
-
-Using spring JDBC template you should not take care of opening and closing resources. No need to take care of looping through result set.
-
-Good start to setup a dao:
-
-```java
-	@Repository
-	public class SessionDao extends BaseDaoImpl<PericlesSession, Long> implements ISessionDao {
-	  protected NamedParameterJdbcTemplate namedTemplate;
-	  protected JdbcTemplate jdbcTemplate;
-	  protected DataSource dataSource;
-
-	  @Autowired
-	  public void setDataSource(DataSource ds) {
-		this.dataSource = ds;
-		this.namedTemplate = new NamedParameterJdbcTemplate(ds);
-		this.jdbcTemplate = new JdbcTemplate(ds);
-	  }
-	}
-```
-
-##Simple JDBC aka plain SQL
-
-Typical example: 
-
-```java
-	  @Override
-	  public List<ServiceAssignmentDto> getServiceAssignments(Long sess_uid) {
-		//@formatter:off
-		final String sql =
-		  "        SELECT "+ 
-		  "        SA.SOURCE_UID as lang_uid, "+ 
-		  "        SA.START_DATE,  "+
-		  "        SA.END_DATE,  "+
-		  "        SA.SRAS_UID as service_assignment_uid, "+ 
-		  "        SA.ASST_ASST_UID as assignment_status_uid,  "+
-		  "        SA.TOWN_TOWN_UID as town_TOWN_UID,  "+
-		  "        SA.INST_INST_UID as inst_inst_uid,  "+
-		  "        li.SERL_UID request_line_uid,  "+
-		  "        li.REST_REST_UID as request_status_uid, "+
-		  "        S.SESS_UID,  "+
-		  "        ss.comments "+
-		  "      FROM Service_Request_Line Li, Sessions_Service SS, Sessions S, SERVICE_ASSIGNMENTS SA "+
-		  "      WHERE Li.Sese_sese_uid=ss.Sese_uid "+
-		  "      AND Ss.sess_sess_uid  = s.sess_uid "+
-		  "      AND LI.SERL_UID       =SA.SERL_SERL_UID "+
-		  "      AND SS.SETY_SETY_UID  =1 "+
-		  "      and s.sess_uid = :sess_uid ";
-		  //@formatter:on
-		List<ServiceAssignmentDto> res = namedTemplate.query(sql, ImmutableMap.of("sess_uid", sess_uid),
-			new BeanPropertyRowMapper<ServiceAssignmentDto>(ServiceAssignmentDto.class));
-		return res;
-	  }
-```
-
-Steps:
-
-1. have the SQL with **named** parameters like `:sess_uid`
-2. fill actual parameters (done automatically)
-3. declare  a mapper (in this case a `BeanPropertyRowMapper` which is mapping by naming convention.
-
-Another example:
-
-```java
-	  @Override
-	  public SessionDetail getSessionDetail(Long sess_uid) {
-		return namedTemplate.queryForObject(SQL_getSessionDetail, new MapSqlParameterSource("sess_uid", sess_uid),
-			new SessionDetailMapper());
-	  }
-	  private class SessionDetailMapper implements RowMapper<SessionDetail> {
-		@Override
-		public SessionDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
-		  SessionDetail res = new SessionDetail();
-		  res.setSess_uid(rs.getLong("sess_uid"));
-		  res.setSession_number(rs.getString("session_number"));
-		  res.setTitle(AppStrings.replace_simple("{} ({} {})", i18n.text(rs.getString("sc_title"), "EN"),
-			  formatIfNotNull(res.getMeeting_start_date(), "dd/MM/yyyy HH:mm"),
-			  formatIfNotNull(res.getMeeting_end_date(), "dd/MM/yyyy HH:mm")));
-		  ...
-		  return res;
-		}
-	  }
-```
-
-If you could not map result by naming convention or you need some additional logic to 
-add the mapping (like conversion, custom mapping)  you could implement you own mapping.
-
-##Stored procedure
-
-Basic stored procedures are easy to use. the reals difficulties will rise when you want to deal with Oracle specific features like `table` and `object`
-
-It is not 100% automatic. For these operation you need to access the lover level Oracle JDBC driver.
-
-To have it for sure you must to the following.
-
-### Declare connection pool implementation explicitly
-
-In Tomcat, when you are not declaring connection pool implementation the default will be used. the default has the same implementation as `commons-jdbc` but in different packages. To ensure that `commons-jdbc` will be used you must set `factory` in `context.xml`:
-
-```xml
-	 <Resource name="jdbc/PericlesDataSource" auth="Container"
-				.....
-				  connectionProperties="oracle.jdbc.V8Compatible=true"
-				  factory="org.apache.commons.dbcp.BasicDataSourceFactory"
-				  /> 
-```
-
-We have a utility which gets the innermost driver (see `AppDb`):
-
-```java
-	  public static Connection getInnermostDelegate(Connection con){
-		if(con instanceof PoolableConnection){
-		  return ((PoolableConnection)con).getInnermostDelegate();
-		}
-		else if(con instanceof DelegatingConnection){
-		  return ((DelegatingConnection)con).getInnermostDelegate();
-		}
-		else{
-		  log.error("Unhandled connection pool type: {}", con.getClass());
-		}
-		return con;
-	  }
-```
-
-### Stored procedure complex example
-
-```java
-	/**
-	 * custom sample oracle script
-	--DELETE AFTER USE
-	-- custom type
-	create or replace TYPE "MY_TYPE"
-	as object(name varchar(255),
-	value varchar(255));
-	/
-
-	-- array of MY_TYPE
-	create or replace
-	TYPE "MY_ARRAY"
-	as table of MY_TYPE;
-	/
-
-	-- echo like SP, doesn't do too much
-	create or replace procedure foo(
-	i_array in MY_ARRAY,
-	o_array out MY_ARRAY)
-	as
-	begin
-	o_array := MY_ARRAY();
-	for i in 1 .. i_array.count loop
-	  o_array.extend;
-	  o_array(i) := MY_TYPE(i_array(i).name, i_array(i).value);
-	end loop;
-	end;
-	/
-	 */
-	public class FooStoredProcedure {
-	  private static final String SP_NAME = "FOO";
-	  private static final String MY_ARRAY = "MY_ARRAY";
-	  private static final String MY_TYPE = "MY_TYPE";
-	  private static final String I_ARRAY = "i_array";
-	  private static final String O_ARRAY = "o_array";
-
-	  private final StoredProcedure storedProcedure;
-
-	  public FooStoredProcedure(DataSource dataSource) {
-		JdbcTemplate template = new JdbcTemplate(dataSource);
-		template.setNativeJdbcExtractor(new SimpleNativeJdbcExtractor());
-		//storedProcedure = new StoredProcedure(dataSource, SP_NAME) {
-		storedProcedure = new StoredProcedure(template, SP_NAME) {
-		  {
-			declareParameter(new SqlParameter(I_ARRAY, Types.ARRAY, MY_ARRAY));
-			declareParameter(new SqlOutParameter(O_ARRAY, Types.ARRAY, MY_ARRAY, new SqlReturnType() {
-			  public Object getTypeValue(CallableStatement cs, int paramIndex,
-				  int sqlType, String typeName) throws SQLException {
-				Connection connection = AppDb.getInnermostDelegate(cs.getConnection());
-				Map<String, Class<?>> typeMap = connection.getTypeMap();
-				typeMap.put(MY_TYPE, MyType.class);
-				return cs.getObject(paramIndex);
-			  }
-			}));
-			compile();
-		  }
-		};
-	  }
-
-	  /**
-	   * @return array of {@link MyType} objects or <code>null</code> 
-	   */
-	  public MyType[] execute(final MyType... values) {
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put(I_ARRAY, new AbstractSqlTypeValue() {
-		  @Override
-		  protected Object createTypeValue(Connection con, int sqlType, String typeName) throws SQLException {
-			con = AppDb.getInnermostDelegate(con);
-			ArrayDescriptor descriptor = new ArrayDescriptor(typeName, con);
-			return new ARRAY(descriptor, con, values);
-		  }
-		});
-
-		Map<?, ?> result = storedProcedure.execute(params);
-		if ((!result.containsKey(O_ARRAY) || result.get(O_ARRAY) == null)) {
-		  return null;
-		}
-		try {
-		  Object[] resultArray = (Object[]) ((ARRAY) result.get(O_ARRAY)).getArray();
-		  return Arrays.copyOf(resultArray, resultArray.length, MyType[].class);
-		}
-		catch (SQLException e) {
-		  throw new DataRetrievalFailureException("Unable to retrieve array", e);
-		}
-	  }
-
-	  public static class MyType implements SQLData {
-		private String name;
-		private String value;
-		//... getter and setters are omited
-		public String getSQLTypeName() throws SQLException {
-		  return MY_TYPE;
-		}
-		public void readSQL(SQLInput stream, String typeName) throws SQLException {
-		  name = stream.readString();
-		  value = stream.readString();
-		}
-		public void writeSQL(SQLOutput stream) throws SQLException {
-		  stream.writeString(name);
-		  stream.writeString(value);
-		}
-	  }
-	}
-
-	public class FooStoredProcedureWithArrayTest extends ASpringServiceTest{
-	  @Autowired
-	  DataSource dataSource;
-	  @Test
-	  public void test()throws Exception{
-		FooStoredProcedure p = new FooStoredProcedure(dataSource);
-		MyType in = new MyType();
-		in.setName("Otto");
-		in.setValue("Takacs");
-		MyType[] res = p.execute(in);
-		assertNotNull(res);
-		assertEquals(1, res.length);
-	  }
-	}
-```
-
-For real life examples check `PkgServiceSubsystem`.
 
