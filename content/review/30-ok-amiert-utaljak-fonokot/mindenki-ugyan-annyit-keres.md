@@ -25,7 +25,7 @@ A teljesítménybérezés bevezetése  akadályokba ütközhet:
 2. A beosztottak nem bíznak a feletteseik értékelésében.
 3. Egyszerűbb mindenkinek egységesen emelni. "Csapattag vagy..."
 
-Az [5. részben említett](http://www.qualityontime.eu/review/tobbiekkel-kiveteleznek) méltányosság elmélet az alkalmazottak 5 lehetőség közül választanak, amikor úgy gondolják, hogy ugyan annyi a nyereségük, mint azonos munkakörben gyenge teljesítményt nyújtó kollégáiknak. Leggyakrabban az első megoldást választják, és kevesebb energiát fektetnek a munkájukba.
+Az [5. részben említett](<%=item_by_id('/tobbiekkel-kiveteleznek/').path%>) méltányosság elmélet az alkalmazottak 5 lehetőség közül választanak, amikor úgy gondolják, hogy ugyan annyi a nyereségük, mint azonos munkakörben gyenge teljesítményt nyújtó kollégáiknak. Leggyakrabban az első megoldást választják, és kevesebb energiát fektetnek a munkájukba.
 
 Megoldások:
 

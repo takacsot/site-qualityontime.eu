@@ -24,6 +24,6 @@ tags: extracts
 - or simply extending the original estimated schedule by a certain percentage.
 - more advanced version of this approach is to ensure that each person is not normally 100% busy,
 
-[Meeting Milestones via Swarming and Reserves](http://www.basilv.com/psd/blog/2012/meeting-milestones-via-swarming-and-reserves)
+http://www.basilv.com/psd/blog/2012/meeting-milestones-via-swarming-and-reserves (page does not exists enymore)
 
 <div class='old-comments'></div>

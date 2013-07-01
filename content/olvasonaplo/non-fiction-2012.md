@@ -12,7 +12,7 @@ Mi mindent olvastam szakmai szempontból 2012-ben
 
 ###[The productive programmer](http://moly.hu/konyvek/neal-ford-the-productive-programmer)
 
-A [The Productive Programmer](http://www.qualityontime.eu/review/productive-programmer-neal-ford) olyan nekem mint a [Code Craft](http://www.qualityontime.eu/review/code-craft-pete-goodliffe-0) annak idején, mikor olvastam. Az járt a fejemben, hogy „miért nem találtam meg ezt a könyvet sokkal hamarabb”
+A [The Productive Programmer](http://www.qualityontime.eu/review/productive-programmer-neal-ford) olyan nekem mint a [Code Craft](http://www.qualityontime.eu/review/code-craft-pete-goodliffe/) annak idején, mikor olvastam. Az járt a fejemben, hogy „miért nem találtam meg ezt a könyvet sokkal hamarabb”
 
 Azért már öreg rókának tartom magam, hiszen több, mint tíz évnyi szoftver fejlesztési tapasztalattal rendelkezem. Sok trükköt ismerek, de nem eleget.
 

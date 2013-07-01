@@ -1,7 +1,6 @@
 - Linksávba betolni a jobb írások linkjeit. (ehhez megint össze kellene írni)
 
 - nanoc-toolbox project might have good scripts
-- Integrate Comment
 - https://github.com/snusmumrik/nanoc/blob/master/lib/helper.rb
 - https://github.com/avdgaag/nanoc-template/tree/master/lib
 - https://github.com/kamui/nanoc-fuel

@@ -141,7 +141,7 @@ Nem vagyok nagy híve a generikusoknak.
 
 Elképesztően verbose(bőbeszédű, feleslegesen bőbeszédű) a szintaktikája. Sokszor azért sem használom, mert olvashatatlanná teszi a programot. És el is  vezet a következő gondomhoz.
 
-Gyakorlatilag kötelező. Pontosabban alapból nem generikus használat esetén tele vagyok compile warninggal, ami ellent mond azon elvemnek, hogy a [compiler warning-ok legyenek bekapcsolva](http://www.qualityontime.eu/extracts/chapter-9-finding-fault-debugging-what-do-when-things-go-wrong) és úgy programozz, hogy egy warning se legyen.
+Gyakorlatilag kötelező. Pontosabban alapból nem generikus használat esetén tele vagyok compile warninggal, ami ellent mond azon elvemnek, hogy a [compiler warning-ok legyenek bekapcsolva](<%=item_by_id('/chapter-9-finding-fault-debugging-what-do-when-things-go-wrong/').path %>) és úgy programozz, hogy egy warning se legyen.
 
 Magának a generikusnak a szintaxisa (mármint ha te csinálsz generikus osztályt) valami rémálom (trivialitásoktól eltekintve)
 [Ezen  youtube vidon](http://www.youtube.com/watch?feature=player_embedded&v=V1vQf4qyMXg) van pár példa, amit [Scala](http://www.scala-lang.org/) tíz körrel lepipál. És ami lényeg, hogy ennek semmi köze nincs a [Scala](http://www.scala-lang.org/) egyéb funkcionalitásához. Ez csak az, hogyan lehet a generikusokat egyszerűbb szintaxissal megvalósítani.

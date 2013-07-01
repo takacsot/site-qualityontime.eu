@@ -26,20 +26,20 @@ This book comes from the trenches. Well, it actually comes from deep within the 
 >difficult job. Welcome to the Real World.
 
 - [Chapter 1: Deffensive programming](<%=item_by_id('chapter-1-deffensive-programming').path %>)
-- [Chapter 2: THE BEST LAID PLANS](chapter2-best-laid-plans"></a></strong><br />
-- [Chapter 3: WHAT’S IN A NAME?](chapter-3-whats-name)
-- [Chapter 4: THE WRITE STUFF](chapter-4-write-stuff)
-- [Chapter 5: A PASSING COMMENT How to Write Code Comments](chapter-5-passing-comment-how-write-code-comments)
-- [Chapter 6: TO ERR IS HUMAN Dealing with the Inevitable&mdash;Error Conditions in Code](chapter-6-err-human-dealing-inevitable-error-conditions-code)
-- [Chapter 7: THE PROGRAMMER&rsquo;S TOOLBOX Using Tools to Construct Software](chapter-7-programmers-toolbox-using-tools-construct-software)
-- [Chapter 8: TESTING TIMES The Black Art of Testing Code](chapter-8-testing-times-black-art-testing-code)
-- [Chapter 9: FINDING FAULT Debugging: What to Do When Things Go Wrong](chapter-9-finding-fault-debugging-what-do-when-things-go-wrong)
-- [Chapter 10: THE CODE THAT JACK BUILT Mechanisms to Turn Source Code into Executable Code](chapter-10-code-jack-built-mechanisms-turn-source-code-executable-code)
-- [Chapter 11: THE NEED FOR SPEED Optimizing Programs and Writing Efficient Code](chapter-11-need-speed-optimizing-programs-and-writing-efficient-code)
-- [Chapter 12: AN INSECURITY COMPLEX Writing Secure Programs](chapter-12-insecurity-complex-writing-secure-programs)
-- [Chapter 13: GRAND DESIGNS How to Produce Good Software Designs](chapter-13-grand-designs-how-produce-good-software-designs)
+- [Chapter 2: THE BEST LAID PLANS](<%=item_by_id('chapter2-best-laid-plans').path %>)
+- [Chapter 3: WHAT’S IN A NAME?](<%=item_by_id('chapter-3-whats-name').path %>)
+- [Chapter 4: THE WRITE STUFF](<%=item_by_id('chapter-4-write-stuff').path %>)
+- [Chapter 5: A PASSING COMMENT How to Write Code Comments](<%=item_by_id('chapter-5-passing-comment-how-write-code-comments').path %>)
+- [Chapter 6: TO ERR IS HUMAN Dealing with the Inevitable&mdash;Error Conditions in Code](<%=item_by_id('chapter-6-err-human-dealing-inevitable-error-conditions-code').path %>)
+- [Chapter 7: THE PROGRAMMER&rsquo;S TOOLBOX Using Tools to Construct Software](<%=item_by_id('chapter-7-programmers-toolbox-using-tools-construct-software').path %>)
+- [Chapter 8: TESTING TIMES The Black Art of Testing Code](<%=item_by_id('chapter-8-testing-times-black-art-testing-code').path %>)
+- [Chapter 9: FINDING FAULT Debugging: What to Do When Things Go Wrong](<%=item_by_id('chapter-9-finding-fault-debugging-what-do-when-things-go-wrong').path %>)
+- [Chapter 10: THE CODE THAT JACK BUILT Mechanisms to Turn Source Code into Executable Code](<%=item_by_id('chapter-10-code-jack-built-mechanisms-turn-source-code-executable-code').path %>)
+- [Chapter 11: THE NEED FOR SPEED Optimizing Programs and Writing Efficient Code](<%=item_by_id('chapter-11-need-speed-optimizing-programs-and-writing-efficient-code').path %>)
+- [Chapter 12: AN INSECURITY COMPLEX Writing Secure Programs](<%=item_by_id('chapter-12-insecurity-complex-writing-secure-programs').path %>)
+- [Chapter 13: GRAND DESIGNS How to Produce Good Software Designs](<%=item_by_id('chapter-13-grand-designs-how-produce-good-software-designs').path %>)
 - Chapter 14: SOFTWARE ARCHITECTURE Laying the Foundations of Software Design
-- [Chapter 15: SOFTWARE EVOLUTION OR SOFTWARE REVOLUTION? How Does Code Grow?](chapter-15-software-evolution-or-software-revolution-how-does-code-grow)
+- [Chapter 15: SOFTWARE EVOLUTION OR SOFTWARE REVOLUTION? How Does Code Grow?](<%=item_by_id('chapter-15-software-evolution-or-software-revolution-how-does-code-grow').path %>)
 - Chapter 16: CODE MONKEYS Fostering the Correct Attitude and Approach to Programming
 	
 	Nagyon jó összefüglaló a kölönféle a programozókról. Bizony könnyen magunkra ismerhetünk. És azt is megtudjuk, hogyan kell ezekkel az emberekkel bánni. Leírja erősségüket, gyengéjüket és azt, hogy kit hogyan kell kezelni. Gyakorlatilag a teljes fejezetete ki kellene emelni.&nbsp;<br />
@@ -60,15 +60,15 @@ This book comes from the trenches. Well, it actually comes from deep within the 
     - *PRAT*s: politicians, relational, artistic, and technical
     - *THICK*: team players, honest and humble, improving constantly, considerate, and keen
 
-- [Chapter 17: TOGETHER WE STAND Teamwork and the Individual Programmer](chapter-17-together-we-stand-teamwork-and-individual-programmer)
+- [Chapter 17: TOGETHER WE STAND Teamwork and the Individual Programmer](<%=item_by_id('chapter-17-together-we-stand-teamwork-and-individual-programmer').path %>)
 - Chapter 18: PRACTICING SAFE SOURCE Source Control and Self-Control
     Code is valuable. Treat it with respect and care.
     Source control is an essential tool for software development. It is vital for teams to work together safely.
     Treat the repository with respect. Never check in broken code that will stall other developers.
     Back up your work. Don&rsquo;t wait for disaster to strike before you think about a recovery strategy.
-- [Chapter 19: BEING SPECIFIC Writing Software Specifications](chapter-19-being-specific-writing-software-specifications)
-- [Chapter 20: A REVIEW TO A KILL Performing Code Reviews](chapter-20-review-kill-performing-code-reviews)
-- [Chapter 21: HOW LONG IS A PIECE OF STRING? The Black Art of Software Timescale Estimation](chapter-21-how-long-piece-string-black-art-software-timescale-estimation)
+- [Chapter 19: BEING SPECIFIC Writing Software Specifications](<%=item_by_id('chapter-19-being-specific-writing-software-specifications').path %>)
+- [Chapter 20: A REVIEW TO A KILL Performing Code Reviews](<%=item_by_id('chapter-20-review-kill-performing-code-reviews').path %>)
+- [Chapter 21: HOW LONG IS A PIECE OF STRING? The Black Art of Software Timescale Estimation](<%=item_by_id('chapter-21-how-long-piece-string-black-art-software-timescale-estimation').path %>)
 - Chapter 22: RECIPE FOR A PROGRAM Code Development Methodologies and Processes
 - Chapter 23: THE OUTER LIMITS The Different Programming Disciplines
 

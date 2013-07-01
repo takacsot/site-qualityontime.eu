@@ -20,7 +20,7 @@ Hozzászoktunk a gondolathoz, hogy:
 Az alkalmazotti __fluktuáció__ nagyon sokba, az alkalmazott __éves fizetésének 150%-ába__ vagy többe is kerülhet a szervezetnek. A költségekbe beletartoznak az üresen maradt pozíció miatti termeléskiesés stb. Nehezen számszerűsíthető költségek is fellépnek, például a távozó alkalmazott közvetlen kollégáinak csökkenő elkötelezettsége, valamint a csapatmunka és bajtársiasság a csapat felbomlása miatt.
 
 
-Pszichológiai háttér: [Lásd méltányosságelmélet korábbi fejezetekben.](/review/tobb-kepzesre-lenne-szuksegunk)
+Pszichológiai háttér: [Lásd méltányosságelmélet korábbi fejezetekben.](<%=item_by_id('/tobb-kepzesre-lenne-szuksegunk/').path%>)
 
 
 Megoldások:
