@@ -1,13 +1,9 @@
 ---
 title: "Toolbox"
 kind: article
-created_at: 2014-06-29 00:00
+created_at: 2013-07-05 00:00
 book: technology_stack
 ---
-
-Toolbox
-========
-
 Various tools and technologies which are useful.
 
 ## Guava
@@ -31,7 +27,7 @@ For Exception propagation. Several of the Java API forces us to handle checked E
 
 It will shorten it.
 
-~~~java
+```java
 	  public static String getProperty(Object bean, String name) {
 		try {
 		  return delege.getProperty(bean, name);
@@ -40,7 +36,7 @@ It will shorten it.
 		  throw Throwables.propagate(e);
 		}
 	  }
-~~~
+```
 
 ### Immutable collections
 
@@ -48,13 +44,13 @@ Immutable collections are faster to use in multithreaded environment.  Majority 
 
 Plus lost of useful function to make life more easy when dealing with collections. 
 
-~~~java
+```java
 		Map<?, ?> ret = ImmutableMap.of("status", "OK", "data", resp);
-~~~
+```
 
 Imagine when you want to filter a collections - getting a subset based on certain conditions
 
-~~~java
+```java
 		List<InterpreterDto> relevantInterpreters = Collections2.filter(interpreters, new Predicate<InterpreterDto>() {
 		  public boolean apply(InterpreterDto input) {
 			for (InterpreterBoothDto b : input.getBooths()) {
@@ -65,11 +61,11 @@ Imagine when you want to filter a collections - getting a subset based on certai
 			return false;
 		  }
 		});
-~~~
+```
 
-Of course you could reuse that Predicate. Imagine when you get a list of object and want to lookup based on some `id` of that object.
+Of course you could reuse that `Predicate`. Imagine when you get a list of object and want to lookup based on some `id` of that object.
 
-~~~java
+```java
 	Function<Unavailability, Long> interp_pers_uid_extractor = new Function<Unavailability, Long>() {
 		@Override
 		public Long apply(Unavailability input) {
@@ -79,7 +75,7 @@ Of course you could reuse that Predicate. Imagine when you get a list of object 
 	...
 	List<Unavailability> unavs = search(s)
 	ListMultimap<Long, Unavailability> res = groupBy(unavs, interp_pers_uid_extractor)
-~~~
+```
 
 Where the `interp_pers_uid_extractor` can be reused in multiple places. In this example the `groupBy` is synonym for `Multimaps.index`.
 
@@ -89,10 +85,10 @@ Using functional programing idioms can produce shorter and simpler programs.
 
 #### Joiner
 
-~~~java
+```java
 	Joiner joiner = Joiner.on("; ").skipNulls();
 	return joiner.join("Harry", null, "Ron", "Hermione");
-~~~
+```
 
 #### Splitter
 
@@ -100,15 +96,15 @@ Typical problem o splitting String. I java you could use `Spring.split` which ca
 
 But you can feel the difference: 
 
-~~~java
+```java
 	List<String> tokens = copyOf(Splitter.on(CharMatcher.WHITESPACE).omitEmptyStrings().trimResults().split(prop));
-~~~
+```
 
 ### EventBus
 
-In PLI it is not used but in Pericles Client it would be extremely useful.
+In a desktop application it can be very useful.
 
-~~~java
+```java
 	// Class is typically registered by the container.
 	class EventBusChangeRecorder {
 	  @Subscribe public void recordCustomerChange(ChangeEvent e) {
@@ -122,7 +118,7 @@ In PLI it is not used but in Pericles Client it would be extremely useful.
 	  ChangeEvent event = getChangeEvent();
 	  eventBus.post(event);
 	}
-~~~
+```
 
 ## mockito
 
@@ -134,7 +130,7 @@ In practice: Imagine when you want to test a business logic which is relying on 
 
 Example use in PLI:
 
-~~~java
+```java
 	public class SessionFinderTest {
 	  String username = "SessionFinderTest";
 	  SessionFinder finder;
@@ -162,7 +158,7 @@ Example use in PLI:
 		Assert.assertEquals(1, res.getResult().get(0).getLang_coverage_info().size());
 	  }
 	}
-~~~
+```
 
 Advantages:
 
@@ -182,15 +178,15 @@ What we use:
 
 Examples - Generic dao interface:
 
-~~~java
+```java
 	public interface ProjectDAO extends GenericDAO<Project, Long> {}
 	public class ProjectDAOImpl extends GenericDAOImpl<Project, Long> implements ProjectDAO {}
-~~~
+```
 
 Example - search:
-Search search = new Search(Project.class);
+`Search search = new Search(Project.class);`
 
-~~~java
+```java
 	//filtering
 	search.addFilterEqual("name", "hibernate-generic-dao");
 	search.addFilterLessThan("completionDate", new Date());
@@ -206,7 +202,7 @@ Search search = new Search(Project.class);
 	//paging
 	search.setMaxResults(15); //a.k.a. results per page
 	search.setPage(3);
-~~~
+```
 
 And if any of the features are suitable to your need you still have access to hibernate session.
 
@@ -345,7 +341,7 @@ After building up an abstract table you could apply a visitor which will interpr
 
 Useful visual utility for displaying message. 
 
-![How jGrowl looks like](img/jgrowl.png "sdfsdfsdf")
+![How jGrowl looks like](<%=item_by_id('/jgrowl.png/')%> "Jgrowl example")
 
 Usage example:
 
@@ -528,116 +524,6 @@ But there are solutions:
 3. Write `test.js`
 4. After saving file the result will be reflected in the browser after the next refresh.
 
-	
-## JQGrid
-
-jqGrid is a JavaScript third party library based on jQuery UI which can provides quite advanced functionalities.
-
-One of the main reason to select this component is the possibility to have frozen columns like in Excel and
-which is convenient when displaying the timeline.
-
-It can work with local JavaScript data or remote datasource (using XML or JSON formats), supports sorting, 
-pagination, tree grid / sub grid, cell editing, search within the table, custom formatting...
-
-When using remote datasources, the grid configuration permit to define readers (XML, JSON) to easily interface
-the data format returned by the server. You only specify the path to the different data required by the grid.
-
-### PLI integration
-
-#### How it works
-
-It is used in PLI for the interpreters search results. Given that the grid configuration is depending on the 
-search criteria (period and time unit for the timeline), the search form triggers an Ajax requests which:
-
-- renders the results table with the proper column
-- the server URL for the results table takes as parameters the results page request parameters
-
-As a result, submitting a search triggers 2 HTTP requests, one for rendering the results table and another 
-for feeding the table with JSON data. When navigating using the pager, only one request is sent.
-
-#### Row/cell selection
-
-Row selection is supported by default (even multiple row selection with a checkbox column) and provides 
-row highlighting, API for getting/setting the selection, events... 
-
-The row API works only on the visible grid when using pagination. Keeping the selection across pages has 
-to be handled programmatically (use of the "gridComplete" event to set the selection).
-
-However, cell selection is not fully supported (only events). So cell selection set/get/highlighting has to be handle
-programmatically. Also preventing that a cell selection select / deselect the whole row...
-
-#### Drag and drop
-
-Drag and drop of records from one table to another is also supported by the library but we did not use
-it.
-
-Indeed, DnD is implemented in the interpreters replace / swap view, one picks up an interpreter from results grid
-and drag it to one of the "replace slot". But we changing the search parameters (e.g. modifying the period / unit of 
-the timeline, then the "replace slot" should also be refreshed and the jqGrid DnD is not enough.  
-
-The DnD is then handled programmatically using the jQuery dragable and dropable methods. When dropping, the 
-grid is fetching explicitly the interpreter from the server.
-
-#### Frozen columns
-
-Are simply defined in the column configuration (one flag to set per column and a method to call to enable the freezing).
-Straightforward.
-
-#### Table layout
-
-The jqGrid table is used either with fixed width or adapted to the window width. The last is achieved by binding to the
-grid container's resize event (not the window which cause some perf issue on IE) the resize of the grid.
-
-```javascript
-	// Resize grid to the browser window
-	$('#'+params.slot_id).resize(function() {
-	  $(params.target).setGridWidth($(window).width()-260);
-	}).trigger('resize');
-```
-
-#### Header grouping
-
-One nice feature of jqGrid is to provided header column grouping (one level only). You simply specify for each 
-group of column the start column, the number of column for the group and the group title.
-
-### Example
-
-```javascript
-	$(function(){ 
-	  $("#list").jqGrid({
-		url:'example.php',
-		datatype: 'xml',
-		mtype: 'GET',
-		colNames:['Inv No','Date', 'Amount','Tax','Total','Notes'],
-		colModel :[ 
-		  {name:'invid', index:'invid', width:55}, 
-		  {name:'invdate', index:'invdate', width:90}, 
-		  {name:'amount', index:'amount', width:80, align:'right'}, 
-		  {name:'tax', index:'tax', width:80, align:'right'}, 
-		  {name:'total', index:'total', width:80, align:'right'}, 
-		  {name:'note', index:'note', width:150, sortable:false} 
-		],
-		pager: '#pager',
-		rowNum:10,
-		rowList:[10,20,30],
-		sortname: 'invid',
-		sortorder: 'desc',
-		viewrecords: true,
-		gridview: true,
-		caption: 'My first grid'
-	  }); 
-	}); 
-```
-
-### References  
-
-[Demo](http://trirand.com/blog/jqgrid/jqgrid.html)
-
-API:  
-
-- [options for grid config](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:options)
-- [methods](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:methods)
-- [events](http://www.trirand.com/jqgridwiki/doku.php?id=wiki%3aevents)
 
 ## Spring SpEL
 
@@ -712,13 +598,13 @@ Once you have to use `java.util.Date` intensively you will understand how painfu
 
 Just remove the pain by using Joda Time.
 
-> **Easy to Use**. Calendar makes accessing 'normal' dates difficult, due to the lack of simple methods. Joda-Time has straightforward field accessors such as getYear() or getDayOfWeek().\
-> **Easy to Extend**. The JDK supports multiple calendar systems via subclasses of Calendar. This is clunky, and in practice it is very difficult to write another calendar system. Joda-Time supports multiple calendar systems via a pluggable system based on the Chronology class.\
-> **Comprehensive Feature Set**. The library is intended to provide all the functionality that is required for date-time calculations. It already provides out-of-the-box features, such as support for oddball date formats, which are difficult to replicate with the JDK.\
-> **Up-to-date Time Zone calculations.** The time zone implementation is based on the public tz database, which is updated several times a year. New Joda-Time releases incorporate all changes made to this database. Should the changes be needed earlier, manually updating the zone data is easy.\
-> **Calendar support.** The library currently provides 8 calendar systems. More will be added in the future.\
-> **Easy interoperability.** The library internally uses a millisecond instant which is identical to the JDK and similar to other common time representations. This makes interoperability easy, and Joda-Time comes with out-of-the-box JDK interoperability.\
-> **Better Performance Characteristics.** Calendar has strange performance characteristics as it recalculates fields at unexpected moments. Joda-Time does only the minimal calculation for the field that is being accessed.\
+> - **Easy to Use**. Calendar makes accessing 'normal' dates difficult, due to the lack of simple methods. Joda-Time has straightforward field accessors such as getYear() or getDayOfWeek().\
+> - **Easy to Extend**. The JDK supports multiple calendar systems via subclasses of Calendar. This is clunky, and in practice it is very difficult to write another calendar system. Joda-Time supports multiple calendar systems via a pluggable system based on the Chronology class.\
+> - **Comprehensive Feature Set**. The library is intended to provide all the functionality that is required for date-time calculations. It already provides out-of-the-box features, such as support for oddball date formats, which are difficult to replicate with the JDK.\
+> - **Up-to-date Time Zone calculations.** The time zone implementation is based on the public tz database, which is updated several times a year. New Joda-Time releases incorporate all changes made to this database. Should the changes be needed earlier, manually updating the zone data is easy.\
+> - **Calendar support.** The library currently provides 8 calendar systems. More will be added in the future.\
+> - **Easy interoperability.** The library internally uses a millisecond instant which is identical to the JDK and similar to other common time representations. This makes interoperability easy, and Joda-Time comes with out-of-the-box JDK interoperability.\
+> - **Better Performance Characteristics.** Calendar has strange performance characteristics as it recalculates fields at unexpected moments. Joda-Time does only the minimal calculation for the field that is being accessed.\
 
 Simple and expressive.
 
@@ -764,17 +650,4 @@ Jakarta commons way: [Lazy Map](http://commons.apache.org/proper/commons-collect
  Map<String, Date> lazy = LazyMap.lazyMap(new HashMap<String, Date>(), factory);
  Date date = lazy.get("NOW");
 ```
-
-Big differ
-
-#TODO
-
-
-http://code.google.com/p/spock/wiki/SpockBasics
-
-
-
-
-
-
 

@@ -1,11 +1,9 @@
 ---
 title: "Web view"
 kind: article
-created_at: 2014-06-29 00:00
+created_at: 2013-07-04 00:00
 book: technology_stack
 ---
-
-#Web view
 
 ## HTML
 
@@ -15,7 +13,8 @@ Basic HTML (more precisely JSP) should not be a serious problem. Read examples a
 
 CSS is for formatting HTML. I have to say there is no easy way of learn and master CSS. 
 
-thebest strategy can be start the development some good looking CSS template like [Bootstrap](#bootstrap) and then add your own extension if needed.
+The best strategy can be start the development some good looking CSS template like [Bootstrap](#bootstrap)
+and then add your own extension if needed.
 
 As you are tweaking existing CSS and check the result in Firebug or in chrome development tools you can learn what is the effect of specific changes. 
 
@@ -23,11 +22,9 @@ I have found [Stackoverflow](http://stackoverflow.com/) and [w3schools](http://w
 
 ##JavaScript
 
-JavaScript is not evil. JavaScript is not bad programming language. It is just different. It has it own semantics which make sense to learn as developing. 
+JavaScript is not evil. JavaScript is not a bad programming language. It is just different. It has it own semantics which make sense to learn as developing. 
 
-Rule of thumb: if you are applying the same software development technics as for Java you will got the same level of clear and easy to maintain code as it would be developed in Java.
-
-If you need any material I (Otto) could provide e-books (PDF) which helps to learn JavaScript in details.
+Rule of thumb: __if you are applying the same software development technics as for Java you will got the same level of clear and easy to maintain code as it would be developed in Java__.
 
 [Patterns For Large-Scale JavaScript Application Architecture](http://addyosmani.com/largescalejavascript/)
 is an extramely good artile with lots of usefull references what kind of patterns and practices should be applied to JavaScript based development.
@@ -40,17 +37,18 @@ is an extramely good artile with lots of usefull references what kind of pattern
 
 [JQuery](http://jquery.com/) is framwork which helps to manipulate webpages and develop  browser independent JavaScript applications. Quete complex ui manipulation can be surprisingly easy with JQuery.
 
-It have lots of plugins to extend base functionality.
+It has lots of plugins to extend base functionality.
 
 ##JQuery UI
 
-[JQuery UI](http://jqueryui.com/) framework over [JQuery](#jquery). Provide a consistent, simple and easy to use widget library.
+[JQuery UI](http://jqueryui.com/) framework over [JQuery](#jquery).
+It provides a consistent, simple and easy to use widget library.
 
-It have lots of plugins to extend base functionality.
+It has lots of plugins to extend base functionality.
 
 ##Real MVC
 
-The key to develop easy to maintain web application is to apply the same design patterns as in fat client (Pericles client is not the best example for that).  The key pattern is the MVC, but not the MVC applied in web application but the real, old, traditional, Smalltalk originated MVC.
+The key to develop easy to maintain web application is to apply the same design patterns as in fat client.  The key pattern is the MVC, but not the MVC applied in web application but the real, old, traditional, Smalltalk originated MVC.
 
 In article 
 [MVC Architecture for JavaScript Applications](http://michaux.ca/articles/mvc-architecture-for-javascript-applications)

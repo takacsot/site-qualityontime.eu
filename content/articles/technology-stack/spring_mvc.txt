@@ -1,16 +1,14 @@
 ---
 title: "Spring MVC"
 kind: article
-created_at: 2014-06-29 00:00:00
+created_at: 2013-07-03 00:00:00
 book: technology_stack
 ---
-# Spring MVC 
-
 Version: Spring 3.1
 
 The goal is not to explain how Spring MVC is working because everyone 
 can read. I would like to emphasis certain aspects of the library and 
-best practices 
+best practices.
 
 ## Keep it short 
 
@@ -28,7 +26,7 @@ related functionality.
 
 Spring MVC provide lots of functionality to parse request to business 
 object. There is no any problem parsing simple attributes and populating 
-into objects. But sometimes it is not enough. for example when you want 
+into objects. But sometimes it is not enough. For example when you want 
 to accept Date and times you expect to got `java.util.Data`. In that 
 case you must register custom editor: 
 
@@ -269,7 +267,7 @@ And the main JSP page (call it `application.jsp`)
 Doesn't matter how good you web application is if it is not working in EP environment. 
 Our experience that in EP Internet Explorer settings all EP domains is set up for using Compatibility View (see Tools -> Compatibility View).
 
-In Compatibility View you shine and perfect application
+In Compatibility View you shiny and perfect application
 
 - looks ugly
 - not working because of some mysterious JavaScript errors
@@ -283,7 +281,7 @@ To ensure switching of Compatibility View you have to put one line into the head
 
 ### Keep session alive
 
-HTTP sessions are expiring after a while. That is normal. After session timeout re-authentication is needed. in most cases the default timeout is 30 minutes. If this period is not enough you could extend it by modifying server settings. But it still can be frustrating. 
+HTTP sessions are expiring after a while. That is normal. After session timeout re-authentication is needed. In most cases the default timeout is 30 minutes. If this period is not enough you could extend it by modifying server settings. But it still can be frustrating. 
 
 Solution: ping the server periodically.
 
@@ -384,14 +382,15 @@ But it is still not enough for `JSON`. You musf extend the annotation of ajax me
 	  public String preassign(@RequestParam(value = "data", required = true) String data, ModelMap model) {
 ```
 
-### SEssion scoped object
+### Session scoped object
 
-If you need an always available object in session scope it might be more easy to use Session scoped bean instead of manul session management.
+If you need an always available object in session scope it might be more easy to use Session scoped bean instead of manual session management.
 
 ```java 
 @Component
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Clipboard {
+...
 }
 
 @Controller
@@ -402,5 +401,5 @@ public class NotificationController {
 }
 ```
 
-In the bacground it will create a clipboard proxy instance which will be injetced into controller singleton (one instace always). When in a na actual request the proxy class will take care of which (session level ) instance of target class to use.
+In the bacground it will create a clipboard proxy instance which will be injetced into controller singleton (one instace always). When in a na actual request the proxy class will take care of which (session level) instance of target class to use.
 
