@@ -18,4 +18,5 @@ Nanoc features demonstrated:
 - Custom layout
 - google analytics integration
 - scheduled publication
+- Similar book pages as in Drupal
 

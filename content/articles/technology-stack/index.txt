@@ -3,6 +3,7 @@ title: "Technology stack"
 kind: article
 created_at: 2013-06-30 21:21
 book: technology_stack
+book_page: 0
 ---
 
 Egy prototípus projekt után megkértek, hogy gyűjtsem össze a tapasztalataimat: A használt technológia miért volt jó, mi mindent lehet megvalósítani vele? Ügyfél oldalról a pilot project során milyen pozitív és negatív tapasztalataink voltak. Azaz, amolyan retrospektive, vagy project kiértékelés. Meglepő volt, hiszen életem első olyan esete, mikor hivatalosan is igény volt erre. Más kérdés, hogy csak "házon belül" használtuk.

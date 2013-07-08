@@ -48,6 +48,7 @@ compile '*' do
       filter :erb
 	end
 	lyt = 'default'
+	lyt = 'book' if item[:book]
 	lyt = item[:layout] if item[:layout]  
 	layout lyt
 	filter :relativize_paths, :type => :html
@@ -69,6 +70,9 @@ route '/htaccess/' do
 end
 route '/rss/' do
   '/rss.xml'
+end
+route '/google803f4acc65c5566f/' do
+  '/google803f4acc65c5566f.html'
 end
 
 route '*' do

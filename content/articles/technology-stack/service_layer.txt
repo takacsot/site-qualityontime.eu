@@ -3,6 +3,7 @@ title: "Service layer"
 kind: article
 created_at: 2013-07-02 00:00
 book: technology_stack
+book_page: 2
 ---
 
 
@@ -12,7 +13,7 @@ A service is the **unit of work**. It have both logical and transactional bounda
 
 ## Typical Service configuration
 
-```java
+~~~java
 	@Service
 	@Transactional(rollbackFor = { Exception.class })
 	public class SessionService implements ISessionService {
@@ -20,7 +21,7 @@ A service is the **unit of work**. It have both logical and transactional bounda
 	  @Autowired
 	  private ISessionDao sessionDao;
 	...
-```
+~~~
 
 ## Autowire first
 
@@ -32,44 +33,44 @@ There are multiple way of wiring spring beans together:
 
 You must declare where to search for annotated classes in `spring.xml`:
 
-```xml
+~~~xml
 	<context:component-scan base-package="ep.pericles.dao" />
-```
+~~~
 
 You could declare implementations to be spring managed in spring xml or using annotation.
 
 This will be only a plain bean:
 
-```java
+~~~java
 	@Component
 	public class AssignmentResponseErrWarnFormatter extends ReflectiveVisitor {
-```
+~~~
 
 or Dao:
 
-```java
+~~~java
 	@Repository(value = "PliSessionDao")
 	public class PliSessionDao extends SessionDao implements IPliSessionDao {
-```
+~~~
 
 or Service:
 
-```java
+~~~java
 	@Service
 	@Transactional
 	public class SessionService implements ISessionService {
-```
+~~~
 
 For wiring automatically you can use `@Autowire`
 
-```java
+~~~java
 	 @Autowired
 	  private ISessionDao sessionDao;
 	  @Autowired
 	  private ISessionFinder sessionFinder;
 	  @Autowired
 	  private IInterpreterService interpreterService;
-```
+~~~
 
 For more detail read spring manual.
 
@@ -81,12 +82,12 @@ Operations must have a strict declared transaction management around it.
 
 Finder service are providing readonly functionalities. No transaction management expected to be effect on these services.
 
-```java
+~~~java
 	@Service
 	@Transactional(readOnly = true)
 	public class SessionFinder implements ISessionFinder {
 	...
-```
+~~~
 
 ##Cache
 
@@ -94,14 +95,14 @@ Most of the time it is enough to use declerative cache what Spring(3.1) provides
 
 Declaration is not an issue and has no effect on the code at all:
 
-```java
+~~~java
   @Cacheable("i18n")
   public String text(String code, String lang_iso_code) { ...
-```
+~~~
 
 in the spring xml:
 
-```xml
+~~~xml
 	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
 		<property name="caches">
 			<set>
@@ -111,7 +112,7 @@ in the spring xml:
 			</set>
 		</property>
 	</bean>
-```
+~~~
 
 This XML confign is the simplest solution (mainly for prototype or testing purposes) In production ready code you should use EHcache or something else.
 
@@ -123,14 +124,14 @@ This cache is easy to use and easy to missuse. Bu the problem is not about the c
 
 You might notice that the method call is not cached even if it has the annotation on it. Typical case when the annotated method is called internally. Example:
 
-```java
+~~~java
   @Cacheable(value = "Interpreter")
   public Map<Long, InterpreterDto> getAllInterpretersMap(List<Long> ids) {
   ...
   //within he same class
   ...
   Object x = this.getAllInterpretersMap(asList(1,2,3));
-```
+~~~
 
 In this case the `@Cacheable` annotation is not applied because the cache is build *around* the instance not inside.
 
@@ -151,7 +152,7 @@ The origin of the problem can be related to the default `KeyGenerator`  implemen
 
 Solution: use your own implemenation.
 
-```java
+~~~java
 public class AppKeyGenerator implements KeyGenerator {
   private static Logger log = LoggerFactory.getLogger(AppKeyGenerator.class);
 
@@ -181,14 +182,14 @@ public class AppKeyGenerator implements KeyGenerator {
     }
   }
 }
-```
+~~~
 
 And add to spring xml:
 
-```xml
+~~~xml
 	<cache:annotation-driven key-generator="app_key_generator" />
 	<bean id="app_key_generator" class="ep.pericles.cache.AppKeyGenerator" />
-```
+~~~
 
 #### Use the KEY
 

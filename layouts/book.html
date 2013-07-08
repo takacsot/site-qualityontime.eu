@@ -30,8 +30,17 @@
 		<div id="main" class="span9">
 		  <h1><%= @item[:title] %></h1>
 		  <%= yield %>
+		  <hr/>
+			<% main_b = main_book_page(@item) %>
+			<%=link_to_unless_current(main_b[:title], main_b)%>
+		  <ul>
+		  <% sorted_pages_same_book_but_main(@item).each do |b|%>
+			<li><%=link_to_unless_current(b[:title],b)%></li>
+		  <%end%>
+		  </ul>
+		  <hr/>
 		  <div class="created_at"><%= pretty_time(@item[:created_at]) %></div>
-		  <% if @item[:kind] == 'article' %>
+		  <% if @item[:kind] == "article" %>
 			<%=render "_comments"%>
 		  <% end %>
 		</div>

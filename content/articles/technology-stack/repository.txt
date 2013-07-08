@@ -3,7 +3,7 @@ title: "Data access layer"
 kind: article
 created_at: 2013-07-03 00:00
 book: technology_stack
-
+book_page: 3
 ---
 
 Plain resource related operations. Most of the time these resources are database related ones (hibernate, stored procedure, plain sql) but sometimes it is something else (like accessing a third party service).
@@ -25,7 +25,7 @@ Using spring JDBC template you should not take care of opening and closing resou
 
 Good start to setup a dao:
 
-```java
+~~~java
 	@Repository
 	public class SessionDao extends BaseDaoImpl<PericlesSession, Long> implements ISessionDao {
 	  protected NamedParameterJdbcTemplate namedTemplate;
@@ -39,13 +39,13 @@ Good start to setup a dao:
 		this.jdbcTemplate = new JdbcTemplate(ds);
 	  }
 	}
-```
+~~~
 
 ##Simple JDBC aka plain SQL
 
 Typical example: 
 
-```java
+~~~java
 	  @Override
 	  public List<ServiceAssignmentDto> getServiceAssignments(Long sess_uid) {
 		//@formatter:off
@@ -73,7 +73,7 @@ Typical example:
 			new BeanPropertyRowMapper<ServiceAssignmentDto>(ServiceAssignmentDto.class));
 		return res;
 	  }
-```
+~~~
 
 Steps:
 
@@ -83,7 +83,7 @@ Steps:
 
 Another example:
 
-```java
+~~~java
 	  @Override
 	  public SessionDetail getSessionDetail(Long sess_uid) {
 		return namedTemplate.queryForObject(SQL_getSessionDetail, new MapSqlParameterSource("sess_uid", sess_uid),
@@ -102,7 +102,7 @@ Another example:
 		  return res;
 		}
 	  }
-```
+~~~
 
 If you could not map result by naming convention or you need some additional logic to 
 add the mapping (like conversion, custom mapping)  you could implement you own mapping.
@@ -119,17 +119,17 @@ To have it for sure you must to the following.
 
 In Tomcat, when you are not declaring connection pool implementation the default will be used. the default has the same implementation as `commons-jdbc` but in different packages. To ensure that `commons-jdbc` will be used you must set `factory` in `context.xml`:
 
-```xml
+~~~xml
 	 <Resource name="jdbc/PericlesDataSource" auth="Container"
 				.....
 				  connectionProperties="oracle.jdbc.V8Compatible=true"
 				  factory="org.apache.commons.dbcp.BasicDataSourceFactory"
 				  /> 
-```
+~~~
 
 We have a utility which gets the innermost driver (see `AppDb`):
 
-```java
+~~~java
 	  public static Connection getInnermostDelegate(Connection con){
 		if(con instanceof PoolableConnection){
 		  return ((PoolableConnection)con).getInnermostDelegate();
@@ -142,11 +142,11 @@ We have a utility which gets the innermost driver (see `AppDb`):
 		}
 		return con;
 	  }
-```
+~~~
 
 ### Stored procedure complex example
 
-```java
+~~~java
 	/**
 	 * custom sample oracle script
 	--DELETE AFTER USE
@@ -265,6 +265,6 @@ We have a utility which gets the innermost driver (see `AppDb`):
 		assertEquals(1, res.length);
 	  }
 	}
-```
+~~~
 
 
