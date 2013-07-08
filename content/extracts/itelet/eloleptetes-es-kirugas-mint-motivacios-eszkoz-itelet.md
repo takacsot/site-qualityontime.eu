@@ -5,6 +5,8 @@ created_at: 2012-01-17 10:11:11 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 3
 ---
 Az előléptetés egyszerre
 
@@ -22,8 +24,3 @@ az előléptetéssel egyúttal a vállalati kultúrát is lehet formázni. Első
 
 [Előléptetés és kirúgás, mint motivációs eszköz](http://pasztor.freeblog.hu/archives/2011/12/20/Eloleptetes_es_kirugas_mint_motivacios_eszkoz/)
 
-
-<!--break-->
-
-
-<div class='old-comments'></div>

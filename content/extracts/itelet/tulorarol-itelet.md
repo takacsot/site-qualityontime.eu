@@ -5,7 +5,10 @@ created_at: 2012-03-20 21:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 8
 ---
+
 - Mint a tetejére a koronát, hogy az ajakrúzst a malacra, ahogy a művelt angol mondja.
 - De tényleg kell-e, érdemes-e túlórázni.
 - aki azt mondja, hogy igen. A tulajdonos-vezérigazgató, akinek az élete a cége. A CEO, aki elvált és nincsenek barátai. A kőkemény menedzser, aki kitapossa a beosztottaiból a teljesítményt. Ők azok, akik mindig túlóráznak, és ugyanezt várják el beosztottaiktól.
@@ -18,5 +21,3 @@ tags: extracts
 - Azt terrorral el lehet érni, hogy fizikailag bent legyenek – de érdemi munkavégzés nem fog történni.
 előbb-utóbb lelépnek.
 - Márpedig ha lelépnek, akkor sokkal többet veszít a cég az új kolléga megkeresésével és betanításával, mint amennyit nyer a régi kolléga kifacsarásával.
-
-<div class='old-comments'></div>

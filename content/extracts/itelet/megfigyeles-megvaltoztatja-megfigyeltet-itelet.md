@@ -5,6 +5,8 @@ created_at: 2012-01-19 10:11:11 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 5
 ---
 A menedzsment a problem ticket-ek számát nézi? Akkor jövőre egy sem lesz.
 
@@ -23,7 +25,3 @@ Az igazi trükk a mérésben azonban az, hogy a beosztottak tisztában vannak a 
 És természetesen sosem szabad vakon hinni egy riport-nak. 
 
 [A megfigyelés megváltoztatja a megfigyeltet](http://pasztor.freeblog.hu/archives/2011/12/17/A_megfigyeles_megvaltoztatja_a_megfigyeltet/)
-
-<!--break-->
-
-<div class='old-comments'></div>

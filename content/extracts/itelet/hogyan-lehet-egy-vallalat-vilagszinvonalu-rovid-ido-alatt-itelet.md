@@ -5,6 +5,8 @@ created_at: 2012-04-27 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 10
 ---
 - Az átalakítás tapasztalatait, illetve a mozgatórugóit szeretném most megosztani.
 - Technológia helyett emberek, folyamatok és tudás
@@ -25,5 +27,3 @@ tags: extracts
    2. Supporting: Elindul az új módszer. A munkatársak megkapnak hozzá minden segítséget (oktatás, dokumentáció, felsővezetői segítség). Ha valakinek gondja van, akkor támogatást kap hogy jól tudja csinálni. 
    3. Delegating: A módszert mindenki ismeri és működik. A munkatársak hatalmat kapnak, javaslatokat tehetnek, javíthatnak a folyamaton, jöhetnek az ötletek.
 - Közös alap a közös cél
-
-<div class='old-comments'></div>

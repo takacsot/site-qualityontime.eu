@@ -5,6 +5,8 @@ created_at: 2010-12-07 19:08:04 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 1
 ---
 Még szerencse, hogy [ilyen](http://pasztor.freeblog.hu/archives/2010/12/07/A_tl_sok_irnyvltstl_lelassul_a_haj/) nálunk nem történhet meg :)
 
@@ -15,4 +17,3 @@ Még szerencse, hogy [ilyen](http://pasztor.freeblog.hu/archives/2010/12/07/A_tl
 
 >Függöny
 
-<div class='old-comments'></div>

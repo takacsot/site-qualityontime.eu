@@ -5,15 +5,16 @@ created_at: 2011-10-21 18:32:36 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 4
 ---
+
 - Lehet-e projektet vezetni kívülről?
 - A modern szoftverfejlesztés Mithras kultusza
 - Operations Management
 - Projekt sikertényező: a kudarc mint kockázat
 - Projektvezetés vs piramisépítés 
 - A kapitány prezentációja 
-
-<!--break-->
 
 Lehet-e projektet vezetni kívülről?
 ----

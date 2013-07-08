@@ -95,5 +95,7 @@ DirectoryIndex index.html
   Redirect 301 /articles/szakmai-alázat http://www.qualityontime.eu/articles/szakmai-alazat/
   Redirect 301 /extracts/chapter-4-write-stuff/ http://www.qualityontime.eu/review/code-craft-pete-goodliffe/chapter-4-write-stuff/
   Redirect 301 /extracts/chapter-21-how-long-piece-string-black-art-software-timescale-estimation http://www.qualityontime.eu/review/code-craft-pete-goodliffe/chapter-21-how-long-piece-string-black-art-software-timescale-estimation/
+  Redirect 301 /extracts/hogyan-lehet-egy-vallalat-vilagszinvonalu-rovid-ido-alatt-itelet http://www.qualityontime.eu/extracts/itelet/hogyan-lehet-egy-vallalat-vilagszinvonalu-rovid-ido-alatt-itelet/
+  Redirect 301 /extracts/hogyan-kell-egy-uj-menedzsert-beilleszteni-itelet http://www.qualityontime.eu/extracts/itelet/hogyan-kell-egy-uj-menedzsert-beilleszteni-itelet/
 </IfModule>
 

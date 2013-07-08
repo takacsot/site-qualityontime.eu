@@ -5,6 +5,8 @@ created_at: 2012-03-23 21:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: extracts
+book: itelet
+book_page: 6
 ---
 Az email nem hatékony: 
 
@@ -25,5 +27,3 @@ Nos, ez színtiszta rossz időbeosztás. Time management címszó alatt nagyon j
 A másik oldalról pedig az email nem megszakadás, hanem kommunikáció és információáramlás. Ha a kommunikációs csatorna nem működik megfelelően, akkor ott feltehetőleg a kommunikáció rosszul szervezett.
 
 [Miért nem fog soha eltűnni az email?](http://pasztor.freeblog.hu/archives/2012/02/16/Miert_nem_fog_soha_eltunni_az_email/)
-
-<div class='old-comments'></div>
