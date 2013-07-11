@@ -1,0 +1,45 @@
+---
+book: management-stack
+book_page: 0
+---
+Mindennapi tudás, ami egy IT project management során megtapasztal az ember. 
+
+>Az olvasás az egyetlen rizikómentes tapasztalatszerzés. - [Tonk Emil](<%=item_by_id('/review/tonk-emil-uzleti-patika-1/').path%>)
+
+Már többször észrevettem magamon, hogy nem mindig tudom, hgy mit miért csinálok, miért pont azt a döntés hozom. Abban viszont teljesen biztos vagyook, hogy vagy azért teszem, amit kell, mert tanultam vagy megtapasztaltam (sokszor a saját káromos is). 
+
+Itt az ideje, hogy egy kicsit összeszedjem milyen módszereket és technikákat is alkalmazok szoftver-projectek vezetésekor. Ezek a módszerek garantáltan működnek. Egye mbert tudok, akiknél teljesen beváltak: nálam.
+
+Fontos észben tartani, hogy nem kell vezetőnek lenni ahhoz, hogy bármilyen menedzser módszert alkalmazzon. Rengeteg technika van, ami egyetlen egy emberen (saját magadon) is alkalmazni tudod. Mindent kicsiben kell kezdeni.
+
+
+Első lépés mindenek előtt a tanulás. Menedzser területen igaz az a mondás, hogy van az, ami már túl sok. Nem kell minden könyvet és menedzser blogot elolvasni. Elég ha legfontosabbakra fókuszálsz. Én tényleg rengeteget olvastam és egy idő után már csak ugyan azt ismétlik, vagy más tálalásban adják elő. Mindenkinek megvan a saját kedvenc könyvei. Ime az enyémek:
+
+- [Johanna Rothman: Manage It!](http://moly.hu/ertekelesek/994760)
+- [Johanna Rothman: Behind Closed Doors: Secrets of Great Management](xxx)
+- [Code Craft by Pete Goodliffe](/review/code-craft-pete-goodliffe/)
+- [Mike Cohn: Agile Estimating and Planning]()
+- [Frederick P. Brooks: The mythical man-month]()
+- [Tom DeMarco · Timothy Lister: Peopleware productive projects and team]()
+- http://moly.hu/konyvek/brian-tracy-maximalis-teljesitmeny/tag?user[id]=6093
+- http://moly.hu/konyvek/david-allen-barmire-keszen-52-lepes-a-produktivitashoz/tag?user[id]=6093
+- http://moly.hu/konyvek/david-allen-intezz-el-mindent/tag?user[id]=6093
+- http://moly.hu/konyvek/doubravszky-gyorgy-szabad-pentek/tag?user[id]=6093
+- http://moly.hu/konyvek/florence-littauer-szemelyisegunk-rejtett-tartalekai/tag?user[id]=6093
+- http://moly.hu/konyvek/forgacs-jozsef-a-tarsas-erintkezes-pszichologiaja/tag?user[id]=6093
+- http://moly.hu/konyvek/hyrum-smith-a-sikeres-idogazdalkodas-es-eletvitel-10-termeszettorvenye/tag?user[id]=6093
+- http://moly.hu/konyvek/jez-humble-david-farley-continuous-delivery/tag?user[id]=6093
+- http://moly.hu/konyvek/joel-spolsky-joel-on-software/tag?user[id]=6093
+- http://moly.hu/konyvek/john-c-maxwell-holnapra-vezeto-lehetsz/tag?user[id]=6093
+- http://moly.hu/konyvek/keith-ellis-csodalampa/tag?user[id]=6093
+- http://moly.hu/konyvek/kenneth-blanchard-helyzetfuggo-vezetes/tag?user[id]=6093
+- http://moly.hu/konyvek/kenneth-blanchard-spencer-johnson-az-egyperces-menedzser/tag?user[id]=6093
+- http://moly.hu/konyvek/michael-leboeuf-az-onszervezes-iskolaja/tag?user[id]=6093
+- http://moly.hu/konyvek/mike-cohn-succeeding-with-agile/tag?user[id]=6093
+- http://moly.hu/konyvek/neal-ford-the-productive-programmer/tag?user[id]=6093
+- http://moly.hu/konyvek/nyiri-zoltan-hackl-krisztian-szemelyisegkalauz/tag?user[id]=6093
+- http://moly.hu/konyvek/peter-f-drucker-drucker-minden-napra/tag?user[id]=6093
+- http://moly.hu/konyvek/ray-josephs-idogazdalkodas-vezetoknek/tag?user[id]=6093
+- http://moly.hu/konyvek/roert-lorber-kenneth-blanchard-egyperces-menedzser-a-gyakorlatban/tag?user[id]=6093
+- http://moly.hu/konyvek/stephen-r-covey-a-kiemelkedoen-sikeres-emberek-7-szokasa/tag?user[id]=6093
+- http://moly.hu/konyvek/tonk-emil-uzleti-patika-1/tag?user[id]=6093
