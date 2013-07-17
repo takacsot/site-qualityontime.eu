@@ -1,0 +1,5 @@
+A @ModelAttribute globalli binded to form,
+
+ 
+
+If zou are createing new form object and use it has no effect on the "external" model object. For example you are modifying the search by creteing new Search model . You could aply on business bject but those changes will not be visible in the outside workd (aka web form)

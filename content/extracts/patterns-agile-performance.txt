@@ -1,0 +1,90 @@
+---
+title: "Accelerating Agile: Hyper-performing without the Hype"
+kind: article
+created_at: 2013-07-17 21:00
+author: "takacsot"
+---
+
+### Step 1: Learn the domain
+
+- have domain expert in the team
+- study doing the business
+- practice the business
+
+### Step 2: Prioritse __risky__ over valuable
+
+- actively surface uncertainty
+	- business
+	- technology, platform
+
+> "Where is the dragon?"
+
+### Step 3: Plan as far as you need
+
+- adjust as you learn
+- reset the board (daily? weekly?)
+- review your plannig horizont
+
+Tehát csináld a [rollong wave planninget](http://www.jrothman.com/blog/mpd/2004/05/rolling-wave-planning.html)
+
+### Step 4: Try something __different__
+
+- languages
+- programming styles
+
+### Step 5: Fire, Aim, Ready
+
+- get something (anything) in pront of __user__
+- best __feedback__ is from real life
+- showcases frequently - even daily (evenhalf baked)
+
+Ez igazábül fontosabb, mint a 100% test coverage. Igazából nincs értelme álltalánosan növelni a test coverege-t, amíg a legkockázatosabb (lásd Step 2) részek nem lefedettek rendesen.
+
+Személyes tapasztalatom is hasonló. Soha nem dolgoztam magas test lefedettségű rendszerrel, de olyannal igen, aminek voltak visszatérő komponens problémái (minidg ugyan abban a komponensben jött elő valami gond), amit sikerült teljesen kiküszöbölnöm azzal, hogy azon a komponensen drasztikusan megemeltem a teszt lefedettséget és hogy, hogy nem abbból a komonenstől többet nem szenvedtünk. Pár körben még megcsináltam ugyan ezt pár hasonlóan problémás (és kritikusan fontos) komponenssel, és a rendszer dramatikus mértékben stabilizálódott.
+
+### Step 6: Build small, sparate pieces
+
+- __[DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) is the enemy of [decoupled](http://en.wikipedia.org/wiki/Coupling_%28computer_programming%29)__
+
+Elmesél egy történetet, hogy a csapaténak egyik tagja copy-paste-el dolgozik. Mikor mit. néhol egy adatstruktúrát, néhol egy függvényt. Álltalában azzal kezni, hogy copy és elkezdni módosítani.
+
+És van is értelme, hiszen: __DRY -> sharing responsibility -> coupled__. 
+
+Ez pont az gondolatsor volt, amivel tudat alatt én is sokszor foglalkoztam. sokszor előfordult velem, hogy bizonyos esetekben egyszerően nem éreztem megfelelőnek a kód újrafelhasználást, hanem másolni akartam. Nem tudtam, hogy miből jön ez az érzés. De most már igen.
+
+- share memory by communication
+- don't be afraid of functions ... languages or libraries
+
+Kicsi komponenseket ugyan könnyebb lecserélni, de ehhez eleve ilyen architectúrával kell rendelkezni. Architektúrát nehezebb cserélni.
+
+### Step 7: Deploy _small_, separate pieces
+
+- make component deployment quick
+- make product deployment consistent
+- make components self-describing
+- make environment unsurprising
+- always go forward: ha gond van, akkor javitsd meg gyorsan és telepítsd gyorsan. Soha nem lépj vissza, ne csinálj rollback-et. Ezzel el tudod kerülni az össze rollback-el kapcsolatos problémát.
+
+### Step 8: Prefer _simple_ over _easy_
+
+Nem valami konkrét, de érdemes feltenni pár kérdést. Pár példát felsorolt:
+
+- ha egy szerviszre van szükséged, akkor tényleg egy egész servelt containerre is szükséged van ahelyett, hogy egy teljesen egyszerű kis min webszerverrel dolgozzál a Servlet környezet nélkül.
+
+### Step 9: Make the trade/offs
+
+- build vs buy vs OSS
+- learning framework vs rolling your own
+
+### Step 10: Share the love
+
+- pair programming
+- learning lunches
+- code reviews
+- on-boarding
+
+### Step 11: Be OK with "failure"
+
+- product development not project delivery
+
+[Accelerating Agile: Hyper-performing without the Hype](http://www.infoq.com/presentations/patterns-agile-performance)
