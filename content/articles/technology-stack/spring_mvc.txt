@@ -32,11 +32,13 @@ to accept Date and times you expect to got `java.util.Data`. In that
 case you must register custom editor: 
 
 ~~~java
-	  @InitBinder
-	  protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-	  }
+@InitBinder
+protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+  SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+  binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+  //for specific attribute only
+  binder.registerCustomEditor(Set.class, "place.room_uids" , new CommaDelimitedStringToIntegerEditor());
+}
 ~~~
 
 ## Use the power of naming convention 

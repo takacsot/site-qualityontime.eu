@@ -11,7 +11,7 @@ author: "takacsot"
 - study doing the business
 - practice the business
 
-### Step 2: Prioritse __risky__ over valuable
+### Step 2: Prioritise __risky__ over valuable
 
 - actively surface uncertainty
 	- business

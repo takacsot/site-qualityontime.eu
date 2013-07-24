@@ -121,50 +121,6 @@ In a desktop application it can be very useful.
 	}
 ~~~
 
-## mockito
-
-[mockito](http://code.google.com/p/mockito/)
-
-> Mockito is a mocking framework that tastes really good. It lets you write beautiful tests with clean & simple API.
-
-In practice: Imagine when you want to test a business logic which is relying on database access. Reading from database. to test such a code you need to mock out that part of the system because database behavior can be indeterministic. Mock frameworks are good example for that.
-
-Example use in PLI:
-
-~~~java
-	public class SessionFinderTest {
-	  String username = "SessionFinderTest";
-	  SessionFinder finder;
-	  IPliSessionDao pliSessionDao;
-
-	  @Before
-	  public void before() {
-		finder = new SessionFinder();
-		ReflectionTestUtils.setField(finder, "pliSessionDao", pliSessionDao = mock(IPliSessionDao.class));
-		when(pliSessionDao.searchBy(any(SessionSearchCriteria.class))).thenReturn(
-			asList(SessionDto(1L, 10), SessionDto(2L, 10), SessionDto(3L, 10)));
-		...
-		ListMultimap<Long, DateRange> shifts = ...
-		when(pliSessionDao.findShifts(asList(1L, 2L, 3L))).thenReturn(shifts);
-		...
-		Map<Pair<Long, DateRange>, List<LanguageCoverageInfo>> lci = ....
-		when(pliSessionDao.getLanguageCoverageInformation(username, shifts)).thenReturn(lci);
-	  }
-
-	  @Test
-	  public void testFind() {
-		PagedResult<SessionDto> res = finder.find(username, new SessionSearchCriteria());
-		Assert.assertEquals(10, res.getCounter());
-		Assert.assertEquals(Long.valueOf(1), res.getResult().get(0).getSess_uid());
-		Assert.assertEquals(1, res.getResult().get(0).getLang_coverage_info().size());
-	  }
-	}
-~~~
-
-Advantages:
-
-- full control on mocked out result. It is possible to test such a scenarios which are extremely rare.
-- high speed of execution because we do not need to call a real (in this case database) implementation.
 
 ## Generic hibernate Dao
 
