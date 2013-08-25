@@ -1,0 +1,75 @@
+---
+title: "First Principles of Interaction Design"
+kind: article
+created_at: 2013-08-01  00:00:00
+publish: true
+---
+
+> 
+- Applications should attempt to anticipate the user’s wants and needs.
+- Bring to the user all the information and tools needed for each step of the process.
+- The computer, the interface, and the task environment all "belong" to the user, but user-autonomy doesn’t mean we abandon rules.
+- Adults, too, feel most comfortable in an environment that is neither confining nor infinite, an environment explorable, but not hazardous.
+- Use status mechanisms to keep users aware and informed.
+- Status mechanisms are vital to supplying the information necessary for workers to respond appropriately to changing conditions.
+- Keep status information up to date and within easy view
+- Users should not have to seek out status information.
+they should be able to glance at their work environment and be able to gather at least a first approximation of state and workload.
+- Any time you use color to convey information in the interface, you should also use clear, secondary cues to convey the information to those who won't be experiencing any color coding today.
+- Consistency
+	* Interpretation of user behavior, e. g., shortcut keys maintain their meanings.
+	* Invisible structures.
+	* Small visible structures.
+	* The overall "look" of a single application or service--splash screens, design elements.
+	* A suite of products.
+	* In-house consistency.
+	* Platform-consistency.
+- "Small visible structures" refers to icons, size boxes, scroll arrows, etc. The appearance of such objects needs to be strictly controlled if people are not to spend half their time trying to figure out how to scroll or how to print.
+- Inconsistency: It is just important to be visually inconsistent when things must act differently as it is to be visually consistent when things act the same.
+- The most important consistency is consistency with user expectations.
+- Efficiency of the User 
+- Look at the user's productivity, not the computer's.
+- Keep the user occupied.
+- Since, typically, the highest expense in a business is labor cost. Any time the user must wait for the system to respond before they can proceed, money is being lost.
+- To maximize the efficiency of a business or other organization you must maximize everyone’s efficiency, not just the efficiency of a single group.
+- The great efficiency breakthroughs in software are to be found in the fundamental architecture of the system, not in the surface design of the interface.
+- Write help messages tightly and make them responsive to the problem: good writing pays off big in comprehension and efficiency.
+- Menu and button labels should have the key word(s) first.
+- Give users well-marked roads and landmarks, then let them shift into four-wheel drive.
+- Offer users stable perceptual cues for a sense of "home."
+- Make Actions reversible
+- Always allow "Undo."
+- Always allow a way out.
+- However, make it easier to stay in.
+- The time to acquire a target is a function of the distance to and size of the target.
+- Use large objects for important functions (Big buttons are faster).
+- Human-interface objects are not necessarily the same as objects found in object-oriented systems.
+- Wherever possible, use multi-threading to push latency into the background.
+	* Reduce the user’s experience of latency.
+	* Acknowledge all button clicks by visual or aural feedback within 50 milliseconds.
+	* Display an hourglass for any action that will take from 1/2 to 2 seconds.
+	* Animate the hourglass so they know the system hasn't died.
+	* Display a message indicating the potential length of the wait for any action that will take longer than 2 seconds.
+	* Communicate the actual length through an animated progress indicator.
+	* Offer engaging text messages to users informed and entertained while they are waiting for long processes, such as server saves, to be completed.
+	* Make the client system beep and give a large visual indication upon return from lengthy (>10 seconds) processes, so that users know when to return to using the system.
+	* Trap multiple clicks of the same button or object. Because the Internet is slow, people tend to press the same button repeatedly, causing things to be even slower.
+	* Make it faster
+>
+- Ideally, products would have no learning curve: users would walk up to them for the very first time and achieve instant mastery. 
+- Usability and learnability are not mutually exclusive. First, decide which is the most important; then attack both with vigor. Ease of learning automatically coming at the expense of ease of use is a myth.
+- Ensure that users never lose their work as a result of error on their part
+- Text that must be read should have high contrast. Favor black text on white or pale yellow backgrounds. Avoid gray backgrounds.
+- Use font sizes that are large enough to be readable on standard monitors.
+- Because many of our browser-based products exist in a stateless environment, we have the responsibility to track state as needed.
+- We may need to know:
+	* Whether this is the first time the user has been in the system
+	* Where the user is
+	* Where the user is going
+	* Where the user has been during this session
+	* Where the user was when they left off in the last session
+>
+- Avoid invisible navigation.
+
+
+[AskTog: First Principles of Interaction Design](http://www.asktog.com/basics/firstPrinciples.html)

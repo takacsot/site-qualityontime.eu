@@ -3,6 +3,10 @@ title: "Accelerating Agile: Hyper-performing without the Hype"
 kind: article
 created_at: 2013-07-17 21:00
 author: "takacsot"
+abstract: >
+  Valami value
+  Masik line
+  Harmadik line
 ---
 
 ### Step 1: Learn the domain
@@ -25,7 +29,7 @@ author: "takacsot"
 - reset the board (daily? weekly?)
 - review your plannig horizont
 
-Tehát csináld a [rollong wave planninget](http://www.jrothman.com/blog/mpd/2004/05/rolling-wave-planning.html)
+Tehát csináld a [rolling wave planninget](http://www.jrothman.com/blog/mpd/2004/05/rolling-wave-planning.html)
 
 ### Step 4: Try something __different__
 
@@ -49,6 +53,8 @@ Személyes tapasztalatom is hasonló. Soha nem dolgoztam magas test lefedettség
 Elmesél egy történetet, hogy a csapaténak egyik tagja copy-paste-el dolgozik. Mikor mit. néhol egy adatstruktúrát, néhol egy függvényt. Álltalában azzal kezni, hogy copy és elkezdni módosítani.
 
 És van is értelme, hiszen: __DRY -> sharing responsibility -> coupled__. 
+
+Nagyon érdekes analógiát hoz fel: A természetben mi az ami úgy működik, hogy másol-módosít? A DNS! At ermészet bizony így fejlődik.
 
 Ez pont az gondolatsor volt, amivel tudat alatt én is sokszor foglalkoztam. sokszor előfordult velem, hogy bizonyos esetekben egyszerően nem éreztem megfelelőnek a kód újrafelhasználást, hanem másolni akartam. Nem tudtam, hogy miből jön ez az érzés. De most már igen.
 
