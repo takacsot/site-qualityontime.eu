@@ -19,6 +19,10 @@ def item_by_id(identifier)
   items.find { |item| item.identifier.include? identifier }
 end
 
+def path_by_id(identifier)
+	item_by_id(identifier).path
+end
+
 def item_by_identifier(identifier)
   items ||= @items
   items.find { |item| item.identifier == identifier }
@@ -92,4 +96,13 @@ end
 
 def past_sorted_articles
 	sorted_articles.select{|a| parse_time(a[:created_at]) < Time.new}
+end
+
+def list_non_published
+	puts "Not yet published items"
+	just_now = Time.new
+	non_published_items = items.select { |item| item[:created_at] && attribute_to_time(item[:created_at]) > just_now }
+	non_published_items.each do |it|
+		puts "#{it[:created_at]}: #{it.identifier}"
+	end
 end
