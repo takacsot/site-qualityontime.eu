@@ -8,15 +8,12 @@ tags: articles
 ---
 ##[JNotify](http://jnotify.sourceforge.net/)
 
-<pre class="brush: java"> <code>
-public class JNotifySample {
-  public static void main(String args[]) throws Exception {</code></pre>
 
 Nativ megoldás. Az operációs rendszer értesít a változásokról.
 
 A websiton található sample minimális átirat.
 
-<pre class="brush: java"> 
+~~~java
 public class JNotifySample {
   public static void main(String args[]) throws Exception {
     // path to watch
@@ -69,7 +66,7 @@ public class JNotifySample {
     }
   }
 }
-</pre>
+~~~
 
 Működésének jellemzői:
 
@@ -121,7 +118,8 @@ Konkrétan:
 
 Csupaszítsuk le egy kicsit az alapprogramot:
 
-<pre class="brush: java;toolbar: false;tab-size:2"  >public class JNotifySample2 {
+~~~java
+public class JNotifySample2 {
   public static void main(String args[]) throws Exception {
     String path = "c:/TEMP/notify";
     int mask = JNotify.FILE_CREATED |
@@ -135,11 +133,13 @@ Csupaszítsuk le egy kicsit az alapprogramot:
       Thread.sleep(10000);
     }
   }
-}</pre>
+}
+~~~
 
 És a listenert is készítsük el:
 
-<pre class="brush: java;toolbar: false;tab-size:2"  >package public class JNotifyExecutorListener extends JNotifyAdapter {
+~~~java
+package public class JNotifyExecutorListener extends JNotifyAdapter {
   volatile boolean executing = false;
   static void  p(String s){
     System.out.println(s);
@@ -191,6 +191,5 @@ Csupaszítsuk le egy kicsit az alapprogramot:
       p("command is ready");
     }
   }
-}</pre>
-
-<div class='old-comments'></div>
+}
+~~~

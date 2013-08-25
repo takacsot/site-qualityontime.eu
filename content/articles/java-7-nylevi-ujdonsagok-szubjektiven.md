@@ -18,17 +18,17 @@ Az újítások nem minden aspektusát emelem ki, de annyit igen, hogy érteni le
 [The try-with-resources Statement](http://docs.oracle.com/javase/7/docs/technotes/guides/language/try-with-resources.html)
 =======
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+~~~java
 static String readFirstLineFromFile(String path) throws IOException {
   try (BufferedReader br = new BufferedReader(new FileReader(path))) {
     return br.readLine();
   }
 }
-</pre>
+~~~
 
 equivalent with
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+~~~java
 static String readFirstLineFromFileWithFinallyBlock(String path) throws IOException {
   BufferedReader br = new BufferedReader(new FileReader(path));
   try {
@@ -37,7 +37,7 @@ static String readFirstLineFromFileWithFinallyBlock(String path) throws IOExcept
     if (br != null) br.close();
   }
 }
-</pre>
+~~~
 
 Ezt a szart. 
 
@@ -45,12 +45,12 @@ Tudni kell, hogy a közösség nagyon régóta várta Java-ba bevezetni a closur
 
 És a fenti példa closur-okkal API szintre hozható lett volna
 
-<pre class="brush: scala;toolbar: false;tab-size:2" >
+~~~scala
     withFileIterator(myfilename) {
       line => {
         println(line)
       }
-</pre>
+~~~
 
 A fenti példában nincs [Scala](http://www.scala-lang.org/) foglalt szó. Ebben csak sima függvényhívások vannak. De van closur!
 
@@ -62,12 +62,12 @@ Nagy különbség van API és nyelvi komplexitás növelésben. Mert míg az API
 Handling More Than One Type of Exception
 -----------------
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+~~~java
 catch (IOException|SQLException ex) {
     logger.log(ex);
     throw ex;
 }
-</pre>
+~~~
 
 Nagyon jó, nagyon hasznos. Rájöttek, hogy a java kivételkezelési stratégiája nem a legrugalmasabb. Pontosabban az a gond, hogy checked excpetion-ök vannak garmadával, még akkor is, ha érdemben alig van olyan eset, amikor le lehet kezelni.
 
@@ -82,18 +82,19 @@ Nagyszerű újítás.
 [Binary Literals](http://docs.oracle.com/javase/7/docs/technotes/guides/language/binary-literals.html)
 -----------
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+~~~java
 // A 16-bit 'short' value:
 short aShort = (short)0b1010000101000101;
-</pre>
+~~~
 
 Semleges. A teljes szakmai múltamban nem vettem volna hasznát.
 
 [Underscores in Numeric Literals](http://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html)
 -------------------
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+
+~~~java
 long creditCardNumber = 1234_5678_9012_3456L;
-</pre>
+~~~
 
 Nagyon jó. Hiányozni nem hiányzott, de azért hasznos kis trükk a kód olvashatósága érdekében. 
 
@@ -101,7 +102,7 @@ Nagyon jó. Hiányozni nem hiányzott, de azért hasznos kis trükk a kód olvas
 [Strings in switch Statements](http://docs.oracle.com/javase/7/docs/technotes/guides/language/strings-switch.html)
 ------------
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
+~~~java
 public String getTypeOfDayWithSwitchStatement(String dayOfWeekArg) {
      String typeOfDay;
      switch (dayOfWeekArg) {
@@ -125,17 +126,17 @@ public String getTypeOfDayWithSwitchStatement(String dayOfWeekArg) {
      }
      return typeOfDay;
 }
-</pre>
+~~~
 
 Ideje volt!
 
 [Type Inference for Generic Instance Creation](http://docs.oracle.com/javase/7/docs/technotes/guides/language/type-inference-generic-instance-creation.html)
 --------------
 
-<pre  class="brush: java;toolbar: false;tab-size:2" >
-Map&lt;String, List&lt;String>> myMap = new HashMap&lt;String, List&lt;String>>();
-Map&lt;String, List&lt;String>> myMap = new HashMap&lt;>();
-</pre>
+~~~java
+Map<String, List<String>> myMap = new HashMap<String, List<String>>();
+Map<String, List<String>> myMap = new HashMap<>();
+~~~
 
 Nem vagyok nagy híve a generikusoknak.
 
@@ -153,20 +154,3 @@ Ezt megoldást már a generikusok legelső megvalósításával meg kellett voln
 
 Igazság szerint érteni alig értem, szóval valószínűleg eddig sem zavart.
 
-<!-- event to the end of the fiel -->
-<link href="http://www.qualityontime.eu/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-<script src="http://www.qualityontime.eu/syntax/scripts/shCore.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJScript.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJava.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushRuby.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushScala.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushSql.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushXml.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushPlain.js"></script>
-<script src="http://www.qualityontime.eu/syntax/scripts/shAutoloader.js" type="text/javascript"></script>
-<!-- http://alexgorbatchev.com/SyntaxHighlighter -->
-<script type="text/javascript">
-SyntaxHighlighter.all()
-</script>
-
-<div class='old-comments'></div>

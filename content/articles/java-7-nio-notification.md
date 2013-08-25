@@ -20,7 +20,7 @@ Jellemzője:
 
 Ugyan alapbül nem támogatja, de azért természetesen megoldható. A [WatchDir.java](http://docs.oracle.com/javase/tutorial/essential/io/examples/WatchDir.java) példában következő módon:
 
-<pre class="brush: java;toolbar: false;tab-size:2"  >
+~~~java
     /**
      * Register the given directory with the WatchService
      */
@@ -55,21 +55,9 @@ Ugyan alapbül nem támogatja, de azért természetesen megoldható. A [WatchDir
             }
         });
     }
-</pre>
+~~~
 
 További kapcsolódó linkek:
 
 - [FolderListener for JDK7 – Watch folder events more elegantly.](http://whiteboardjunkie.wordpress.com/2012/01/26/folderlistener-for-jdk7-watch-folder-events-more-elegantly/)
 - [FilesystemAlterationMonitor](http://commons.apache.org/jci/commons-jci-fam/index.html) Talán nem is ezzel megvalósítva, de a teljes képhez az a Apache Commons project is érdekes.
-
-<!-- event to the end of the fiel -->
-<link href="http://www.qualityontime.eu/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-<script src="http://www.qualityontime.eu/syntax/scripts/shCore.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJava.js"></script>
-<script src="http://www.qualityontime.eu/syntax/scripts/shAutoloader.js" type="text/javascript"></script>
-<!-- http://alexgorbatchev.com/SyntaxHighlighter -->
-<script type="text/javascript">
-SyntaxHighlighter.all()
-</script>
-
-<div class='old-comments'></div>

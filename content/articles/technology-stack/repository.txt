@@ -26,19 +26,18 @@ Using spring JDBC template you should not take care of opening and closing resou
 Good start to setup a dao:
 
 ~~~java
-	@Repository
-	public class SessionDao extends BaseDaoImpl<PericlesSession, Long> implements ISessionDao {
-	  protected NamedParameterJdbcTemplate namedTemplate;
-	  protected JdbcTemplate jdbcTemplate;
-	  protected DataSource dataSource;
-
-	  @Autowired
-	  public void setDataSource(DataSource ds) {
-		this.dataSource = ds;
-		this.namedTemplate = new NamedParameterJdbcTemplate(ds);
-		this.jdbcTemplate = new JdbcTemplate(ds);
-	  }
-	}
+@Repository
+public class SessionDao extends BaseDaoImpl<PericlesSession, Long> implements ISessionDao {
+  protected NamedParameterJdbcTemplate namedTemplate;
+  protected JdbcTemplate jdbcTemplate;
+  protected DataSource dataSource;
+  @Autowired
+  public void setDataSource(DataSource ds) {
+	this.dataSource = ds;
+	this.namedTemplate = new NamedParameterJdbcTemplate(ds);
+	this.jdbcTemplate = new JdbcTemplate(ds);
+  }
+}
 ~~~
 
 ##Simple JDBC aka plain SQL
@@ -46,33 +45,33 @@ Good start to setup a dao:
 Typical example: 
 
 ~~~java
-	  @Override
-	  public List<ServiceAssignmentDto> getServiceAssignments(Long sess_uid) {
-		//@formatter:off
-		final String sql =
-		  "        SELECT "+ 
-		  "        SA.SOURCE_UID as lang_uid, "+ 
-		  "        SA.START_DATE,  "+
-		  "        SA.END_DATE,  "+
-		  "        SA.SRAS_UID as service_assignment_uid, "+ 
-		  "        SA.ASST_ASST_UID as assignment_status_uid,  "+
-		  "        SA.TOWN_TOWN_UID as town_TOWN_UID,  "+
-		  "        SA.INST_INST_UID as inst_inst_uid,  "+
-		  "        li.SERL_UID request_line_uid,  "+
-		  "        li.REST_REST_UID as request_status_uid, "+
-		  "        S.SESS_UID,  "+
-		  "        ss.comments "+
-		  "      FROM Service_Request_Line Li, Sessions_Service SS, Sessions S, SERVICE_ASSIGNMENTS SA "+
-		  "      WHERE Li.Sese_sese_uid=ss.Sese_uid "+
-		  "      AND Ss.sess_sess_uid  = s.sess_uid "+
-		  "      AND LI.SERL_UID       =SA.SERL_SERL_UID "+
-		  "      AND SS.SETY_SETY_UID  =1 "+
-		  "      and s.sess_uid = :sess_uid ";
-		  //@formatter:on
-		List<ServiceAssignmentDto> res = namedTemplate.query(sql, ImmutableMap.of("sess_uid", sess_uid),
-			new BeanPropertyRowMapper<ServiceAssignmentDto>(ServiceAssignmentDto.class));
-		return res;
-	  }
+@Override
+public List<ServiceAssignmentDto> getServiceAssignments(Long sess_uid) {
+	//@formatter:off
+	final String sql =
+	  "        SELECT "+ 
+	  "        SA.SOURCE_UID as lang_uid, "+ 
+	  "        SA.START_DATE,  "+
+	  "        SA.END_DATE,  "+
+	  "        SA.SRAS_UID as service_assignment_uid, "+ 
+	  "        SA.ASST_ASST_UID as assignment_status_uid,  "+
+	  "        SA.TOWN_TOWN_UID as town_TOWN_UID,  "+
+	  "        SA.INST_INST_UID as inst_inst_uid,  "+
+	  "        li.SERL_UID request_line_uid,  "+
+	  "        li.REST_REST_UID as request_status_uid, "+
+	  "        S.SESS_UID,  "+
+	  "        ss.comments "+
+	  "      FROM Service_Request_Line Li, Sessions_Service SS, Sessions S, SERVICE_ASSIGNMENTS SA "+
+	  "      WHERE Li.Sese_sese_uid=ss.Sese_uid "+
+	  "      AND Ss.sess_sess_uid  = s.sess_uid "+
+	  "      AND LI.SERL_UID       =SA.SERL_SERL_UID "+
+	  "      AND SS.SETY_SETY_UID  =1 "+
+	  "      and s.sess_uid = :sess_uid ";
+	  //@formatter:on
+	List<ServiceAssignmentDto> res = namedTemplate.query(sql, ImmutableMap.of("sess_uid", sess_uid),
+		new BeanPropertyRowMapper<ServiceAssignmentDto>(ServiceAssignmentDto.class));
+	return res;
+}
 ~~~
 
 Steps:
@@ -84,24 +83,24 @@ Steps:
 Another example:
 
 ~~~java
-	  @Override
-	  public SessionDetail getSessionDetail(Long sess_uid) {
-		return namedTemplate.queryForObject(SQL_getSessionDetail, new MapSqlParameterSource("sess_uid", sess_uid),
-			new SessionDetailMapper());
-	  }
-	  private class SessionDetailMapper implements RowMapper<SessionDetail> {
-		@Override
-		public SessionDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
-		  SessionDetail res = new SessionDetail();
-		  res.setSess_uid(rs.getLong("sess_uid"));
-		  res.setSession_number(rs.getString("session_number"));
-		  res.setTitle(AppStrings.replace_simple("{} ({} {})", i18n.text(rs.getString("sc_title"), "EN"),
-			  formatIfNotNull(res.getMeeting_start_date(), "dd/MM/yyyy HH:mm"),
-			  formatIfNotNull(res.getMeeting_end_date(), "dd/MM/yyyy HH:mm")));
-		  ...
-		  return res;
-		}
-	  }
+@Override
+public SessionDetail getSessionDetail(Long sess_uid) {
+	return namedTemplate.queryForObject(SQL_getSessionDetail, new MapSqlParameterSource("sess_uid", sess_uid),
+		new SessionDetailMapper());
+}
+private class SessionDetailMapper implements RowMapper<SessionDetail> {
+	@Override
+	public SessionDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
+	  SessionDetail res = new SessionDetail();
+	  res.setSess_uid(rs.getLong("sess_uid"));
+	  res.setSession_number(rs.getString("session_number"));
+	  res.setTitle(AppStrings.replace_simple("{} ({} {})", i18n.text(rs.getString("sc_title"), "EN"),
+	  formatIfNotNull(res.getMeeting_start_date(), "dd/MM/yyyy HH:mm"),
+	  formatIfNotNull(res.getMeeting_end_date(), "dd/MM/yyyy HH:mm")));
+	  ...
+	  return res;
+	}
+}
 ~~~
 
 If you could not map result by naming convention or you need some additional logic to 
@@ -120,28 +119,172 @@ To have it for sure you must to the following.
 In Tomcat, when you are not declaring connection pool implementation the default will be used. the default has the same implementation as `commons-jdbc` but in different packages. To ensure that `commons-jdbc` will be used you must set `factory` in `context.xml`:
 
 ~~~xml
-	 <Resource name="jdbc/PericlesDataSource" auth="Container"
-				.....
-				  connectionProperties="oracle.jdbc.V8Compatible=true"
-				  factory="org.apache.commons.dbcp.BasicDataSourceFactory"
-				  /> 
+<Resource name="jdbc/PericlesDataSource" auth="Container"
+.....
+  connectionProperties="oracle.jdbc.V8Compatible=true"
+  factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+/> 
 ~~~
 
-We have a utility which gets the innermost driver (see `AppDb`):
+We have a utility which gets the innermost driver ([many thanks](http://svn.codehaus.org/geoserver/branches/2.1.x/src/main/src/main/java/org/geoserver/data/jdbc/SpringUnWrapper.java)): 
 
 ~~~java
-	  public static Connection getInnermostDelegate(Connection con){
-		if(con instanceof PoolableConnection){
-		  return ((PoolableConnection)con).getInnermostDelegate();
-		}
-		else if(con instanceof DelegatingConnection){
-		  return ((DelegatingConnection)con).getInnermostDelegate();
-		}
-		else{
-		  log.error("Unhandled connection pool type: {}", con.getClass());
-		}
-		return con;
-	  }
+
+/* Copyright (c) 2001 - 2007 TOPP - www.openplans.org. All rights reserved.
+ * This code is licensed under the GPL 2.0 license, availible at the root
+ * application directory.
+ */
+package org.geoserver.data.jdbc;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import org.geotools.data.jdbc.datasource.UnWrapper;
+import org.springframework.jdbc.support.nativejdbc.C3P0NativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.JBossNativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.Jdbc4NativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.NativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.WebLogicNativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.WebSphereNativeJdbcExtractor;
+import org.springframework.jdbc.support.nativejdbc.XAPoolNativeJdbcExtractor;
+
+/**
+ * Wires up the rich set of Spring native connection and statements un-wrappers to the
+ * GeoTools UnWrapper API, whose model is different (they assume you know in advance
+ * which un-wrapper you'll need, each un-wrapper works only in the environment it was
+ * designed for)
+ * @author Andrea Aime - OpenGeo
+ */
+public class SpringUnWrapper implements UnWrapper {
+    
+    static final List<NativeJdbcExtractor> EXTRACTORS;
+    
+    static {
+        List<NativeJdbcExtractor> extractors = new ArrayList<NativeJdbcExtractor>();
+        
+        // some of these extractors will just blow up during initialization if
+        // the environment does not contain the classes they are looking for, so we
+        // guard their initialization and just skip them 
+        try {
+            extractors.add(new CommonsDbcpNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new JBossNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new Jdbc4NativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new SimpleNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new WebLogicNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new WebSphereNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new XAPoolNativeJdbcExtractor());
+        } catch(Throwable e) {};
+        try {
+            extractors.add(new C3P0NativeJdbcExtractor());
+        } catch(Throwable e) {};
+        
+        // use a concurrent enabled data structure so that we can modify
+        // the order of extractors at run time, in a way that the extractors
+        // that can actually do the work end up first (the code is executed in
+        // tight loops over features and handling over and over exceptions is expensive)
+        EXTRACTORS = new CopyOnWriteArrayList<NativeJdbcExtractor>(extractors);
+    }
+    
+
+    public boolean canUnwrap(Connection conn) {
+        Connection unwrapped = unwrapInternal(conn);
+        return unwrapped != null;
+    }
+
+    public Connection unwrap(Connection conn) {
+        Connection unwrapped = unwrapInternal(conn);
+        if(unwrapped != null)
+            return unwrapped;
+        else
+            throw new IllegalArgumentException("This connection is not unwrappable, " +
+                        "check canUnwrap before calling unwrap");
+    }
+
+    private Connection unwrapInternal(Connection conn) {
+        for (int i = 0; i < EXTRACTORS.size(); i++) {
+            NativeJdbcExtractor extractor = EXTRACTORS.get(i);
+            try {
+                // the contract is that the original connection is returned
+                // if unwrapping was not possible
+                Connection unwrapped = extractor.getNativeConnection(conn);
+                
+                if(conn != unwrapped) {
+                    if(i != 0) {
+                        // move the extractor to the top, so that we don't do
+                        // many useless attempts at unwrapping with the others
+                        // (this code is typically executed for each feature)
+                        EXTRACTORS.add(0, extractor);
+                        EXTRACTORS.remove(i);
+                    }
+                    return unwrapped;
+                }
+            } catch(Throwable t) {
+                // catch a throwable since some of the unwrappers do not blow up
+                // during initialization when the enviroment does not help, but
+                // they do at unwrap time and they throw Error suclasses
+                // We just want to skip the unwrapper and move on
+            }
+        }
+        return null;
+    }
+    
+    public boolean canUnwrap(Statement st) {
+        Statement unwrapped = unwrapInternal(st);
+        return unwrapped != null;
+    }
+
+    public Statement unwrap(Statement statement) {
+        Statement unwrapped = unwrapInternal(statement);
+        if(unwrapped != null)
+            return unwrapped;
+        else
+            throw new IllegalArgumentException("This statement is not unwrappable, " +
+                "check canUnwrap before calling unwrap");
+    }
+    
+    private Statement unwrapInternal(Statement st) {
+        for (int i = 0; i < EXTRACTORS.size(); i++) {
+            NativeJdbcExtractor extractor = EXTRACTORS.get(i);
+            try {
+                // the contract is that the original connection is returned
+                // if unwrapping was not possible
+                Statement unwrapped = extractor.getNativeStatement(st);
+                if(st != unwrapped) {
+                    if(i != 0) {
+                        // move the extractor to the beginning, so that we don't do
+                        // many useless attempts at unwrapping with the others
+                        // (this code is typically executed for each feature)
+                        EXTRACTORS.add(0, extractor);
+                        EXTRACTORS.remove(i);
+                    }
+                    
+                    return unwrapped;
+                }
+            } catch(SQLException e) {
+                // no problem, skip it
+            }
+        }
+        return null;
+    }
+}
 ~~~
 
 ### Stored procedure complex example

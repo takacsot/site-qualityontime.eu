@@ -1,0 +1,205 @@
+---
+title: "radiocheckbox JQuery plugin"
+kind: article
+created_at: 2013-08-24 15:00:00
+abstract: >
+   Uncheckable radio button. JQuery plugin.
+---
+
+For short: Uncheckable radio button.
+
+## Background
+
+Representing boolean values in HTML form is simple. Everyone is using checkboxes for that. Until a client has a need of representing the a "third" value (e.g.: making decision of yes or no or no decision). In that situation the radiobutton is the proper solution. But radiobutton has one major disadvantages: it cannot be unchecked.
+
+## Usage
+
+~~~html
+<script type="text/javascript">
+$().ready(function() {
+  $('.test').radiocheckbox({
+    defaultValue : 2,
+    domainValues : [ {
+      label : 'No',
+      value : 0
+      }, {
+      label : 'Yes',
+      value : 1
+      } ]
+  });
+});
+</script>
+<span class="test" data-value="0" data-name="fieldName1"></span>
+<hr />
+<span class="test" data-value="1" data-name="fieldName2"></span>
+<hr />
+<span class="test" data-value="2" data-name="fieldName3"></span>
+~~~
+
+## Source
+
+~~~javascript
+;(function($, window, document, undefined) {
+  // Create the defaults once
+  var pluginName = "radiocheckbox", defaults = {
+    propertyName : "value"
+  };
+
+  // The actual plugin constructor
+  function Plugin(element, options) {
+    this.element = element;
+    this.options = $.extend({}, defaults, options);
+
+    this._defaults = defaults;
+    this._name = pluginName;
+    this._id_counter = 0;
+
+    this.init();
+  }
+
+  Plugin.prototype = {
+    init : function() {
+      var initial_value = $(this.element).data('value');
+      var base = this;
+      var field_name = $(this.element).data('name');
+      var id_default = this.generate_id(field_name);
+      var items = [];
+      _.each(base.options['domainValues'] ,function(d, index, list){
+        var id_c = base.generate_id(field_name);
+        items.push('<label><input id="' + id_c + '" type="checkbox" name="' + field_name + '" value="'+d.value+'" '
+            + base.checked(initial_value, d.value) + '></input>'+d.label+'</label>');
+      });
+      items.push('<input id="' + id_default + '" type="hidden" name="' + field_name + '" value="2"></input>');
+      $(items.join('')).appendTo($(base.element));
+
+      //`.change` or `.click`
+      $('input', $(base.element)).change(function(e) {
+        var current_checkbox = this;
+        if(!$(current_checkbox).prop('checked')){
+          return true;
+        }
+        var others_checked = !$(current_checkbox).prop('checked');
+        $(':checkbox', $(base.element)).each(function() {
+          if (this !== current_checkbox) {
+            $(this).prop('checked', others_checked);
+          }
+        });
+      });
+    },
+
+    checked : function(currentVal, domainVal) {
+      if (currentVal === domainVal) {
+        return 'checked';
+      }
+      return '';
+    },
+    generate_id : function(prefix) {
+      return prefix + (this._id_counter++);
+    }
+  };
+
+  $.fn[pluginName] = function(options) {
+    return this.each(function() {
+      if (!$.data(this, "plugin_" + pluginName)) {
+        $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+      }
+    });
+  };
+
+})(jQuery, window, document);
+~~~
+
+
+
+## Demo
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script type="text/javascript">
+;(function($, window, document, undefined) {
+  // Create the defaults once
+  var pluginName = "radiocheckbox", defaults = {
+    propertyName : "value"
+  };
+
+  // The actual plugin constructor
+  function Plugin(element, options) {
+    this.element = element;
+    this.options = $.extend({}, defaults, options);
+
+    this._defaults = defaults;
+    this._name = pluginName;
+    this._id_counter = 0;
+
+    this.init();
+  }
+
+  Plugin.prototype = {
+    init : function() {
+      var initial_value = $(this.element).data('value');
+      var base = this;
+      var field_name = $(this.element).data('name');
+      var id_default = this.generate_id(field_name);
+      var items = [];
+      _.each(base.options['domainValues'] ,function(d, index, list){
+        var id_c = base.generate_id(field_name);
+        items.push('<label><input id="' + id_c + '" type="checkbox" name="' + field_name + '" value="'+d.value+'" '
+            + base.checked(initial_value, d.value) + '></input>'+d.label+'</label>');
+      });
+      items.push('<input id="' + id_default + '" type="hidden" name="' + field_name + '" value="2"></input>');
+      $(items.join('')).appendTo($(base.element));
+
+      //`.change` or `.click`
+      $('input', $(base.element)).change(function(e) {
+        var current_checkbox = this;
+        if(!$(current_checkbox).prop('checked')){
+          return true;
+        }
+        var others_checked = !$(current_checkbox).prop('checked');
+        $(':checkbox', $(base.element)).each(function() {
+          if (this !== current_checkbox) {
+            $(this).prop('checked', others_checked);
+          }
+        });
+      });
+    },
+
+    checked : function(currentVal, domainVal) {
+      if (currentVal === domainVal) {
+        return 'checked';
+      }
+      return '';
+    },
+    generate_id : function(prefix) {
+      return prefix + (this._id_counter++);
+    }
+  };
+
+  $.fn[pluginName] = function(options) {
+    return this.each(function() {
+      if (!$.data(this, "plugin_" + pluginName)) {
+        $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+      }
+    });
+  };
+
+})(jQuery, window, document);
+
+$().ready(function() {
+  $('.test').radiocheckbox({
+    defaultValue : 2,
+    domainValues : [ {
+      label : 'No',
+      value : 0
+      }, {
+      label : 'Yes',
+      value : 1
+      } ]
+  });
+});
+</script>
+<span class="test" data-value="0" data-name="fieldName1"></span>
+<hr />
+<span class="test" data-value="1" data-name="fieldName2"></span>
+<hr />
+<span class="test" data-value="2" data-name="fieldName3"></span>

@@ -9,8 +9,3 @@ tags: articles
 Ebben sorozatban elmesélem kálváriámat a különböző file és directory watcher-ekkel. Mire is használhatóak és hogyan is kell őket használni. Hogyan implementálhatsz saját magadnak egy testreszabottat.
 
 
-
-
-
-
-<div class='old-comments'></div>

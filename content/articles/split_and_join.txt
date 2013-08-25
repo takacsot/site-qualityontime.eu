@@ -1,0 +1,42 @@
+---
+title: "Split and Join"
+kind: article
+created_at: 2013-07-29 19:12:21
+---
+
+Avagy funkcionális örömök java-ban.
+
+Néha előfordul, hogy egy SQL IN close részébe eszeveszett méretű adatot akarok átadni. De azért mindig vannak technikai limitek. Ekkor jön jó az "oszd meg és uralkodj" megoldások.
+
+~~~java
+public static <T> List<T> split_and_join (Collection<Long> ids, int max, Function<Collection<Long>, List<T>> op) {
+    if (ids.size() > max) {
+      Iterable<T> init = ImmutableList.of();
+      for (List<Long> partIds : Iterables. partition(ids, max)) {
+        init = Iterables.concat(init, op.apply(partIds));
+      }
+      return ImmutableList.copyOf(init);
+    }
+    return op.apply(ids);
+}
+~~~
+
+Example usage:
+
+~~~java
+public List<BoothDto> getBooths(Collection<Long> sess_uids) {
+    //@formatter:off
+    final String sql =
+      "        SELECT * "+
+      "      FROM  "+
+      "        SERVICE_ASSIGNMENTS sras "+
+      "      WHERE sras.sess_sess_uid in (:sess_uids) ";
+      //@formatter:on
+    return SplitAndJoin. split_and_join(sess_uids, IN_CLOSE_MAX, new Function<Collection<Long>, List<BoothDto>>() {
+      public List<BoothDto> apply(Collection<Long> input) {
+        return namedTemplate .query(sql, ImmutableMap.of ("sess_uids" , input),
+            new BeanPropertyRowMapper<BoothDto>(BoothDto.class));
+      }
+    });
+}
+~~~

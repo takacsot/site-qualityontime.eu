@@ -8,12 +8,12 @@ tags: articles
 ---
 ## Disabling Current Page Links:
 
-<pre class="brush: css;"  >
+~~~css
  a {
        pointer-events: none;
        cursor: default;
 }
-</pre>
+~~~
 
 ## Indenting block of text
 
@@ -30,15 +30,3 @@ your text here
 your text here
 </div>
 </pre>
-
-<!-- event to the end of the fiel -->
-<link href="http://www.qualityontime.eu/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-<script src="http://www.qualityontime.eu/syntax/scripts/shCore.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushCss.js"></script>
-<script src="http://www.qualityontime.eu/syntax/scripts/shAutoloader.js" type="text/javascript"></script>
-<!-- http://alexgorbatchev.com/SyntaxHighlighter -->
-<script type="text/javascript">
-SyntaxHighlighter.all()
-</script>
-
-<div class='old-comments'></div>

@@ -1,0 +1,44 @@
+---
+title: "Szegény ember BDD-je"
+kind: article
+created_at: 2013-07-26 07:00:00
+publish: true
+---
+
+Kicsit komolyabban megismerkedtem [Cucumber](http://cukes.info/) [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) rendszerrel. Pontosabban elolvastam egy igen érdekes könyvet. És most már tudom miért fontos, hogy a _teszt inkább olvasható legyen, mint könnyen írható_.
+
+Azelőtt nem tudtam mi is az a [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development). Most már csak majdnem nem tudom.
+
+Kicsit összesűritve és emiatt leegyszerűsítve: Építsd fel a tesztjeidet a GIVEN-WHEN-THEN struktúra alapján, ami egy __könnyen olvasható__ tesztesetet ad. Neked "csak" az implementációt kell mellé tenned. Ezáltal úgynevezet "executable specification"-t kapunk, ami kéz a kézben jár "[Specification by Example](http://en.wikipedia.org/wiki/Specification_by_example)"-vel ( [könyv is van róla](<%=path_by_id('/non-fiction-2013-q1/')%>) ).
+
+Iskolapéldának a [Cucumber](http://cukes.info/)-t hozzák fel, mint az egyik legjobb implementációt. Java implementáció is létezik!
+
+De azért nem kell nagyon elszálni. Magának a [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) tesztnek a felépítésében nincs semmi különleges. A struktúrát (GIVEN-WHEN-THEN) követni kell minden teszt esetében. Az igazi váltás a szemléletben van. Végre egy módszer, kiemel egy igen fontos szempontot:
+
+> __A tesztnek elsősorban olvashatónak kell lennie__ a könnyen írhatóság helyett.
+
+Gondolj bele milyen sok pénzt lehet elkölteni úgynevezett teszt autómatizáló toolokra. De azok a toolok leginkább a record-replay kategóriába tartoznak.
+
+Ha esetleg kedvet kaptál, akkor azért nem kell nagyon messzire menned. Nem kell minden áron [Cucumber](http://cukes.info/)-t használnod. Elég ha csak a teszted belső struktúráját alakítod át egy kicsit. 
+
+A következő példa teljesen hagyomás [JUnit](http://junit.org/)-ban íródott.
+
+~~~java
+@Test
+public void user_field_empty() throws Exception {
+    given_empty_user_id();
+    given_user_text("otto");
+    when_validate();
+    then_got_error_message("User is mandatory");
+}
+// metódus implementációk...
+~~~
+
+Miért is jó:
+
+- a teszt könnyen olvasható. Nincs tele "low-level" kóddal. Természetesen minden alacsonyszintű implementáció megtalálható a teszt osztályban, de nem a konkrét teszt metódusban.
+- első ránézésre halvány lila gőzünk sincs, hogyan van implementálva (ami most jó, hiszen "decoupling"). Lehetséges, hogy egy service layer szintű dolgot tesztelünk, vagy egy UI-t tekerünk meg (pl) Seleniummal.
+- Ugyan azt az alap-tesztet újra tudjuk használni (lásd előző pont service vs UI layer).
+- Ha változik az implementáció, akkor csak a kiszolgáló metódusokat kell újraimplementálni. Maga a teszt változatlan marad.
+
+Hát nem nagyszerű!

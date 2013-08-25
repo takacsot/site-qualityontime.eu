@@ -10,5 +10,3 @@ Miért java-val kezdem?
 
 Egyrészt ebben van a legnagyobb tapasztalatom. Másrészt ha ez megvan, akkor megvan minden olyan nyelvben is, amit kedvelek (Ruby/JRuby, Scala) egy jó kis wrapper API-val.
 
-
-<div class='old-comments'></div>

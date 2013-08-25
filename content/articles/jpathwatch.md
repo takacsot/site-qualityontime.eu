@@ -10,7 +10,8 @@ tags: articles
 
 Példaprogram a következő:
 
-<pre class="brush: java;toolbar: false;tab-size:2">public class JPathwatchSample {
+~~~java
+public class JPathwatchSample {
 
   public static void main(String[] args) throws Exception {
     WatchService watchService = FileSystems.getDefault().newWatchService();
@@ -88,7 +89,7 @@ Példaprogram a következő:
     }
   }
 }
-</pre>
+~~~
 
 Jellemzői:
 
@@ -153,7 +154,7 @@ Az én kis problémámra a következő implementációt hoztam össze.
 
 Másodjára implementálva a megoldást kiderül, hogy a JNotify esetén mely kódrészleteket tudom újra felhasználni. A JNotify-ban megismert BatchExecutor nagyon jól ki lehet emelni. A szemafor váltogatást interfész mögé teszem és már egy csomó mindent nem kell újra megírnom. 
 
-<pre class="brush: java;toolbar: false;tab-size:2"  >
+~~~java
 public interface IWorkerSemafor {
   public void working();
   public void notWorking();
@@ -187,11 +188,12 @@ class BatchExecutor implements Runnable {
     }
   }
 }
-</pre>
+~~~
 
 És a következő egyszerű kódot írtam, hogy meghajthassam a funkcionalitást:
 
-<pre class="brush: java;toolbar: false;tab-size:2"  >public class JPathwatchSample2 {
+~~~java
+public class JPathwatchSample2 {
 
   public static void main(String[] args) throws Exception {
     Thread watcherT = new Thread(watcher);
@@ -264,18 +266,6 @@ class BatchExecutor implements Runnable {
       workerRunning = false;
     }
   };
-}</pre>
+}
+~~~
 
-
-<!-- event to the end of the fiel -->
-<link href="http://www.qualityontime.eu/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-<script src="http://www.qualityontime.eu/syntax/scripts/shCore.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJava.js"></script>
-<script src="http://www.qualityontime.eu/syntax/scripts/shAutoloader.js" type="text/javascript"></script>
-<!-- http://alexgorbatchev.com/SyntaxHighlighter -->
-<script type="text/javascript">
-SyntaxHighlighter.all()
-</script>
-
-
-<div class='old-comments'></div>

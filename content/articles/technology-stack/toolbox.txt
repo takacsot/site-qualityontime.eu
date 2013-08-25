@@ -429,58 +429,6 @@ Underscore.js has utility called [template](http://underscorejs.org/#template).
 	Jaml.render('simple');
 ~~~
 
-## QUnit - JavaScript unit test
-
-[QUnit](http://qunitjs.com)
-
-Setup unit test page:
-
-~~~html
-	<link rel="stylesheet" href="../assets/unittest/qunit.css">
-	<script src="../assets/unittest/qunit.js"></script>
-	<script src="../assets/jquery/js/jquery-1.8.2.js"></script>
-	<script src="../assets/underscore/js/underscore.js"></script>
-	<script src="../assets/amplify/js/amplify.js"></script>
-	<script src="../assets/app/js/message-bus.js"></script>
-	<script src="../assets/app/js/booth.js"></script>
-	<script src="../assets/app/js/session.js"></script>
-	<script src="test.js"></script>
-	</head>
-	<body>
-	  <div id="qunit"></div>
-	  <div id="qunit-fixture">test markup</div>
-	</body>
-~~~
-
-Then write unit test in JavaScript
-
-~~~javascript
-	test("hello test", function() {
-	  ok(1 == "1", "Passed!");
-	});
-
-	// before this you need som setup code - see documentation
-	test('booth.findInterpByAssignmentLineUid not found', function() {
-	  var interp = booth.findInterpByAssignmentLineUid(-1);
-	  ok(_.isNull(interp));
-	});
-
-	test('booth.findInterpByAssignmentLineUid found', function() {
-	  var interp = booth.findInterpByAssignmentLineUid(1);
-	  ok(interp);
-	  equal('should find',interp.name);
-	});
-~~~
-
-EP Eclipse distribution prevent us installing plugins which can help to run these test in Eclipse while developing.
-
-But there are solutions:
-
-1. open the `test.html` in the browser.
-2. User browser plugin or some kind of bookmarklet to automatically refresh page
-3. Write `test.js`
-4. After saving file the result will be reflected in the browser after the next refresh.
-
 
 ## Spring SpEL
 
@@ -527,6 +475,8 @@ Of course [Spring expressions](http://static.springsource.org/spring/docs/3.1.0.
 
 ## Logging
 
+### slf4j
+
 Use slf4j only. And in the bacground you could still use log4j configs as before.
 
 Do you need asingle reason why using slf4j?
@@ -545,6 +495,36 @@ After:
 log.debug("Some text {} and other to log", something);
 ~~~
 
+### Trick to optimize
+
+Although slf4j is really effective and optimized not to call `toString` unnecceseraly. It is still not enough. Sometimes the loggable object generation is as consuming as calling `toString`.
+
+Try the following trick:
+
+~~~java
+// The important part
+log.debug("{}",new Object(){
+	public String toString(){
+		return Iterables.transform(col, BeanFieldValueExtractor.byField("interesting"))
+	}
+}); 
+
+...
+//This is not so relevant just helps understanding the previous block
+public class BeanFieldValueExtractor<T> implements Function<Object, T> {
+  private final String attr;
+  //... constructor omited
+  public T apply(Object input) {
+    return (T) ReflectionUtil.getField(input, attr);
+  }
+  public static <T> BeanFieldValueExtractor<T> byField(String attr) {
+    return new BeanFieldValueExtractor<T>(attr);
+  }
+} 
+~~~
+
+So we are replacing an expensive operation by a cheap object creation.
+
 ## JodaTime
 
 [Joda Time](http://joda-time.sourceforge.net/)
@@ -555,13 +535,13 @@ Once you have to use `java.util.Date` intensively you will understand how painfu
 
 Just remove the pain by using Joda Time.
 
-> - **Easy to Use**. Calendar makes accessing 'normal' dates difficult, due to the lack of simple methods. Joda-Time has straightforward field accessors such as getYear() or getDayOfWeek().\
-> - **Easy to Extend**. The JDK supports multiple calendar systems via subclasses of Calendar. This is clunky, and in practice it is very difficult to write another calendar system. Joda-Time supports multiple calendar systems via a pluggable system based on the Chronology class.\
-> - **Comprehensive Feature Set**. The library is intended to provide all the functionality that is required for date-time calculations. It already provides out-of-the-box features, such as support for oddball date formats, which are difficult to replicate with the JDK.\
-> - **Up-to-date Time Zone calculations.** The time zone implementation is based on the public tz database, which is updated several times a year. New Joda-Time releases incorporate all changes made to this database. Should the changes be needed earlier, manually updating the zone data is easy.\
-> - **Calendar support.** The library currently provides 8 calendar systems. More will be added in the future.\
-> - **Easy interoperability.** The library internally uses a millisecond instant which is identical to the JDK and similar to other common time representations. This makes interoperability easy, and Joda-Time comes with out-of-the-box JDK interoperability.\
-> - **Better Performance Characteristics.** Calendar has strange performance characteristics as it recalculates fields at unexpected moments. Joda-Time does only the minimal calculation for the field that is being accessed.\
+> - **Easy to Use**. Calendar makes accessing 'normal' dates difficult, due to the lack of simple methods. Joda-Time has straightforward field accessors such as `getYear()` or `getDayOfWeek()`.
+> - **Easy to Extend**. The JDK supports multiple calendar systems via subclasses of Calendar. This is clunky, and in practice it is very difficult to write another calendar system. Joda-Time supports multiple calendar systems via a pluggable system based on the Chronology class.
+> - **Comprehensive Feature Set**. The library is intended to provide all the functionality that is required for date-time calculations. It already provides out-of-the-box features, such as support for oddball date formats, which are difficult to replicate with the JDK.
+> - **Up-to-date Time Zone calculations.** The time zone implementation is based on the public tz database, which is updated several times a year. New Joda-Time releases incorporate all changes made to this database. Should the changes be needed earlier, manually updating the zone data is easy.
+> - **Calendar support.** The library currently provides 8 calendar systems. More will be added in the future.
+> - **Easy interoperability.** The library internally uses a millisecond instant which is identical to the JDK and similar to other common time representations. This makes interoperability easy, and Joda-Time comes with out-of-the-box JDK interoperability.
+> - **Better Performance Characteristics.** Calendar has strange performance characteristics as it recalculates fields at unexpected moments. Joda-Time does only the minimal calculation for the field that is being accessed.
 
 Simple and expressive.
 
@@ -576,7 +556,7 @@ Simple and expressive.
 
 It is possible to use in hibernate mapping:
 
-~~~{.java}
+~~~java
 @Column
 @Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
 private DateTime fromDate;

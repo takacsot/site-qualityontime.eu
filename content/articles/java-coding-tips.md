@@ -69,4 +69,3 @@ class="kw">throws</span> Exception {
 dataSource);
     }</code></pre>
 
-<div class='old-comments'></div>

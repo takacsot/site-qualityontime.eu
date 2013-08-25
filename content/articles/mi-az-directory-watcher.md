@@ -20,10 +20,10 @@ De ha elkezdem a kidolgozását, akkor már konkrétan Markdown állományokkal 
 
 Általában Pandoc-ot használok (bár legutolsó verzióban a pdf generálás már csak LaTeX-en keresztül valósul meg :( ). Általában a következő batch file-t csinálom meg hozzá:
 
-<pre  class="brush: plain;toolbar: false;tab-size:2" >
+~~~bat
 del result.html
 pandoc *.txt -s -o result.html
-</pre>
+~~~
 
 Azaz:
 
@@ -91,19 +91,3 @@ Két stratégia van egy ilyen alkalmazás elkészítésére:
 
 De lássuk a medvét, hogy mire is jutottam.
   
-<!-- event to the end of the fiel -->
-<link href="http://www.qualityontime.eu/syntax/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-<script src="http://www.qualityontime.eu/syntax/scripts/shCore.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJScript.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushJava.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushRuby.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushScala.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushSql.js"></script>
-<script type="text/javascript" src="http://www.qualityontime.eu/syntax/scripts/shBrushPlain.js"></script>
-<script src="http://www.qualityontime.eu/syntax/scripts/shAutoloader.js" type="text/javascript"></script>
-<!-- http://alexgorbatchev.com/SyntaxHighlighter -->
-<script type="text/javascript">
-SyntaxHighlighter.all()
-</script>
-
-<div class='old-comments'></div>
