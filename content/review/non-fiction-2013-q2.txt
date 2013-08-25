@@ -1,22 +1,138 @@
 ---
-title: "xxxx"
-kind: page
-publish: false
+title: "Non-finction 2013 q2"
+kind: article
+publish: true
+create_at: 2013-08-25 18:00:00
 ---
 
-ugyan a cím alapján a második negyedéves nem szórakoztató irodalmi olvasmányaimról lenne szó, de valójában nem követem az üzleti negyedév szabályait. Egyszerűen ez csak a második kör.
+Ugyan a cím alapján a második negyedéves nem szórakoztató irodalmi olvasmányaimról lenne szó, de valójában nem követem az üzleti negyedév szabályait. Egyszerűen ez csak a második kör.
 
-##
-##
-##
-##
-##
-##
+## Cenzúrázott egészség 
+
+[![Cenzúrázott egészség](http://moly.hu/system/covers/normal/covers_12356.jpg)](http://moly.hu/konyvek/dr-lenkei-gabor-cenzurazott-egeszseg)
+
+Ha az összeesküvés elmélet részét nem nézzük, akkor nagyon jó és hasznos könyv.
+
+## AntiPatterns
+
+[![AntiPatterns - Refactoring Software, Architectures, and Projects in Crisis](http://moly.hu/system/covers/normal/covers_246542.jpg)](http://moly.hu/konyvek/william-j-brown-raphael-c-malveau-hays-w-skip-mccormick-thomas-j-mowbray-antipatterns)
+
+Ugyan nehezen indult, de a közepétől már kiemelkedően jó lett. Alapmű kategória, hogy tudd mi mindent kell elkerülnöd szoftverfejlesztés során. 
+
+Körülbelül ugyan ezeket az antipatterneket találod meg a [http://sourcemaking.com/ -on is](http://sourcemaking.com/antipatterns)
+
+## Akka Essentials
+
+[![Akka Essentials](http://moly.hu/system/covers/normal/covers_229693.jpg)](http://moly.hu/konyvek/munish-k-gupta-akka-essentials)
+
+Ugyan be nem fejeztem, de azt kell mondanom, hogy nagyon jó eszközrendszer. A félbehagyás oka, hogy ez egy nagyon referencia könyv. Emiatt már unalmassá vált később, de már ismerem a témát és fogom tudni mihez nyúljak később.
+
+## Growing Object-Oriented Software Guided by Tests
+
+[![Growing Object-Oriented Software Guided by Tests](http://moly.hu/system/covers/normal/covers_249110.jpg?1367601411)](http://moly.hu/konyvek/steve-freeman-nat-pryce-growing-object-oriented-software-guided-by-tests)
+
+Azért olvastam el, mert az Infoq-n vagy youtube-on valami előadó azt mondta, hogy ez a ma kapható legjobb könyv szoftverfejlesztés témakörében. Na ez azért erős túlzás volt.
+
+A címe alapján sok architektúra vagy design témát vártam és egy kevés tesztelést. De természetesen tévedtem. Sokkal inkább TDD volt a téma, mint bármi más. Sőt sokszor olyan érzésem volt, mintha egy JMock reklámkiadványt olvasnák.
+
+A második részt leszámítva csak ajánlani tudom. Egészében véve jó, de határozottan túlzó, hogy a legjobb lenne.
+
+Egyszerűen csak jó.
+
+## Testable JavaScript
+
+[![Testable JavaScript](http://moly.hu/system/covers/normal/covers_249535.jpg)](http://moly.hu/konyvek/mark-ethan-trostler-testable-javascript)
+
+Minden, ami JavaScript teszteléssel kapcsolatos lehet. Minden témát megkapirgál. De attól még unalmas és kevéssé mély. Az haszna az, hogy tényleg sok mindent érint:
+
+– unit test
+
+– integrációs teszt
+
+– performance
+
+– loadtest
+
+– automatizálás
 
 
------
+## Cucumber Recipes
 
-## Babasyekció
+[![Cucumber Recipes](http://moly.hu/system/covers/normal/covers_259120.jpg)](http://moly.hu/konyvek/ian-dees-matt-wynne-aslak-hellesoy-cucumber-recipes)
+
+Ugyan nem ismerem mélyebben a Cucumber eszközrendszert, de már megvan a „feeling”. Itt az ideje egy konkrét bevezető szintű könyvet keresnem.
+
+Rájöttem, hogy [fontosabb a könnyen olvashatóság, mint könnyen írhatóság](<%=item_by_id('szegeny-ember-BDD').path%>).
+
+## Working Effectively with Legacy Code
+
+[![Working Effectively with Legacy Code](http://moly.hu/system/covers/normal/covers_164538.jpg)](http://moly.hu/konyvek/michael-feathers-working-effectively-with-legacy-code)
+
+__Természetesen alapmű.__
+
+A sok pozitív mellett egyetlen negatív dolgot találtam, azok pedig a példák. Akár hányszor konkrét program szerepelt, mindig a Refactoring to Patterns példái jutottak eszembe. De ez a normális, hiszen minden refactoring célja, hogy design patternek irányába vigye el a kódot.
+
+További vélemények:
+
+-  [http://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code](http://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code)
+- [http://jeremybytes.blogspot.com/2013/02/book-review-working-effectively-with.html](http://jeremybytes.blogspot.com/2013/02/book-review-working-effectively-with.html)
+- [http://news.slashdot.org/story/08/09/29/1328206/working-effectively-with-legacy-code](http://news.slashdot.org/story/08/09/29/1328206/working-effectively-with-legacy-code)
+- [http://ayende.com/blog/627/book-review-working-effectively-with-legacy-code](http://ayende.com/blog/627/book-review-working-effectively-with-legacy-code)
+- [http://ljcbookclub.wordpress.com/2011/11/04/working-effectively-with-legacy-code/](http://ljcbookclub.wordpress.com/2011/11/04/working-effectively-with-legacy-code/)
+
+
+## xUnit Test Patterns – Refactoring Test Code
+
+[![xUnit Test Patterns – Refactoring Test Code](http://moly.hu/system/covers/normal/covers_88199.jpg)](http://moly.hu/konyvek/gerard-meszaros-xunit-test-patterns-refactoring-test-code)
+
+Ugyancsak __alapmű__.
+
+Zseniálisan mindenre tesztelési kérdésre választ adó könyv. És nem technológia specifikus. Semleges, emiatt mondható alapműnek mindenki számára. 
+
+__Legjobb könyv tesztelés témájában.__
+
+- [http://blog.codehangover.com/book-review-xunit-test-patterns/(http://blog.codehangover.com/book-review-xunit-test-patterns/)
+- [http://www.makinggoodsoftware.com/2009/08/16/book-review-xunit-test-patterns/](http://www.makinggoodsoftware.com/2009/08/16/book-review-xunit-test-patterns/)
+- [http://www.goodreads.com/book/show/337302.Xunit_Test_Patterns](http://www.goodreads.com/book/show/337302.Xunit_Test_Patterns)
+
+## Pattern-Oriented Software Architecture For Dummies
+
+[![Pattern-Oriented Software Architecture For Dummies](http://moly.hu/system/covers/normal/covers_263857.jpg)](http://moly.hu/konyvek/robert-hanmer-pattern-oriented-software-architecture-for-dummies)
+
+Tényleg csak hülyéknek való. Max 20% érdemes gondolat. A többi szemétre való.
+
+De abban a 20%-van benne volt egy nagyon hasznos is: Építsd fel a saját pattern katalógusodat. Utólag azt mondom, hogy [már meg is kezdtem](<%=item_by_id("/articles/technology-stack/").path%>).
+
+## JavaScript Unit Testing
+
+[![JavaScript Unit Testing](http://moly.hu/system/covers/normal/covers_263856.jpg)](http://moly.hu/konyvek/hazem-saleh-javascript-unit-testing)
+
+Legfontosabb JavaScript teszt keretrendszerek bemutatása ugyan azon a példán keresztül.
+
+## Effective Unit Testing 
+
+[![Effective Unit Testing ](http://moly.hu/system/covers/normal/covers_263854.jpg)](http://moly.hu/konyvek/lasse-koskela-effective-unit-testing)
+
+Majdnem __alapmű__.
+
+Olyan, mintha a Working effectively with lagacy code illetve az xUnit test pattern könyvet kicsit összekevernéd és Java környezetbe helyeznéd. 
+
+Ha az említett két könyvet már magadévá tetted, akkor ez nem kell. Ha csak ezt a könyvet dolgoztad fel, akkor még maradtak fehér foltok, hiszen a másik két könyv olyan eseteket is feldolgoz, amik Java  környezetben fel sem merülnek, vagy nem úgy működnek (mint pl C++ esetében).
+
+De önmagában egy nagyszerű könyv.
+
+## Refactoring to Patterns
+
+[![Refactoring to Patterns](http://moly.hu/system/covers/normal/covers_263853.jpg)](http://moly.hu/konyvek/joshua-kerievsky-refactoring-to-patterns)
+
+Újraolvasás. 
+
+O, igen. Nagyon szép és nagyon jó kiadvány. 
+
+Természetesen __alapmű__.
+
+
+## Babaszekció
 
 Mivel megszületett első lányom lelkesen fel is készültem könyvekből is:
 
@@ -24,7 +140,7 @@ Mivel megszületett első lányom lelkesen fel is készültem könyvekből is:
 
 [![Terheskönyv kispapáknak](http://moly.hu/system/covers/big/covers_144136.jpg)](http://moly.hu/konyvek/frank-mungeam-terheskonyv-kispapaknak)
 
-Belbecs: tartalmilag semmi lényegi más terheskönyvhöz képest. Persze férfi oldaról. De a tényleges férfi okulásos részek bármilyen asszony felhasználói kézikönyvben benne vannak. Humorilag is igen jó.
+Belbecs: tartalmilag semmi lényegi más terheskönyvhöz képest. Persze férfi oldalról. De a tényleges férfi okulásos részek bármilyen asszony felhasználói kézikönyvben benne vannak. Humorilag is igen jó.
 
 Külcsín: hangoskönyv.
 1. Fejezetek közötti zongorafutamok az agyamra mentek.
@@ -36,9 +152,12 @@ Külcsín: hangoskönyv.
 
 Villámgyors, mert nagyon rövid. De hasznosnak tűnnek a tanácsok. Igazából csak pár jó tipp, mint tényleges mély olvasnivaló.
 
-###
-###
+### Babamasszázs
 
--------
+[![Babamasszázs](http://moly.hu/system/covers/normal/covers_44778.jpg)](http://moly.hu/konyvek/barbara-ahr-babamasszazs)
 
-Teljes olvasmánylistám
+Jónak tűnik. Na majd ki is próbálom, amint lehet. :)
+
+
+
+[Minden könyvem 2013-ban](http://moly.hu/tagok/takacsot/olvasasok?year=2013)
