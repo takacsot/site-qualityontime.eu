@@ -1,0 +1,21 @@
+	<script type="text/javascript" src="/assets/js/jquery-snippet-min.js"></script> 
+	<link rel="stylesheet" href="/assets/css/jquery-snippet-min.css">
+	<script type="text/javascript" >
+	$().ready(function(){
+		$('pre code').each(function(){
+			var lang = $(this).attr('class').replace('language-', '');
+			var content = $(this).text();
+			var par = $(this).parent();
+			/*
+			Need to replace CODE block with the pure content because 
+			nippet plugin does not supports CODE block but PRE.
+			*/
+			$(par).text(content);
+			try{
+				$(par).snippet(lang,{style:"ide-eclipse"});
+			}catch(err){
+				console.log(err);
+			}
+		});
+	});
+	</script>
