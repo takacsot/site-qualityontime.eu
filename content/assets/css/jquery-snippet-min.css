@@ -29,7 +29,7 @@ box-shadow: 2px 2px 5px #000;
 .snippet-wrap .snippet-num {margin:1em 0 1em 1em; padding-left:3em;}
 .snippet-wrap .snippet-num li {list-style:decimal-leading-zero outside none;}
 .snippet-wrap .snippet-no-num li.box {padding:0 6px; margin-left:-6px;}
-.snippet-wrap .snippet-num li.box {border:1px solid; list-style-position:inside; margin-left:-3em; padding-left:6px;}
+.snippet-wrap .snippet-num li.box {border:1px solid; list-style-position:inside; margin-left:-2.5em; padding-left:6px;}
 *:first-child+html .snippet-wrap .snippet-num li.box {margin-left:-2.4em;}
 * html .snippet-wrap .snippet-num li.box {margin-left:-2.4em;}
 .snippet-wrap li.box-top {border-width:1px 1px 0 !important;}

@@ -13,6 +13,7 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 preprocess do
+  list_hidden_items
   list_non_published
   items.delete_if { |item| item[:publish] == false }
   items.delete_if { |item| item[:created_at] && attribute_to_time(item[:created_at]) > Time.new}

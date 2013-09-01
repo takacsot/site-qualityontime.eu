@@ -1,0 +1,48 @@
+---
+title: "Nanoc tips: syntax highlight"
+kind: article
+created_at: 2013-08-30 00:00:00
+---
+
+Az én nanoc-om kramdown-t használ markdown konvertálásra. Az valami ehhez hasonló módon generálja ki a forráskód példákat:
+
+~~~html
+<pre>
+  <code class="language-html">
+  ...
+~~~
+
+De ez még majdnem semmi. Max egy szép kódblockot kapunk.
+
+Több JavaScript alapú highlighter kipróbálása után a [Snippet](http://www.steamdev.com/snippet/)-vel sikerült az igényeimnek megfelelő megoldást találnom.
+
+A következő html fregmentet illesztettem minden oldal header részébe (persze installációs leírás után...):
+
+~~~html
+<script type="text/javascript" src="/assets/js/jquery-snippet-min.js"></script> 
+<link rel="stylesheet" href="/assets/css/jquery-snippet-min.css">
+~~~
+
+A végére pedig:
+
+~~~javascript
+<script type="text/javascript" >
+$().ready(function(){
+	$('pre code').each(function(){
+		var lang = $(this).attr('class').replace('language-', '');
+		var content = $(this).text();
+		var par = $(this).parent();
+		/*
+		Need to replace CODE block with the pure content because 
+		nippet plugin does not support CODE block but PRE only.
+		*/
+		$(par).text(content);
+		try{
+			$(par).snippet(lang,{style:"ide-eclipse"});
+		}catch(err){
+			console.log(err);
+		}
+	});
+});
+</script>
+~~~

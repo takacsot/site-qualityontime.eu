@@ -1,0 +1,418 @@
+---
+title: "Difficult to test example refactoring"
+kind: article
+created_at: 2013-09-01 08:00:00
+book: technology_stack
+book_page: 101
+---
+
+
+Together with my college we have identified some extremely difficult to test code. It was challenging but we succeeded to make it testable and as a side effect it become a better code.
+
+> __Rules:__
+> 
+> - __Separate command and query methods. Query is the method which is reading state. Command is altering system state.__
+> - __If a method has side effect (see command) then it should be part of an object (never static method)__
+> - __Output of static method must be relying on input parameters only (real function)__
+
+Function to test:
+
+
+~~~java
+/**
+  * called before the associated job has been executed to check whether a lock
+  * file is present that indicates that another extraction request has not completed yet
+  * @param context
+  * @param jobException
+  */
+public static boolean isExtractionInProgress(Properties props, String pJobName, boolean pCreateLockFile) {
+  boolean debug = log.isDebugEnabled();
+  boolean isExtractionInProgress = true; // block by default
+
+  try {
+    if (props!=null) {
+      String lock_file_name = props.getProperty(pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY);
+
+      if (lock_file_name == null) {
+        log.error("No job level lock file name found, key used: " + pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY);
+      } else {
+        String sys_base_path = PropertyManager.getInstance(true).getBasePath();
+
+        if (debug)
+           log.debug("lock_file_name: " + lock_file_name);
+        File lockFile = new File(sys_base_path + lock_file_name);
+        if (lockFile.exists()) {
+           if (debug)
+              log.debug("lock file exists: extraction already in progress");
+        } else {
+           if (debug)
+             log.debug("lock file does not exist");
+
+           if (pCreateLockFile) {
+               if (lockFile.createNewFile()) {
+                  if (debug)
+                    log.debug("Created lock file");
+                  } else {
+                    log.error("Can not create job lock file");
+                  }
+               }
+               isExtractionInProgress = false;
+           }
+        }
+    } else {
+       log.error("Can not check lock file: no props found");
+    }
+  }
+  catch (Exception ex) {
+    log.error("Can not update job completed 'flag' file", ex);
+  }
+  return isExtractionInProgress;
+}
+~~~
+{:data-box="12,15,18,23,31,42,46"}
+
+Goal:
+
+- Write unit test which able to test all major cases of this function. It is not a goal to fix potentially incorrect behavior. It is a legacy system and the client code is relying on the behavior.
+
+What are the problems?
+
+- __code layout__: as you can see all major activity is behind several `if` close. I personally prefer shortcut evaluation because it makes code more readable. (line 12, 15, 23)
+- certain __edge cases__ cannot be test because it is logged only. (e.g.: line 42, 46)
+- __false name__: although method name (and javadoc comments too) is describing behavior as a query function it is not really that. At line 31 it is modifying system state by creating file.
+- __hardcoded non replaceable dependency__: at line 18 is using some kind of singleton object to read some data. 
+
+As it is visible it is extremely difficult to test as something standalone, without any "safe" refactoring. Safe refactoring means that has IDE support and simple enough to have minimal risk of altering behavior.
+
+Test cases intend to write:
+
+- input validation: although there is no significant input validation and it is not even expected (returning true if any of the input is not valid enough) i would like to handle them explicitly)
+- what happening when lock file exists
+- what happening when there is no lock file
+- testing file system security issues (non readable folder, etc)
+
+As I have mentioned before it is extremely difficult to test so I have done it in multiple iteration to explain each step and provide justification too.
+
+### Iteration 1: minimal test of major failer and success cases.
+
+
+
+And a little bit refactored method:
+
+~~~java
+  public static boolean isExtractionInProgress(Properties props, 
+		String pJobName, boolean pCreateLockFile) {
+    return isExtractionInProgress(props, pJobName, pCreateLockFile, PropertyManager.getInstance(true));
+  }
+
+  public static boolean isExtractionInProgress(Properties props, 
+		String pJobName, boolean pCreateLockFile, PropertyManager propertyManager) {
+    boolean isExtractionInProgress = true;
+    try {
+      Preconditions.checkNotNull(propertyManager);
+      isExtractionInProgress_paramCheck(props, pJobName);
+    } catch (Exception e) {
+      log.error(e.getMessage(), e);
+      return isExtractionInProgress;
+    }
+    final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+    final String lock_file_name = props.getProperty(key);
+    final String sys_base_path = propertyManager.getBasePath();
+    File lockFile = new File(sys_base_path + lock_file_name);
+    try {
+      if (lockFile.exists()) {
+        return isExtractionInProgress;
+      }
+      if (pCreateLockFile) {
+        lockFile.createNewFile())
+      }
+      isExtractionInProgress = false;
+    } catch (Exception ex) {;}
+    return isExtractionInProgress;
+  }
+
+  static void isExtractionInProgress_paramCheck(Properties props, String pJobName) {
+    if (null == props) {
+      throw new NullPointerException("Can not check lock file: no props found");
+    }
+    final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+    if (!props.containsKey(key) || null == props.getProperty(key)) {
+      throw new NullPointerException(
+		"No job level lock file name found, key used: " + 
+		pJobName + 
+		PericlesJobScheduler.LOCK_FILE_NAME_KEY);
+    }
+  }
+~~~
+{:data-box="3,6,9-15,21"}
+
+Changes:
+
+- the hardcoded dependency is extracted to a an input parameter. the original method is kept and delegating all the parameter to the new method plus the previously hardcoded dependency. Lines 3 and 6.
+- Lines 9-15: As in the original implementation input validation cannot be checked clearly (more precisely, not clearly separated from other reasons producing the same output).  I have extracted input validation method (for me it is a save refactoring) and finally i have tested the new method (`isExtractionInProgress_paramCheck`) instead.
+- changed code structure to use shortcuts instead of indented `if closes. Example: line 21
+- to make it more readable: eliminated logging. has no functional value but in the original implementation i have kept as before.
+
+Lets see test cases
+
+~~~java
+public class JobUtils_isExtractionInProgress_Test {
+  Properties prop;
+  PropertyManager propertyManager;
+  File rootDir;
+  File lockFile;
+  String newLockFileName = "newLockfile.txt";
+
+  @Before
+  public void setup() throws Exception {
+    prop = new Properties();
+    rootDir = createTempDirectory();
+    lockFile = new File(rootDir, "testLockFile.txt");
+    lockFile.createNewFile();
+    propertyManager = mock(PropertyManager.class);
+  }
+
+  @After
+  public void teardown() throws Exception {
+    lockFile.delete();
+    new File(rootDir, newLockFileName).delete();
+    rootDir.delete();
+
+  }
+
+  public static File createTempDirectory() throws IOException {
+    final File temp;
+    temp = File.createTempFile("temp", Long.toString(System.nanoTime()));
+    if (!(temp.delete())) {
+      throw new IOException("Could not delete temp file: " + temp.getAbsolutePath());
+    }
+    if (!(temp.mkdir())) {
+      throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
+    }
+    return (temp);
+  }
+
+ @Test
+  public void no_property() {
+    new AssertThrows(NullPointerException.class) {
+      @Override
+      public void test() throws Exception {
+        isExtractionInProgress_paramCheck(null, null);
+      }
+    }.runTest();
+  }
+
+  @Test
+  public void inpropert_job_name() throws Exception {
+    new AssertThrows(NullPointerException.class) {
+      @Override
+      public void test() throws Exception {
+        isExtractionInProgress_paramCheck(prop, null);
+      }
+    }.runTest();
+  }
+
+  @Test
+  public void lock_exists() throws Exception {
+    prop.setProperty("nullJobLockFileNameKey", lockFile.getName());
+    when(propertyManager.getBasePath()).thenReturn(rootDir.getAbsolutePath() + File.separator);
+    assertTrue(isExtractionInProgress(prop, null, false, propertyManager));
+  }
+
+  @Test
+  public void lock_not_exists() throws Exception {
+    prop.setProperty("nullJobLockFileNameKey", newLockFileName);
+    when(propertyManager.getBasePath()).thenReturn(rootDir.getAbsolutePath() + File.separator);
+    assertFalse(isExtractionInProgress(prop, null, false, propertyManager));
+  }
+}
+~~~
+{:data-box="25,38,60,67"}
+
+Changes:
+
+- created: there were no test case for that
+- As the method is working on files and folders it make sense to simulate needed environment.
+- Temp folder creation a little bit tricky but not so difficult. line 25.
+- input validation is made against the new create input validation function. e.g. line 38.
+- dependent object is mocked out (by Mockito). Line 60, 67.
+
+In this structure  it is not really possible to improve testability. To be able to test file system security option I need full control on `File` creation.
+
+### Iteration 2: Make it object
+
+~~~java
+  public static boolean isExtractionInProgress(Properties props, String pJobName, boolean pCreateLockFile, PropertyManager propertyManager) {
+    return new FileLocking(props, pJobName, pCreateLockFile, propertyManager).isExtractionInProgress();
+  }
+
+  static class FileLocking {
+    private final Properties props;
+    private final String pJobName;
+    private final boolean pCreateLockFile;
+    private final PropertyManager propertyManager;
+
+    public FileLocking(Properties props, String pJobName, boolean pCreateLockFile, PropertyManager propertyManager) {
+      super();
+      this.props = props;
+      this.pJobName = pJobName;
+      this.pCreateLockFile = pCreateLockFile;
+      this.propertyManager = propertyManager;
+    }
+
+    public boolean isExtractionInProgress() {
+      isExtractionInProgress_paramCheck();
+      Preconditions.checkNotNull(propertyManager);
+      boolean isExtractionInProgress = true; // block by default
+      final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+      final String lock_file_name = props.getProperty(key);
+      final String sys_base_path = propertyManager.getBasePath();
+      final File lockFile = new File(sys_base_path + lock_file_name);
+      try {
+        if (lockFile.exists()) {
+          return isExtractionInProgress;
+        }
+        if (pCreateLockFile) {
+          if (lockFile.createNewFile()) {}else {}
+        }
+        isExtractionInProgress = false;
+      } catch (Exception ex) {
+      }
+      return isExtractionInProgress;
+    }
+
+    void isExtractionInProgress_paramCheck() {
+      if (null == props) {
+        throw new NullPointerException("Can not check lock file: no props found");
+      }
+      final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+      if (!props.containsKey(key) || null == props.getProperty(key)) {
+        throw new NullPointerException("No job level lock file name found, key used: " + pJobName
+            + PericlesJobScheduler.LOCK_FILE_NAME_KEY);
+      }
+    }
+  }
+~~~
+{:data-box="11"}
+
+As the whole functionality is about locking and implemented through file system I have moved the method into a new class `FileLocking` and converted static method into an instance one. Applied the changes on the unit test too, so from no the `FileLocking` instance is tested.
+
+I have implemented parameter passing ans constructor call so parameter become field of `FileLocking`. Other option would be to have no instance fields and all parameters would be passed to instance method (full delegate). Which option to choose is really up to you and the context.
+
+### Iteration 3: testing file system security
+
+~~~java
+public static boolean isExtractionInProgress(Properties props, String pJobName, boolean pCreateLockFile, PropertyManager propertyManager) {
+    try {
+      return new FileLocking(props, pJobName, pCreateLockFile, propertyManager).checkLockOrCreate();
+    } catch (Exception e) {
+      log.error(e, e);
+      return true;//??? !!!! ???
+    }
+  }
+
+  static class FileLocking {
+    private final Properties props;
+    private final String pJobName;
+    private final boolean pCreateLockFile;
+    private final PropertyManager propertyManager;
+
+    public FileLocking(Properties props, String pJobName, boolean pCreateLockFile, PropertyManager propertyManager) {
+      super();
+      this.props = props;
+      this.pJobName = pJobName;
+      this.pCreateLockFile = pCreateLockFile;
+      this.propertyManager = propertyManager;
+    }
+
+    public boolean checkLockOrCreate() {
+      isExtractionInProgress_paramCheck();
+      Preconditions.checkNotNull(propertyManager);
+      boolean isExtractionInProgress = true; // block by default
+      final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+      final String lock_file_name = props.getProperty(key);
+      final String sys_base_path = propertyManager.getBasePath();
+      final File lockFile = getLockFile(lock_file_name, sys_base_path);
+      try {
+        if (lockFile.exists()) {
+          log.debug("lock file exists: extraction already in progress");
+          return isExtractionInProgress;
+        }
+        log.debug("lock file does not exist");
+        if (pCreateLockFile) {
+          if (lockFile.createNewFile()) {}else {}
+        }
+        isExtractionInProgress = false;
+      } catch (Exception ex) {}
+      return isExtractionInProgress;
+    }
+
+    File getLockFile(final String lock_file_name, final String sys_base_path) {
+      return new File(sys_base_path + lock_file_name);
+    }
+
+    void isExtractionInProgress_paramCheck() {
+      if (null == props) {
+        throw new NullPointerException("Can not check lock file: no props found");
+      }
+      final String key = pJobName + PericlesJobScheduler.LOCK_FILE_NAME_KEY;
+      if (!props.containsKey(key) || null == props.getProperty(key)) {
+        throw new NullPointerException("No job level lock file name found, key used: " + pJobName
+            + PericlesJobScheduler.LOCK_FILE_NAME_KEY);
+      }
+    }
+
+  }
+~~~
+{:data-box="31,46"}
+
+Changes:
+
+- fragment `new File(sys_base_path + lock_file_name)` is extracted into new method called `getLockFile`. I will use as an "backdoor" in testing. Line 31 and 46.
+
+So the remaining of test cases:
+
+~~~java
+  @Test
+  public void non_readable_file_or_folder() throws Exception {
+    prop.setProperty("nullJobLockFileNameKey", lockFile.getName());
+    FileLocking subject = new FileLocking(prop, null, false, propertyManager) {
+      @Override
+      File getLockFile(String lock_file_name, String sys_base_path) {
+        File r = mock(File.class);
+        when(r.exists()).thenThrow(new SecurityException("fake security exception for `File.exists()`"));
+        return r;
+      }
+    };
+    assertTrue("Are we sure that this is the correct behavior??????", subject.checkLockOrCreate());
+  }
+
+  @Test
+  public void non_writable_folder() throws Exception {
+    prop.setProperty("nullJobLockFileNameKey", lockFile.getName());
+    FileLocking subject = new FileLocking(prop, null, true, propertyManager) {
+      @Override
+      File getLockFile(String lock_file_name, String sys_base_path) {
+        File r = mock(File.class);
+        try {
+          when(r.exists()).thenReturn(false);
+          when(r.createNewFile()).thenThrow(new SecurityException("fake security exception for `File.createNewFile()`"));
+        } catch (IOException e) {
+          throw Throwables.propagate(e);
+        }
+        return r;
+      }
+    };
+    assertTrue("Are we sure that this is the correct behavior??????", subject.checkLockOrCreate());
+  }
+~~~
+{:data-box="6,20"}
+
+Changes:
+- Creating local subclass of `FileLocking` and override `getLockfile`
+- the `File` instance returning is mock what I have full control on.
+- renamed function `isExtractionInProgres` to `checkLockOrCreate` because more descriptive. 
+
+### Finally
+
+Of course it is not ready yet. As you see the original implementation is quite inconsistent especially behavior related to error cases. Another next step could be to alter client code to use `FileLocking` directly instead of the static delegate method. And finally it should be split into two separate functionality (see command and query methods).

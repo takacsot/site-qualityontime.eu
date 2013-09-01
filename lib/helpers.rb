@@ -101,8 +101,21 @@ end
 def list_non_published
 	puts "Not yet published items"
 	just_now = Time.new
-	non_published_items = items.select { |item| item[:created_at] && attribute_to_time(item[:created_at]) > just_now }
+	non_published_items = items.select { |item| 
+		item[:created_at] && attribute_to_time(item[:created_at]) > just_now 
+	}
 	non_published_items.each do |it|
 		puts "#{it[:created_at]}: #{it.identifier}"
+	end
+end
+
+def list_hidden_items
+	puts "Hidden items"
+	non_published_items = items.select { |item| 
+		false if nil == item[:publish]
+		!item[:publish] if nil != item[:publish]
+	}
+	non_published_items.each do |it|
+		puts "#{it.identifier}"
 	end
 end

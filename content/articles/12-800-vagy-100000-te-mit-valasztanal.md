@@ -3,7 +3,7 @@ title: "12%, 800% vagy 100000%? Te mit választanál?"
 kind: article
 created_at: 2010-11-12 14:07:41 +0000
 author: "Takács Ottó"
-published: true
+publish: true
 tags: business,articles
 ---
 Amerikai piacot nyitni csak egyszer lehet. Többet nem nyílik meg. Még pár hét van hátra, hogy részesülj ebből a lehetőséből. Passzív pénz! Nem kell érte dolgoznod.

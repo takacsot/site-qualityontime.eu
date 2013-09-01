@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @item[:title] + " - " if @item[:title]%>QualityOnTime.eu</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/stylesheet.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-responsive.css">
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="/rss.xml"/>
+	<meta name="generator" content="nanoc"> 
+	<meta name="description" content="QualityOnTime.eu">
+	<meta name="keywords" content="gtd,productivity,programming,java,ruby,groovy,management">
+	<meta name="author" content="Otto Takacs">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+	<%=render "_analytics"%>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>	
+
+
+	<script type="text/javascript" src="/assets/js/jquery-snippet-min.js"></script> 
+	<link rel="stylesheet" href="/assets/css/jquery-snippet-min.css">
+	<script type="text/javascript" >
+	function getDataAttributes(node) {
+		var d = {}, 
+			re_dataAttr = /^data\-(.+)$/;
+
+		$.each(node.get(0).attributes, function(index, attr) {
+			if (re_dataAttr.test(attr.nodeName)) {
+				var key = attr.nodeName.match(re_dataAttr)[1];
+				d[key] = attr.nodeValue;
+			}
+		});
+
+		return d;
+	}
+$().ready(function(){
+		$('pre code').each(function(){
+			var lang = $(this).attr('class').replace('language-', '');
+			var content = $(this).text();
+			var par = $(this).parent();
+			var syntax_options = $.extend({},{style:"ide-eclipse"},getDataAttributes(par));
+			/*
+			Need to replace CODE block with the pure content because 
+			nippet plugin does not supports CODE block but PRE.
+			*/
+			$(par).text(content);
+			$(par).snippet(lang,syntax_options);
+		});
+	});
+	</script>
+	
+  </head>
+  <body>
+	<header></header>
+	<div class="row">
+		<div class="span12">
+			<div class='header_title' style="float:left;"><a href="http://www.qualityontime.eu">QualityOnTime.eu</a></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span9 offset3" id="searchbox">
+		  <%=render "_search" %>
+		</div>
+	</div>
+	<div class="row">
+		<div id="sidebar" class="span3 hidden-phone">
+		  <%=render "_menu" %>
+		</div>
+		<div id="main" class="span9">
+		  <h1><%= @item[:title] %></h1>
+		  <%= yield %>
+		  <div class="created_at"><%= pretty_time(@item[:created_at]) %></div>
+		  <% if @item[:kind] == 'article' %>
+			<%=render "_comments"%>
+		  <% end %>
+		</div>
+	<div class="row">
+	</div>
+  </body>
+</html>
