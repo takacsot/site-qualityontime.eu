@@ -5,6 +5,8 @@ created_at: 2012-04-21 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: articles
+book: directory-watcher
+book_page: 5
 ---
 ##Pollozó megoldás
 

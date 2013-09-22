@@ -1,3 +1,21 @@
+---
+title: "Groovy directory diff"
+kind: article
+created_at: 2013-09-22 00:00:00 +0000
+author: "Takács Ottó"
+published: true
+tags: articles
+book: directory-watcher
+book_page: 6
+---
+
+A Java verziókban hanyagoltam a legalapabb megoldást: directory pollozó implementációt. Egyszerűen azért, mert Java nem egy barátságos nyelv és az IO API különösen nem az. (Miért? Mert nem szeretem a [checked Exception-öket](<%=item_by_id('/checked-exception-code-generation/').path%>).).
+
+Groovy/ viszont más. Abban lehet elegánsan is programozni. A következő példa nem is directory watch, csak egy példa implementáció arra, hogyan lehet beazonosítani a változásokat. A kulcsa a `mapDiff` függvény.
+
+NB: Ezt a scriptet használom a site feltöltésére, mert nem akarok mindent feltölteni, csak a változott tartalmakat.
+
+~~~groovy
 @GrabConfig(systemClassLoader=true)
 @Grapes([
 @Grab(group='ant', module='ant', version='1.7.0'),
@@ -155,3 +173,4 @@ def upload(uploadable, deletable){
 }
 
 main()
+~~~
