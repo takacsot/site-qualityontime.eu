@@ -15,7 +15,7 @@ Groovy/ viszont más. Abban lehet elegánsan is programozni. A következő péld
 
 NB: Ezt a scriptet használom a site feltöltésére, mert nem akarok mindent feltölteni, csak a változott tartalmakat.
 
-~~~groovy
+~~~java
 @GrabConfig(systemClassLoader=true)
 @Grapes([
 @Grab(group='ant', module='ant', version='1.7.0'),
