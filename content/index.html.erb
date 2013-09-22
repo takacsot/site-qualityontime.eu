@@ -1,2 +1,13 @@
-<%= item_by_identifier('/archive/page/1/').compiled_content%>
+<% pages = index_pages %>
+
+<% pages.each do |article| %>
+  <h1><%=link_to(article[:title],article) %></h1>
+  <%= article.compiled_content %>
+  <div class="created_at"><%= pretty_time(article[:created_at]) %></div>
+  <hr/>
+<% end %>
+
+<div>
+<%=link_to "Archives", item_by_id('/archives/') %>
+</div>
 

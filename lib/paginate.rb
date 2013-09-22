@@ -16,6 +16,10 @@ module Paginate
 	  )
 	end
   end
+  
+  def index_pages
+	index_articles = past_sorted_articles[0..10]
+  end
 end
 
 include Paginate
