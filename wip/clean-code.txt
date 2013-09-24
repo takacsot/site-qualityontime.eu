@@ -1,0 +1,5 @@
+
+Clean code
+
+http://www.planetgeek.ch/wp-content/uploads/2013/06/Clean-Code-V2.1.pdf
+http://www.planetgeek.ch/2011/01/04/clean-code-and-clean-tdd-cheat-sheets/
