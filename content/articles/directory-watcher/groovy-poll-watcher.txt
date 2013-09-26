@@ -1,0 +1,81 @@
+---
+title: "Groovy pollozó megoldás"
+kind: article
+created_at: 2013-09-26 00:00:00
+book: directory-watcher
+book_page: 7
+---
+
+Azaz, ha jó eszközeid vannak, akkor mindenre van megoldás.
+
+Adott egy speciális probléma. Van egy olyan pici project, ami maven-t használ és egy speciális bytekód utófeldolgozást igényel. Sajnos a maven féle `process-classes` nem nagyon támogatott az Eclipse pluginomban (feketepont a maven-nek és az Eclipse-nek is). 
+
+Ekkor marad parancssor. De ha lúd, akkor legyen kövér: legyen continuous teszting (szerinte ez még a Test First-nél is jobb).
+
+Eddig bemutattam [Java-s megoldásokat](<%=item_by_identifier('/articles/directory-watcher/').path%>). Most megmutatom, hogy mennyire egyszerű problémáról van szó, ha megfelelő eszköz van a kezünkben, ez esetben a [Groovy](http://groovy.codehaus.org/)
+
+~~~java
+def job = {
+  String pomPath = /-f <full path to pom>\pom.xml/
+  String  command = /<full path to maven home>\bin\mvn.bat test /
+  String fullCommand = command+pomPath
+  println "Executing "+command
+  def proc = fullCommand.execute()
+  proc.waitForProcessOutput(System.out, System.err)
+}
+
+params =  [
+  closure: job,
+  sleepInterval: 1000,
+  dirPath: /<path to dir to monitor>\src/
+]
+
+import groovy.transform.Canonical;
+
+@Canonical
+class AutoRunner{
+  def closure
+  def sleepInterval = 3000
+  // running for 8 hours then stop automatically if checking every 3 seconds
+  def nrOfRepeat = 9600 
+  def dirPath = "."
+  long lastModified = 0
+
+  def autorun(){
+    println "Press CTRL+C to stop..."
+    println this
+    def to_run = {
+      while(nrOfRepeat--){
+        sleep(sleepInterval)
+        if(anyChange()){
+          closure()
+        }
+      }
+    } as Runnable
+    Thread runner = new Thread(to_run)
+    runner.start()
+  }
+  
+  def boolean anyChange(){
+    def max = lastModified
+    new File(dirPath).eachFileRecurse {
+      if(it.lastModified() > max){
+        max = it.lastModified()
+      }
+    }
+    if(max > lastModified){
+      lastModified = max
+      return true
+    }
+    return false;
+  }
+}
+
+new AutoRunner(params).autorun()
+~~~
+
+Egyszerűen nagyszerű.
+
+A következő lépés az lehetne, hogy az `anyChange()` metódus helyett is closure-t használunk.
+
+Ez az implementáció pollozást használ, ami nagyszerű kis projectek esetében, de egy nagyobb könyvtárhierarchiánál, már észrevehetően lelassúl.
