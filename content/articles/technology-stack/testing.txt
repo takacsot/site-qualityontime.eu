@@ -341,6 +341,37 @@ public final class PatternClasspathClassesFinder {
 }
 ~~~
 
+## Enclosed tests
+
+The [Enclosed](http://junit.org/javadoc/4.10/org/junit/experimental/runners/Enclosed.html) suite also gives a good option to organize Test classes.
+
+~~~java
+@RunWith(Enclosed.class)
+public class TeamReserveDialogTest {
+  // shered test helpers
+  
+  public static class DegenerateTest{
+	// having ts own test init and tead down methods if needed
+  }
+  
+  public static class NewTeamReserveDialogTest extends ATeamReserveDialogTest {
+  }
+
+  public static class TeamReservePropertiesDialogTest extends ATeamReserveDialogTest {
+  }
+
+  @Ignore
+  public static abstract class ATeamReserveDialogTest {
+	// common inherited test functions
+    @Test
+    public void test() {
+      fail("Not yet implemented");
+    }
+
+  }
+}
+
+~~~
 
 ## Mockito
 
