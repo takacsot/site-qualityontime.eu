@@ -1,0 +1,40 @@
+---
+title: "Programing on paper"
+kind: article
+created_at: 2013-10-14 00:00
+book: management-stack
+book_page: 50
+---
+
+Messziről jött ember azt mond, amit akar. A __felvételi folyamán a legnagyobb részben az számít, hogy miként tudja a tudását demonstrálni__.
+
+Egyik nagyon tanulságos módszerem a __papíron kiadott programozási feladat__. 
+
+A feladat valami hasonló (szóban - fontos - mondom el):
+
+>_Adott egy halom vasúti kocsi összekapcsolva. Minden egyes kocsi rendelkezik egy egyedi számmal, mint azonosítóval. A kocsikat úgy tudják mozgatni a szerelvényen belül, hogy rátolják egy nagy kör alakú platformra, amin egyszerre két kocsi fér el. A platformon álló két kocsit lecsatolják, majd a platformot 180 fokban megforgatják és a megfordult kocsikat újra összekötik a teljes szerelvénnyel. másik kocsipár forgatásához oda-vissza tologatják az egész szerelvényt._
+
+>_A feladat: Írj egy olyan __függvényt__, ami a vasúti szerelvény __tetszőleges reprezentációjára__ visszaadja, hogy __mennyi forgatás__ szükséges ahhoz, hogy a szerelvények azonosító szerint __sorrendben__ legyenek._
+
+Kiemeltem pár kifejezést, amik fontosak, mivel azokkal voltak a legtöbb gondok. Lásd egy kicsit később.
+
+__Szándékosan szóban__ mondom el és tudatosan helyezek el benne nem tiszta részeket. Elvárásom, hogy a jelölt, __jegyzetelje__ le a feladatot. Hagyom egy kicsit gondolkodni és felteszem a kérdést, hogy tiszta-e minden. Ha teljesen meg is érti, akkor a "sorrendben legyen" kifejezésre tisztázó kérdést kell feltenni (csökkenő vagy növekvő - válasz: tetszőleges :)).
+
+A feladat nem bonyolult. Ha egy kicsit is jártas vagy az algoritmusokban, akkor rájössz, hogy egy buborékrendezés az alapja, plusz egy számolás, hogy hányszor volt csere. Mindig kihangsúlyoztam, hogy elfogadható, ha az algoritmus nem teljesen pontos, mivel papíron kell dolgozni, de valami __buborékrendezés szerű__ kódot akkor is elvárok. Természetesen a pontos szintaxis sem szükséges. 
+
+Voltak jelöltek, akik ugyan felismerték, hogy rendező algoritmus kell, de a nekiálltak egy egyszerű kiválasztással vagy valami mással. És csak pislognak, amikor megkérdezem, hogyan is fog ez működni egy száztonnás vagonnal...
+
+A "tetszőleges reprezentáció" kifejezéssel is gondok voltak.  Volt, aki bizonyítani akarta, hogy milyen okos és nekiállt modellezni a vonatokat (egy halom osztály és leszármazott, meg ki tudja még mi minden). A "tetszőleges" kifejezés igazából a __legegyszerűbbet__ jelenti. Jelen eseteben számok tömbjét vagy listáját.
+
+Egy _függvénynek_ értéket kell visszaadnia. Sokan teljesen elégedettek voltak, a számolással és az algoritmussal, de értéket már nem adták vissza. És a __legfontosabb__,  a mellékhatása, pontosabban annak hiánya. Gyakorlatilag minden jelöltnél az történt, hogy az eredeti inputot rendezték. Az elvárt megoldás az __input másolatával__ dolgozik.
+
+Lehet, hogy szőrszálhasogatásnak tűnik, de ha jobban belegondolsz a minden fenti pont elképesztően fontos a való életben: 
+
+- ha  a lekérdező függvényed mellesleg még lenullázza a bankszámládat...
+- ha hibás algoritmus miatt banki törlesztőd sokkal magasabb...
+- ha hibás algoritmus miatt a műtőrobot egy tizedmilliméterrel arrébb vág, mint kellene...
+- ha nem tisztázod, a specifikációt és hónapok munkája megy szemétbe, mert nem azt fejlesztetted, amit kellet...
+- ha túlbonyolított architektúrával akarsz egy egyszerű problémát megoldani...
+- és még ....
+
+Egy egyszerű feladat és mégis rengeteget elárul a fejlesztőről.
