@@ -6,8 +6,18 @@ book: management-stack
 book_page: 0
 ---
 
+Mindennapi tudás, ami egy IT project management során megtapasztal az ember. 
+
+>Az olvasás az egyetlen rizikómentes tapasztalatszerzés. - [Tonk Emil](<%=item_by_id('/review/tonk-emil-uzleti-patika-1/').path%>)
+
+Már többször észrevettem magamon, hogy nem mindig tudom, hogy mit miért csinálok, miért pont azt a döntés hozom. Abban viszont teljesen biztos vagyok, hogy vagy azért teszem, amit kell, mert tanultam vagy megtapasztaltam (sokszor a saját káromon is). 
+
+Itt az ideje, hogy egy kicsit összeszedjem milyen módszereket és technikákat is alkalmazok szoftver-projectek vezetésekor. Ezek a módszerek garantáltan működnek. Egy embert tudok, akiknél teljesen beváltak: nálam.
+
+Fontos észben tartani, hogy nem kell vezetőnek lenni ahhoz, hogy bármilyen menedzser módszert alkalmazzon. Rengeteg technika van, ami egyetlen egy emberen (saját magadon) is alkalmazni tudod. Mindent kicsiben kell kezdeni.
+
 A [Technology stack](<%=item_by_identifier('/articles/technology-stack/').path%>)-hez hasonlóan a saját menedzsment gyakorlatomat is összeszedem. Elsősorban saját magamnak, mivel most, hogy már lassan évek óta újra fejlesztőként dolgozok és olyan környezetben, ami megöli a jobbítási és fejlesztési szándékot, érzem, hogy kezdek kiesni. Kell a mankó, hogy újra, meg újra emlékeztessem magam, hogy mik a számomra bevált technikák, milyen környezetben. 
 
 Az biztos, hogy bármilyen részlet is kerül publikálásra, az gyakran fog változni. Már a vázlatok összeszedése során is újabb és újabb gondolatok merültek fel, amik erősen divergáltak az eredeti célomtól. De az rendben van, amíg össze tudom szedni. :) 
 
-Lesz itt etika, estimáció, vezetés, hiring, interjúztatás és még ki tudja mi már.
+Lesz itt etika, estimáció, vezetés, hiring, interjúztatás és még ki tudja mi még.

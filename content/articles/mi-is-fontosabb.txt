@@ -1,0 +1,13 @@
+---
+title: "Mi is a fontosabb?"
+kind: article
+created_at: 2013-10-12 00:00
+---
+
+__Az öregek nem az eszközökről beszélnek, hanem a gondolkodásról!__
+
+Időhatékonyság növelése érdekében rászoktam, arra, hogy online előadásokat hallgatok (ha videofelvétel, akkor is, mert ritkán számít a powerpoint tartalma). Rendszeresen, rengeteget, több hétre való anyagot hallgattam már meg az elmúlt hónapokban (nagyszerűen összekapcsolható a tömegközlekedéssel és házimunkával)
+
+ÉS felfedeztem egy mintát (aka. pattern): az előadók életkorával változik a mondanivaló. A fiatal előadók leginkább technológiáról, toolokról, frameworkokről beszélnek. Az idősebbek pedig architektúráról, __gondolkodásról__, együttműködésről.
+
+Következtetés: __Ne az eszközökre koncentrálj__, ha jó fejlesztő vagy menedzser akarsz lenni. __Legyen jó a gondolkodásod__.

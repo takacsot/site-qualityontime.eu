@@ -1,16 +1,13 @@
 ---
+title: "Management books"
+kind: article
+created_at: 2013-12-07 00:00
 book: management-stack
-book_page: 0
+book_page: 99
 ---
-Mindennapi tudás, ami egy IT project management során megtapasztal az ember. 
+Kezdetnek talán Rothman teljes blogját. Igenazán régi és tele van jó dolgokkal. 
 
->Az olvasás az egyetlen rizikómentes tapasztalatszerzés. - [Tonk Emil](<%=item_by_id('/review/tonk-emil-uzleti-patika-1/').path%>)
-
-Már többször észrevettem magamon, hogy nem mindig tudom, hgy mit miért csinálok, miért pont azt a döntés hozom. Abban viszont teljesen biztos vagyook, hogy vagy azért teszem, amit kell, mert tanultam vagy megtapasztaltam (sokszor a saját káromos is). 
-
-Itt az ideje, hogy egy kicsit összeszedjem milyen módszereket és technikákat is alkalmazok szoftver-projectek vezetésekor. Ezek a módszerek garantáltan működnek. Egye mbert tudok, akiknél teljesen beváltak: nálam.
-
-Fontos észben tartani, hogy nem kell vezetőnek lenni ahhoz, hogy bármilyen menedzser módszert alkalmazzon. Rengeteg technika van, ami egyetlen egy emberen (saját magadon) is alkalmazni tudod. Mindent kicsiben kell kezdeni.
+könyvekkel, mert az a legbiztosnágosabb tapasztalatszerzés. Minden más a saját tapasztalton alapszik, ami  azért lassú és kockézatos.
 
 
 Első lépés mindenek előtt a tanulás. Menedzser területen igaz az a mondás, hogy van az, ami már túl sok. Nem kell minden könyvet és menedzser blogot elolvasni. Elég ha legfontosabbakra fókuszálsz. Én tényleg rengeteget olvastam és egy idő után már csak ugyan azt ismétlik, vagy más tálalásban adják elő. Mindenkinek megvan a saját kedvenc könyvei. Ime az enyémek:
