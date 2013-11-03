@@ -1,0 +1,82 @@
+---
+title: "Quick Commit Statistics"
+kind: article
+created_at: 2013-11-03 00:00
+---
+
+Greg Young a [How to get productive on your first day](http://vimeo.com/43624436) előadásában bemutatott pár olyan eszközt, amivel gyorsan rá lehet mutatni, hol is van a probléma a kódban. mint független konzulens, aki csak rövid ideig dolgozik egy-egy projekten szükségszerűen nagyon hatékonyan rá kell tapintania a gyenge pontokra, hogy a legnagyobb hatással legyen. (Érdemes megnézni, hiszen nagyon jó eszközöket mutat be)
+
+De nem csak technikai, de menedzsment oldalról is érdekesek az egyszerű és  mégis hatásos statisztikáknak. De ne felejtsük el:
+
+Minden metrika, kimutatás és statisztika alkalmatlan, hogy abszolút mértékben minősítse a projektet vagy az embereket, de __segít rámutatni a gyenge pontokra__.
+
+Ebből az elgondolásból egy fél ebédidőben összedobtam egy gyors kis kimutatást:
+
+>Fogd a legutolsó 1000 svn commit-tot és ha abban volt Java file, akkor nézd meg, hogy milyen arányban volt olyan file commit is, amit tartalmazott Test-et.
+
+Fapadosan egyszerű és elképesztően könnyű átrázni. De főleg ennek ismeretében lehetnek rémületesek az eredmények. Például az mostani projektemen a következő eredményeket adja (persze nem kik az érintettek):
+
+- otakacs: 55.63% (158 / 284)
+- xxxxxxxxxxx: 45.6% (57 / 125)
+- ccccccccccc: 26.47% (9 / 34)
+- vvvvvvvvvvv: 7.4% (2 / 27)
+- bbbbbbbbbbb: 2.32% (3 / 129)
+- nnnnnnnnnnn: 0.0% (0 / 10)
+
+És ez valami döbbenetes volt. Részben azért, mert saját magamról sokkal magasabba értéket vártam volna el (55.63% - a részletese vizsgálat alapján kiderült, hogy az utóbbi időben sok PDF generáló munkát csináltam, amit még nem tudok, hogyan lehetne automatizálni, de akkor is...)
+
+Másik ledöbbenés, hogy a csapat többi része milyen nagyvonalúan ignorálja az automatizált teszteket. Amint alaposabban utánajártam azok a kis  test módosítások is inkább abból fakadtak, hogy ha egy módosítás miatt nem fordult a teszt, akkor minimális szinten adaptálták a kódot. De a nem írtak új teszteket a módosításokhoz.
+
+Magyarán a csapat nagy része, még csak nem is gondolkozik automatizált tesztekben. 
+
+Tudnál ezzel az adattal mit kezdeni a saját projektedben? Akkor íme (Groovy, svn log xml format input):
+
+~~~java
+def log = new XmlParser().parseText(new File(/last1000log.xml/).getText())
+def logentries = log.logentry
+println logentries.size()
+
+def allJavaCommits = [:]
+def javaCommitsWithTest = [:]
+def allCommit = [:]
+
+for(logentry in logentries){
+  String author = logentry.author.text()
+  allCommit[author] = allCommit.get(author,0)+1
+  def paths = logentry.paths.path*.text()
+  if(ends(paths,"java")){
+    allJavaCommits[author] = allJavaCommits.get(author,0)+1
+  }
+  if(ends(paths,"java") && cont(paths,"Test")){
+    javaCommitsWithTest[author] = javaCommitsWithTest.get(author,0)+1
+  }
+}
+
+def ends(List<String> paths, String ending){
+  for(p in paths){
+    if(p.endsWith(ending)){
+      return true
+    }
+  }
+  return false
+}
+
+def cont(List<String> paths, String ending){
+  for(p in paths){
+    if(p.contains(ending)){
+      return true
+    }
+  }
+  return false
+}
+
+println allCommit
+println allJavaCommits
+println javaCommitsWithTest
+
+allJavaCommits.each {developer,java ->
+  def test = javaCommitsWithTest.get(developer,0)
+  double percent = (test/java)*100
+  println "${developer}: ${percent.trunc(2)}% (${test} / ${java})"
+}
+~~~
