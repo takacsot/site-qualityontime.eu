@@ -14,7 +14,7 @@ Ebből az elgondolásból egy fél ebédidőben összedobtam egy gyors kis kimut
 
 >Fogd a legutolsó 1000 svn commit-tot és ha abban volt Java file, akkor nézd meg, hogy milyen arányban volt olyan file commit is, amit tartalmazott Test-et.
 
-Fapadosan egyszerű és elképesztően könnyű átrázni. De főleg ennek ismeretében lehetnek rémületesek az eredmények. Például az mostani projektemen a következő eredményeket adja (persze nem kik az érintettek):
+Fapadosan egyszerű és elképesztően könnyű átrázni. De főleg ennek ismeretében lehetnek rémületesek az eredmények. Például az mostani projektemen a következő eredményeket adja (persze nem említve, kik az érintettek):
 
 - otakacs: 55.63% (158 / 284)
 - xxxxxxxxxxx: 45.6% (57 / 125)
