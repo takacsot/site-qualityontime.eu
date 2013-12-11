@@ -1,0 +1,46 @@
+---
+title: "Extreme Programming, a Reflection"
+kind: article
+created_at: 2013-12-11 00:00:00
+---
+
+>a revolution that has changed everything about the way we write software. Those practices are:
+>
+- The Planning Game: Nowadays known as SCRUM. The idea that software is produced in short increments from a prioritized list of work items.
+- Small Releases: The notion that deployments should be frequent and incremental.
+- Metaphor: Finally crystalized by Eric Evans in his book Domain Driven Design. The notion that the structure of the system is based upon a simple mental model of the problem domain.
+- Simple Design: The notion that it is best to keep the system as simple as possible at all times regardless of what we fear about the future.
+- Testing: The notion that programmers, and customers, write automated tests that verify that the production code actually does what they think it should. Nowadays we call this Test Driven Development (TDD) and Acceptance Test Driven Development (ATDD).
+- Refactoring: The notion that the internal structure of software can, and should, be continuously improved.
+- Pair Programming: The notion that members of a team cannot be a team if they work separately. To be a team they must regularly collaborate, at the keyboard. In so doing they share knowledge sufficient to cover for each other as team members should.
+- Collective Ownership: The notion that the code belongs to the team, not to the individual.
+- 40 Hour week: The notion that teams who consistently work overtime are failing.
+- On Site Customer: The notion that someone from the business, who is responsible for requirements, must be readily and consistently available to the programming team.
+- Coding Standards: The notion that the team adopts a consistent style in their code emphasizing cleanliness and communication.
+>
+>...
+
+> fourteen years ago it was wildly controversial.
+>
+>...
+
+> What's more, those teams that don't do all these practices today, are __trying to move towards them__
+>
+>...
+
+> We've seen the creation, the wild success, and the corresponding (and predictable) impotence, of certifications. We saw the adoption of the planning game (i.e. SCRUM) without the other eleven practices; and we saw that strategy fail -- becoming what Martin Fowler called: Flaccid Scrum. 
+>
+>...
+
+> We also saw the name Extreme Programming fade almost entirely out of use. ... It is very rare for me to hear a team describe what they do as Extreme Programming, even when they are practicing all twelve practices as described. 
+>
+>...
+
+> __The practices are persistent.__
+>
+>...
+
+> Extreme Programming succeeded! 
+
+
+[Extreme Programming, a Reflection](http://blog.8thlight.com/uncle-bob/2013/12/10/Thankyou-Kent.html)
