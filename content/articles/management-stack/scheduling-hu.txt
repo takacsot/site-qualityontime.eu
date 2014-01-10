@@ -1,0 +1,54 @@
+---
+title: "Scheduling - HU"
+kind: article
+created_at: 2014-01-10 00:00
+book: management-stack
+book_page: 40
+---
+
+[Angol verzió](<%=item_by_id('scheduling-en').path%>)
+
+Magyarán __ütemterv__ készítés.
+
+Legfontosabb és leggyakrabban vétett hiba: 
+
+__A munkaerő becslés nem ütemterv!__
+
+Feltételezés: megbízható becslési eredmény (lásd máshol/később)
+
+Az ütemterv készítésnél a következő dolgokat veszem figyelembe:
+
+- Senki sem dolgozik teljes munkaidőben. Emiatt a napi nyolc óra helyett és a fejlsztő idejének 2/3 részével dolgozom (maga a szám az [EVO](http://www.malotaux.nl/doc.php?id=1&title=Evolutionary%20Project%20Management%20Methods)-ból vettem). Mégis mire mehet al a többi idő?
+	- Szociális élet: "sajnos" munkahelyen szocializálódni is kell.
+	- Szükséges megbeszélések (pl [Scrum](http://en.wikipedia.org/wiki/Scrum_%28software_development%29) daily standup)
+	- ad-hoc munkák
+	- puffer idő, hogy utol érd saját magad
+	- ["fűrész élezés"](http://en.wikipedia.org/wiki/The_Seven_Habits_of_Highly_Effective_People)
+- Szabadságolás: 3 havonta 1 hetet emberenként. Ha köztudottan olyan periódusra esik, amikor sok a szabadság (nyár, karácsony), akkor még annál is többet, mondjuk 2 hetet.
+- ad-hoc kiesés: emberenként 3 havonta 1-2 nap. Akármilyen okból, de nem elérhetőek. Többnyire valami családi ügyben. Nem tűnik soknak, de ha összead, akkor egy 5 fős csapatnál 2-3 hónapon belül összejön egy hét.
+- 1 naptári hét 3 havonta, csak úgy. Ez a biztonsági tartalék.
+- [Kiveszek embereket support munkára](<%=item_by_id('support-team').path%>): kell elég ember, a support munkára. Az összes Agile módszer közül egyedül a [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%> ad integrált választ a support munkára.
+
+Project portfólió ütemezés (több project, párhuzamosan is)
+
+- Nem mozgatok embert projektről el, amíg be nem fejeződött.
+- Nem adok projekthez embert ideiglenesen
+- Nem adok embert projekthez a vége felé.
+
+Ezzel az ütemezési technikával 2 héten belül max. 1 napot, 3 hónapon belül max. 1 hetes határidő eltérést értem el.
+
+Mikor bukott az ütemezés?
+
+- Mikor a becslést ütemezésnek tekintik. Magyarán, amikor nem én adom az ütemezést, hanem a menedzsment.
+- Munka elején elveszik az erőforrásokat: "még van idő bőven, de ez a másik munka most nagyon sürgős". 
+- Az estimációt és ütemezést is súlyos elkötelezettségnek (commitment) tekintik. Ugyan egy profitól elvárható, hogy megbízható választ adjon mind a becslésre, mind az ütemezésre, mégsem várható el, hogy 100%-osan megbízható legyen. És van az, amikor már pár nap (pl. törvényi határidő) sem megengedett.
+- új ember: kiszámíthatatlan
+- új technológia: kiszámíthatatlan, kell idő tanulásra.
+- új adminisztratív szabályok vagy eszközök: pl mikor központilag eldöntik, hogy mindenki úgy számítógépek kap, de teljesen üresen és napok vagy hetek telnek el, amíg működőképessé nem válik.
+- változó csapatösszetétel: közismert, hogy a [velocity](http://en.wikipedia.org/wiki/Velocity_%28software_development%29) csak fix csapatnál megbízható(?) szám. "Mi volna, ha 2 hét után 2 embert kivennénk és áttennénk egy másik munkára, majd a 6. héttől 2 másik (eddig nem dolgoztak a projekten) embert tennénk rá." [Ebben a példában az volt a cél, hogy ne legyenek "láblógatós" emberek]
+- instabil követelmények
+- becslés nem felülvizsgálata: a becslés csak jóslás. Rendszeresen felül kell vizsgálni és finomhangolni az ütemtervet.
+
+
+
+NB: Mint minden szabály esetén a fentiek mindegyikét megszegtem többször is. De a szabályokat csak okosan szabad megszegni!

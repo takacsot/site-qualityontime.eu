@@ -1,0 +1,52 @@
+---
+title: "Scheduling - EN"
+kind: article
+created_at: 2014-01-10 00:00
+book: management-stack
+book_page: 40
+---
+
+[Hungarian version](<%=item_by_id('scheduling-hu').path%>)
+
+The most important and most frequently made mistake:
+
+__Estimation is not schedule!__
+
+Assumption: reliable estimation (see later)
+
+I consider the following aspect when creating schedule:
+
+- Nobody is working in full time. So instead of 8 hour per day I count 2/3 of that time (the number itself is coming from [EVO](http://www.malotaux.nl/doc.php?id=1&title=Evolutionary%20Project%20Management%20Methods))
+	- Social life: "unfortunately" the workplace is social
+	- Required meetings (eg [Scrum](http://en.wikipedia.org/wiki/Scrum_%28software_development%29) daily standup)
+	- ad-hoc works
+	- buffer time, to catch up yourself
+	- ["sharpening the saw"](http://en.wikipedia.org/wiki/The_Seven_Habits_of_Highly_Effective_People)
+- Regular holidays: 1 extra week per developer every 3  month. When the period is a well-known holiday period I add even more.
+- ad-hoc day-offs: 1-2 days per developer in every 3 month. It does not matter what kind of reason. Most of the time it is something family related. It is not a huge amount of time but if you would count all of them it would costs a a significant amount.
+- 1 calendar week in every 3 month as security margin
+- [Do not count support](<%=item_by_id('support-team').path%>): As support is one of the most important aspect of development you have to consider. Amongst all agile method  [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%> is the only which provides integrated response to this problem.
+
+Project portfolio scheduling (multiple project, parallel execution)
+
+- Do not move developer from one project to other
+- Do not add developer to project temporarily
+- Do not add developer to project at the end
+
+
+My result using this scheduling process: approximately 1 day of actual schedule difference in 2 weeks or max 1 week of difference in 3 month.
+
+When this scheduling process was failed?
+
+- When estimation is considered as a schedule. Simply saying, when management gives the schedule.
+- Losing resources at the beginning og the project. "We still have time to complete but this other job is much more important"
+- When estimation and schedule is considered as commitment.. Although we could expect that a professional developer or manager gives us reliable estimation and schedule it will never be 100% reliable. Sometimes even a small uncertainty is unelectable (e.g. legal rules)
+- new developer: unpredictable
+- new technology: unpredictable, developer needs time to learn and master it
+- new rules and regulation: e.g. when there is central decision that everyone got a new computer which is not preconfigured for development and it takes weeks until you can get it working properly.
+- changing team: well-known, [velocity](http://en.wikipedia.org/wiki/Velocity_%28software_development%29) is reliable in case of fixed teams. "What if after two weeks we remove 1 developer then after 4 additional weeks add two totally new (never worked on the project before) one?" [In this example the goal was to eliminate waste.]
+- unstable requirements
+- not reviewing estimation and schedule: estimation is just a prediction. We have to review periodically and frequently to fine tune estimation and schedule.
+
+
+NB: As in case of all rules  I have broken all at least once in my professional life. But you must know that only cleaver can break rules.

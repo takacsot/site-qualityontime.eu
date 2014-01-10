@@ -18,7 +18,3 @@ Projects that invest twelve months or more before there is a return have extreme
 <p><strong>Control the delivery cycle and you have controlled the risk </strong></p>
 </blockquote>
 <p><a href="http://www.techdarkside.com/estimating-project-risk">Original</a></p>
-
-<!--break-->
-
-<div class='old-comments'></div>

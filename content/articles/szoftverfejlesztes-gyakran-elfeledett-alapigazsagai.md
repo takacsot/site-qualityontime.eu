@@ -78,7 +78,7 @@ Nem várom el, hogy egyetérts mindenben, talán az igazságok némelyike fel is
 
 [M4] Az előző két szabályt hívhatjuk a szoftverek “60-60-as szabály”-ának.
 
-[M5] A legtöbb szoftverfejlesztéssel és -karbantartással kapcsolatos feladat azonos – kivéve azt a plusz karbantartással kapcsolatos feladatot, amikor megkell érteni, hogy mit is csinál a létező termék. Ez a domináns karbantartási tevékenység, kb. 30%-át viszi el a karbantartási időnek. Így aztán nem teljesen alaptalan az az állítás, hogy a karbantartás nehezebb, mint a fejlesztés.
+[M5] A legtöbb szoftverfejlesztéssel és -karbantartással kapcsolatos feladat azonos – kivéve azt a plusz karbantartással kapcsolatos feladatot, amikor meg kell érteni, hogy mit is csinál a létező termék. Ez a domináns karbantartási tevékenység, kb. 30%-át viszi el a karbantartási időnek. Így aztán nem teljesen alaptalan az az állítás, hogy a karbantartás nehezebb, mint a fejlesztés.
 
 ###Követelmények és tervezés
 
@@ -135,6 +135,8 @@ Nem várom el, hogy egyetérts mindenben, talán az igazságok némelyike fel is
 Ezek hát az én szoftverfejlesztéssel kapcsolatos igazságaim. Mik a Tieid? Azt várom, hogy ha párbeszédet kezdeményezünk egymással, akkor újabb tényekre derülhet fény, amiket vagy kifelejtettem, vagy amiknek nem voltam tudatában. Különösképpen az új tények érdekelnek, de természetesen arra is kíváncsi vagyok, ha valamivel nem értesz egyet.
 
 A szerző címe: rglass@indiana.edu (és angolul várja a hozzászólásokat :) )
+
+[Eredeti cikk](http://www.computer.org/portal/web/buildyourcareer/fa035)
 
 <div class='old-comments'>
 		<div class='one-old-comment'>

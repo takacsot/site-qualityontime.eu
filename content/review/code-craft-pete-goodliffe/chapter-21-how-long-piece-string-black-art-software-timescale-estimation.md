@@ -48,5 +48,3 @@ tags: extracts
     <li>Watch out for changing requirements and specifications and track how this will affect your timescales.</li>
 </ul>
 
-
-<div class='old-comments'></div>

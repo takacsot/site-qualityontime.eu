@@ -25,5 +25,3 @@ tags: extracts
 </ul>
 </blockquote>
 <p><a href="http://agile-commentary.blogspot.com/2009/05/support-team.html">Original</a></p>
-
-<div class='old-comments'></div>

@@ -1,0 +1,36 @@
+
+
+Teljesen mindegy milyen mértékben törekedünk arra, hogy minéél jobban automatizáljuk, akkor is lesz egy elég nagy menniységű manuálist test eset. Nem is beszélve arról, ha a szervezetben inkább a tradicionális tesztelés dívik, magyarán vegyél egy halom olcsó tesztelőt és költs el egy halom pénzt, hogy ugyan azokat a dolgkat újra és újra teszteljék le. És ezen a drága teszt automatizáló eszközük sem segítenek, mivel azok legtöbbike inkább record-plyaback alapon  máködik, ami gyorsít, de nem jobbít.
+
+De vissza a manuális tesztelésre. 
+
+A legelső és legfontosabb lépés, hogy definiáljuk __mi az elvárt tudásszint__ a tesztelőtől.
+
+Teljesen más tesztforgatókönyveket és végrehajtást kell terveznünk, ha nincs semmi tudásbeli elvárásunk, mint amikor egy relative magas rendszerismeretet várunk el a tesztelőtől. 
+
+Sokszor hallottam azt az érvet, hogy a teszteket bárkinek végre kell tudnia halytani. Akár egy majomnak is. És én még életemben nem láttam olyan tesztet, ami kielégítette volna azt az igényt, hogy akárki aki leül elé, az úgy leteszteli, amiben bárki megbízik. 
+
+Olyan tesztforgatókönyvvel is találkoztam, ahol UI kontrolok szintjén volt definiálva, magyarán még azt sem várja el, hogy ismerje a számítógépet. És vannak ennek még fokozatai. De azt hiszem viláogs, hogy milyen töméntelen mennnyiségű energia megye el az ilyen tesz essetek megírására, karbantartására és végrehajtására. 
+
+Érv: A teszt önűlló legyen. Ne legyen a teszt esetek között függőségek. attól, hogy User manualt helyettesítő részletezettségeel írunk le valamit az nem jelenti azt, hogy nincs függőség. És ha valanit kompaktan a funckióra kihegyezve írjuk el még lehet önálló ugyan úgy.
+
+Érv:A user manualban nics leírv, hogyan kell megcsinálni ezt vagy azt. Nos, akkor sikerült rávilágítani arra, hogy a user manual hibás és azt kell korrigálni, nem a testesetet feleslegesen bővíteni zajjal.
+
+Számos előúnye van, ha teszt eset nem UI centrikus. Például az, hogy nem UI centrkus lesz. Azt fogja leirni, ami a lényeg. (persze, amikor a cél egy bizonyos UI elem, akkor persze azt kell tartalmaznia). UI nagyon törékeny/fregile. Legappróbb változásnál már módosítanikell a tesztesetet. Menniy tesztesetnél vállik kezelhetettlenné? 10? 100? 1000? Előbb utóbb fizikailag képtelenség lesz karbantartni, és akkor szépen mindenki elkezni ignorálni. Magyarán felelsleges lesz.
+
+Én személy szerint egy viszonylag magas elvárt tudászszintű tesztelőnem akarom írni a testeseteket. 
+
+Rossz példa:
+File menu: legördül ezzel meg azzal.
+Klikkels a XXX pontra, akkor megynílik az amblak, aminek ez meg az a fejléce. 
+...
+És igy sok ponton át és végül a teszteset utolsó 10-20%-ban a tényleges teszt cél leírása.
+
+
+Jó példa:
+Előfeltétel, hogy ott vagy és minden adat előkészítve (itt most persze az előfeltételek leírása). nem érdekel, hogy an csinálod. Ha nem tudod, akkor olvasd el a manualt vagy kérdezz meg valaki.
+És akkor jöhet a teszt cél leírűsa.
+
+Linkek:
+- http://www.infoq.com/presentations/automated-testing-sins-
+- Robert C   Martin tesztelési előadásai

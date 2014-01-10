@@ -14,6 +14,5 @@ Többszörösen is aktuális számomra, mert én is közszférában létező pro
 
 Gyakorlatilag semmi elmélet. Csak a véres valóság.
 
+[Wikipedia - Kanban](http://en.wikipedia.org/wiki/Kanban_%28development%29)
 
-
-<div class='old-comments'></div>
