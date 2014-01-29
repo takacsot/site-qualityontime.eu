@@ -27,7 +27,7 @@ Az ütemterv készítésnél a következő dolgokat veszem figyelembe:
 - Szabadságolás: 3 havonta 1 hetet emberenként. Ha köztudottan olyan periódusra esik, amikor sok a szabadság (nyár, karácsony), akkor még annál is többet, mondjuk 2 hetet.
 - ad-hoc kiesés: emberenként 3 havonta 1-2 nap. Akármilyen okból, de nem elérhetőek. Többnyire valami családi ügyben. Nem tűnik soknak, de ha összead, akkor egy 5 fős csapatnál 2-3 hónapon belül összejön egy hét.
 - 1 naptári hét 3 havonta, csak úgy. Ez a biztonsági tartalék.
-- [Kiveszek embereket support munkára](<%=item_by_id('support-team').path%>): kell elég ember, a support munkára. Az összes Agile módszer közül egyedül a [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%> ad integrált választ a support munkára.
+- [Kiveszek embereket support munkára](<%=item_by_id('support-team').path%>): kell elég ember, a support munkára. Az összes Agile módszer közül egyedül a [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%>) ad integrált választ a support munkára.
 
 Project portfólió ütemezés (több project, párhuzamosan is)
 

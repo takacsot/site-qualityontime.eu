@@ -25,7 +25,7 @@ I consider the following aspect when creating schedule:
 - Regular holidays: 1 extra week per developer every 3  month. When the period is a well-known holiday period I add even more.
 - ad-hoc day-offs: 1-2 days per developer in every 3 month. It does not matter what kind of reason. Most of the time it is something family related. It is not a huge amount of time but if you would count all of them it would costs a a significant amount.
 - 1 calendar week in every 3 month as security margin
-- [Do not count support](<%=item_by_id('support-team').path%>): As support is one of the most important aspect of development you have to consider. Amongst all agile method  [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%> is the only which provides integrated response to this problem.
+- [Do not count support](<%=item_by_id('support-team').path%>): As support is one of the most important aspect of development you have to consider. Amongst all agile method  [Kanban](<%=item_by_id('/lean-trenches-managing-large-scale-projects-kanban-henrik-kniberg/').path%>) is the only which provides integrated response to this problem.
 
 Project portfolio scheduling (multiple project, parallel execution)
 

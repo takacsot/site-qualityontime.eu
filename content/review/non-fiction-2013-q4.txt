@@ -1,0 +1,114 @@
+---
+title: "Non Fiction 2013 Q4"
+kind: article
+created_at: 2014-01-25 00:00:00 +0000
+author: "Takács Ottó"
+published: true
+tags: review
+---
+## Mary Poppendieck · Tom Poppendieck - Implementing Lean Software Development
+
+[![](http://moly.hu/system/covers/big/covers_267499.jpg)](
+http://moly.hu/konyvek/mary-poppendieck-tom-poppendieck-implementing-lean-software-development){:target="_blank"}
+
+Inkább Lean, mint szoftver. Nagyon nagyon jó. Különösképpen nem is tudok kiemelni semmit, mert minden fejezet igen értékes és érdekes volt.
+
+## Andrew Hunt · David Thomas - The Pragmatic Programmer 
+
+[![](http://moly.hu/system/covers/big/covers_133706.jpg?1373751170)](
+http://moly.hu/konyvek/andrew-hunt-david-thomas-the-pragmatic-programmer){:target="_blank"}
+
+Nagyon kiváló.
+
+Nagyon szépen strukturált és követhető koncepciók. 
+
+Quick refernce:
+
+- [lokális](<%=item_by_id('/pragmatic-programmer-checklist/').path%>) (köztudott, hogy az interneten semmi sem örök)
+- [from Coding horror](http://www.codinghorror.com/blog/files/Pragmatic%20Quick%20Reference.htm)
+- [ideharbor](http://ideaharbor.org/notes/reviews/books/the-pragmatic-programmer-andrew-hunt-and-david-thomas)
+- [Pragmatic programmer](http://pragprog.com/the-pragmatic-programmer/extracts/tips)
+
+
+Kritikák:
+
+- [javalobby](http://www.javalobby.org/articles/the-pragmatic-programmer/)
+- [goodreads](https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer)
+- [negatív is van](http://terrychay.com/article/pragmatic-programmer-review.shtml)
+
+
+## Robert C. Martin - Clean Code: A Handbook of Agile Software Craftsmanship
+
+[![](http://moly.hu/system/covers/big/covers_85460.jpg?1373711977)](
+<%=item_by_id("non-fiction-2012").path%>/index.html#clean-code){:target="_blank"}
+
+Már véleményeztem [korábban](<%=item_by_id("non-fiction-2012").path%>/index.html#clean-code){:target="_blank"}. 
+Újraolvasva és kicsit kibővítve
+
+Ez egy nagyszerű könyv.
+
+DE nekem hasonló témában A Code Craft könyv jut mindig eszembe. A Code Craft több témát tárgyal. Az átfedő témákban viszont teljesen hasonló véleményen vannak (még hogy nincsenek alapigazságok a szoftverfejlesztésben?!)
+
+Olyan, mint egy jóféle coding guideline.
+
+Csak ajánlani tudom.
+
+És mindenképpen nézd meg a Youtube videókat, amikben Martin tart előadást. Nagyon jók. Sőt azt kell mondanom, hogy igazán az előadásainak szenvedélyessége győzött meg, arról, hogy újra elővegyem és az előadásokból leszűrhető szemlélettel olvassam újra. 
+
+## Mike Clark - Pragmatic Project Automation
+
+[![](http://moly.hu/system/covers/big/covers_33000.jpg?1373673256)](
+http://moly.hu/konyvek/mike-clark-pragmatic-project-automation){:target="_blank"}
+
+Nem éri meg a pénzét. Ha tudod, hogy mit akarsz csinálni, akkor Google. Ha nem tudod, akkor azon nem segít.
+Nagyon alacsony szinten technikai,emiatt hamar el is fog avulni.
+
+
+## Robert C. Martin - The Clean Coder
+
+![](http://moly.hu/system/covers/big/covers_187145.jpg?1373806895)
+
+Clean Code "folytatása". Nem technikai részleteket tárgyal, hanem inkább a fejlesztő egyéni és csapat felelősségét.
+A coding kata koncepciója igazán érdekes. Ki kellene próbálnom.
+
+Maximálisan ajánlom.
+
+## Robert C. Martin - Agile Software Development, Principles, Patterns, and Practices
+
+[![](http://moly.hu/system/covers/big/covers_277045.jpg?1383488180)](
+http://moly.hu/konyvek/robert-c-martin-agile-software-development-principles-patterns-and-practices){:target="_blank"}
+
+Uncle Bob egy jóval korábbi könyve. 
+
+A borító alapján sok témát tárgyal. Számomra a tervezési mint (design pattern) volt a domináns mondanivaló. Nem egyszerűen bemutatja a patterneket, hanem kontextusba helyezi. Olyan problémakörnyezetet teremt, ami valóságosnak hat és rávilágít számos gyengeségére és erősségére is. Néhány pattern csak most kattant a helyére a fejemben (pl Command). És olyan is akadt, amivel még nem találkoztam korábban (Monostate).
+
+A példákon keresztül bemutatja az iteratív, inkrementális fejlesztést is, persze TDD-vel karöltve.
+
+Határozottan a többször olvasandó könyvek közé tartozik.
+
+## Stacia Viscardi - The Professional ScrumMaster's Handbook 
+
+[![](http://moly.hu/system/covers/big/covers_277051.jpg?1383489368)](
+http://moly.hu/konyvek/stacia-viscardi-the-professional-scrummaster-s-handbook){:target="_blank"}
+
+Annak idején olvastam az egyik legelső Scrum cikket és könyveket. Aki ismeri, az tudja, hogy a Scrum max egy pár oldalas cikknyi valami. Emiatt minden Scrum-val foglalkozó könyvnek iszonyatosan kemény munkát kell végezni, hogy azt a látszatot keltse, hogy a Scrum több pár oldalnál. De a tapasztalt rókák (mint én) átlát a szitán. Tedd fel magadnak a kérdést minden egyes fejezet után, hogy ez most Scrum vagy valami más (XP, valami tool, technika, Kanban, etc) És azt fogod látni, hogy ez a könyv is csak részben szól a Scrum-ról.
+
+## Kenneth A. Kousen - Making Java Groovy
+
+[![](http://moly.hu/system/covers/big/covers_277047.jpg?1383488712)](
+http://moly.hu/konyvek/kenneth-a-kousen-making-java-groovy){:target="_blank"}
+
+Vegyes vélemény. Nagyon jó Groovy könyv, de a Groovy in Action jobb. Pont.
+
+Az erőssége talán akkor jön ki, mikor keményvonalas Java-s embereket kell meggyőzni. De én poliglottabb vagyok ennél.
+
+## Gregor Hophe · Bobbz Wolf - Enterprise Integration Patterns
+
+[![](http://moly.hu/system/covers/big/covers_278113.jpg?1384081788)](
+http://moly.hu/konyvek/gregor-hophe-bobbz-wolf-enterprise-integration-patterns){:target="_blank"}
+
+Alapmű.
+
+Maximálisan hasznos könyv. Nem csak integrációs problémákról szól, hiszen egy Actor rendszer nem integráció,  hanem elosztásról szol, mégis minden pattern igaz ott is. 
+
+Nagy kedvem lett mindent messaginggel megoldani. :)

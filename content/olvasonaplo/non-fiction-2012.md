@@ -153,7 +153,7 @@ Ugyan ebből senki sem fog programozni tanulni. De ha mar tud javazni, akkor tel
 
 Ha esetleg mar olvastad az első kiadást akkor nem sokat fog adni. Persze feltételezve hogy azért naprakész vagy az addig történtekkel.
 
-###[Clean Code: A Handbook of Agile Software Craftsmanship](http://moly.hu/konyvek/robert-c-martin-clean-code-a-handbook-of-agile-software-craftsmanship)
+###[Clean Code: A Handbook of Agile Software Craftsmanship](http://moly.hu/konyvek/robert-c-martin-clean-code-a-handbook-of-agile-software-craftsmanship){:name="clean-code"}
 
 Önmagában jó, de Code Craft után semmi.
 
