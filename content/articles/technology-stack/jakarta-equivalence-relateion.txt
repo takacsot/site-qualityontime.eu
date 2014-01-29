@@ -1,0 +1,275 @@
+---
+title: "Jakarta Equivalence Relation"
+kind: article
+created_at: 2014-01-29 00:00
+book: technology_stack
+book_page: 7
+---
+
+### The Need
+
+Given a big and complex (objects in objects, maps, arrays, lists, child object etc) object structure. 
+
+And I would like to check weather __two set of objects are equals or not__.
+
+I could not use `equals()` because it is ialready implemented but it not complete (not all attribute included) and I could not decide whether it is a featrure or bug. Plus the input is two arrays of object and as we all know Java array implementation gives a shit to equals.
+
+Secondary need: once a difference is found I would like to know where it is failed on the object hierarchy exactly. Just think about a little bit. If something is not equal you still need to know why.
+
+Let's start in small
+
+~~~java
+public interface EquivalenceRelation {
+  public final static EquivalenceRelation DEFAULT = new EquivalenceRelation() {
+    public boolean areEquals(Object o1, Object o2) {
+      return o1 == o2 || o1 != null && o1.equals(o2);
+    }
+  };
+
+  public boolean areEquals(Object o1, Object o2);
+}
+~~~
+
+So far so good. But we should not forget about "reporting" differences.
+
+~~~java
+public abstract class ReportingEquivalenceRelation implements EquivalenceRelation {
+  final List<String> messages = new ArrayList<String>();
+  int indent = -1;
+  static String END_MARKER = "<!--diff -->";
+  static String INDENT = "   ";
+
+  public ReportingEquivalenceRelation() {
+  }
+
+  public ReportingEquivalenceRelation(String title) {
+    addMessage(title);
+  }
+
+  public boolean areEquals(Object o1, Object o2) {
+    indent();
+    boolean res = _areEquals(o1, o2);
+    unindent();
+    if (!res && !alreadyEndMarked()) {
+      addMessage(END_MARKER);
+    }
+    return res;
+  }
+
+  private boolean alreadyEndMarked() {
+    return messages.size() > 0 && messages.get(messages.size() - 1).endsWith(END_MARKER);
+  }
+
+  public abstract boolean _areEquals(Object o1, Object o2);
+
+  public List<String> getMessages() {
+    return messages;
+  }
+
+  public String getMessage() {
+    return Joiner.on("\n").join(messages);
+  }
+
+  public void addMessage(String s) {
+    messages.add(indentation() + s);
+  }
+
+  private String indentation() {
+    String res = "";
+    for (int i = 0; i < indent; i++) {
+      res += INDENT;
+    }
+    return res;
+  }
+
+  public void indent() {
+    indent++;
+  }
+
+  public void unindent() {
+    indent--;
+  }
+}
+~~~
+
+How to implement in a generic way? Trivial answer: use some kind of reflection. Working directly with reflection in java is pain. But luckily there are alternatives, wrappers like [Jakarta Beanutils](http://commons.apache.org/proper/commons-beanutils/).
+
+(NB: Even if some of the classes used are not familiar you could check in github - see later - or trivial enough - like `FIterable`)
+
+~~~java
+public class JakartaEquivalenceRelation extends ReportingEquivalenceRelation {
+  private Set<Pair<Integer, Integer>> registry = new HashSet<Pair<Integer, Integer>>();
+
+  public JakartaEquivalenceRelation() {
+  }
+
+  public JakartaEquivalenceRelation(String title) {
+    super(title);
+  }
+
+  @Override
+  public boolean _areEquals(Object o1, Object o2) {
+    if (o1 == o2) {
+      return true;
+    }
+    if (null == o1 || null == o2) {
+      return false;
+    }
+    if (isPrimitive(o1) || isPrimitive(o2)) {
+      return equalsPrimitive(o1, o2);
+    }
+    return beanEquals(o1, o2);
+  }
+
+  static Predicate<PropertyDescriptor> class_attribute = AppPredicates.propEq("name", "class");
+  static Predicate<PropertyDescriptor> no_class_attribute = Predicates.not(class_attribute);
+  static Function<PropertyDescriptor, String> byName = AppFunction.byProp("name");
+
+  private boolean beanEquals(Object o1, Object o2) {
+    register(o1, o2);
+    if (isArray(o1)) {
+      return equalsArrays(o1, o2);
+    }
+    if (isList(o1)) {
+      return equalsList(o1, o2);
+    }
+    if (isSet(o1)) {
+      throw new RuntimeException("Set equvalence isnot supported");
+    }
+    if (isMap(o1)) {
+      return equalsMap(o1, o2);
+    }
+    //plain object
+    Map<String, PropertyDescriptor> pd1 = 
+		FIterable.from(getPropertyDescriptors(o1)).filter(no_class_attribute).asMap(byName);
+    Map<String, PropertyDescriptor> pd2 = 
+		FIterable.from(getPropertyDescriptors(o2)).filter(no_class_attribute).asMap(byName);
+    if (pd1.size() != pd2.size()) {
+      addMessage("size diff");
+      return false;
+    }
+    if (!(pd1.keySet().equals(pd2.keySet()))) {
+      addMessage("nr of bean properties diff");
+      return false;
+    }
+    for (String prop : pd1.keySet()) {
+      Object p1 = JakartaPropertyUtils.getProperty(o1, prop);
+      Object p2 = JakartaPropertyUtils.getProperty(o2, prop);
+      addMessage(rs("[{}:`{}` vs `{}`]", prop, simplify(p1), simplify(p2)));
+      if (isRegistered(p1, p2)) {
+        continue;
+      }
+      if (!areEquals(p1, p2)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean isMap(Object o1) {
+    return o1 instanceof Map;
+  }
+
+  private boolean isSet(Object o1) {
+    return o1 instanceof Set;
+  }
+
+  private boolean isList(Object o1) {
+    return o1 instanceof List;
+  }
+
+  private Object simplify(Object p1) {
+    if (isPrimitive(p1)) {
+      return p1;
+    }
+    return "<complex>";
+  }
+
+  private boolean isRegistered(Object o1, Object o2) {
+    Pair<Integer, Integer> pos = Pair.of(System.identityHashCode(o1), System.identityHashCode(o2));
+    return registry.contains(pos);
+  }
+
+  private void register(Object o1, Object o2) {
+    Pair<Integer, Integer> pos = Pair.of(System.identityHashCode(o1), System.identityHashCode(o2));
+    registry.add(pos);
+  }
+
+  private boolean equalsPrimitive(Object o1, Object o2) {
+    return o1.equals(o2);
+  }
+
+  private boolean isPrimitive(Object o1) {
+    return o1 == null
+        || o1.getClass().isPrimitive()
+        || o1 instanceof Boolean
+        || java.lang.Number.class.isAssignableFrom(o1.getClass())
+        || java.lang.String.class.isAssignableFrom(o1.getClass())
+        || java.lang.Object.class.equals(o1.getClass())
+        || o1 instanceof Date;
+  }
+
+  private boolean equalsMap(Object o1, Object o2) {
+    addMessage("MAP");
+    Map<?, ?> a = (Map<?, ?>) o1;
+    Map<?, ?> b = (Map<?, ?>) o2;
+    if (a.size() != b.size()) {
+      addMessage("size diff");
+      return false;
+    }
+    for (Object k : a.keySet()) {
+      Object va = a.get(k);
+      Object vb = b.get(k);
+      addMessage(rs("[{}:`{}` vs `{}`]", k, va, vb));
+      boolean r = areEquals(va, vb);
+      if (!r) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean equalsList(Object o1, Object o2) {
+    addMessage("LIST");
+    List<?> l1 = (List<?>) o1;
+    List<?> l2 = (List<?>) o2;
+    if (l1.size() != l2.size()) {
+      addMessage("size diff");
+      return false;
+    }
+    for (int i = 0; i < l1.size(); i++) {
+      addMessage(i + ".");
+      boolean r = areEquals(l1.get(i), l2.get(i));
+      if (!r) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean isArray(Object o1) {
+    return o1.getClass().isArray();
+  }
+
+  private boolean equalsArrays(Object o1, Object o2) {
+    addMessage("ARRAY");
+    Object[] oa1 = (Object[]) o1;
+    Object[] oa2 = (Object[]) o2;
+    if (oa1.length != oa2.length) {
+      addMessage("Length diff");
+      return false;
+    }
+    for (int i = 0; i < oa1.length; i++) {
+      addMessage(i + ".");
+      boolean r = areEquals(oa1[i], oa2[i]);
+      if (!r) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+~~~
+
+
+[Download full source code with test from github](https://github.com/takacsot/toolbox/tree/master/jakartaequivalencerelation)
