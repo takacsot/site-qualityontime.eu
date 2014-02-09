@@ -6,7 +6,7 @@ tags: ep,productivity
 ---
 __Az EP-ben olyan dolgozni, mint amikor az ember egy számmal kisebb cipőt hord.__ Ha csak ülsz a fotelban és nem sétálsz 12 méternél többet egy nap, akkor teljesen mindegy. egy kicsit szorít és kényelmetlen, de csak egy kicsit. Cserébe vígan mutogathatod, hogy milyen szép csuka van a lábadon. De ha elkezded használni, akkor egyből előjön a legnagyobb problémája, hiszen szorít.
 
-Ezen héten kapott mindenki szép új Windows 7-es gépeket. Mivel nekem már volt gey erősebb gépem (mivel csak 32 bites WinXP futott rajta csak töredékét tudtam kihasználni, de mégis jobb volt mint előtte) és egy nappal hamarabb kaptam meg, mint a többiek. Ez elvileg jó, de a gyakorlatban nem:
+Ezen héten kapott mindenki szép új Windows 7-es gépeket. Mivel nekem már volt egy erősebb gépem (mivel csak 32 bites WinXP futott rajta csak töredékét tudtam kihasználni, de mégis jobb volt mint előtte) és egy nappal hamarabb kaptam meg, mint a többiek. Ez elvileg jó, de a gyakorlatban nem:
 
 1. __Saját magamnak kellett mentést csinálnom.__ Arra hivatkoztak, hogy túl nagy a drive-om. Ami meglepő, hiszen a gép és ezáltal a drive ugyan az, csak az oprendszert cserélik le, ami egy másik partíción van. Én meg is csináltam __saját külső vinyóra__.
 2. __Tervezetthez képest egy nappal hamarabb frissítettek.__ Ez elvileg jó, de a gyakorlatban teljesen meg voltam hallva. hiszen nem volt nálam a mentés. A gépen pedig __semmi sem maradt meg az előző gép beállításaiból__. Az ég egy adta világon semmi.

@@ -5,6 +5,8 @@ created_at: 2012-03-17 21:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: articles
+book: directory-watcher
+book_page: 1
 ---
 Mi is a directory watcher? Mire is használható? Egyáltalán miért is kellene nekem egy ilyen eszköz? Pár szót ejtek a már ismert implementációkról is.
 
