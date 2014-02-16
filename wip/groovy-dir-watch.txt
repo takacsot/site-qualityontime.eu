@@ -1,5 +1,0 @@
-http://cadrlife.blogspot.com/2010/07/watch-directory-for-changes-in-groovy.html?m=1
-
-http://thegreenoak.blogspot.com/2012/06/groovy-script-to-watch-for-changes-in.html?m=1
-
-http://www.stupidjavatricks.com/2011/12/windows-coffeescript-auto-compiler-using-groovy-and-jdk-7-watcherservice/

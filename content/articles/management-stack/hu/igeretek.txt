@@ -1,0 +1,21 @@
+﻿---
+title: "Ígéret"
+kind: article
+created_at: 2014-02-16 00:00
+book: management-stack
+book_page: 2
+--- 
+
+Ígérni lehet bármit. 
+
+Az ígéret egy érdekes jószág. De fura, ha automatikusan hiszünk az ígéreteknek. Csak a következő esetek lehetnek racionálisak ígéretekkel kapcsolatban:
+
+1. Illető múltbeli eredményeit vizsgálod és azt kivetíted saját véleményed szerint és az alapján ítéled meg, hogy arra visz-e ami neked tetszik. Itt tulajdonképpen figyelmen kívül hagyod az ígéretet csak az embert nézed.
+
+2. Ismered az illető múltját és az alapján azt, hogy az ígéreteit a múltban milyen hatékonysággal teljesítette. 
+
+De  mint látszik. ismeretlen embernek nem lehet hinni. Olyannak, aki már korábban is szegett meg ígéretet, annak sem.
+
+Minden más ígéretre hallgatás súlyos önbecsapás
+
+NB: Eredeti vázlat - 2011.08.29. 

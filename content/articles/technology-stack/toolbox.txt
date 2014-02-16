@@ -484,7 +484,7 @@ Do you need asingle reason why using slf4j?
 Before:
 
 ~~~java
-if(log.isDebugEnamled()){
+if(log.isDebugEnabled()){
 	log.debug("Some text "+something+" and other to log);
 }
 ~~~
