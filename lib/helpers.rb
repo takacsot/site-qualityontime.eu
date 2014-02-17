@@ -119,3 +119,10 @@ def list_hidden_items
 		puts "#{it.identifier}"
 	end
 end
+
+def all_children_image(id)
+	puts "all_children_image"
+	res = items.select{|i| i.binary?}.select{|i| i.identifier.start_with?(id)}
+	res = res.sort_by{|i| i.path}.reverse
+	res
+end
