@@ -7,6 +7,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 551,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -35,6 +43,26 @@
 	},
 	"file_history":
 	[
+		"/C/environment/_workspace/site-qualityontime.eu/.git/COMMIT_EDITMSG",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/brian-tracy-maximalis-teljesitmeny.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/brian-tracy-szemelyes-hatekonysag.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/how-build-high-traffic-web-site.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/evidence-5-immutable-principles-project-success-herding-cats.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/brian-tracy-torespont.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/articles/robert-kiyosaki-vs-takacs-otto-hibakrol.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/code-craft-pete-goodliffe/chapter-8-testing-times-black-art-testing-code.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/batch-converting-libreoffice-documents-pdf.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/code-craft-pete-goodliffe/chapter-10-code-jack-built-mechanisms-turn-source-code-executable-code.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/bizalom-olcsobba-es-gyorsabba-teszi-dolgokat-tudatos-vezetes.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/assets/css/bootstrap-responsive.css",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/code-craft-pete-goodliffe/chapter-19-being-specific-writing-software-specifications.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/bizalomepites-ket-csodaszere-tudatos-vezetes.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/articles/boldogulas-szinthez-eleg-20-30-ora-tanulas.md",
+		"/C/environment/_workspace/site-qualityontime.eu/layouts/book.html",
+		"/C/environment/_workspace/site-qualityontime.eu/content/articles/elmeny.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/review/eric-sink-businsess-software.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/estimating-project-risk.md",
+		"/C/environment/_workspace/site-qualityontime.eu/content/extracts/estimation-causes-waste-slack-creates-value.md"
 	],
 	"find":
 	{
@@ -69,8 +97,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								551,
+								551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

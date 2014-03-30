@@ -11,4 +11,3 @@ START command
 # passing all command line parameter to caled application
 
 %*
-
