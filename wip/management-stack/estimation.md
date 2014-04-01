@@ -10,7 +10,7 @@
 
 There are two main:
 
-- story point, and its variation like T-shirt size, etc
+- story point, and its variation like T-shirt size, and the new fun thing about noestimate (no estimate ha prerequirement like small stories and unified size sotries simply imagine all storey have the size of 1 and small enough to fitt into one sprint so we are truning to story points...)etc
 - effort in calendar unit
 
 ## story point

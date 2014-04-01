@@ -1,0 +1,28 @@
+---
+title: "Performance as Design"
+kind: article
+created_at: 2014-04-14 00:00
+---
+
+It’s time for us to treat performance as an essential design feature, not just as a technical best practice.
+
+...
+
+ 74% of mobile web users [9] will leave a site if it takes longer than 5 seconds to load. 
+
+...
+
+ __Good performance is good design__
+
+The road towards better performance doesn’t start with developers or technology stacks (though I’m certainly not suggesting those things are unimportant). It begins with a shared interest on everyone’s part in making a product that’s lightning fast.
+
+- Include performance in project documents
+- Get designs into the browser as soon as possible
+- Test on real devices
+- Educate—Many people in the design process simply don’t know a lot of performance consequences of their design decisions.
+
+...
+
+Ultimately performance is about respect. Respect your users’ time and they will be more likely to walk away with a positive experience. Good performance is good design. It’s time we treat it as such.
+
+[Original article](http://bradfrostweb.com/blog/post/performance-as-design/)
