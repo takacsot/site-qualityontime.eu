@@ -1,7 +1,7 @@
 ---
 title: "Euroszkepticizmus"
 kind: article
-created_at: 2014-04-06 22:22
+created_at: 2014-04-06 19:22
 ---
 
 __az euroszkepticizmus igazi alapjait a munkakultúrában kell keresni. Minden más csupán duma.__
