@@ -11,3 +11,4 @@ jruby*.jar
 mediacenter.groovy
 upload.groovy
 gallery
+*.sublime-workspace
