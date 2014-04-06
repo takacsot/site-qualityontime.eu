@@ -1,7 +1,7 @@
 ---
 title: "EP nem project orientált szervezet"
 kind: article
-created_at: 2012-04-21 00:00
+created_at: 2014-04-21 00:00
 ---
 
 Szeretne projekt orientált szervezet lenne, de nem megy neki. Ahol nem projekt orientált a szervezett ott egy projekt sem fog sikerülni soha.
