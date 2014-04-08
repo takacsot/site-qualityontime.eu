@@ -10,4 +10,9 @@ crash.log
 jruby*.jar
 mediacenter.groovy
 upload.groovy
+<<<<<<< HEAD
 gallery/*.jpg
+=======
+gallery
+*.sublime-workspace
+>>>>>>> e84e796f84787f40eb8d811ab383e2bb138df97b
