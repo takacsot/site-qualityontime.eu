@@ -10,4 +10,4 @@ crash.log
 jruby*.jar
 mediacenter.groovy
 upload.groovy
-gallery
+gallery/*.jpg

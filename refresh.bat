@@ -1,3 +1,5 @@
+git pull origin master
+
 call nanoc compile
 
 call groovy.bat scripts/mediacenter.groovy

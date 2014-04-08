@@ -1,0 +1,1260 @@
+﻿---
+layout: "none"
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<style>
+img{
+    max-width:30%;
+}
+.pagination a{
+	font-size:1.5em;
+	padding-left: 1em;
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+/** Thanks for stackoverflow*/
+Array.prototype.chunk = function(chunkSize) {
+    var array=this;
+    return [].concat.apply([],
+        array.map(function(elem,i) {
+            return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
+        })
+    );
+};
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
+
+/** Thanks for stackoverflow*/
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+$().ready(function(){
+    var PAGE_SIZE=9;
+    var img_urls = [];
+    $('div#repository imgx').each(function(index, element){
+        img_urls.push( $(element).attr('src'));
+    });
+    var urls_per_pages = img_urls.chunk(PAGE_SIZE);
+    //console.log(urls_per_pages);
+    var page = parseInt(getParameterByName('page'));
+    if(undefined === page || isNaN(page)){
+        page = 0;
+    }
+    //console.log(page);
+    var current_urls = urls_per_pages[page]
+    //console.log( current_urls);
+    
+    //build view
+    $.each(current_urls, function(index, value){
+		var imgurl =value;
+		if(imgurl.endsWith("mp4")){
+			imgurl = "http://www.graphicsfuel.com/wp-content/uploads/2011/05/video-clapperboard-512x512.png";
+		}
+		$('div#content').append('<a href="'+value+'"><img src="'+imgurl+'"></img></a>');
+    });
+    
+    //build paginaton
+    var base_url = location.href.replace(location.search,'');
+    //console.log(base_url);
+    
+    $.each(urls_per_pages, function(index, value){
+        $('div.pagination').append('<a href="'+base_url+'?page='+index+'">'+index+'</a> ');
+    });
+});
+
+</script>
+</head>
+<body>
+
+<h1>Gal&eacute;ria </h1>
+
+<p>A k&eacute;pre kattintva nagyobban is meg lehet n&eacute;zni</p>
+
+<p>Lapoz&aacute;s</p>
+<div class="pagination">
+</div>
+
+<div id="content">
+</div>
+
+<p>Lapoz&aacute;s</p>
+<div class="pagination">
+</div>
+
+<div id="repository" style="display:none;">
+<% all_children_image("/gallery/").each do |i| %>
+	<imgx src='<%=i.path%>'></imgx>
+<% end %>
+
+    <imgx src="20140307_101228.jpg"></imgx>
+
+    <imgx src="20140307_101155.jpg"></imgx>
+
+    <imgx src="20140307_101114.jpg"></imgx>
+
+    <imgx src="20140307_083508.jpg"></imgx>
+
+    <imgx src="20140307_083503.jpg"></imgx>
+
+    <imgx src="20140307_083452.jpg"></imgx>
+
+    <imgx src="20140306_161658.jpg"></imgx>
+
+    <imgx src="20140306_161651.jpg"></imgx>
+
+    <imgx src="20140306_161615.jpg"></imgx>
+
+    <imgx src="20140306_161606.jpg"></imgx>
+
+    <imgx src="20140306_161602.jpg"></imgx>
+
+    <imgx src="20140306_161556.jpg"></imgx>
+
+    <imgx src="20140306_161546.jpg"></imgx>
+
+    <imgx src="20140306_161544.jpg"></imgx>
+
+    <imgx src="20140306_161542.jpg"></imgx>
+
+    <imgx src="20140306_161540.jpg"></imgx>
+
+    <imgx src="20140306_161532.jpg"></imgx>
+
+    <imgx src="20140306-00081.jpg"></imgx>
+
+    <imgx src="20140306-00080.jpg"></imgx>
+
+    <imgx src="20140304-00079.jpg"></imgx>
+
+    <imgx src="20140304-00078.jpg"></imgx>
+
+    <imgx src="20140304-00077.jpg"></imgx>
+
+    <imgx src="20140304-00076.jpg"></imgx>
+
+    <imgx src="20140304-00075.jpg"></imgx>
+
+    <imgx src="20140304-00074.jpg"></imgx>
+
+    <imgx src="20140302_154323.jpg"></imgx>
+
+    <imgx src="20140302_154308.jpg"></imgx>
+
+    <imgx src="20140302_154255.jpg"></imgx>
+
+    <imgx src="20140302_154252.jpg"></imgx>
+
+    <imgx src="20140302_083412.jpg"></imgx>
+
+    <imgx src="20140302_083352.jpg"></imgx>
+
+    <imgx src="20140302_083336.jpg"></imgx>
+
+    <imgx src="20140302_083328.jpg"></imgx>
+
+    <imgx src="20140302_080734.jpg"></imgx>
+
+    <imgx src="20140302_080716.jpg"></imgx>
+
+    <imgx src="20140302_080702.jpg"></imgx>
+
+    <imgx src="20140228-00073.jpg"></imgx>
+
+    <imgx src="20140228-00072.jpg"></imgx>
+
+    <imgx src="20140222_151251.jpg"></imgx>
+
+    <imgx src="20140222_151246.jpg"></imgx>
+
+    <imgx src="20140222_151240.jpg"></imgx>
+
+    <imgx src="20140222_151226.jpg"></imgx>
+
+    <imgx src="20140222_151220.jpg"></imgx>
+
+    <imgx src="20140221_181838.jpg"></imgx>
+
+    <imgx src="20140221_181831.jpg"></imgx>
+
+    <imgx src="20140221_181826.jpg"></imgx>
+
+    <imgx src="20140219_184524.jpg"></imgx>
+
+    <imgx src="20140219_184514.jpg"></imgx>
+
+    <imgx src="20140215_105741.jpg"></imgx>
+
+    <imgx src="20140210_194536.jpg"></imgx>
+
+    <imgx src="20140210_194529.jpg"></imgx>
+
+    <imgx src="20140210_194517.jpg"></imgx>
+
+    <imgx src="20140210_194506.jpg"></imgx>
+
+    <imgx src="20140210_194500.jpg"></imgx>
+
+    <imgx src="20140210_194449.jpg"></imgx>
+
+    <imgx src="20140210_194439.jpg"></imgx>
+
+    <imgx src="20140204_191325.jpg"></imgx>
+
+    <imgx src="20140204_191322.jpg"></imgx>
+
+    <imgx src="20140204_191316.jpg"></imgx>
+
+    <imgx src="20140202_114847.jpg"></imgx>
+
+    <imgx src="20140202_114837.jpg"></imgx>
+
+    <imgx src="20140202_114821.jpg"></imgx>
+
+    <imgx src="20140202_114800.jpg"></imgx>
+
+    <imgx src="20140202_114740.jpg"></imgx>
+
+    <imgx src="20140202_114730.jpg"></imgx>
+
+    <imgx src="20140202_114720.jpg"></imgx>
+
+    <imgx src="20140201_103156.jpg"></imgx>
+
+    <imgx src="20140201_103108.jpg"></imgx>
+
+    <imgx src="20140201_103102.jpg"></imgx>
+
+    <imgx src="20140201_103057.jpg"></imgx>
+
+    <imgx src="20140201_103016.jpg"></imgx>
+
+    <imgx src="20140127_092531.jpg"></imgx>
+
+    <imgx src="20140126_154824.jpg"></imgx>
+
+    <imgx src="20140126_154815.jpg"></imgx>
+
+    <imgx src="20140126_120706.jpg"></imgx>
+
+    <imgx src="20140126_120654.jpg"></imgx>
+
+    <imgx src="20140113_105815.jpg"></imgx>
+
+    <imgx src="20140113_105751.jpg"></imgx>
+
+    <imgx src="20140113_105711.jpg"></imgx>
+
+    <imgx src="20140113_105636.jpg"></imgx>
+
+    <imgx src="20140113_105625.jpg"></imgx>
+
+    <imgx src="20140113_105530.jpg"></imgx>
+
+    <imgx src="20140110_174631.jpg"></imgx>
+
+    <imgx src="20140110_174627.jpg"></imgx>
+
+    <imgx src="20140110_174624.jpg"></imgx>
+
+    <imgx src="20140109_083645.jpg"></imgx>
+
+    <imgx src="20140109_083306.jpg"></imgx>
+
+    <imgx src="20140109_083254.jpg"></imgx>
+
+    <imgx src="20140109_083247.jpg"></imgx>
+
+    <imgx src="20140109_083235.jpg"></imgx>
+
+    <imgx src="20140109_083228.jpg"></imgx>
+
+    <imgx src="20140109_083224.jpg"></imgx>
+
+    <imgx src="20140109_083209.jpg"></imgx>
+
+    <imgx src="20140109_083159.jpg"></imgx>
+
+    <imgx src="20140109_083146.jpg"></imgx>
+
+    <imgx src="20140109_083134.jpg"></imgx>
+
+    <imgx src="20140109_083118.jpg"></imgx>
+
+    <imgx src="20140109_083023.jpg"></imgx>
+
+    <imgx src="20140109_083006.jpg"></imgx>
+
+    <imgx src="20140109_082910.jpg"></imgx>
+
+    <imgx src="20140108_171125.jpg"></imgx>
+
+    <imgx src="20140108_171120.jpg"></imgx>
+
+    <imgx src="20140108_171110.jpg"></imgx>
+
+    <imgx src="20140108_165642.jpg"></imgx>
+
+    <imgx src="20140108_165637.jpg"></imgx>
+
+    <imgx src="20140108_165631.jpg"></imgx>
+
+    <imgx src="20140108_165628.jpg"></imgx>
+
+    <imgx src="20140108_165626.jpg"></imgx>
+
+    <imgx src="20140108_165623.jpg"></imgx>
+
+    <imgx src="20140108_165620.jpg"></imgx>
+
+    <imgx src="20140108_165616.jpg"></imgx>
+
+    <imgx src="20140108_165612.jpg"></imgx>
+
+    <imgx src="20140108_165602.jpg"></imgx>
+
+    <imgx src="20140108_165553.jpg"></imgx>
+
+    <imgx src="20140108_165549.jpg"></imgx>
+
+    <imgx src="20140108_165542.jpg"></imgx>
+
+    <imgx src="20140108_165537.jpg"></imgx>
+
+    <imgx src="20140106_151934.jpg"></imgx>
+
+    <imgx src="20140106_151931.jpg"></imgx>
+
+    <imgx src="20140106_151928.jpg"></imgx>
+
+    <imgx src="20140106_151924.jpg"></imgx>
+
+    <imgx src="20140106_151918.jpg"></imgx>
+
+    <imgx src="20140106_151914.jpg"></imgx>
+
+    <imgx src="20140105_173449.jpg"></imgx>
+
+    <imgx src="20140104_140243.jpg"></imgx>
+
+    <imgx src="20140104_140237.jpg"></imgx>
+
+    <imgx src="20140104_140233.jpg"></imgx>
+
+    <imgx src="20140104_132319.jpg"></imgx>
+
+    <imgx src="20140103_182048.jpg"></imgx>
+
+    <imgx src="20140103_182042.jpg"></imgx>
+
+    <imgx src="20140103_181147.jpg"></imgx>
+
+    <imgx src="20140103_181113.jpg"></imgx>
+
+    <imgx src="20140103_181059.jpg"></imgx>
+
+    <imgx src="20140103_181052.jpg"></imgx>
+
+    <imgx src="20140103_181046.jpg"></imgx>
+
+    <imgx src="20140103_181039.jpg"></imgx>
+
+    <imgx src="20140103_180845.jpg"></imgx>
+
+    <imgx src="20140103_180836.jpg"></imgx>
+
+    <imgx src="20140103_165713.jpg"></imgx>
+
+    <imgx src="20140103_165701.jpg"></imgx>
+
+    <imgx src="20140103_165647.jpg"></imgx>
+
+    <imgx src="20140103_165327.jpg"></imgx>
+
+    <imgx src="20140103_165320.jpg"></imgx>
+
+    <imgx src="20140103_165310.jpg"></imgx>
+
+    <imgx src="20140103_165307.jpg"></imgx>
+
+    <imgx src="20140103_165258.jpg"></imgx>
+
+    <imgx src="20140102_150619.jpg"></imgx>
+
+    <imgx src="20140102_143927.jpg"></imgx>
+
+    <imgx src="20140102_143919.jpg"></imgx>
+
+    <imgx src="20140102_113653.jpg"></imgx>
+
+    <imgx src="20140102_113647.jpg"></imgx>
+
+    <imgx src="20140102_113641.jpg"></imgx>
+
+    <imgx src="20140102_113623.jpg"></imgx>
+
+    <imgx src="20140102_113529.jpg"></imgx>
+
+    <imgx src="20140102_111809.jpg"></imgx>
+
+    <imgx src="20140102_111806.jpg"></imgx>
+
+    <imgx src="20140102_111802.jpg"></imgx>
+
+    <imgx src="20140102_111750.jpg"></imgx>
+
+    <imgx src="20140102_110435.jpg"></imgx>
+
+    <imgx src="20140102_110428.jpg"></imgx>
+
+    <imgx src="20140101_164834.jpg"></imgx>
+
+    <imgx src="20140101_164815.jpg"></imgx>
+
+    <imgx src="20140101_164806.jpg"></imgx>
+
+    <imgx src="20140101_164759.jpg"></imgx>
+
+    <imgx src="20140101_163842.jpg"></imgx>
+
+    <imgx src="20140101_163831.jpg"></imgx>
+
+    <imgx src="20140101_163823.jpg"></imgx>
+
+    <imgx src="20140101_153642.jpg"></imgx>
+
+    <imgx src="20140101_153631.jpg"></imgx>
+
+    <imgx src="20140101_153617.jpg"></imgx>
+
+    <imgx src="20140101_153609.jpg"></imgx>
+
+    <imgx src="20140101_153602.jpg"></imgx>
+
+    <imgx src="20140101_153551.jpg"></imgx>
+
+    <imgx src="20140101_153445.jpg"></imgx>
+
+    <imgx src="20140101_153440.jpg"></imgx>
+
+    <imgx src="20140101_142350.jpg"></imgx>
+
+    <imgx src="20140101_142338.jpg"></imgx>
+
+    <imgx src="2014-01-05-172530.jpg"></imgx>
+
+    <imgx src="2014-01-05-172524.jpg"></imgx>
+
+    <imgx src="20131230_193004.jpg"></imgx>
+
+    <imgx src="20131230_193001.jpg"></imgx>
+
+    <imgx src="20131230_192958.jpg"></imgx>
+
+    <imgx src="20131230_133249.jpg"></imgx>
+
+    <imgx src="20131227_190737.jpg"></imgx>
+
+    <imgx src="20131227_190725.jpg"></imgx>
+
+    <imgx src="20131227_190707.jpg"></imgx>
+
+    <imgx src="20131227_190702.jpg"></imgx>
+
+    <imgx src="20131227_190649.jpg"></imgx>
+
+    <imgx src="20131226_184103.jpg"></imgx>
+
+    <imgx src="20131226_184059.jpg"></imgx>
+
+    <imgx src="20131226_151437.jpg"></imgx>
+
+    <imgx src="20131226_151421.jpg"></imgx>
+
+    <imgx src="20131226_143747.jpg"></imgx>
+
+    <imgx src="20131226_143739.jpg"></imgx>
+
+    <imgx src="20131226_143733.jpg"></imgx>
+
+    <imgx src="20131226_143730.jpg"></imgx>
+
+    <imgx src="20131226_143045.jpg"></imgx>
+
+    <imgx src="20131226_143034.jpg"></imgx>
+
+    <imgx src="20131226_143019.jpg"></imgx>
+
+    <imgx src="20131226_143010.jpg"></imgx>
+
+    <imgx src="20131225_11_09_00_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_57_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_29_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_26_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_23_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_19_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_08_14_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_07_53_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_07_49_Pro.jpg"></imgx>
+
+    <imgx src="20131225_11_07_46_Pro.jpg"></imgx>
+
+    <imgx src="20131225_10_55_02_Pro.jpg"></imgx>
+
+    <imgx src="20131225_10_54_50_Pro.jpg"></imgx>
+
+    <imgx src="20131225_10_54_46_Pro.jpg"></imgx>
+
+    <imgx src="20131225_10_54_32_Pro.jpg"></imgx>
+
+    <imgx src="20131225_10_54_19_Pro.jpg"></imgx>
+
+    <imgx src="20131225_103135.jpg"></imgx>
+
+    <imgx src="20131225_103122.jpg"></imgx>
+
+    <imgx src="20131225_094925.jpg"></imgx>
+
+    <imgx src="20131225_094920.jpg"></imgx>
+
+    <imgx src="20131224_20_31_22_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_31_19_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_31_14_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_31_03_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_30_49_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_30_32_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_30_28_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_30_25_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_30_16_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_29_58_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_29_45_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_29_41_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_29_29_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_28_43_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_28_39_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_28_35_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_28_12_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_28_09_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_27_47_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_27_36_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_27_28_Pro.jpg"></imgx>
+
+    <imgx src="20131224_20_27_20_Pro.jpg"></imgx>
+
+    <imgx src="20131224_202000.jpg"></imgx>
+
+    <imgx src="20131224_201948.jpg"></imgx>
+
+    <imgx src="20131224_200030.jpg"></imgx>
+
+    <imgx src="20131224_200027.jpg"></imgx>
+
+    <imgx src="20131224_200014.jpg"></imgx>
+
+    <imgx src="20131224_200011.jpg"></imgx>
+
+    <imgx src="20131224_19_44_25_Pro.jpg"></imgx>
+
+    <imgx src="20131224_19_44_21_Pro.jpg"></imgx>
+
+    <imgx src="20131224_19_44_14_Pro.jpg"></imgx>
+
+    <imgx src="20131224_19_44_08_Pro.jpg"></imgx>
+
+    <imgx src="20131224_19_44_04_Pro.jpg"></imgx>
+
+    <imgx src="20131224_182020.jpg"></imgx>
+
+    <imgx src="20131224_182012.jpg"></imgx>
+
+    <imgx src="20131224_182008.jpg"></imgx>
+
+    <imgx src="20131224_182003.jpg"></imgx>
+
+    <imgx src="20131224_181824.jpg"></imgx>
+
+    <imgx src="20131224_181818.jpg"></imgx>
+
+    <imgx src="20131224_181739.jpg"></imgx>
+
+    <imgx src="20131224_181722.jpg"></imgx>
+
+    <imgx src="20131224_181715.jpg"></imgx>
+
+    <imgx src="20131224_181710.jpg"></imgx>
+
+    <imgx src="20131224_181704.jpg"></imgx>
+
+    <imgx src="20131224_181532.jpg"></imgx>
+
+    <imgx src="20131224_181529.jpg"></imgx>
+
+    <imgx src="20131224_181520.jpg"></imgx>
+
+    <imgx src="20131224_181517.jpg"></imgx>
+
+    <imgx src="20131224_181511.jpg"></imgx>
+
+    <imgx src="20131224_181508.jpg"></imgx>
+
+    <imgx src="20131224_181506.jpg"></imgx>
+
+    <imgx src="20131224_181211.jpg"></imgx>
+
+    <imgx src="20131224_181158.jpg"></imgx>
+
+    <imgx src="20131224_181141.jpg"></imgx>
+
+    <imgx src="20131224_174258.jpg"></imgx>
+
+    <imgx src="20131224_174255.jpg"></imgx>
+
+    <imgx src="20131224_173613.jpg"></imgx>
+
+    <imgx src="20131224_173541.jpg"></imgx>
+
+    <imgx src="20131224_173526.jpg"></imgx>
+
+    <imgx src="20131224_173523.jpg"></imgx>
+
+    <imgx src="20131224_173513.jpg"></imgx>
+
+    <imgx src="20131224_173414.jpg"></imgx>
+
+    <imgx src="20131224_173356.jpg"></imgx>
+
+    <imgx src="20131224_173323.jpg"></imgx>
+
+    <imgx src="20131224_173313.jpg"></imgx>
+
+    <imgx src="20131224_173226.jpg"></imgx>
+
+    <imgx src="20131224_173213.jpg"></imgx>
+
+    <imgx src="20131224_173212.jpg"></imgx>
+
+    <imgx src="20131224_173210.jpg"></imgx>
+
+    <imgx src="20131224_173143.jpg"></imgx>
+
+    <imgx src="20131224_173101.jpg"></imgx>
+
+    <imgx src="20131224_173054.jpg"></imgx>
+
+    <imgx src="20131224_173029.jpg"></imgx>
+
+    <imgx src="20131224_173027.jpg"></imgx>
+
+    <imgx src="20131224_173015.jpg"></imgx>
+
+    <imgx src="20131224_173006.jpg"></imgx>
+
+    <imgx src="20131224_172949.jpg"></imgx>
+
+    <imgx src="20131224_172936.jpg"></imgx>
+
+    <imgx src="20131224_164028.jpg"></imgx>
+
+    <imgx src="20131224_15_21_47_Pro.jpg"></imgx>
+
+    <imgx src="20131224_15_21_28_Pro.jpg"></imgx>
+
+    <imgx src="20131224_15_21_09_Pro.jpg"></imgx>
+
+    <imgx src="20131224_130428.jpg"></imgx>
+
+    <imgx src="20131224_130420.jpg"></imgx>
+
+    <imgx src="20131224_130407.jpg"></imgx>
+
+    <imgx src="20131224_130322.jpg"></imgx>
+
+    <imgx src="20131224_12_16_23_Pro.jpg"></imgx>
+
+    <imgx src="20131224_12_16_08_Pro.jpg"></imgx>
+
+    <imgx src="20131224_12_15_57_Pro.jpg"></imgx>
+
+    <imgx src="20131224_12_15_51_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_33_05_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_32_24_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_32_20_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_05_19_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_05_10_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_05_05_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_05_01_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_04_01_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_03_57_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_03_52_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_03_17_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_02_57_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_02_52_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_02_37_Pro.jpg"></imgx>
+
+    <imgx src="20131223_20_02_27_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_58_23_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_58_08_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_57_59_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_57_22_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_57_18_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_57_14_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_55_20_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_54_58_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_53_02_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_52_56_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_51_53_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_51_49_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_51_32_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_51_20_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_50_39_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_50_08_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_49_55_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_49_43_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_44_35_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_44_07_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_42_11_Smart.jpg"></imgx>
+
+    <imgx src="20131223_19_42_00_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_41_47_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_41_43_Pro.jpg"></imgx>
+
+    <imgx src="20131223_19_38_09_Smart.jpg"></imgx>
+
+    <imgx src="20131222_164757.jpg"></imgx>
+
+    <imgx src="20131222_164754.jpg"></imgx>
+
+    <imgx src="20131222_164738.jpg"></imgx>
+
+    <imgx src="20131222_164733.jpg"></imgx>
+
+    <imgx src="20131222_140623.jpg"></imgx>
+
+    <imgx src="20131222_140614.jpg"></imgx>
+
+    <imgx src="20131215_181216.jpg"></imgx>
+
+    <imgx src="20131215_181145.jpg"></imgx>
+
+    <imgx src="20131215_181134.jpg"></imgx>
+
+    <imgx src="20131215_181105.jpg"></imgx>
+
+    <imgx src="20131215_181052.jpg"></imgx>
+
+    <imgx src="20131215_181046.jpg"></imgx>
+
+    <imgx src="20131215_181033.jpg"></imgx>
+
+    <imgx src="20131215_181024.jpg"></imgx>
+
+    <imgx src="20131215_180909.jpg"></imgx>
+
+    <imgx src="20131215_180845.jpg"></imgx>
+
+    <imgx src="20131210_115118.jpg"></imgx>
+
+    <imgx src="20131210_115034.jpg"></imgx>
+
+    <imgx src="20131210_112723.jpg"></imgx>
+
+    <imgx src="20131210_112709.jpg"></imgx>
+
+    <imgx src="20131210_112652.jpg"></imgx>
+
+    <imgx src="20131201_191833.jpg"></imgx>
+
+    <imgx src="20131201_191814.jpg"></imgx>
+
+    <imgx src="20131201_191810.jpg"></imgx>
+
+    <imgx src="20131130_110738.jpg"></imgx>
+
+    <imgx src="20131130_110736.jpg"></imgx>
+
+    <imgx src="20131130_110733.jpg"></imgx>
+
+    <imgx src="20131130_110730.jpg"></imgx>
+
+    <imgx src="20131130_110722.jpg"></imgx>
+
+    <imgx src="20131130_110559.jpg"></imgx>
+
+    <imgx src="20131130_110510.jpg"></imgx>
+
+    <imgx src="20131130_110502.jpg"></imgx>
+
+    <imgx src="20131130_110438.jpg"></imgx>
+
+    <imgx src="20131124_160400.jpg"></imgx>
+
+    <imgx src="20131124_160355.jpg"></imgx>
+
+    <imgx src="20131124_160350.jpg"></imgx>
+
+    <imgx src="20131124_154802.jpg"></imgx>
+
+    <imgx src="20131124_154746.jpg"></imgx>
+
+    <imgx src="20131124_154644.jpg"></imgx>
+
+    <imgx src="20131124_154601.jpg"></imgx>
+
+    <imgx src="20131124_154540.jpg"></imgx>
+
+    <imgx src="20131124_154531.jpg"></imgx>
+
+    <imgx src="20131123_172651.jpg"></imgx>
+
+    <imgx src="20131123_172646.jpg"></imgx>
+
+    <imgx src="20131123_172642.jpg"></imgx>
+
+    <imgx src="20131123_172637.jpg"></imgx>
+
+    <imgx src="20131123_105536.jpg"></imgx>
+
+    <imgx src="20131123_105526.jpg"></imgx>
+
+    <imgx src="20131123_105522.jpg"></imgx>
+
+    <imgx src="20131123_105512.jpg"></imgx>
+
+    <imgx src="20131116_134056.jpg"></imgx>
+
+    <imgx src="20131116_134051.jpg"></imgx>
+
+    <imgx src="20131115_191239.jpg"></imgx>
+
+    <imgx src="20131115_191215.jpg"></imgx>
+
+    <imgx src="20131115_191212.jpg"></imgx>
+
+    <imgx src="20131115_191201.jpg"></imgx>
+
+    <imgx src="20131115_191155.jpg"></imgx>
+
+    <imgx src="20131112_185608.jpg"></imgx>
+
+    <imgx src="20131112_185604.jpg"></imgx>
+
+    <imgx src="20131112_180052.jpg"></imgx>
+
+    <imgx src="20131109_142839.jpg"></imgx>
+
+    <imgx src="20131109_142829.jpg"></imgx>
+
+    <imgx src="20131109_142819.jpg"></imgx>
+
+    <imgx src="20131109_142802.jpg"></imgx>
+
+    <imgx src="20131109_142755.jpg"></imgx>
+
+    <imgx src="20131109_142242.jpg"></imgx>
+
+    <imgx src="20131109_141838.jpg"></imgx>
+
+    <imgx src="20131109_141833.jpg"></imgx>
+
+    <imgx src="20131109_141827.jpg"></imgx>
+
+    <imgx src="20131109_141823.jpg"></imgx>
+
+    <imgx src="20131109_141815.jpg"></imgx>
+
+    <imgx src="20131109_141805.jpg"></imgx>
+
+    <imgx src="20131109_141802.jpg"></imgx>
+
+    <imgx src="20131109_141759.jpg"></imgx>
+
+    <imgx src="20131109_135938.jpg"></imgx>
+
+    <imgx src="20131109_135834.jpg"></imgx>
+
+    <imgx src="20131109_135829.jpg"></imgx>
+
+    <imgx src="20131109_135819.jpg"></imgx>
+
+    <imgx src="20131109_135815.jpg"></imgx>
+
+    <imgx src="20131109_135805.jpg"></imgx>
+
+    <imgx src="20131109_135758.jpg"></imgx>
+
+    <imgx src="20131109_135752.jpg"></imgx>
+
+    <imgx src="20131109_135530.jpg"></imgx>
+
+    <imgx src="20131109_135527.jpg"></imgx>
+
+    <imgx src="20131109_135522.jpg"></imgx>
+
+    <imgx src="20131107_143353.jpg"></imgx>
+
+    <imgx src="20131107_143343.jpg"></imgx>
+
+    <imgx src="20131107_143212.jpg"></imgx>
+
+    <imgx src="20131107_143019.jpg"></imgx>
+
+    <imgx src="20131107_142942.jpg"></imgx>
+
+    <imgx src="20131107_142934.jpg"></imgx>
+
+    <imgx src="20131107_142920.jpg"></imgx>
+
+    <imgx src="20131107_142851.jpg"></imgx>
+
+    <imgx src="20131107_142717.jpg"></imgx>
+
+    <imgx src="20131107_142628.jpg"></imgx>
+
+    <imgx src="20131107_142622.jpg"></imgx>
+
+    <imgx src="20131103_144415.jpg"></imgx>
+
+    <imgx src="20131103_144358.jpg"></imgx>
+
+    <imgx src="20131103_144335.jpg"></imgx>
+
+    <imgx src="20131103_144323.jpg"></imgx>
+
+    <imgx src="20131103_144321.jpg"></imgx>
+
+    <imgx src="20131101_194511.jpg"></imgx>
+
+    <imgx src="20131101_194507.jpg"></imgx>
+
+    <imgx src="20131101_194451.jpg"></imgx>
+
+    <imgx src="20131101_151935.jpg"></imgx>
+
+    <imgx src="20131031-00048.jpg"></imgx>
+
+    <imgx src="20131029_081351.jpg"></imgx>
+
+    <imgx src="20131029_080445.jpg"></imgx>
+
+    <imgx src="20131029_080429.jpg"></imgx>
+
+    <imgx src="20131029_080416.jpg"></imgx>
+
+    <imgx src="20131029_080408.jpg"></imgx>
+
+    <imgx src="20131027_165308.jpg"></imgx>
+
+    <imgx src="20131027_165258.jpg"></imgx>
+
+    <imgx src="20131027_165224.jpg"></imgx>
+
+    <imgx src="20131027_165220.jpg"></imgx>
+
+    <imgx src="20131027_165209.jpg"></imgx>
+
+    <imgx src="20131027_165203.jpg"></imgx>
+
+    <imgx src="20131027_154948.jpg"></imgx>
+
+    <imgx src="20131027_154938.jpg"></imgx>
+
+    <imgx src="20131027_133544.jpg"></imgx>
+
+    <imgx src="20131027_133536.jpg"></imgx>
+
+    <imgx src="20131027_124214.jpg"></imgx>
+
+    <imgx src="20131027_123713.jpg"></imgx>
+
+    <imgx src="20131027_123701.jpg"></imgx>
+
+    <imgx src="20131027_123635.jpg"></imgx>
+
+    <imgx src="20131026_125527.jpg"></imgx>
+
+    <imgx src="20131026_125456.jpg"></imgx>
+
+    <imgx src="20131026_112245.jpg"></imgx>
+
+    <imgx src="20131026_110741.jpg"></imgx>
+
+    <imgx src="20131026_110727.jpg"></imgx>
+
+    <imgx src="20131026_105632.jpg"></imgx>
+
+    <imgx src="20131026_105625.jpg"></imgx>
+
+    <imgx src="20131026_105549.jpg"></imgx>
+
+    <imgx src="20131026_105542.jpg"></imgx>
+
+    <imgx src="20131026_105535.jpg"></imgx>
+
+    <imgx src="20131020_095849.jpg"></imgx>
+
+    <imgx src="20131020_095844.jpg"></imgx>
+
+    <imgx src="20131020_095835.jpg"></imgx>
+
+    <imgx src="20131018-00041.jpg"></imgx>
+
+    <imgx src="20131010_173951.jpg"></imgx>
+
+    <imgx src="20131010_173945.jpg"></imgx>
+
+    <imgx src="20131006_165110.jpg"></imgx>
+
+    <imgx src="20131006_165052.jpg"></imgx>
+
+    <imgx src="20131006_165049.jpg"></imgx>
+
+    <imgx src="20131006_165040.jpg"></imgx>
+
+    <imgx src="20131005_194435.jpg"></imgx>
+
+    <imgx src="20131005_194404.jpg"></imgx>
+
+    <imgx src="20131005_194356.jpg"></imgx>
+
+    <imgx src="20131005_194334.jpg"></imgx>
+
+    <imgx src="20131005_194321.jpg"></imgx>
+
+    <imgx src="20131005_194218.jpg"></imgx>
+
+    <imgx src="20131005_194208.jpg"></imgx>
+
+    <imgx src="20131005_194037.jpg"></imgx>
+
+    <imgx src="20131005_194023.jpg"></imgx>
+
+    <imgx src="20131005_193959.jpg"></imgx>
+
+    <imgx src="20131005_193943.jpg"></imgx>
+
+    <imgx src="20131005_193917.jpg"></imgx>
+
+    <imgx src="20131005_193859.jpg"></imgx>
+
+    <imgx src="20131005_193851.jpg"></imgx>
+
+    <imgx src="20131005_193755.jpg"></imgx>
+
+    <imgx src="20131005_193723.jpg"></imgx>
+
+    <imgx src="20131005_193653.jpg"></imgx>
+
+    <imgx src="20131005_193643.jpg"></imgx>
+
+    <imgx src="20131005_193431.jpg"></imgx>
+
+    <imgx src="20131005_193414.jpg"></imgx>
+
+    <imgx src="20131005_193400.jpg"></imgx>
+
+    <imgx src="20131005_193341.jpg"></imgx>
+
+    <imgx src="20131005_193324.jpg"></imgx>
+
+    <imgx src="20130930_175355.jpg"></imgx>
+
+    <imgx src="20130930_175346.jpg"></imgx>
+
+    <imgx src="20130929_174137.jpg"></imgx>
+
+    <imgx src="20130929_174124.jpg"></imgx>
+
+    <imgx src="20130929_174122.jpg"></imgx>
+
+    <imgx src="20130929_173901.jpg"></imgx>
+
+    <imgx src="20130929_173844.jpg"></imgx>
+
+    <imgx src="20130929_135709.jpg"></imgx>
+
+    <imgx src="20130929_114428.jpg"></imgx>
+
+    <imgx src="20130929_114425.jpg"></imgx>
+
+    <imgx src="20130929_114359.jpg"></imgx>
+
+    <imgx src="20130929_114349.jpg"></imgx>
+
+    <imgx src="20130929_114341.jpg"></imgx>
+
+    <imgx src="20130929_114308.jpg"></imgx>
+
+    <imgx src="20130929_114252.jpg"></imgx>
+
+    <imgx src="20130929_114126.jpg"></imgx>
+
+    <imgx src="20130929_114117.jpg"></imgx>
+
+    <imgx src="20130929_114112.jpg"></imgx>
+
+    <imgx src="20130929_114108.jpg"></imgx>
+
+    <imgx src="20130929_114104.jpg"></imgx>
+
+    <imgx src="20130929_114044.jpg"></imgx>
+
+    <imgx src="20130929_114038.jpg"></imgx>
+
+    <imgx src="20130929_114022.jpg"></imgx>
+
+    <imgx src="20130917_200048.jpg"></imgx>
+
+    <imgx src="20130917_200032.jpg"></imgx>
+
+    <imgx src="20130917_195951.jpg"></imgx>
+
+    <imgx src="20130917_195945.jpg"></imgx>
+
+    <imgx src="20130917_195939.jpg"></imgx>
+
+    <imgx src="20130912_080206.jpg"></imgx>
+
+    <imgx src="20130912_080155.jpg"></imgx>
+
+    <imgx src="20130911_201512.jpg"></imgx>
+
+    <imgx src="20130911_201506.jpg"></imgx>
+
+    <imgx src="20130911_201431.jpg"></imgx>
+
+    <imgx src="20130911_201422.jpg"></imgx>
+
+    <imgx src="20130911_201340.jpg"></imgx>
+
+    <imgx src="20130911_201328.jpg"></imgx>
+
+    <imgx src="20130911_201318.jpg"></imgx>
+
+    <imgx src="20130911_201308.jpg"></imgx>
+
+    <imgx src="20130910-00021.jpg"></imgx>
+
+    <imgx src="20130906_205429.jpg"></imgx>
+
+    <imgx src="20130906_205419.jpg"></imgx>
+
+    <imgx src="20130906_083732.jpg"></imgx>
+
+    <imgx src="20130906_083728.jpg"></imgx>
+
+    <imgx src="20130901_084222.jpg"></imgx>
+
+    <imgx src="20130831_113553.jpg"></imgx>
+
+    <imgx src="20130830_142416.jpg"></imgx>
+
+    <imgx src="20130830_141952.jpg"></imgx>
+
+    <imgx src="20130824_173625.jpg"></imgx>
+
+    <imgx src="20130824_173512.jpg"></imgx>
+
+    <imgx src="20130824_173443.jpg"></imgx>
+
+    <imgx src="20130824_173327.jpg"></imgx>
+
+    <imgx src="20130824_173320.jpg"></imgx>
+
+    <imgx src="20130824_173304.jpg"></imgx>
+
+    <imgx src="20130809_191421.jpg"></imgx>
+
+    <imgx src="20130808_165007.jpg"></imgx>
+
+    <imgx src="20130806_193303.jpg"></imgx>
+
+    <imgx src="20130806_193258.jpg"></imgx>
+
+    <imgx src="20130801_210100.jpg"></imgx>
+
+    <imgx src="20130801_193701.jpg"></imgx>
+
+    <imgx src="20130801_104944.jpg"></imgx>
+
+    <imgx src="20130801_024747.jpg"></imgx>
+
+
+</div>
+</body>
+</html>
+
+
+
