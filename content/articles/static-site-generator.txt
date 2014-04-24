@@ -28,13 +28,17 @@ De mint említettem az igazi nagyágyúk scripting nyelvek alatt érhetőek el. 
 2. Másold le mint `jruby-complete.jar` (hidd el, párszor  meg fogod ismételni, mire elkészíted a saját verziódat).
 3. A trükk az, hogy ezzel a disztribúcióval bármit tudsz csinálni. Fogod magad és letöltöd a neked tetsző gem-eket és élvezed. Persze vannak korlátok, hiszen a C kiterjesztéssel működő gem-ek nem fognak simán működni, de a tisztán [Ruby](http://www.ruby-lang.org/)-ban implementált gem-ekkel nem szabad, hogy gond legyen. (Egyébként jelenleg ez a leggyorsabb [Ruby](http://www.ruby-lang.org/) implementáció, ha a start-up időt nem számítjuk.)
 4. töltsd le a szükséges gem-eket, nanoc és függőségeit: (pl.: kramdown)
+
 ~~~
 java -jar jruby-complete.jar -S gem install -i ./nanoc-gems nanoc kramdown
 ~~~
+
 5. Updateld a [JRuby](http://jruby.org/) jar filet:
+
 ~~~
 jar uf jruby-complete.jar -C nanoc-gems/ .
 ~~~
+
 6. kezd el használni a nanoc-ot (honlapról vett példa): `java -jar jruby-complete.jar nanoc create-site tutorial` stb...
 
 Szerintem minimum szükséges gem-ek listája:
