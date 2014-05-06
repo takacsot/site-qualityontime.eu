@@ -1,7 +1,7 @@
 ---
 title: "Gradle Groovy Java cross compile"
-created_at: 2013-05-15 00:00
-kind: articled
+created_at: 2014-05-15 00:00
+kind: article
 tags:
   - java
   - groovy
@@ -26,6 +26,8 @@ A [Groovy](http://groovy.codehaus.org/)-t könnyű bevezetni, mikor rámutatsz, 
      def object 
  }
 ~~~
+
+A fenti példa egy teljes értékű Java beant hoz létre mindenféle getterrel, setterrel, toStringgel, hashCoddal, equalsval és hasznos konstruktorokkal.
 
 Majd ezt használni akarod Java-ban. És nem fog menni!
 
