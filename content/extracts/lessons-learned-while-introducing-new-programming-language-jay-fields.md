@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-01-27 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 I hate all programming languages - Matt Foemmel
 

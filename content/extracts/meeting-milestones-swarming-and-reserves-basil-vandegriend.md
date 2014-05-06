@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-21 21:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 ##Swarming
 

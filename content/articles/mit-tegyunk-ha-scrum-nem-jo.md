@@ -4,7 +4,11 @@ kind: article
 created_at: 2010-05-30 12:07:23 +0000
 author: "Takács Ottó"
 published: true
-tags: it,management,productivity,articles
+tags: 
+  - it
+  - management
+  - productivity
+
 ---
 Mikor __Agile__ szoftverfejlesztés szóba kerül, akkor önkéntelenül mindenki a __Scrum__-ra gondol, pedig nem így van. [Korábbi írásomhoz](/extracts/megertik-es-atelik-munkajukat-scrum-modszerrol-1-resz) érdekes és tanulságos hozzászólások születtek. Több ötletet és elgondolást találtam, amit hasznosítani tudok.
 

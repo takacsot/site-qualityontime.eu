@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-02-26 13:35:50 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![A burok](/sites/default/files/covers_1100.jpg)
 Kicsit szkeptikusan vettem kezembe (pontosabban töltöttem fel az ebook readeremre), de végül nem csalódtam. Kellemes, nehezen letehető olvasmány. Kicsit érzelmes, de nem csöpögős. Sokszor meghatódtam az olvasása közben.

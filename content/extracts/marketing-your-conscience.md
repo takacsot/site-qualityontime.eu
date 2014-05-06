@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-08-27 17:18:03 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <blockquote>
 <p><span style="color: rgb(0, 0, 0); font-family: Verdana;" class="Apple-style-span">You must become so convinced of the benefits of your product or service that you feel you'd be unjustly depriving people by not doing everything in your power to get the word out.</span></p>

@@ -4,7 +4,11 @@ kind: article
 created_at: 2010-10-06 19:50:56 +0000
 author: "Takács Ottó"
 published: true
-tags: development,agile,productivity,quality,articles
+tags: 
+  - development
+  - agile
+  - productivity
+  - quality
 ---
 Csak ezen a héten találkoztam ezzel a cikkel. A blog szerzőjének (Marhefka István) engedélyével publikálom újra.
 

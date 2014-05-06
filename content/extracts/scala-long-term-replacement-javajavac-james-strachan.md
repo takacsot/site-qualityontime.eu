@@ -4,7 +4,12 @@ kind: article
 created_at: 2012-03-09 21:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: scala,jruby,java,groovy,extracts
+tags: 
+  - scala
+  - jruby
+  - java
+  - groovy
+  - extracts
 ---
 >So whats gonna be the long term replacement for javac? Certainly the dynamic languages like Ruby, Groovy, Python, JavaScript have been getting very popular the last few years - lots of folks like them.
 

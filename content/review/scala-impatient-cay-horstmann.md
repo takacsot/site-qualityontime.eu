@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-04-09 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Scala for the impatient](http://moly.hu/system/covers/normal/covers_173949.jpg?1332140734)
 

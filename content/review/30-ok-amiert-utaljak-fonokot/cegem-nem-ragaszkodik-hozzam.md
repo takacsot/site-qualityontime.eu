@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-14 16:36:41 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 __Az alkalmazottak 38%-a nem érez elkötelezettséget foglalkoztatója iránt.__
 

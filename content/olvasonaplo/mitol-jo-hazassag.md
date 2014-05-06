@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-07-19 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review,olvasonaplo
+tags: 
+  - review,olvasonaplo
 ---
 ![](http://moly.hu/system/covers/normal/covers_32096.jpg?1254421557)
 

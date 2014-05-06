@@ -4,7 +4,11 @@ kind: article
 created_at: 2009-10-05 18:31:28 +0000
 author: "Takács Ottó"
 published: true
-tags: quality,management,it,extracts
+tags: 
+  - quality
+  - management
+  - it
+  - extracts
 ---
 >In order to improve, people need information--specific examples of behavior or results, along with the impact of the behavior or result.
 

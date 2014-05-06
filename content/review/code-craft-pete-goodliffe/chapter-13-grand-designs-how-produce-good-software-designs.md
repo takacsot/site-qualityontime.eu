@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-15 22:32:07 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.</li>

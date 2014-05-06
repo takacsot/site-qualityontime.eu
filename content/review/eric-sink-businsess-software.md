@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-10-08 18:03:51 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 <p>Let's start business. It does matter what kind of business you want to start.<br />
 <img alt="" src="http://takacsot.blog.hu/media/image/extract/businessofsoftware.jpg" /><br />

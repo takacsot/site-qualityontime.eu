@@ -4,7 +4,8 @@ kind: article
 created_at: 2011-10-07 13:20:47 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 „Az ember territoriális lény, akár tetszik, akár nem.” –
 

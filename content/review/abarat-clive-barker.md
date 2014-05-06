@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-10-31 10:17:31 +0000
 author: "Takács Ottó"
 published: true
-tags: olvasonaplo,review
+
 ---
 Clive Barker nagy kedvencem. De az Abarat már sokkal kevésbé.
 

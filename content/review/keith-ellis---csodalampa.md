@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-30 13:01:14 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Csodalámpa cover](/sites/default/files/_csodalampa.jpg)
 

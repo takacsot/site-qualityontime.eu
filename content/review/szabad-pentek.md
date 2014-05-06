@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-01-04 12:44:18 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Szabad péntek](/sites/default/files/szabadpentek_0.jpg)
 

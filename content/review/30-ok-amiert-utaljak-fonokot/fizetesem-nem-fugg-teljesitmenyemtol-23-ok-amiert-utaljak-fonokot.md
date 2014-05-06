@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-26 20:14:02 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 __10-ből 7 alkalmazott azt állítja, hogy bére nem függ a teljesítményétől.__
 

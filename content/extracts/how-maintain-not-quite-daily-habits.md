@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-09-03 17:28:42 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <blockquote>
 <p>1. Make it daily anyway.<br />

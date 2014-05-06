@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-05 11:50:24 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Alapvetően kedvelem ezt a stílust, de ez a rész szánalmas. Szappanopera, semmi más és abból is a gyengébb fajta.
 

@@ -4,7 +4,9 @@ kind: article
 created_at: 2012-04-03 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
+  - test
 ---
 1. Keep unit tests small and fast
 2. Unit tests should be fully automated and non-interactive

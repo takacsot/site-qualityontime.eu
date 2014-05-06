@@ -4,7 +4,10 @@ kind: article
 created_at: 2013-03-26 21:41:23 +0000
 author: "Takács Ottó"
 published: true
-tags: agile,management,extracts
+tags: 
+  - agile
+  - management
+  - extracts
 ---
 > What is your confidence, on a scale of one to ten, that the team will accomplish the goal of this sprint?
 

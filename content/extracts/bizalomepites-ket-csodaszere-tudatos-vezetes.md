@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-07 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 A két csodaszer a következő: __normálisan viselkedünk és nem vagyunk igénytelenek munkánkkal kapcsolatban.__
 

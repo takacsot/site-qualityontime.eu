@@ -4,7 +4,7 @@ kind: article
 created_at: 2011-01-16 22:21:39 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Már korábban is írtam arról hogy Brian Tracy milyen sokat adott nekem. A történet nem új és nem is ismétlem magam. Első találkozásom vele a Phoenix-szeminárium volt hanganyag formájában. És itt az írott tankönyv a Maximális teljesítmény.
 

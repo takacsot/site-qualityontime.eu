@@ -4,7 +4,11 @@ kind: article
 created_at: 2010-09-14 09:23:24 +0000
 author: "Takács Ottó"
 published: true
-tags: articles,siker,kiyosaki,cashflow,business
+tags: 
+  - siker
+  - kiyosaki
+  - cashflow
+  - business
 ---
 <!-- #Robert Kiyosaki vs. Takács Ottó: A hibákról -->
 

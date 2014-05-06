@@ -4,7 +4,8 @@ kind: article
 created_at: 2011-10-25 20:57:16 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 > Managers are accustomed to working in timeboxes. To them, the iteration is a timebox. But, they also are accustomed to features spanning multiple timeboxes, and that’s not OK in agile.
 

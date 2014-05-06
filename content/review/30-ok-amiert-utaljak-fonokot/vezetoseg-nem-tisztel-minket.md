@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-07 20:20:26 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 *Az alkalmazottak 46%-a úgy véli, hogy vállalatuk nem kezeli őket kellő tisztelettel.*
 

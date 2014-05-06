@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-03-18 17:31:25 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 <p><a href="http://en.newinstance.it/2009/03/27/mocking-jndi/">Minimum JNDI mock for unit tests:</a></p>
 <pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import javax.naming.Context;</span>

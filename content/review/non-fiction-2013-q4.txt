@@ -4,7 +4,7 @@ kind: article
 created_at: 2014-01-25 00:00:00 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ## Mary Poppendieck · Tom Poppendieck - Implementing Lean Software Development
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-07 20:25:37 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Build your code with all compiler warnings switched on. It will highlight potential problems before they can bite.</li>

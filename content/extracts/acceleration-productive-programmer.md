@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-21 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - What most of us might be able to get done in a week, some are able to get done in a day. Why is that? The short answer concerns mastery of the tools developers have at their disposal.
 - Developers today are not runningtheir computers, they are walkingthem.

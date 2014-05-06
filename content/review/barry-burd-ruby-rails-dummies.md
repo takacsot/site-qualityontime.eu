@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-16 18:22:20 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Minden, ami Rails, de tényleg csak az alapok. Minden controller, view és modell téma ki van fejtve röviden és ami nagoyn fontos jól érthető példákon keresztül.
 

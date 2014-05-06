@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-30 17:08:55 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Mint a legtöbb __Brian Tracy__ könyv ez is fenomenális. elektronikus formában sikerült megszereznem, de ez sem von le az értékéből, elvileg ezért tartom az ebook readeremet. :)
 

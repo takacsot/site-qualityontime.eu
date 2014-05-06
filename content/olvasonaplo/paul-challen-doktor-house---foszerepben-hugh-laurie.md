@@ -4,7 +4,8 @@ kind: article
 created_at: 2009-10-13 06:58:21 +0000
 author: "Takács Ottó"
 published: true
-tags: novel
+tags: 
+  - novel
 ---
 Sorozatkönyv.
 

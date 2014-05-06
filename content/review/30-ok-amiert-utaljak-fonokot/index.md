@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-09-09 06:00:00 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,management
+
 ---
 30 ok, amiért utálják a főnököt
 

@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-12-31 11:32:44 +0000
 author: "Takács Ottó"
 published: true
-tags: review,olvasonaplo
+tags:
+  - review,olvasonaplo
 ---
 <div id="toc"><ol></ol></div>
 

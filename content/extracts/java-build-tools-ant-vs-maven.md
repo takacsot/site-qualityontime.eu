@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-21 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 >Maven advocates claim their tool embraces the principle of Convention Over Configuration; Maven advocates are liars. The only convention Maven supports is: compile, run unit tests, package .jar file. Getting Maven to do anything else requires configuring the conventions.
 

@@ -4,7 +4,8 @@ kind: article
 created_at: 2013-05-27 19:30:00
 author: "Takács Ottó"
 published: true
-tags: productivity
+tags: 
+  - productivity
 ---
 
 Hogyan pazarol az Europai Parlamant.

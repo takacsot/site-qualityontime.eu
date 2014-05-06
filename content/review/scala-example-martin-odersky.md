@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-04-11 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Nagyszerű kiegészítés a [Scala for Impatient](http://www.qualityontime.eu/review/scala-impatient-cay-horstmann)-hez.
 

@@ -4,7 +4,10 @@ kind: article
 created_at: 2012-03-19 21:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: management,extracts,agile
+tags: 
+  - management
+  - extracts
+  - agile
 ---
 ![Successful agile](http://blog.mountaingoatsoftware.com/wp-content/uploads/Agile-Waterfall-Success-Failure-Rates.jpg)
 

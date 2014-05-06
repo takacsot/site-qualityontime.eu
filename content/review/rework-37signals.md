@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-08-31 00:15:25 +0000
 author: "Takács Ottó"
 published: true
-tags: kiyosaki,vállalkozás,productivity,marketing,hiring,business,review
+
 ---
 A [Rework](http://37signals.com/rework/) könyv röviden arról szól, hogy hagyd abba a nyavalygást és __kezd el megvalósítani az ötletedet__. Nem majd! Most! Már a első lépésektől kezdve tudatosan kerüld el azokat munkát akadályozó dolgokat, mint a felesleges értekezletek. Mint a Nike reklám: Just Do It!
 

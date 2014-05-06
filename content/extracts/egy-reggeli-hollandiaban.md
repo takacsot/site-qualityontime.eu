@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-01-30 10:15:17 +0000
 author: "Takács Ottó"
 published: true
-tags: 
 ---
 >-Egy fillérrel sem, ahogy a coffee shopokat sem. Mindenki csinálhatja a bohóckodását abban a műfajban, amiben akarja, de azt ne várja senki, hogy ezt neki a másik finanszírozza.
 

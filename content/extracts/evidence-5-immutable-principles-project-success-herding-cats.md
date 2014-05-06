@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-04-29 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 ![Definition of project success](http://herdingcats.typepad.com/.a/6a00d8341ca4d953ef0168e9bb2a46970c-pi)
 

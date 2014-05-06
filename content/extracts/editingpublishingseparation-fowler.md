@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-08-21 19:15:59 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 Igazán azért érdekes, mivel az ebben leírt koncepciót tökéletesen kielégíti egy __static site generator és egy verziókövető rendszer párosa__.
 

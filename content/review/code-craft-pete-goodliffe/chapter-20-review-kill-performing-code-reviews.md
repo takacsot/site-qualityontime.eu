@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-02 20:20:28 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>A review places source code under the microscope&mdash;really aiming to criticize and verify it.</li>

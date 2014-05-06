@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-19 22:36:04 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Both the interactions within and outside your development team will affect the code you produce. Notice how they affect your work.</li>

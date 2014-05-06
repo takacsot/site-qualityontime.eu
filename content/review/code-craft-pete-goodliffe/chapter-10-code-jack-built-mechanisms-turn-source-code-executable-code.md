@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-11 22:29:24 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Consider the build system a part of the source tree, and maintain the two together. They are intimately entwined.</li>

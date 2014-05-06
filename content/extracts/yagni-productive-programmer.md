@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-01 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - YAGNI STANDS FOR“YOUAIN’TGONNANEEDIT.” It is the battle cry of agile project development to help prevent speculative development.
 - Whatever form it takes, though, the health of your software suffers if you indulge in too much speculative development. In its worst form, it leads to frameworks!

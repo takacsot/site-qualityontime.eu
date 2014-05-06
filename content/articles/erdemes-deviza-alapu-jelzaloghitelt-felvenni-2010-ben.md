@@ -4,7 +4,6 @@ kind: article
 created_at: 2010-08-17 12:53:19 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 A jelenlegi kormány és több bank az ellen van, hogy az emberek ne vegyenek fel deviza alapú jelzáloghiteleket. A kormány egyértelműen kijelentette, hogy devizahitel rossz. Vallja, hogy ezzel a kis embereket védi meg. De ez __hazugság__!
 

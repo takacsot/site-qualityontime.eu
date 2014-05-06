@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-28 09:39:17 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Errors can and will occur.</li>

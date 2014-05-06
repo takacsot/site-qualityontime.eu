@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-17 19:05:07 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Don&rsquo;t write code that needs to be propped up by external documentation. It&rsquo;s flimsy. Ensure that your code reads clearly on its own.</li>

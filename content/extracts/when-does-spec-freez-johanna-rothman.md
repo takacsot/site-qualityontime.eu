@@ -4,7 +4,12 @@ kind: article
 created_at: 2009-10-14 10:58:03 +0000
 author: "Takács Ottó"
 published: true
-tags: it,management,productivity,quality,extracts
+tags: 
+  - it
+  - management
+  - productivity
+  - quality
+  - extracts
 ---
 > I asked him, “When does the spec freeze now?” He smiled, and pointed to his “Design freeze” gate on his process picture. “I bet you a coffee that you can ask any developer here and that they cannot point to one spec that didn’t change after that or any spec that was right at the end of the project.” He took the bet.
 

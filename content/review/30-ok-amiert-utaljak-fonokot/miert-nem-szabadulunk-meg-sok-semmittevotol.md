@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-25 10:36:51 +0000
 author: "Takács Ottó"
 published: true
-tags: management,productivity,quality,review
+
 ---
 __Az alkalmazottak 61%-a úgy érzi, hogy a szervezetüknél eltűrik a gyengén teljesítőket. Az is felmerül bennük, hogy főnökeik talán azt sem veszik észre, hogy ők _jól_ teljesítenek.__
 

@@ -4,7 +4,6 @@ kind: article
 created_at: 2009-08-20 16:10:15 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 <p>
   Az <strong>önfejlesztés</strong> jó cél. Ha komolyan veszi az ember, akkor előbb utóbb eljut arra a szintre, hogy annyira jónak képzeli magát, hogy <strong>nagyképűvé</strong> válik. El kell jutni az <strong>alázatig</strong>.

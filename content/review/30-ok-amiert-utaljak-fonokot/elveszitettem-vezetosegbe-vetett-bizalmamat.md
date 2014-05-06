@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-02 09:51:02 +0000
 author: "Takács Ottó"
 published: true
-tags: management,review
+
 ---
 __Gyakran a vezetőség tudja meg utoljára, hogy elveszítette alkalmazottai bizalmát.__
 

@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-13 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 A potential hiring manager asks you, “What was your gross income?” as part of the interview. What do you say?
 

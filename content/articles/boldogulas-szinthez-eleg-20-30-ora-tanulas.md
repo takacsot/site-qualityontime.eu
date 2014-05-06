@@ -4,7 +4,10 @@ kind: article
 created_at: 2011-12-16 16:47:11 +0000
 author: "Takács Ottó"
 published: true
-tags: productivity,gtd,articles
+tags: 
+  - productivity
+  - gtd
+  - articles
 ---
 Ahhoz, hogy elboldogulj egy adott témakörben elegendő 20-30 óra aktív tanulásra.
 

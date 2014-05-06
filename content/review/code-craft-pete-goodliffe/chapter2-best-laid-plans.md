@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-07 22:25:23 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Understand the real audience for your source code: other programmers. Write for their benefit.</li>

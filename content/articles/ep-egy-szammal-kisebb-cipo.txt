@@ -2,7 +2,9 @@
 title: "EP és az egy számmal kisebb cipő"
 kind: article
 created_at: 2013-06-20 21:11:00
-tags: ep,productivity
+tags: 
+  - ep
+  - productivity
 ---
 __Az EP-ben olyan dolgozni, mint amikor az ember egy számmal kisebb cipőt hord.__ Ha csak ülsz a fotelban és nem sétálsz 12 méternél többet egy nap, akkor teljesen mindegy. egy kicsit szorít és kényelmetlen, de csak egy kicsit. Cserébe vígan mutogathatod, hogy milyen szép csuka van a lábadon. De ha elkezded használni, akkor egyből előjön a legnagyobb problémája, hiszen szorít.
 

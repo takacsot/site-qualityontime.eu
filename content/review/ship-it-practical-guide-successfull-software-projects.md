@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-11 22:15:54 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Milyen módon kellene szoftvert fejlesztenünk? Az biztos, hogy nincs egyetlen üdvözítő mód. De nagyon sok jó technika van. 
 

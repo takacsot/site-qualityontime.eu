@@ -4,7 +4,8 @@ kind: article
 created_at: 2011-11-23 09:19:30 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 >People who cannot manage themselves should not manage others.
 

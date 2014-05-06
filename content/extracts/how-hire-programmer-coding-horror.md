@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-27 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 1. First, pass a few simple "Hello World" online tests.
 2. Ask to see their portfolio.

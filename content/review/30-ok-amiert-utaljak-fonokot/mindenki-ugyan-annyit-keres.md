@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-09-27 12:50:31 +0000
 author: "Takács Ottó"
 published: true
-tags: management,productivity,quality,hiring,review
+
 ---
 __Az alkalmazottak 52%-a úgy gondolja, hogy nem keres eleget kollégáihoz képest.__
 

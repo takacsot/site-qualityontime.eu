@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-14 12:51:35 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Learn to name things transparently&mdash;an object&rsquo;s name should describe it clearly.</li>

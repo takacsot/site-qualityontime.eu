@@ -4,7 +4,8 @@ kind: article
 created_at: 2009-10-10 09:21:32 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 > Open Door Policy. The idea of this policy is that every manager’s door is open to all employees,
 > I dislike this policy.

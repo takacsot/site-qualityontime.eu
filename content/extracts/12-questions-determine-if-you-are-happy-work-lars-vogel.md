@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-05 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 1. Do I know what is expected of me at work?
 2. Do I have the material and equipment to do my work right?

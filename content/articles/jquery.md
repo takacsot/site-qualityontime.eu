@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-03-18 16:09:09 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 When using jQuery (or any other JavaScript library for that matter), have you ever wondered how to test whether an element exists using a selector?
 

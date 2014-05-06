@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-09 22:27:45 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Know your common tools inside out. A little time invested to become proficient with them will quickly pay off.</li>

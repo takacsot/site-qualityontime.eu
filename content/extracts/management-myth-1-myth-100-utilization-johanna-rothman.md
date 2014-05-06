@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-15 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 Too many managers believe in the myth of 100% utilization--the belief that every single technical person must be fully utilized every single minute of every single day. The problem with this myth is that there is no time for innovation, no time for serendipitous thinking, no time for exploration, and it often leads to a less successful organization.
 

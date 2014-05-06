@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-05-05 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Hogyan kapcsolódik a német bombázás, egy éhes kacsa és az adrenalin felfedezése? Egy vegetáriánus nő és a mesterséges lélegeztetés? A Morse-jel és egy művészeti akadémia és a pszichoszomatikus szó eredete. Vesekő az égetett mész és a skót whisky? És a Gőzmozdony?
 

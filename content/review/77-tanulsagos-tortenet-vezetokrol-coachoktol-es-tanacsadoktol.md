@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-10-07 19:20:49 +0000
 author: "Takács Ottó"
 published: true
-tags: management,leadership,review
+
 ---
 ![77 tanulságos történet vezetőktől](http://assets0.moly.hu/system/covers/normal/covers_100680.jpg)
 

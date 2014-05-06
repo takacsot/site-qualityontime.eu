@@ -4,7 +4,8 @@ kind: article
 created_at: 2011-08-08 11:35:05 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - 1/ 2	Egy ember jelleméről sokat mond, hogy milyen társaságot választ.
 - 1/ 8	A dicsekvés általában a kisebbrendűségi komplexus öntudatlan beismerése.

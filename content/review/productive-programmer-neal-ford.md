@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-02-07 15:33:35 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Productive programmer](http://akamaicovers.oreilly.com/images/9780596519544/lrg.jpg)
 

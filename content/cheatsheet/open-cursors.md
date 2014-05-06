@@ -4,7 +4,6 @@ kind: article
 created_at: 2011-02-11 11:32:50 +0000
 author: "Takács Ottó"
 published: true
-tags: 
 ---
 > select count(1), user_name
 from v$open_cursor

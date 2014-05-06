@@ -4,7 +4,11 @@ kind: article
 created_at: 2011-10-23 20:13:43 +0000
 author: "Takács Ottó"
 published: true
-tags: review,resume,management,development
+tags: 
+  - review
+  - resume
+  - management
+  - development
 ---
 ![101 Great resume](http://moly.hu/system/covers/normal/covers_149906.jpg?1317986029)
 Éppen aktuálissá vált a munkakeresés. Nem munkahelyi okokból, hanem családiból. Feleségem előléptetést ért el Luxemburgba. Szóval én is leporoltam a régi Cv-met és aktualizáltam. 

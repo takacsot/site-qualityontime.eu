@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-11-03 10:52:52 +0000
 author: "Takács Ottó"
 published: true
-tags: review,pratchett,olvasonaplo
+
 ---
 Végre, végre, végre! Megint egy olyan könyv, amit le sem tudtam tenni. Olyan betegen szórakoztató volt, hogy az valami csoda. 
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-08-29 09:35:50 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,productivity,it,book
+
 ---
 
 <img src="/sites/default/files/code-craft-cover.jpg" alt="Code craft cover" alt="Code Craft cover"/> 

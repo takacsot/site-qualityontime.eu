@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-21 12:36:57 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,management
+
 ---
 ![Egyperce menedzser erőre kap boritó](/sites/default/files/egyperces-menedzser-erore-kap.jpg)
 

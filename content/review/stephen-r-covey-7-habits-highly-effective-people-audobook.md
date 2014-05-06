@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-08-20 17:14:23 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Nagyon érdekes élmény. Magát a könyvet nem vettem meg, de mivel audioanyagból igen kevésem van elkezdtem hallgatni (Angolul nem olyan hatékony több okból is, később)
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-09-02 08:00:00 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 <img src="/sites/default/files/google_sztori.jpg" alt="google sztori boritó cover" />
 <p>

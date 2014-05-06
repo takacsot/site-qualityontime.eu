@@ -4,7 +4,6 @@ kind: article
 created_at: 2010-01-19 11:12:12 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 <p>Újra <a href="/review/idoforras-doubravszky-gyorgy">összeszedtem </a>magam szervezettség és időgazdálkodás szempontjából. És újra belefutottam ugyan azokba a problémákba, mint korábban és újra kellett tanulnom. Roppant érdekes és tanulságos volt megint megtapasztalnom milyen módon tanulok. Ha nem csinálod elfelejted. <a href="/articles/tanulas-forradalma-miert-erdemes-tanitani-meg-akkor-ha-nem-vagy-mestere">Tanuld, beszélj és csináld is</a>. A lényeg viszont az, hogy újabb mélységekbe véstem be a tudást.</p>
 <ul>

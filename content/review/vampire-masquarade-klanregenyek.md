@@ -4,7 +4,7 @@ kind: article
 created_at: 2011-11-03 20:46:50 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Setita](http://moly.hu/system/covers/normal/covers_6024.jpg?1235646313)
 

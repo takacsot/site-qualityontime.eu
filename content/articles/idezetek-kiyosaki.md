@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-07-01 13:13:32 +0000
 author: "Takács Ottó"
 published: true
-tags: kiyosaki,articles
+tags: 
+  - kiyosaki
 ---
 - Feltételezés (assume) is ass-u-me: Ass for you and me
 - A kifogások önmagunknak szóló hazugságok

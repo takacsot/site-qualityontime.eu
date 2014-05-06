@@ -4,7 +4,9 @@ kind: article
 created_at: 2010-07-16 07:55:22 +0000
 author: "Takács Ottó"
 published: true
-tags: kiyosaki,extracts
+tags: 
+  - kiyosaki
+  - extracts
 ---
 * A jövőbe látás egyik módja, hogy figyeljük, miként válnak a dolgok túl nagyokká, aztán keressünk valami kicsit vagy láthatatlant, ami a helyébe lép.
 * A láthatatlan gazdaság erős és növekszik.

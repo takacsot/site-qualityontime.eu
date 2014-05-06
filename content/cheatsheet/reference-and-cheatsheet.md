@@ -4,7 +4,9 @@ kind: article
 created_at: 2012-02-19 20:53:45 +0000
 author: "Takács Ottó"
 published: true
-tags: reference,cheatsheet
+tags: 
+  - reference
+  - cheatsheet
 ---
 List of cheatsheets and reference collection of useful stuffs:
 

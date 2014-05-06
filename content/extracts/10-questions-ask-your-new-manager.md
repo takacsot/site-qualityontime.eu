@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-04-15 09:56:29 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 1. What do know about management? What models do you use?
 2. What books and blogs do you read? Which managers are your source of inspiration?

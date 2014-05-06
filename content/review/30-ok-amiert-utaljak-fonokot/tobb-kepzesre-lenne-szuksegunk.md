@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-11 16:26:53 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 __Az alkalmazottak 51%-a úgy véli, hogy több képzésre lenne szüksége a megfelelő munkavégzéshez.__
 

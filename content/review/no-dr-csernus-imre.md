@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-28 20:37:45 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![A nő - Csernis Imre](/sites/default/files/a-no-csernus-imre.jpg)
 

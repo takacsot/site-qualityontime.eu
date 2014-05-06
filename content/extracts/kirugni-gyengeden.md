@@ -4,7 +4,9 @@ kind: article
 created_at: 2009-09-28 12:30:47 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts,management
+tags: 
+  - extracts
+  - management
 ---
 Egyik kollégám mesélte nekem, hogy nagy álma lenne végre kirúgni valakit (kicsi a csapat és nincs is kirúgásra szükség). Úgy érzi, hogy ettől eljutna a következő szintre.
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-05-14 15:38:44 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>I&rsquo;ve never known any trouble that an hour&rsquo;s reading didn&rsquo;t assuage.</li>

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-10 11:32:14 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Assume nothing. Unwritten assumptions continually cause faults, particularly as code grows.</li>

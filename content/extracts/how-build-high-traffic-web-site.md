@@ -4,7 +4,8 @@ kind: article
 created_at: 2009-10-03 08:53:02 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 Writing high traffic web sites is not somthing is happening but somthing which is planned. Here are a few guideline how.
 

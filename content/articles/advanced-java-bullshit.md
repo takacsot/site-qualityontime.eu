@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-04-09 22:00:00 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 Mások forráskódjával dolgozni mindig tanulságos volt. A legjobban azt szeretem, mikor tanulhatok belőle. Most is vár pár open source project, hogy alaposabban megismerkedjek a forráskódjával, hogy ellessek megoldásokat és fejlesszem magam. 
 

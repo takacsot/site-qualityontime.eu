@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-05-07 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Vad kicsapongásom a mindennapi olvasnivalók között.
 

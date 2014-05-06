@@ -4,7 +4,7 @@ kind: article
 created_at: 2012-02-03 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 __Az alkalmazottak 54%-a úgy gondolja, hogy értelmetlenek a teljesítményértékelések__
 

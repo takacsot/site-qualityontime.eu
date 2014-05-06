@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-06-29 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: review,olvasonaplo
+tags: 
+  - review,olvasonaplo
 ---
 ![Succeeding with Agile](http://moly.hu/system/covers/normal/covers_179293.jpg?1335980532)
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-11-14 18:29:30 +0000
 author: "Takács Ottó"
 published: true
-tags: clive barker,olvasonaplo,review
+
 ---
 Sokkal jobb, mint az [előző](http://www.qualityontime.eu/review/abarat-clive-barker).
 

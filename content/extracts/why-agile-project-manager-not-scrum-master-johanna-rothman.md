@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-19 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 The project manager and product owner start the release planning and ask the team if the release planning is ok.
 

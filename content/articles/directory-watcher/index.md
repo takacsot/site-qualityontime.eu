@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-02-12 19:30:55 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 book: directory-watcher
 book_page: 0
 ---

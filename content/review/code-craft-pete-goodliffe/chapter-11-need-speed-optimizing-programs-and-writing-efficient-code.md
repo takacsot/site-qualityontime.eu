@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-30 13:42:19 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Think about the performance of your program from the very start&mdash;do not ignore it, hoping to make quick fixes at the end of development.</li>

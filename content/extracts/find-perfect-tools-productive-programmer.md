@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-03 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - Find your perfect editor and learn it inside and out.
 - These are the things I think the perfect editor should have,

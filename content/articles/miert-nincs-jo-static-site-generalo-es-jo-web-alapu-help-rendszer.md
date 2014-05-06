@@ -4,7 +4,8 @@ kind: article
 created_at: 2013-03-24 19:00:44 +0000
 author: "Takács Ottó"
 published: true
-tags: java,articles
+tags: 
+  - java
 ---
 Mi az a két dolog, ami nagyon hiányzik a Java ecosystemből? Egy jó __static site generator__ és a egy jó __web help rendszer__. (Végig free vagy open source megoldásokról beszélek)
 

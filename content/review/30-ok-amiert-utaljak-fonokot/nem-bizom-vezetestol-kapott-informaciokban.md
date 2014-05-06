@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-26 09:18:27 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 __Az alkalmazottak 45%-a nem bízik a felső vezetéstől kapott információikban.__ Ha munkatársaink megkérdőjelezik a felülről kapott híreket, akkor termelékenységünk és a szervezet iránti elhivatottságuk is csökken.
 

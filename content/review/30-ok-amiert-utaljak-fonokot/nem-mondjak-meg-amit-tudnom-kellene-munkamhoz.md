@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-09 16:18:44 +0000
 author: "Takács Ottó"
 published: true
-tags: management,review
+
 ---
 __Az alkalmazottak 47%-a azt állítja, hogy nem kapja meg a megfelelő munkavégzéshez szükséges információkat.__
 

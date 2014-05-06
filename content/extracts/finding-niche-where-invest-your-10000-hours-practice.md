@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-02-08 11:12:12 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <blockquote>
 <p><strong>if you want to be a world-class expert in your field, you must do your 10,000 hours of practice</strong>.</p>

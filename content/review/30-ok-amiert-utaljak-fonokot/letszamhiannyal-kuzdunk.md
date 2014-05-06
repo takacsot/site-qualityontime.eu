@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-04 10:07:43 +0000
 author: "Takács Ottó"
 published: true
-tags: management,review
+
 ---
 __Az alkalmazottak 58%-a azt állítja, hogy létszámhiány van az osztályán.__
 

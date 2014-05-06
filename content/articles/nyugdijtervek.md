@@ -4,7 +4,10 @@ kind: article
 created_at: 2010-06-15 07:26:18 +0000
 author: "Takács Ottó"
 published: true
-tags: kiyosaki,nyugdij,cashflow,articles
+tags: 
+  - kiyosaki
+  - nyugdij
+  - cashflow
 ---
 Nyugdíjtervek
 

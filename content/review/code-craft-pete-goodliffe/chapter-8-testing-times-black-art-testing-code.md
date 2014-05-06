@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-29 13:08:40 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Test everything. Keep what is good.</li>

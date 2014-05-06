@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-12-14 21:26:51 +0000
 author: "Takács Ottó"
 published: true
-tags: siker,review
+
 ---
 A [Pénzmágnes](http://www.penzmagnes.hu/) magazin két szempontból is zseniális és érdekes. Egyrészt egy fantasztikus marketing kiadvány, gyakorlatilag egy szuper szórólap, amiért még fizetni is hajlandóak vagyunk. Másik oldalról egy nagyszerű gondolatokkal teli értékes kiadvány.
 

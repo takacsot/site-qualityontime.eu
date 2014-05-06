@@ -4,7 +4,7 @@ kind: article
 created_at: 2011-08-03 12:52:54 +0000
 author: "Takács Ottó"
 published: true
-tags: review,productivity
+
 ---
 Napoleon Hill öreg róka. Még a jogdíj is lejárt az írásairól emiatt bárki előveheti és saját nevét mellé téve gyakorlatilag garantált sikerkönyvet hoz létre. 
 

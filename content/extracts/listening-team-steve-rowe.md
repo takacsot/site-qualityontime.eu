@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-01-03 16:17:06 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 “Features, Timeframe, Budget, and Quality; Pick three”. It’s usually possible to hit all three of the first choice as long as you are willing to sacrifice quality. 
 

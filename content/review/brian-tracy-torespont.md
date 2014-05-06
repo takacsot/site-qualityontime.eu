@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-05 17:59:15 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Alcíme: Hatékony válságkezelés 21 lépésben. Válságok jönnek minden mennyiségben. Ha nem saját magunkra figyelünk, akkor a környezet olyan helyzetbe hoz, ami miatt elkedvtelenedsz, csökken a teljesítményed, hatékonyságod és válságba kerül az életed vagy vállalkozásod.
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-07-17 22:34:25 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
 

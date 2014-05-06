@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-12-07 22:01:18 +0000
 author: "Takács Ottó"
 published: true
-tags: management,review
+
 ---
 __Az alkalmazottak 61%-a elégedetlen a fizetésével.__
 

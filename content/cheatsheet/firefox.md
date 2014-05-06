@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-19 20:59:39 +0000
 author: "Takács Ottó"
 published: true
-tags: cheatsheet
+tags: 
+  - cheatsheet
 ---
 <table>
 <col width="22%" />

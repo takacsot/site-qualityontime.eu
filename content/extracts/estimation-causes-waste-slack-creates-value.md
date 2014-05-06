@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-06-09 17:08:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - Manager's measurement #1: count how many people talk in every 4 minute cycle. If it drops below 50% of the team, people are preaching, not communicating. Take it offline.
 - Manager's measurement #2: Can the team identify the top one or two questions about the feature? That is, do they know what they need to learn about the story card, be it clarifying user needs or technical risks? If so, let them start working on it. Oh, and at this point, it's OK to ask how long they think it will take to answer the question.

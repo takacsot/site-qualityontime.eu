@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-21 22:58:03 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Időgazdálkodás: mindig nagy kedvencem volt. Gyakorlatilag véletlenül botlottam bele, de miután megismertem, hogy a szisztematikus időmenedzsment mikét változtattam meg azt, hogy mit is tudok ténylegesen végrehajtani más síkra helyezett. Egyik leginspirálóbb a GTD volt. Egyszerű, mint a faék és mégis roppant hatékony. Csináltam aktívan, de végül megbuktam.
 

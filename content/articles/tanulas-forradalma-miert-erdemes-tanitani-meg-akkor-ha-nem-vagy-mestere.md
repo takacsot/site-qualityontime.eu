@@ -4,7 +4,6 @@ kind: article
 created_at: 2010-01-11 13:12:12 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 <p>Olvastam valahol:</p>
 <p>Megtanuljuk</p>

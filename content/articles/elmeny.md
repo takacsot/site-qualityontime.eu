@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-08-23 11:36:43 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
+
 ---
 <p>A <a href="http://varazsladika.hu/konyveink.html">Hallgass a szívedre!</a> című nagyszerű könyvből nem idézek, csak kiemelek egy pár gondolatot.</p>
 <p>Az biztos, hogy a jelenben kell élnünk. A múltból elég ha tanulunk, hiszen úgy sem tudunk már mit tenni vele, a jövőt pedig nem tudjuk kiszámítani, ebben rejlik az izgalom. Szóval a jelenben KELL élnünk. De hogyan?</p>

@@ -4,7 +4,11 @@ kind: article
 created_at: 2009-09-28 18:09:49 +0000
 author: "Takács Ottó"
 published: true
-tags: quality,management,it,extracts
+tags: 
+  - quality
+  - management
+  - it
+  - extracts
 ---
 >Stuff that's easy to count usually doesn't count--like lines of code, bugs found, seconds spent on a call, etc.
 

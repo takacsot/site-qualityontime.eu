@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-09-07 06:00:00 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,productivity,management
+
 ---
 Elképesztően tanulságos könyv. Olyan rövid, hogy akár egy ültő helyzetben el lehetne olvasni, de a leírt gondolatokkal akár heteket, hónapokat el lehet játszani.
 

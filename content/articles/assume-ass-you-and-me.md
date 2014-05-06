@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-12-06 12:58:12 +0000
 author: "Takács Ottó"
 published: true
-tags: articles,kiyosaki
+tags: 
+  - kiyosaki
 ---
 [Kiyosakitól ismertem meg ezt a fogalmat](http://www.qualityontime.eu/articles/idezetek-kiyosaki), pontosabban azt, amivel örökre az emlékezetembe tudom idézni.
 

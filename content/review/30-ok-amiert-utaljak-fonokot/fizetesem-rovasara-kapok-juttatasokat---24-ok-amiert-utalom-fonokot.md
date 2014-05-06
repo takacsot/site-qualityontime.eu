@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-23 20:15:15 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 __10-ből 2 alkalmazott állítja, hogy nem elégedett a vállalat által biztosított juttatásokkal.__
 

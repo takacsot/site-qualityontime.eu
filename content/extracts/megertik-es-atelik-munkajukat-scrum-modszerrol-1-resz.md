@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-05-19 09:17:27 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 Nagyszerű összefoglaló a Scrum-ról. Gyakorlatilag kötelező olvasmány olyan jó összefoglaló, főleg magyar nyelven :) Sajnos mint minden jó cikk ez is alkalmas arra, hogy félrevezesse az embereket. Nem melyti meg, hogy milyen feltételei vannak a Scrum alkalmazásának olyan módon, ahogy ez le van írva. 
 

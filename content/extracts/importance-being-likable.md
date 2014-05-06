@@ -4,7 +4,8 @@ kind: article
 created_at: 2009-10-19 13:20:27 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 1. Being nice
 1. Friendliness

@@ -2,6 +2,9 @@
 title: "Groovy like map constructor"
 kind: article
 created_at: 2014-04-13 00:00
+tags:
+  - groovy
+  - toolbox
 ---
 
 I miss so much the Groovy like [map constructor](http://mrhaki.blogspot.com/2009/09/groovy-goodness-using-lists-and-maps-as.html) in Java that I have created my own.

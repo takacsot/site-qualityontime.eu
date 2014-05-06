@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-05 11:33:44 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Személyiségkalauz](/sites/default/files/szemelyisegkalauz.png)
 

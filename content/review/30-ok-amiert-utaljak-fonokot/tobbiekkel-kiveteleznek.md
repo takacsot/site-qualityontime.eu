@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-09-23 06:36:00 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 _Az alkalmazottak 53%-a úgy véli, hogy a vállalatuknál igazságtalanul alkalmazzák a személyügyi irányelveket és eljárásokat._
 

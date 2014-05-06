@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-03-18 17:39:00 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 ## Disabling Current Page Links:
 

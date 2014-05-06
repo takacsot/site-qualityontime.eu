@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-09-10 17:34:36 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <blockquote>
 <p>how to handle &quot;critical&quot; issues.</p>

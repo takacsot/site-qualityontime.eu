@@ -4,7 +4,9 @@ kind: article
 created_at: 2010-06-07 16:24:14 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts,management
+tags: 
+  - extracts
+  - management
 ---
 >Elégé közismert, mi a beosztottak véleménye a főnökről, és hogy ki a jó főnök. Ami kevéssé ismert: mit gondol a vezetőség, kik a jó és használható beosztottak?
 

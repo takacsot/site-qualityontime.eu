@@ -4,7 +4,6 @@ kind: article
 created_at: 2012-01-19 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
 book: itelet
 book_page: 5
 ---

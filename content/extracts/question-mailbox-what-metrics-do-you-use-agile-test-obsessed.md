@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-04-01 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - The problem is that traditional measures don’t work in Agile.
 - Requirements coverage is meaningless if the definition of “Done” includes tested. 

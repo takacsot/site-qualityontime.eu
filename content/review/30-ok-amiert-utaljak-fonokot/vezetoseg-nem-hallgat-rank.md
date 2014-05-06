@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-09-30 21:49:53 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 *Az alkalmazottak 66%-a véli úgy, hogy főnöke nem kéri ki a véleményét, 67%-uk pedig úgy érzi, javaslatait nem szívlelik meg a vezetők.*
 

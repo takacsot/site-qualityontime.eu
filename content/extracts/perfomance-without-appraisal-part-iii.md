@@ -4,11 +4,14 @@ kind: article
 created_at: 2009-10-12 20:16:52 +0000
 author: "Takács Ottó"
 published: true
-tags: quality,management,it,extracts
+tags: 
+  - quality
+  - management
+  - it
+  - extracts
 ---
 >As we've seen in the first two installments, rating, ranking, and evaluations can damage teamwork, erode trust, and lead to disengagement.
 
-<!--break-->
 
 >_None of those are good for individual or organizational performance._
 

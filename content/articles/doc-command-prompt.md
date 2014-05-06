@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-28 13:22:23 +0000
 author: "Takács Ottó"
 published: true
-tags: reference,articles
+tags: 
+  - reference
 ---
 __fc - Free BeyondCompare in XP__
 :    FC is an advanced DOS Command that compares two files and displays the differences between them. Though the file comparison results are not as interactive as BeyondCompare or Altova DiffDog, fc is still very useful. You can even set fc to resynchronize the files after finding a mismatch. 

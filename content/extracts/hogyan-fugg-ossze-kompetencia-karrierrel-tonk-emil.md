@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-06-16 10:39:42 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 >A világon csak egyetlen dolog van, amit fentről kezdenek: a gödörásás.
 

@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-05 10:38:53 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 ![Szemelyiségtípusok](/sites/default/files/rejtett_tartalekai.jpg)
 

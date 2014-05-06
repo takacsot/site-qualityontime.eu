@@ -4,7 +4,11 @@ kind: article
 created_at: 2013-03-07 20:27:25 +0000
 author: "Takács Ottó"
 published: true
-tags: java,development,productivity,articles
+tags: 
+  - java
+  - development
+  - productivity
+  - articles
 ---
 <p>Mi is ez? Nyavajgás és picsogás mennyire fárasztó a Java, ha már ismersz más koncepciókat is</p>
 <p>Többféle vélemény van arról, hogy miként kell kivételeket (polgári néven Exception) kezelni. Java-ban két fő kivétel van:</p>

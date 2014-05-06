@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-12-18 13:26:11 +0000
 author: "Takács Ottó"
 published: true
-tags: management,extracts
+
 ---
 __Az alkalmazottak 50%-a úgy érzi, hogy időpocséklás megbeszéléseken ülni.__
 

@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-25 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 Search instead of navigate
 

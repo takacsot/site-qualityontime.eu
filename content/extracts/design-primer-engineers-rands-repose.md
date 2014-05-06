@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-01-31 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 role of design is:
 

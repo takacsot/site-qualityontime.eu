@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-02-09 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 __Minél alacsonyabb a bizalom, annál lassabban mennek a dolgok és annál költségesebbek.__
 

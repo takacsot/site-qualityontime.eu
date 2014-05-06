@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-05-01 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 > There is a notion - a wrong notion - that the critical path is the path through the network of activities with zero slack. If you have a zero slack network, you're late before you start.
 

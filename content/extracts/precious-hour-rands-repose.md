@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-04-05 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - Poorly written emails are an early warning of intense busy.
 - At least I accomplished something.

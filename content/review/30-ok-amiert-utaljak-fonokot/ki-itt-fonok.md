@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-14 11:32:07 +0000
 author: "Takács Ottó"
 published: true
-tags: review,management
+
 ---
 *Az alkalmazottak 48%-a úgy véli, hogy a vezetőség rossz döntéseket hoz.*
 

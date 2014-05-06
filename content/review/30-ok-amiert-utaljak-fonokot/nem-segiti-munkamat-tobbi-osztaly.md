@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-18 13:11:57 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,management
+
 ---
 __Csupán az alkalmazottak 46%-a érzi úgy, hogy jó az együttműködés a különböző osztályok között.__
 

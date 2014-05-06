@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-05-13 22:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 1. Excessive jQuery Calls
 

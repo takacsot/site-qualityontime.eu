@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-20 20:18:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li>Learn to write enough comments, and no more. Favor quality, not quantity.</li>

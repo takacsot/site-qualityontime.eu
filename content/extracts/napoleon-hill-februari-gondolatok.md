@@ -4,7 +4,8 @@ kind: article
 created_at: 2011-08-10 11:37:55 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 - 2 / 1	A legértékesebb feladatokat azok kapják, akik elvégzik azokat. Nem hárítják tovább a felelősséget, nem keresnek alibit a sikertelenségükre. A siker kommulatív erőfeszítés. A csúcsra jutás gondos és körültekintő tervezést igényel. Mindig kezdeményezően nyúljunk egy feladathoz. Még akkor is, ha nem látsz benne kihívást.
 - 2 / 2	Kezdeményezz, és tetteidért légy kész vállalni a felelősséget!

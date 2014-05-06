@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-16 06:55:12 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,management
+
 ---
 __Az alkalmazottak 56%-a úgy gondolja, hogy a vállalatuk rossz minőségű termékeket és szolgáltatásokat kínál.__
 

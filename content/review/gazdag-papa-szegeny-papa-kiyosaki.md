@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-02-01 11:12:12 +0000
 author: "Takács Ottó"
 published: true
-tags: kiyosaki,it,cashflow,review
+
 ---
 <p><img alt="Gazdag papa szegény papa" src="/sites/default/files/gazdagpapa.jpg" />
 </p>

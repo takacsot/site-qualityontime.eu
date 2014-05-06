@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-15 21:22:22 +0000
 author: "Takács Ottó"
 published: true
-tags: java,articles
+tags: 
+  - java
 ---
 Ok, hogy már 2011 nyara óta kint van, de hozzám csak most jutott el a [File  Watcher](http://docs.oracle.com/javase/tutorial/essential/io/notification.html) api kapcsán.
 

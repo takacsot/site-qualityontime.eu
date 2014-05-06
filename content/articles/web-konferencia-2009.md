@@ -4,7 +4,8 @@ kind: article
 created_at: 2009-10-04 19:17:44 +0000
 author: "Takács Ottó"
 published: true
-tags: it,articles
+tags: 
+  - it
 ---
 Barátom és szak-kollégám. Sebi felhívta a figyelmem, hogy van olyan, hogy Web Konferencia. Kicsit későn szólt de szerencsére el tudtam menni. Ingyen volt és a [témák](http://web.conf.hu/2009/program) is érdekesek voltak.
 

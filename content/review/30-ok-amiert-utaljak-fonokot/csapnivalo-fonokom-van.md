@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-10-28 09:38:24 +0000
 author: "Takács Ottó"
 published: true
-tags: management,review
+
 ---
 __Az alkalmazottak 53%-a azt állítja, hogy főnöke nem motiválja.__
 

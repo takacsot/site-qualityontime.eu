@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-05-26 12:20:25 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+
 ---
 <ul>
     <li><em>Horribly important &nbsp;section - Otto</em>.</li>

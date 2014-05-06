@@ -4,7 +4,7 @@ kind: article
 created_at: 2009-11-23 13:15:28 +0000
 author: "Takács Ottó"
 published: true
-tags: management,productivity,review
+
 ---
 __Az alkalmazottak 53%-a érzi úgy, hogy túlságosan bürokratikus a cég.__
 

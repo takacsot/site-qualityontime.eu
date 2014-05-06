@@ -4,7 +4,7 @@ kind: article
 created_at: 2010-06-12 11:04:54 +0000
 author: "Takács Ottó"
 published: true
-tags: review
+
 ---
 Ha csak úgy böngésztem volna egy könyvesboltban, nem olvastam volna el. De szerencsére elfogadok tanácsokat másoktól és megvettem és elolvastam. Azt kell mondanom __zseniális könyv__.
 

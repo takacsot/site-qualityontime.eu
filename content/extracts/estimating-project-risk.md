@@ -4,7 +4,8 @@ kind: article
 created_at: 2010-09-17 17:41:09 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <blockquote>
 <p><strong>Projects requiring six months to deliver valuable working software should automatically be considered medium to high risk of outright failure. <br />

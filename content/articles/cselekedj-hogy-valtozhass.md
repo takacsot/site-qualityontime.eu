@@ -4,7 +4,6 @@ kind: article
 created_at: 2010-04-01 09:46:26 +0000
 author: "Takács Ottó"
 published: true
-tags: articles
 ---
 Ez egy régi gondolatsorozat eredménye. Annak idején tudtam, hogy mivel kapcsolatban jegyeztem ezt fel. Most már nem emlékszem a kontextusra, de a gondolatok önállóan is megállják a helyüket.
 

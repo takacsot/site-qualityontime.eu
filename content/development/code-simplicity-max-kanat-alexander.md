@@ -4,7 +4,12 @@ kind: article
 created_at: 2012-10-07 11:33:33 +0000
 author: "Takács Ottó"
 published: true
-tags: review,quality,olvasonaplo,it,development
+tags: 
+  - review
+  - quality
+  - olvasonaplo
+  - it
+  - development
 ---
 ![Code Simplicity cover](http://akamaicovers.oreilly.com/images/0636920022251/cat.gif)
 

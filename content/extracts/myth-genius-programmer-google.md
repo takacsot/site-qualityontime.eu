@@ -4,7 +4,8 @@ kind: article
 created_at: 2012-03-07 10:11:11 +0000
 author: "Takács Ottó"
 published: true
-tags: extracts
+tags: 
+  - extracts
 ---
 <p>
 Jó programot lehet egyedül is készíteni, de igazán sikeres programot csak úgy ha másokkal is együtt működsz. Ez alól nincs kivétel. Nincsenek zsenik!
