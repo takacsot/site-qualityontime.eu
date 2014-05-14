@@ -1,6 +1,6 @@
 ---
 title: "Jawr, webjars, bootstrap, Spring setup trick"
-created_at: 2014-05-14 00:51
+created_at: 2014-05-16 00:51
 book: technology_stack
 book_page: 101
 tags:
