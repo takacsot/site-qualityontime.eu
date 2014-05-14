@@ -5,7 +5,8 @@ created_at: 2012-07-05 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo
+  - review
+  - olvasonaplo
 ---
 ![](http://moly.hu/system/covers/normal/covers_32209.jpg?1254477871)
 

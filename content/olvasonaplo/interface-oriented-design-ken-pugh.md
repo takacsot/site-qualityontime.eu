@@ -5,7 +5,12 @@ created_at: 2012-06-26 21:40:53 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo,it
+  - review
+  - olvasonaplo
+  - it
+  - cleancode
+  - design
+  - programming
 ---
 <p><img src="http://moly.hu/system/covers/normal/covers_185772.jpg?1340739504" alt="Cover of Interface oriented design">&nbsp;</p>
 

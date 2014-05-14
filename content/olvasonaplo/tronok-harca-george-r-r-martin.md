@@ -5,7 +5,8 @@ created_at: 2012-07-01 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo
+  - review
+  - olvasonaplo
 ---
 Nem rossz könyv, de azért nem kell elszállni. Feltehetően azért dobálta meg annyi ember 5 csillaggal, mert egész évben csak ennyi könyvet olvasnak és korábban sem volt könyvélményük.
 

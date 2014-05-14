@@ -4,6 +4,15 @@ kind: article
 created_at: 2013-07-05 00:00
 book: technology_stack
 book_page: 6
+tags:
+  - toolbox
+  - java
+  - guava
+  - javascrip
+  - jquery
+  - bootstrap
+  - underscorejs
+  - spring
 ---
 Various tools and technologies which are useful.
 

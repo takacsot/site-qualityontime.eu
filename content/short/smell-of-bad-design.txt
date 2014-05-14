@@ -2,6 +2,10 @@
 title: "Smell of bad design"
 created_at: 2014-02-05 00:00:00
 kind: article
+tags:
+  - design
+  - software
+  - programming
 ---
 
 When you read such a mail after a difficult investigation of a bug/code review...

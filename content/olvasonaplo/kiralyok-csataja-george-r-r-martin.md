@@ -5,7 +5,8 @@ created_at: 2012-07-03 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo
+  - review
+  - olvasonaplo
 ---
 ![Kiralyok csataj cover](http://moly.hu/system/covers/normal/covers_32208.jpg?1254477666)
 

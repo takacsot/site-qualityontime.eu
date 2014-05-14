@@ -4,6 +4,11 @@ kind: article
 created_at: 2012-07-21 22:22:22 +0000
 author: "Takács Ottó"
 published: true
+tags: 
+  - review
+  - olvasonaplo
+  - java
+  - design
 
 ---
 ![](http://ec3.images-amazon.com/images/P/0596004273.01._AA240_SCLZZZZZZZ_.jpg)

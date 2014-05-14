@@ -5,7 +5,12 @@ created_at: 2013-04-01 07:00:00 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo,it
+  - review
+  - olvasonaplo
+  - it
+  - javascript
+  - jquery
+  - backbonejs
 ---
 ![Developing Backbone.js Applications](http://addyosmani.github.com/backbone-fundamentals/img/oreilly.jpg)
 

@@ -4,8 +4,25 @@ kind: article
 created_at: 2012-12-31 11:32:44 +0000
 author: "Takács Ottó"
 published: true
-tags:
-  - review,olvasonaplo
+tags: 
+  - review
+  - olvasonaplo
+  - productivity
+  - it
+  - testing
+  - gtd
+  - scala
+  - java
+  - groovy
+  - sql
+  - oracle
+  - hibernate
+  - javascript
+  - jquery
+  - agile
+  - management
+  - cleancode
+  - programming
 ---
 <div id="toc"><ol></ol></div>
 

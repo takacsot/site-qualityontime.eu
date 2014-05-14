@@ -5,7 +5,8 @@ created_at: 2011-06-25 13:37:16 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - olvasonaplo,review
+  - review
+  - olvasonaplo
 ---
 Valójában gyakorlatilag egyszerre olvastam a sci-fi klasszikusának tetralógiáját. 
 

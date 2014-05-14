@@ -5,7 +5,11 @@ created_at: 2012-07-09 22:22:22 +0000
 author: "Takács Ottó"
 published: true
 tags: 
-  - review,olvasonaplo,it
+  - review
+  - olvasonaplo
+  - it
+  - java
+  - cleancode
 ---
 ![](http://moly.hu/system/covers/normal/covers_50545.jpg?1261413580)
 
