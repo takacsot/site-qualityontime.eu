@@ -2,7 +2,7 @@
 title: "Functionals - Toolbox"
 kind: article
 created_at: 2014-06-08 22:29
-hidden: true
+published: false
 book: toolbox
 book_page: 2
 tags:
@@ -87,4 +87,9 @@ Once you get used to Functional Programming paradigm you will change your style 
 First of all you do not need it. You should develop a small wrapper around collections and using it. See later in description of package `eu.qualityontime.functionals`.
 
 If you are not developing any wrapper you still have some advantages over using "plain" libraries. (even if I have reasoned against in the previous section).
+
+- [Façade](http://en.wikipedia.org/wiki/Facade_pattern) to simplify accessing 3rd party libraries. I do not want to remember which specific class to call when transforming values: `Iterables`? `Lists`?, `Maps`? (from [Guava ](http://code.google.com/p/guava-libraries/)).
+- It is always a good idea to hide 3rd party libaries behind a [Bridge](http://en.wikipedia.org/wiki/Bridge_pattern). Originally I was using [Commons Collections ](http://commons.apache.org/proper/commons-collections/) for (eg) transforming lists. At that time [Commons Collections ](http://commons.apache.org/proper/commons-collections/) was not supporting generics. So a second version of the library was using generics as much as possible. Then I have moved to some other derivative of [Commons Collections ](http://commons.apache.org/proper/commons-collections/) which supports generics ([example](https://github.com/megamattron/collections-generic)). And finally I have changed to [Guava ](http://code.google.com/p/guava-libraries/). The change was always transparent to old code because I was supporting both kind of functional API through the `AppCollections`. Lickily libraries are interface compatibles so writing some wrapper around a `Tranformer` of [Commons Collections ](http://commons.apache.org/proper/commons-collections/) to imitate `Function` of [Guava ](http://code.google.com/p/guava-libraries/).
+
+## Functional package
 
