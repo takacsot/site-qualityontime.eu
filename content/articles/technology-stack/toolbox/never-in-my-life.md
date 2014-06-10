@@ -25,7 +25,7 @@ Never again!
 
 In this repository I have collected/re-developed my most frequently used utilities and libraries.
 
-It is also useful many of us (I mean developers). On the other hand it is very good portfolio about my standards of development. 
+It is also useful for many of us (I mean developers). On the other hand it is very good portfolio about my standards of development. 
 
 Not all the utility is about something extraordinary. Sometimes just a simple wrapper around some other library (why having wrapper? Later.), sometimes it is just a simple and stupid experiment I have never used but proved a concept I am interested in.
 

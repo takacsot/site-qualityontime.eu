@@ -51,7 +51,7 @@ NB: I am not describing any of the primitive [Refactoring ](http://en.wikipedia.
 
 Then split the object into three different object per operation: `CreateMeeting`, `UpdateMeeting`, `DeleteMeeting`.
 
-No let's focus on one of the operation only: `CreateMeeting`
+Now let's focus on one of the operation only: `CreateMeeting`
 
 I am sure that it is already better 
 
