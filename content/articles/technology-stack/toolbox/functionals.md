@@ -1,8 +1,7 @@
 ---
 title: "Functionals - Toolbox"
 kind: article
-created_at: 2014-06-08 22:29
-published: false
+created_at: 2014-06-11 21:29
 book: toolbox
 book_page: 2
 tags:
@@ -42,22 +41,22 @@ Alternatives: [Guava ](http://code.google.com/p/guava-libraries/) have similar f
 The advantages of using simple factory method is trivial once you are composing them:
 
 ~~~java
-Map<String, Foo>  t1= new HashMap<>();
-t1.put("some", ....);
-List<Some> temp = new ArrayList<Some>();
-temp.add(...)
-...
-Other o = new Other();
-o.setSomes(temp);
-return o;
+  Map<String, Foo>  t1= new HashMap<>();
+  t1.put("some", ....);
+  List<Some> temp = new ArrayList<Some>();
+  temp.add(...)
+  ...
+  Other o = new Other();
+  o.setSomes(temp);
+  return o;
 ~~~
 
 vs.
 
 ~~~java
-Other o = new Other();
-o.setSomes(List(Map("some", ...),...));
-return o;
+  Other o = new Other();
+  o.setSomes(List(Map("some", ...),...));
+  return o;
 ~~~
 
 ## Non-existing helpers
@@ -92,4 +91,34 @@ If you are not developing any wrapper you still have some advantages over using 
 - It is always a good idea to hide 3rd party libaries behind a [Bridge](http://en.wikipedia.org/wiki/Bridge_pattern). Originally I was using [Commons Collections ](http://commons.apache.org/proper/commons-collections/) for (eg) transforming lists. At that time [Commons Collections ](http://commons.apache.org/proper/commons-collections/) was not supporting generics. So a second version of the library was using generics as much as possible. Then I have moved to some other derivative of [Commons Collections ](http://commons.apache.org/proper/commons-collections/) which supports generics ([example](https://github.com/megamattron/collections-generic)). And finally I have changed to [Guava ](http://code.google.com/p/guava-libraries/). The change was always transparent to old code because I was supporting both kind of functional API through the `AppCollections`. Lickily libraries are interface compatibles so writing some wrapper around a `Tranformer` of [Commons Collections ](http://commons.apache.org/proper/commons-collections/) to imitate `Function` of [Guava ](http://code.google.com/p/guava-libraries/).
 
 ## Functional package
+
+Package `eu.qualityontime.functionals`:
+
+- `FIterable`
+- `FMap`
+- `FMultimap`
+
+`F` prefix means functional. All these classes are wrapper around the appropriate type and delgate all method call. And as an addition it is extending them by few useful functional stuff.
+
+What does the following code do?
+
+~~~java
+  List<Todo> todos = ...
+  Predicate<Todo> completed = ...
+  Function<Todo, List<User>> assignedUsers = ...
+  Function<User, Long> nationality_id = ...
+  Function<User, Map<String, Object>> to_map = ... 
+  Function<Long, String> to_string = ...
+  ...
+  //and the magic
+  Map<String, Collection<Map<String,Object>> = FIterable(todos) //FIterable<Todo>
+    .filter(completed) //FIterable<Todo>
+    .flatMap(assignedUsers) //FIterable<User>
+    .groupBy(nationality_id) //FMultimap<Long, User>
+    .transformValues(to_map) //FMultimal<Long, Map<String, Object>>
+    .asMap() //FMap<Long, Collection<Map<String,Object>>
+    .mapKeys(to_string);//FMap<String, Collection<Map<String,Object>>
+~~~
+
+Do you really have any difficulties to understand (even without comments)? Simply beautifull!
 
