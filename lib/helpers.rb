@@ -96,7 +96,7 @@ def articles_by_year_month(l_articles=sorted_articles)
 end
 
 def past_sorted_articles
-	sorted_articles.select{|a| parse_time(a[:created_at]) < Time.new}
+	sorted_articles.select{|a| parse_time(a[:created_at]) < Time.new}.reject{|a| a[:publish] == false}
 end
 
 def list_non_published
