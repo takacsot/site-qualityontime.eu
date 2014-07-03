@@ -9,7 +9,6 @@ For migration script check [sql.groovy](https://github.com/takacsot/site-quality
 Built by [nanoc](http://nanoc.ws/).
 
 Nanoc features demonstrated:
-
 - rss feed
 - blogging
 - .htaccess definition
