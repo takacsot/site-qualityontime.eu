@@ -1,24 +1,34 @@
 ---
-publish: false
+title: "Inner class for stepdown rule"
+kind: article
+publish: true
+created_at: 2014-07-07 02:32
+tags:
+  - java
+  - cleancode
+  - uncle bob
+  - programming
+  - development
+  - en
 ---
 
-Inner and nested classes (static or not) are not only for passing as anonymous classess for other component or not to expose special derivatives to the public. It is also useful to organize your code layout to improve readability.
+Inner and nested classes (static or not) are not only for passing as anonymous classes for other component or not to expose special derivatives to the public. It is also useful to organize your code layout to improve readability.
 
 I present two usage of class to improve readability:
 
-- group methods togather to see clrarly which functions are belonging to each other and which si belonging to an other method.
-- simplifying parameter passing hell for service methods (commin in Spring - e.g.)
+- group methods together to see clearly which functions are belonging to each other and which is belonging to an other method.
+- simplifying parameter passing hell for service methods (common in Spring - e.g.)
 
-## Group methods togather
+## Group methods together
 
-One the [Clean Coders ](http://cleancoders.com/) vidos and also in the [Clean Code ](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) book there is a specific section about functions and the way to organize the layour of them (look for _The Stepdown Rule_ in section _Functions_).
+One the [Clean Coders ](http://cleancoders.com/) videos and also in the [Clean Code ](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) book there is a specific section about functions and the way to organize the layout of them (look for _The Stepdown Rule_ in section _Functions_).
 
 The summary of this concept is to organize code the following way:
 
 - Main function
   - f1 used in main
   - f2 used in main
-    - f21 usong in f2
+    - f21 used in f2
   - f3 used in main
     - f31 used in f3
     - f32 used in f3
@@ -69,44 +79,43 @@ In service centric code base (like the one easy to make when using [Spring ](htt
 Example:
 
 ~~~java
-void main(String in){
-  ...
-  f1(in, new List());
-  ...
-}
+  void main(String in){
+    ...
+    f1(in, new List());
+    ...
+  }
 
-void f1(String in, List collector){
+  void f1(String in, List collector){
+    ...
+    f2(some_other, collector, Option.WHATEVER);
+    ...
+  }
   ...
-  f2(some_other, collector, Option.WHATEVER);
-  ...
-}
-...
 ~~~
 
 And here it is an other case of using inner classes. Their only purpose is to make parameters class variable and simplify method calls.
 
 ~~~java
-void main(String in){
-  ...
-  new F1(in, new List()).f1();
-  ...
-}
-
-private class F1{
-  String in;
-  List collector;
-  Object some_other;
-  Option whatever = Option.WHATEVER
-  // constructor are not included in the sample. 
-  
-  void f1(){
+  void main(String in){
     ...
-    f2();
+    new F1(in, new List()).f1();
     ...
   }
 
-}
-...
+  private class F1{
+    String in;
+    List collector;
+    Object some_other;
+    Option whatever = Option.WHATEVER
+    // constructor are not included in the sample. 
+    
+    void f1(){
+      ...
+      f2();
+      ...
+    }
+
+  }
+  ...
 ~~~
 
-~~~
