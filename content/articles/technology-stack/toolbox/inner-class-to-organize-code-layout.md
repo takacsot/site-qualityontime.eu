@@ -54,7 +54,7 @@ Before code
   void f2(){...}
 ~~~
 
-After (introducing only one layer to grouping):
+After (introducing only one layer of grouping):
 
 ~~~java
   void main(){
