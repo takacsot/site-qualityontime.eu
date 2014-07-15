@@ -11,9 +11,9 @@ tags:
 
 `foldeLeft` (folding in general) is one of the most powerful functional construct. Clean, elegant and generic.
 
-Almost all functional operations can be [build on top of the `fold` functions](https://twitter.github.io/scala_school/collections.html#generalized). So you need to have one. Once you have `foldLeft` you got a bunch "operation" id addition (see later).
+Almost all functional operations can be [built on top of the `fold` functions](https://twitter.github.io/scala_school/collections.html#generalized). So you need to have one. Once you have `foldLeft` you got a bunch of "operation" in addition (see later).
 
-A [few example ](http://oldfashionedsoftware.com/2009/07/30/lots-and-lots-of-foldleft-examples/) how `foldLeft` an be used:
+A [few example ](http://oldfashionedsoftware.com/2009/07/30/lots-and-lots-of-foldleft-examples/) how `foldLeft` can be used:
 
 - sum
 - product
@@ -26,7 +26,7 @@ A [few example ](http://oldfashionedsoftware.com/2009/07/30/lots-and-lots-of-fol
 - unique
 - etc...
 
-I had a continuous need of implementing some `min` and `max` on collection and I wanted to add my functional [FIterable ](https://github.com/takacsot/toolbox/blob/master/src/main/java/eu/qualityontime/functionals/FIterable.java).
+I had a continuous need of implementing some `min` and `max` on collection and I wanted to add my functional [FIterable ](https://github.com/takacsot/toolbox/blob/master/src/main/java/eu/qualityontime/functionals/FIterable.java). So I did.
 
 ~~~java
   public interface F2<X, Y, Z> {
@@ -69,5 +69,4 @@ I had a continuous need of implementing some `min` and `max` on collection and I
     });
     assertEquals("qqqqqqqqqqq", longestString);
   }
-
 ~~~
