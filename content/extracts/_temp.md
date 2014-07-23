@@ -45,3 +45,7 @@ Oh, yes. At the end of the iteration/sprint is just fine for most of the custome
 >4. Consistency
 
 >the biggest challenge in programming is managing complexity. Consistency is one way to combat complexity.
+
+>5. Learning
+
+>As a software developer, you are constantly learning. Before adding a new feature, you have to understand what it is supposed to do. Before adding code to an existing program, you usually have to learn what the existing code does, in order fit the new functionality in properly
