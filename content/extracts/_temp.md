@@ -57,6 +57,25 @@ Oh, yes. At the end of the iteration/sprint is just fine for most of the custome
 >Velocity is a nice metric for internal process monitoring, so you can spot problems early. But beware of using a negative metric such as velocity as your primary measure of success, it leads down the path of false hyperproductivity and a warm feeling that you’re doing something good when in fact you might be driving the wrong way down a motorway, with a truck heading straight at you.
 
 
+####[Nightmare on Agile Street](http://allankelly.blogspot.com/2014/07/nightmare-on-agile-street.html)
+
+A very humorous story about an Agile project which is not soo agile. Or more precisely about a project in which stakeholders are remembering of those aspect of agile what then prefer. And the result is a total disaster.
+
+A few weeks ago I had a similar (not so extreme) feeling and I wanted to cancel the project too. But... :)
+
+####[Does Speaking Another Language Change How You Think?](http://www.scotthyoung.com/blog/2014/07/27/language-and-thought/)
+
+>Language is a tool that fills the needs of its speakers.
+
+>Languages also have expressions and words for concepts that don’t match one-to-one
+>  But, again, it’s a nuance in expression, the same fundamental thoughts can be conveyed fairly equally in most languages, plus or minus a bit of brevity.
+
+>The big way that learning a new language changes your thinking is that language is a gateway to culture
+
+>language is a preferential route for cultural understanding (albeit a difficult one)
+
+>The Language Learning Experience Changes How You Think
+
 Craft Conf  előadások
 ----------------------
 
@@ -127,3 +146,30 @@ Advice:
 1. Give feeback
 2. Reflect
 
+####http://www.ustream.tv/recorded/46744756
+Jutta Eckstein - Complex Projects aren't planable but controllable 
+Individual goeal are against company goals because most of th goeal need teamwork which is killed by individual goal setups.
+and many othe mut it was not so structured to extract the "single message".
+Use values instead of estimates (business values....) for decising to initiate the project. There are many way to define value (ROI, Risks, Cost of delay, Importance, Willingness for investment)
+Plan in differente leveles: roadmap, long term, mid term, short term
+
+
+####http://www.ustream.tv/recorded/46744753
+Jevgeni Kabanov - Data-Driven Software Engineering 
+Deliver Quality software on time :)
+Reality: Onley 60% deliver on time  and half of releases crashes in production
+Solution: Measure and experiment (sound Agileish)
+Wha tis metter: predictibility productivity and quality for softweare eng, team. And well measurable metrics (except productivity)
+From large statistical data.
+Having standup has 4% more predictibility and similarly small numbers on other aspects.
+Meeting several times a week has negative effect on quality. -  Disctraction.
+Who estimates? If management is resented -6% in predictibility. -3% on quality. the opposite when the whole team is presented - all engineer.
+Who tests? Developer tests +5% in quality. Automtated test 8% predictibility, +3% quality. Testers doing testing does not really makes difference.
+Code reviews: Enormous boost (17-22%) on predictibility, not a big boost on quiality, code reviews is improving your architecture, not neccerely decrease number of bugs, 
+Good data to sell to mamagment.
+Automated test: "Fuctionality covered by automate test = not code coverage". Significant 15-25% gain in predictibility and quality. Nothing  else is increasing quality as much as automated tests.
+Pair up: 7% predictibility, 13% in quality. - But code review are much better in predictibility but worst in quality. In general Code review is more valuable.
+Code quality: "Fix all code quality metrics - e.g. Sonar", 17% predictibility, 13% in quality. So set it up for all your project. And very cheap to monitor.
+Tools: how tools effect. version control 9% predictibility, ide 8%, issue tracker 5%, etc But the specific tool itself  is not effecting too much. Except JRebel +8%.
+
+Measure: Desdline misses, Scope changes, Blocker issues after release, User satisfaction. 

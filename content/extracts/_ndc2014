@@ -1,0 +1,151 @@
+_ndc2014
+======
+
+http://vimeo.com/ndcoslo/videos
+
+## Venkat Subramaniam - Core Software Design Principles-260366048.mp4
+Basic Design and OO principles. Simple and good. DRY, SOLID, tell dont ask, etc.
+
+## Anders Abel - Using the Scrum Rules Against your Boss-260363991.mp4
+Basic Scrum but important for those who are using Scrum as a hipe then realise that it is not working for him:
+
+> Only accept thos produce backlogs whihc are clear.
+
+## Venkat Subramaniam - Towards an Evolutionary Architecture-260353299.mp4
+Érdekes sotriek, de azért elég kevés konkrétum. A lényeg, hogy mit emel ki, hogy tudatos szinten tudjunk a rugalmas architectóráról gondolkodni.
+
+##Robert C. Martin - Clean Architecture and Design260329265
+As in last year. Maybe in an other conference
+
+##Mike Cohn - Advanced Topics in Agile Planning260328289
+I have seen that last year too.
+
+##Steve Sanderson - Architecting large Single Page Applications with Knockout.js260291624
+I have to watch again.... Looks good but it was very fast.
+
+##Robert C. Martin - Advanced TDD The Transformation Priority Premise260285169
+known is watched cleancoders.com
+
+##Robert C. Martin - Functional Programming What Why When260277846
+Thinking about Functional programming. Whay it is so important to be ware of fucntional paradigm for our programming future..
+On the other hand the presentation is made already in an other conference and available online too.
+
+##Mike Cohn - Getting Agile with Scrum260276395
+Scrum 101 :(
+
+##Doc Norton - The Technical Debt Trap 260254705
+The danger occures when athe dept is not repayed. Every minute spent on not-quite-right code counts as interest in that dept.
+Technical dept is good
+  - repid delivery, time to market
+  - heps learnig, indication of learning
+People are confused the dept methaphor with the ide that you could write code poorly.
+Code must be clean enough tobe able to refactor! (always) - Otto: so Test are there...., well tested :)
+Ask yourself:
+- is the code clean?
+- its the code tested
+- is ther a learning objective or event
+- is ther a plan for payback
+-is the business truly informed
+I any of these are missing it is not technical dept. It is a mess!!!
+Remember quality os your responsiblity.
+NEVEL ask permission to do job correctly
+When monitoring complexity p track trends not points. (exact values are meaningless but tends are meaningfull)
+
+##Brendan Forster - 10 Things Ive Learned From Doing OSS 260254576
+. Read other people code
+. there are lots of ways to collaborate. e.g donations, Documentation
+. Scratch your own itch  
+  if you have considerable code you should share it, onsider your contract.
+.  ...
+  you are not your code
+. 
+. words are hard
+. be familiar with software licenses
+. friction sucks, Make it easy for me to hack on your code.
+. "done" vs "dead"
+
+##Enrico Campidoglio - Why no code reviews 260248781
+problem #1 is about Ego.  EGO=1/Knowledge. The less the knowledge the greater the EGO.
+Problem 2: you == your code
+Problem 3: Fear of making mistakes. Fear of let colleges sse my mistakes
+Problem 4: Culture o(lack of it) "you are wrong".... See Ego!
+Do not review the person. REview the code. Do not speak in absolut. Foos are speaking absolute.
+Time: it need time.
+NB: Good diagrama bout productivity of a geek
+What do you get from code review?
+  - code quality goes up
+  - bugs go down, espcially fund during code review,.
+  - sharing knowledge
+MB: not even checking hanges when upating project so he could not learni from others development effort.
+when you know that someone is wathcing you will take care of you code more. "The Big Brother EEffect"
+It can eager ambition because yo want to impress your programmer fellow.
+Give constructive feedback. 
+In a project everyone is in the same boat. (Sometimes I do not have the feeling - Otto -  But we have to trust  people that they are doing their bests)
+Kind fo review
+1. Formal code review. Most bugs found
+2. Over the wsholder code review. Less former. Less bug to be found
+3. Async code review. hapopen async tothe code written. "distributed". IT happend offline. Good compromize in nr of bugs found and time.
+Tools:
+- Gerrit, Diffy
+ruleS:
+1.review small portions of code at a time. One commit one logical change.
+1. keep and follow a checklist
+1. keep under 1 hour
+
+##Aral Balkan - Free is a Lie 260249022
+Interesting and shocking conspiracy theory how googe/facbook is rooling our life and data...
+
+##Peter Smith - It doesnt work like that in enterprise 260248173
+Definituion of Enterprice development
+Problems
+Constrainted process and practices (sometime the lack of it)
+  As long as a sub-optimal processis profitable, it will be allowed to continue (Otto: so you(!) have to prove that you chnage is more profitable)
+  Take Control
+    Dont stop being lay developer (automate)
+    If you tru had enough there will be ways in whihc uou can speed yourself up
+    Consider commiting your own time (!!!!!)
+    Keep innivating, and do not give up.
+Planning for the future
+  Mpost enterprice is planning for the future to some extend
+  Fire-fighting ismuch more common than working proactively
+  Sometime there is no management of technical dept atl all
+  it can be verry difficult to communicate the true value of writing/refactoring code to be loose coupled and maitainable
+  Take control
+    Start the conversation! - Yes it is politics...
+    Lead by Example
+    ask your architect or development manager what the `self-life` of tyour software is (Otto ????)
+Rejection of industry standard knowledge
+  Comanies tend to shy away from buyy to things they perceive as teny
+  Individuals often try to dins the cleverest solution and ignore the simple one right in from the them,
+  Most teams should be able to react quickly to client demands regardless of their processes of failing in other areas.
+  Take control
+    Share your knowledge
+    Demonstrate (cool) usefull things
+    Know the _why_ as wekk as the _what_ and the _how_
+    Helpo people to find the art and the joy in coding
+Management and people
+  Developers ofter trated as liability rather than a resource
+  Staff are often "promoted" based on length of service rather than proficiency and suitability for the role
+  People with responsiblity tend to subconsciously protect their position and their interest
+  Take controll
+    Remin true to yourself and uphold your own standard (be proud of it)
+    Say no
+    The golden rule: " Am I still learning skills that will be relvant to me in my future career?"
+What is the solution?
+
+
+##Scott Allen - Building Directives for AngularJS 260249252.mp4
+Meg kell tanulnom AngularJS-t Mese nincs.
+Demosntrated how to create custom tags into html and have some behaviour around it.
+
+##Doc Norton - Agile Metrics - Velocity is NOT the Goal 260249179.mp4
+VElicity is not a really good indicator of team performance and health
+The only important: The which is measured will improve... at cost. (Otto: So the only meaningfull measurement is business value.)
+Any objsevert statisticsal regularity will fail as soon as it is used as a target.
+When a measure becomes a target, it ceases to be  a good measure....an unintrnded result, contrary to interests of the incentive makers.
+!!!!Not finished yet!!!
+
+
+
+
+
