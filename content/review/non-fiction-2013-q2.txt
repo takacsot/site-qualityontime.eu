@@ -1,7 +1,6 @@
 ---
 title: "Non-finction 2013 q2"
 kind: article
-publish: true
 created_at: 2013-08-25 17:00:00
 ---
 

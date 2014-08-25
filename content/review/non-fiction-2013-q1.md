@@ -3,8 +3,6 @@ title: "Non Fiction 2013 Q1"
 kind: article
 created_at: 2013-03-29 10:39:52 +0000
 author: "Takács Ottó"
-published: true
-
 ---
 ## [The mythical man-month](http://moly.hu/konyvek/frederick-p-brooks-the-mythical-man-month)
 
