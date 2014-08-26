@@ -55,7 +55,7 @@ def generateHash(){
 	Map hashes = [:]
 	allFiles(base_dir).each{ File file ->
 		def md = generateMD5(file)
-		hashes[file.path.substring(base_dir.path.length()+1)]=md
+		hashes[file.path.substring(base_dir.path.length()+1).tr('\\','/')]=md
 	}
 	println "${hashes.size()} hashes are generate."
 	hashes

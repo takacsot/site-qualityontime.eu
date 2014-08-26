@@ -176,3 +176,8 @@ Code quality: "Fix all code quality metrics - e.g. Sonar", 17% predictibility, 1
 Tools: how tools effect. version control 9% predictibility, ide 8%, issue tracker 5%, etc But the specific tool itself  is not effecting too much. Except JRebel +8%.
 
 Measure: Desdline misses, Scope changes, Blocker issues after release, User satisfaction. 
+
+#### http://www.ustream.tv/recorded/46744750
+Gerard Meszaros - Find the Right Abstraction Level for Your Tests 
+Goog good, but difficult to extract essence.
+
