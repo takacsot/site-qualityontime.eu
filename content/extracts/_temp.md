@@ -181,3 +181,45 @@ Measure: Desdline misses, Scope changes, Blocker issues after release, User sati
 Gerard Meszaros - Find the Right Abstraction Level for Your Tests 
 Goog good, but difficult to extract essence.
 
+###http://www.ustream.tv/recorded/46744747
+Differnetece  external and internal quality. Internal quality a kind of subjective. Extrernal quality whihc is noticable only.
+Extrenal qualit like: goal achieved. tipically business goal.
+REffere to E.Myth revisited (A vállallkozás mitosza). And apply that concept to software development.
+Offshore: use concept from 4 hours workweek book. Offshore whihc is freeing up you ding important things.
+Automate or find someone who is thinking and will aitomate. 
+
+###http://www.ustream.tv/recorded/46744746
+Bruce Eckel - What Makes a Good Development Process? 
+Infoq már megvolt. 
+
+###http://www.ustream.tv/recorded/46744741
+Amber Case - Getting Things Done at Scale 
+1/50 has a good experience in acquisition of an company.
+Why:
+- Crippling managment/overhaad to get simple things done
+- Founder flight: charismatic, visionary leader is living fast.
+- Lack of detailed transition plan
+- Loss of   passion for original product
+- Left of respect and cross-compromise.
+- Culture clash 
+- Jealousy/blocking from parent company employees
+- Sprinters vs  Marathon runners
+How to handle
+1. Pre-ngotiate
+  - Do not leave details for later and hope they work
+  - Be as detailed as possible and get corporate bayoff 
+  - do not be vague. Vaguness  breeds confusion nad paranoia.
+2. Predetermine your desired outcome
+  - Creatre and lead a transiton plan
+  - retain pasion for original product
+  - help parent company to sprint
+  - adopt traits of a marthon runner
+  - maintain and  improve team quality
+4. Over communication - Lack of communication with new or remote team leads to suspection and insecurity.
+5. Win friends and influence team
+...
+Several social (read a book about it)
+and orginazational stuff which is a little bit common sense...
+Growing:
+- Hire slowly
+- Litmus test
