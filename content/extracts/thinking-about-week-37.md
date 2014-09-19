@@ -12,7 +12,7 @@ tags:
   - clean code
 ---
 
-All videos can be cound on [http://vimeo.com/ndcoslo/videos](http://vimeo.com/ndcoslo/videos)
+All videos can be found on [http://vimeo.com/ndcoslo/videos](http://vimeo.com/ndcoslo/videos)
 
 ### Venkat Subramaniam - Core Software Design Principles
 

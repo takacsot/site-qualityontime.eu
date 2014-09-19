@@ -148,3 +148,31 @@ and orginazational stuff which is a little bit common sense...
 Growing:
 - Hire slowly
 - Litmus test
+
+###http://www.ustream.tv/recorded/46743935
+Agile team don't necesserily create agile software architectures.
+Agile architecture is reacting to changes easily. (e.g microservices - giving flexibility)
+How do we inspect software architecture
+  - read code - so much to read
+  - pucture 
+    - how? 
+    - TEam arent able to visualize softwasre architecture effectively
+      - difficult to write a single diagram: multiple diagramm need to be created
+Think how to align your code to the architecture.
+Even if BUD is forgotten it is replaced by nothing.
+So 
+- create highl level BUD in the bggining. Significant decision (here you have to design about messageing , micorservice, async or sync etc.) - helps sharing understaning of system.
+- Plus you have to identify and mmitigate your highest priority risks
+- up front design including technology. Technology choise is effecting your architecture
+-
+
+De csak ennyi semmi több.... uff
+A többi csak szarakodás
+
+
+
+
+---------
+
+MB: not even checking changes when updating project so he could not learning from others development effort.
+
