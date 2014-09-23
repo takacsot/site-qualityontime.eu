@@ -18,7 +18,7 @@ module Paginate
   end
   
   def index_pages
-	index_articles = past_sorted_articles[0..10]
+	index_articles = past_sorted_articles[0..9]
   end
 end
 
