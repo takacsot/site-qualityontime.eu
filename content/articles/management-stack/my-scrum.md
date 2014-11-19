@@ -67,3 +67,6 @@ Scrum is a good starting point but I am almost 100% sure that within 6-12 month 
 
 Summary:
 I see the power of Scrum. And I see that Scrum is never enough. It always needs some techniques to make it complete. I see the weakness of Scrum and I have the capability and experience to adapt/change Scrum to fit to the environment.
+
+
+Ez nagzon jol passzol: https://www.youtube.com/watch?v=7H67V6noueE
