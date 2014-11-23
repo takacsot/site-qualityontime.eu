@@ -47,9 +47,11 @@ compile '*' do
 	case ext
     when 'md', 'txt'
 	  filter :erb
-      filter :kramdown
+    filter :kramdown
     when 'haml'
       filter :haml
+    when 'asciidoc', 'adoc', 'asc'
+      filter :asciidoctor
     else
       filter :erb
 	end

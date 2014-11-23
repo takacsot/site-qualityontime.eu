@@ -36,6 +36,9 @@ As in last year. Maybe in an other conference.
 
 I have seen that last year too.
 
+- [Previouse](http://vimeo.com/43548631)
+- [Current](http://vimeo.com/97530864)
+
 ### Steve Sanderson - Architecting large Single Page Applications with Knockout.js
 
 I have to watch again.... Looks good but it was very fast.

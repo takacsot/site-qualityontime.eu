@@ -2,6 +2,10 @@
 title: "Thinking about week 44"
 created_at: 2014-10-30 05:20
 kind: article
+tags:
+  - hibernate
+  - java
+  - programming
 ---
 
 ## Why I hate hibernate
