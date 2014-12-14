@@ -2,7 +2,7 @@
 title: "I give a shit on story points"
 publish: true
 kind: article
-created_at: 2014-11-25 23:14
+created_at: 2014-11-25 19:14
 book: management-stack
 book_page: 41
 tags:
