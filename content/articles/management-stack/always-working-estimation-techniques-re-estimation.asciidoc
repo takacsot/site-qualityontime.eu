@@ -1,0 +1,32 @@
+---
+title: "Always working estimation techniques - re-estimation"
+kind: article
+created_at: 2014-12-15 11:57
+book: management-stack
+book_page: 42
+tags:
+  - estimation
+  - management
+  - development
+  - en
+---
+
+Based on link:<%=item_by_id('/review/fact-fallacies-software-engineering/').path%>[Facts and Fallacies of Software Engineering]:
+
+- (Fact 8.) One of the two most common causes of runaway projects is poor estimation.
+- (Fact 9.) Software estimation usually occurs at the wrong time. - at the beginning of project.
+- (Fact 11.) Software estimates are rarely corrected as the project proceeds.
+
+Consequence: __Re-estimate your issues!__
+
+This an an extremely powerful technique to control estimation and schedule plan.
+
+Take your time (at 1/3 of the estimates project schedule) and review all task/story remaining and adjust estimates based on experiences. At that time you have gained a solid experience in domain, technology so your estimate will be much more reliable.
+
+What is  more: it is absolutely independent from any other estimation technique. It can be applied on any kind of estimates: ideal man day, story points, confidential ranges etc.
+
+You might be afraid of spending huge amount of time on estimating again. But it is wrong. The first estimation takes long but if you analyze how you are spending your time you must recognize a certain pattern: it takes more to understand the issue then doing the estimate.
+
+But the second time you do not need to understand the domain. You can focus on estimation only. 
+
+Based on my experience it takes fraction of time comparing to the time spent on the first estimate.

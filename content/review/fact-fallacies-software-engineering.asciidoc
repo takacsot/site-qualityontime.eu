@@ -8,6 +8,7 @@ tags:
   - management
   - agile
   - review
+  - en
 ---
 
 image::http://elegantcode.com/wp-content/uploads/2010/08/image_thumb3.png[Cover]
@@ -148,7 +149,7 @@ Management
 .    You can’t manage what you can’t measure.
 .    You can manage quality into a software product.
 
-    People
+People
 
 [start=3]
 .    Programming can and should be egoless.

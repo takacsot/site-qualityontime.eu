@@ -51,6 +51,7 @@ compile '*' do
     when 'haml'
       filter :haml
     when 'asciidoc', 'adoc', 'asc'
+      filter :erb
       filter :asciidoctor
     else
       filter :erb
