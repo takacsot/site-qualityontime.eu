@@ -18,11 +18,6 @@ Instead of story points you should use calendar based estimates with proper risk
 
 Here are techniques which are working to me.
 
-### Technique: periodic re-estimation
-
-Just go for it. Once you have more knowledge just review and adapt you estimation. It was always much faster then the forst time when you ahd to spend most of your time on understanidng the problem. On re-estimation you already know the problem. 
-
-Several months of work can be reviewed/re-estimated in 1 hour with team. It measn it can be really frequent. My experience is that after the first or second re/estimation no more re-estimation is needed because the domin become clear the estimations are becoming less risky.
 
 ### Technique: automatic estimation adjustment.
 

@@ -30,3 +30,5 @@ You might be afraid of spending huge amount of time on estimating again. But it 
 But the second time you do not need to understand the domain. You can focus on estimation only. 
 
 Based on my experience it takes fraction of time comparing to the time spent on the first estimate.
+
+Several months of work can be reviewed/re-estimated in 1 hour with team. It means it can be really frequent. My experience is that after the first or second re-estimation no more re-estimation is needed because the domain become clear the estimations are not reducing risk significantly.

@@ -97,5 +97,6 @@ DirectoryIndex index.html
   Redirect 301 /extracts/chapter-21-how-long-piece-string-black-art-software-timescale-estimation http://www.qualityontime.eu/review/code-craft-pete-goodliffe/chapter-21-how-long-piece-string-black-art-software-timescale-estimation/
   Redirect 301 /extracts/hogyan-lehet-egy-vallalat-vilagszinvonalu-rovid-ido-alatt-itelet http://www.qualityontime.eu/extracts/itelet/hogyan-lehet-egy-vallalat-vilagszinvonalu-rovid-ido-alatt-itelet/
   Redirect 301 /extracts/hogyan-kell-egy-uj-menedzsert-beilleszteni-itelet http://www.qualityontime.eu/extracts/itelet/hogyan-kell-egy-uj-menedzsert-beilleszteni-itelet/
+  Redirect 301 /review/fact-falllacies-software-engineering/ http://www.qualityontime.eu/review/fact-fallacies-software-engineering/
 </IfModule>
 
