@@ -1,0 +1,35 @@
+---
+title: "Schedule Game #2: 90% Done"
+kind: article
+created_at: 2015-01-08 15:52
+tags:
+  - hu
+  - scheduling
+  - planning
+  - project management
+  - management
+  - it
+---
+
+Újrapublikálva 2005-ból.
+
+[quote, jrothman]
+____
+Szerencsés fiatal fejlesztő voltam. Az első három hónapban elértem a 90%-ot az ütemezés játékban. Magamért tettem.
+
+Úgy becsültem, hogy az adott feladat 6 hétig fog tartani. Természetesen mivel arrogáns és naiv fejlesztő voltam soha nem történt meg velem, hogy a feladatot apróbb darabokra tördeltem volna. (Az megmondta volna nekem, hogy egyáltalán tudom-e hogy mit kell tenni a feladattal.)
+
+Az első hét végén 20%-ban kész voltam. A második hét végére 40%. A harmadik hét végére 60%, a negyedik végén, pedig 80%. Az ötödik hét végére már 90%-ban kész voltam. A hatodiknak a végén 92%, a hetediknek, pedig 93%. Mind az idő, mind én haladtunk előre. A tizedik hét végére 97%-ban kész voltam. De ekkor azt hittem, hogy egy héten belül kész leszek -- csak három darab egynapos feladatom volt hátra. Ez még további 2 hétig tartott. Összes 12 hét a 6 hetes feladathoz képest.
+
+Miközben 92%, 93% és 94%-ban kész voltam státuszjelentéseket küldtem a menedzseremnek, amiben elmagyaráztam, hogy váratlan problémába botlottam és hogy nem tudom megbecsülni mind azt, amit tenni kellene. A menedzser jól ált hozzá és csak azt mondogatta "Ok, csak tudasd velem az aktualizált becslésedet!"
+
+A feladat végén, mikor végre teljesen befejeztem készen állt, hogy továbbmenjen. Mondtam neki, hogy mostantól máshogy szeretnék becsléseket készíteni, sokkal részletesebben, és több leszállítandó dologgal minden héten. Ha nem tudok dátumot adni, az jó lesz neki. Beszéltünk és megegyeztünk, hogy minden becslési dátumokat kockázati faktorral látjuk el.
+
+Szeretném azt mondani, hogy tökéletes becslő lettem, De nem. Még mindig csak tanulom a becslést. De azt tudom, hogy amikor azt gondolom, hogy 90%-ban kész vagyok, az lehet hogy csak 50%.
+
+Nem én vagyok az egyetlen. A 90%-ban kész ütemezései játék bármilyen feltételek között bekövetkezhet: ésszerű vagy ésszerűtlen ütemezésnél, alacsony vagy magas kockázatú technológiáknál. 90%-ban kész arról szól, hogy megjósolom a jövőt, hogy helyes becslést tudjak adni, és hogy értesüljünk -- előre -- ha megtorpanunk. Nem egy triviális probléma.
+
+A 90%-ban kész ütemezési játék az oka annak, amiért szeretek visszajelzéseket kapni a munka során. See, see, see, see
+____
+
+http://www.jrothman.com/mpd/schedule-games/2005/04/schedule-game-2-90-done/

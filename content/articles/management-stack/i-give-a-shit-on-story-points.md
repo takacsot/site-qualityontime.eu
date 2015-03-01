@@ -42,7 +42,7 @@ In out "everyday" it come up in the context of  [Scrum ](http://en.wikipedia.org
 
 BUT: __[Scrum ](http://en.wikipedia.org/wiki/Scrum_%28software_development%29) is not about story points.__ Not at all. What is more! Not even talking about estimation. Nothing. When I am saying [Scrum ](http://en.wikipedia.org/wiki/Scrum_%28software_development%29) I am talking about the Scrum as it is. Of course when you are talking about Scrum it is always the original Scrum PLUS many-many additional tools and techniques (including story points).
 
-Once I had a talk with some manager using Scrum in his organization. He told me that one of their current challenge (using Scrum for many years and still having this problem. hmmm.... -  on the other hand they have introduced a very agile process which is great) is to make business people understanding the concept of story points. I think it is a mistake to explain it to a businessman who is interest in time and schedule...
+Once I had a talk with some manager using Scrum in his organization. He told me that one of their current challenge (using Scrum for many years and still having this problem. hmmm.... -  on the other hand they have introduced a very agile process which is great) is to make business people understanding the concept of story points. I think it is a mistake to explain it to a businessman who is interested in time and schedule...
 
 
 In one of his [presentation Dan North]((http://www.infoq.com/presentations/agile-does-not-scale)) highlighted why story point is insane (around 24:40 - not exact transcript):
@@ -68,9 +68,11 @@ As I see (and it cause me many problem when dealing with story points). It tries
 - __team experience__: less experienced team in certain area is giving more story point then experienced team. (as story point is sensitive to team composition it becomes clear by time: In the beginning the same task has higher story point then later)
 - __individual developer experience__: better developer can be more than  10X more productive and faster then a dump. And as all team is composed by different qualities of developer.... A single number is hiding capabilities and risk of different developer qualities.
 
+As these risks are so independent from each other you have to use different strategies and techniques to manage them. But if you are hiding these aspect behind a single figure you do not even have a chance.
+
 Plus it has so many other weakness:
 
-- any kind of story point estimate (and its brother [velocity ](http://en.wikipedia.org/wiki/Velocity_%28software_development%29)) is __unique to the team__. __Uncomparable__. How to deal with multiple team project protfolio? It has to be transformed to a common measurement and measurement unit (most probably calendar days)
+- any kind of story point estimate (and its brother [velocity ](http://en.wikipedia.org/wiki/Velocity_%28software_development%29)) is __unique to the team__. __Uncomparable__. How to deal with multiple team project portfolio? It has to be transformed to a common measurement and measurement unit (most probably calendar days)
 - extremely __sensitive to team composition change__. Someone got sick? A developer has an urgent support work in other project? Or just got a new team member? Or someone quits?  (statistically it is quite probable in any project takes more than half a year)
 - __not giving any information without [velocity ](http://en.wikipedia.org/wiki/Velocity_%28software_development%29)__. Obvious. After having [velocity ](http://en.wikipedia.org/wiki/Velocity_%28software_development%29) you could estimate due dates (which is a calendar unit!!!!!) and costs (which is calendar unit and money!!!!). 
 - there is __no strong correlation amongst story point and real effort spent__. The only thing can be sure that higher story point is more then lower. But a 4 sp is not 2 times more then 2 sp! (disclaimer: correlation exists but not strong except on small stories and [small story points](http://www.mountaingoatsoftware.com/blog/seeing-how-well-a-teams-story-points-align-from-one-to-eight) - but it leads to #noestimate subject)

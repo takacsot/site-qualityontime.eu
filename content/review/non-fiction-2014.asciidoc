@@ -1,0 +1,205 @@
+---
+title: "Non Fiction 2014"
+kind: article
+created_at: 2015-03-01 06:15
+tags:
+  - en
+  - hu
+  - review
+  - it
+  - management
+  - dog
+  - gtd
+  - habit
+  - willpower
+  - java
+  - typescript
+  - refactoring
+  - design pattern
+---
+
+== http://moly.hu/konyvek/roy-f-baumeister-john-tierney-willpower[Roy F. Baumeister · John Tierney Willpower]
+
+image::http://moly.hu/system/covers/big/covers_169165.jpg[]
+
+I started to read in english but later I continued in hungarian. See later as `Akaraterő`.
+
+Clear, easy to read but still sciantific book how willpower is working and how to improve it. 
+
+It is a must have book. 
+
+It goes hanad by hand with the book link:<%=item_by_id('/olvasonaplo/non-fiction-2012/').path%>["Thinking, fast and slow" by Daniel Kahneman]
+
+____
+Combining the best of modern social science with practical wisdom, Baumeister and Tierney here share the definitive compendium of modern lessons in willpower. As our society has moved away from the virtues of thrift and self-denial, it often feels helpless because we face more temptations than ever. But we also have more knowledge and better tools for taking control of our lives. However we define happiness-a close- knit family, a satisfying career, financial security-we won't reach it without mastering self-control.
+____
+
+
+== http://moly.hu/konyvek/roy-f-baumeister-john-tierney-akaratero[Roy F. Baumeister · John Tierney: Akaraterő]
+
+image::http://moly.hu/system/covers/big/covers_274969.jpg?1395473521[]
+
+____
+Miért nem teljesülnek az újévi fogadalmak? Miért fulladnak rendre kudarcba a fogyókúrák? Miért bizonyulunk gyakran képtelennek arra, hogy azzal foglalkozzunk, amivel szándékunkban áll? Hogyan vált korunk emberének egyik legnagyobb problémájává az önkontroll, illetve annak hiánya? Mi voltaképpen az akaraterő? E kérdések megválaszolására nagyon sok, sokszor meglepő eredményeket hozó tudományos vizsgálatot végeztek az elmúlt évtizedekben. Kiderült például, hogy izmainkhoz hasonlóan az akaraterőnk is kimerül, ha túlerőltetjük, ezért ügyesen be kell osztanunk – viszont fejleszthető is. A „többet ésszel, mint erővel” és a „rend a lelke mindennek” népi bölcsességek szellemében számos tippet kapunk ehhez a könyv lapjain, többek között a határidők betartásával, a tennivalók listájának csökkentésével, a figyelemösszpontosítással és a káros szenvedélyektől való megszabadulással kapcsolatban. A szerzők a legfontosabb kutatások leírása és az eredmények elemzése mellett híres emberek élettörténetéből vett példákkal teszik olvasmányossá és közérthetővé mondanivalójukat.
+____
+
+
+== http://moly.hu/konyvek/ha-joon-chang-23-dolog-amit-nem-mondtak-el-a-kapitalizmusrol[Ha-Joon Chang: 23 dolog, amit nem mondtak el a kapitalizmusról / 23 Things They Don't Tell You About Capitalism]
+
+image::http://moly.hu/system/covers/big/covers_282264.jpg[]
+
+
+Vevy populist and it is just a "review" (it is describing why thinks were happening and the reason why it is wrong after it happened). On the other hand it is highlighting the weakness of capitalism.
+
+Did you know (for example) that all theory of smart guy getting Nobel prize failed after getting the prize? There were so many of us start using their theories and started to control economics that finally it turned out that it is not working and cause disaster. As I have mentioned this is just one single interesting fact as an example.
+
+== http://moly.hu/konyvek/kenneth-h-blanchard-william-oncken-jr-hal-burrows-the-one-minute-manager-meets-the-monkey[Kenneth H. Blanchard · William Oncken Jr · Hal Burrows: The One Minute Manager Meets the Monkey]
+
+image::http://moly.hu/system/covers/big/covers_289015.jpg?1395483310[]
+
+Monkey management.
+
+Exactly the same as described in  link:http://www.qualityontime.eu/olvasonaplo/non-fiction-2012/[Vezetői időgazdálkodás]. If it would not cost 1 pound I did not buy it.
+
+== http://moly.hu/konyvek/tom-demarco-timothy-lister-waltzing-with-bears[Tom DeMarco · Timothy Lister: Waltzing With Bears]
+
+image::http://moly.hu/system/covers/big/covers_298823.jpg?1397588159[]
+
+Risk management is project management for adults.
+
+On the other hand I am not sure that I will use all the technique described here. But it helped me understanding why risk management is extremely important and have an other reason link:<%=item_by_id('/i-give-a-shit-on-story-points/').path%>[not to like Story Points].
+
+____
+Any software project that's worth starting will be vulnerable to risk. Since greater risks bring greater rewards, a company that runs away from risk will soon find itself lagging behind its more adventurous competition.
+
+By ignoring the threat of negative outcomes—in the name of positive thinking or a Can-Do attitude—software managers drive their organizations into the ground.
+
+In Waltzing with Bears, Tom DeMarco and Timothy Lister—the best-selling authors of Peopleware—show readers how to identify and embrace worthwhile risks. Developers are then set free to push the limits.
+
+You'll find that risk management
+
+* makes aggressive risk-taking possible
+* protects management from getting blindsided
+* provides minimum-cost downside protection
+* reveals invisible transfers of responsibility
+* isolates the failure of a subproject.
+
+Readers are taught to identify the most common risks faced by software projects:
+
+* schedule flaws
+* requirements inflation
+* turnover
+* specification breakdown
+* and under-performance.
+
+Packed with provocative insights, real-world examples, and project-saving tips, Waltzing with Bears is your guide to mitigating the risks—before they turn into problems.
+____
+
+== http://moly.hu/konyvek/dean-leffingwell-agile-software-requirements[Dean Leffingwell: Agile Software Requirements]
+
+image::http://moly.hu/system/covers/big/covers_298824.jpg?1397588425[]
+
+Objective: Good book about requirement. There not so many really practical hint how to collect and manage. 
+
+Subjective: Very little value to me. I had most of the knowledge already from other source and experience.
+
+== http://moly.hu/konyvek/gojko-adzic-impact-mapping[Gojko Adzic: Impact Mapping]
+
+image::http://moly.hu/system/covers/big/covers_309262.jpg?1404327233[]
+
+As short as valuable.
+
+Must have for project managers.
+
+
+== http://moly.hu/konyvek/alan-shalloway-james-r-trott-design-patterns-explained[Alan Shalloway · James R. Trott: Design Patterns Explained]
+
+image::http://moly.hu/system/covers/big/covers_310045.jpg?1404850021[]
+
+
+One of the best book in the subject. Nice and realistic examples are used to describe design patterns and basic software development principles.
+
+And it is not only  about design patterns. There many section about object oriented programming and design, best practices, development principles etc.
+
+
+== http://moly.hu/konyvek/michael-bevilacqua-linn-functional-programming-patterns-in-scala-and-clojure[Michael Bevilacqua-Linn: Functional Programming Patterns in Scala and Clojure ]
+
+image::http://moly.hu/system/covers/big/covers_311014.jpg?1405452293[]
+
+It is more like an introduction into link:http://www.scala-lang.org[Scala] and link:clojure.org/[Closure].
+Patterns are not so relevant in the book. 
+
+
+== http://moly.hu/konyvek/csanyi-vilmos-a-kutyak-szoros-gyerekek[Csányi Vilmos: A kutyák szőrös gyerekek / "Dogs like hairy kids"]
+
+image::http://moly.hu/system/covers/big/covers_220771.jpg?1395446239[]
+
+Extended studies over link:https://www.goodreads.com/book/show/1209703.If_Dogs_Could_Talk[If Dogs Could Talk] and funny stories about the intelligent of dogs. I love it.
+
+== http://moly.hu/konyvek/michael-feathers-working-effectively-with-legacy-code[Michael Feathers: Working Effectively with Legacy Code]
+
+image::http://moly.hu/system/covers/big/covers_164538.jpg?1395408192[]
+
+re-read.
+
+== http://moly.hu/konyvek/robert-l-glass-facts-and-fallacies-of-software-engineering[Robert L. Glass: Facts and Fallacies of Software Engineering]
+
+image::http://moly.hu/system/covers/big/covers_330260.jpg?1418551293[]
+
+Ambivalent.
+
+The first time I read (few years ago) I found not so valuable. After the second read I have recognized why it is describing the truth. After the third time (nowdays) I could appreciate that all facts and fallacies are supported by facts, studies and statistics.
+
+Must have.
+
+== http://moly.hu/konyvek/dan-maharry-typescript-revealed[Dan Maharry: TypeScript Revealed]
+
+image::http://moly.hu/system/covers/big/covers_332794.jpg?1420449677[]
+
+I got familiar with link:http://www.typescriptlang.org/[TypeScript].
+
+== http://moly.hu/konyvek/edward-crookshanks-practical-software-development-techniques[Edward Crookshanks: Practical Software Development Techniques ]
+
+image::http://moly.hu/system/covers/big/covers_332795.jpg?1420449837][]
+
+For not professional developers only. It is just an introduction into many professional practices.
+
+____
+This book provides an overview of tools and techniques used in enterprise software development, many of which are not taught in academic programs or learned on the job. This is an ideal resource containing lots of practical information and code examples that you need to master as a member of an enterprise development team.
+
+This book aggregates many of these „on the job” tools and techniques into a concise format and presents them as both discussion topics and with code examples. The reader will not only get an overview of these tools and techniques, but also several discussions concerning operational aspects of enterprise software development and how it differs from smaller development efforts.
+
+For example, in the chapter on Design Patterns and Architecture, the author describes the basics of design patterns but only highlights those that are more important in enterprise applications due to separation of duties, enterprise security, etc.
+
+The architecture discussion revolves has a similar emphasis – different teams may manage different aspects of the application’s components with little or no access to the developer.
+
+This aspect of restricted access is also mentioned in the section on logging.
+
+Theory of logging and discussions of what to log are briefly mentioned, the configuration of the logging tools is demonstrated along with a discussion of why it’s very important in an enterprise environment.
+
+What you’ll learn
+
+– Version control in a team environment
+– Debugging, logging, and refactoring
+– Unit testing, build tools, continuous integration
+– An overview of business and functional requirements
+– Enterprise design patterns and architecture
+
+Who this book is for
+
+Student and software developers who are new to enterprise environments and recent graduates who want to convert their academic experience into real-world skills. It is assumed that the reader is familiar with Java, .NET, C++ or another high-level programming language. The reader should also be familiar with the differences between console applications, GUI applications and service/daemon applications.
+____
+
+== http://moly.hu/konyvek/charles-duhigg-a-szokas-hatalma[Charles Duhigg: A szokás hatalma / Power of Habit ]
+
+image::http://moly.hu/system/covers/big/covers_182298.jpg?1395418074[]
+
+Very populist book. 
+
+Each of the section is composed as National Geographic movie. There is some interesting story which is artificially made "shocking" to the reader. Then it describes the "fact" and science behind.
+
+The most valuable part of the book is the last section. The whole book is about __describing__ why habits are ruling our life. The book is describing how they are working and why it is so difficult to change (you could not ignore habit but you could change the action to be taken).
+
+And the very last section is giving some hint how to change habit (I am sure that most of us are buying this book for this section only). The real advice is that you should not change the trigger of the habit. You could change the action taken to something less frustrating. And how? Do some experiment until it is succeeded. So try until you become successful. 
+
+I had higher expectations.
