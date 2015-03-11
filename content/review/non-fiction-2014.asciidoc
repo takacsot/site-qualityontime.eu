@@ -142,7 +142,7 @@ image::http://moly.hu/system/covers/big/covers_164538.jpg?1395408192[]
 
 re-read.
 
-== http://moly.hu/konyvek/robert-l-glass-facts-and-fallacies-of-software-engineering[Robert L. Glass: Facts and Fallacies of Software Engineering]
+== link:<%=item_by_id('/fact-fallacies-software-engineering/').path%>[Robert L. Glass: Facts and Fallacies of Software Engineering]
 
 image::http://moly.hu/system/covers/big/covers_330260.jpg?1418551293[]
 

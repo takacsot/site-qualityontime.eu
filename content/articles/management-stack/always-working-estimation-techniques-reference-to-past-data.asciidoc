@@ -1,0 +1,61 @@
+---
+title: "Always working estimation techniques - reference to past data"
+kind: article
+created_at: 2015-03-11 21:31
+book: management-stack
+book_page: 43
+publish: false
+tags:
+  - estimation
+  - management
+  - development
+  - en
+---
+
+
+- How long does it take to put all the dirty place into dishwasher?
+- How long does it take to do the regular weekend shopping?
+- etc TODO. many more frustrating anad everyday experience.
+
+What is common in all of the examples that you could give quite accurate estimate about then. But it was not true. You were not able to tell how long it takes to get to the school when you have just moved to the new town. You have to do it a few time to learn about it. 
+
+And the same can be applied to software projects.
+
+How long did it take last time:
+
+- to implement new database query?
+- to create new form with a dozens of fields with input validation?
+- to implement new web controller (independently from technology stack - struts, struts2 or spring mvc)?
+- to set up a new development environment?
+- to set up a new server?
+- to implement customization of the core product to a new client?
+
+For the first time the answer is always: "I do no know." But _the second time you already have some reference you could use_. 
+
+[NOTE]
+====
+As we had to make customization of our main product to each of our client it was an essential implementation step for each of the new client. As development manager I was asked all the time how long it will take to customize the new client version? Most of the time this question is asked before knowing anything specific about their customization needs. But my estimation was always accurate because we did such a customization many times and I had my record. But each time I got this question I always answered: "as long as it is taken for client X"
+====
+
+Why it is not used?
+
+- not collecting records about actual execution time
+- non-experienced developers either in business or technology
+- new technology
+- crappy code make estimates unpredictable
+
+If you do not have historical record about your executions you should start collecting them. Many times you do not really need precise bookkeeping about time spent. I am sure that you are remembering how long certain thinks are taken in the past, at least approximately.
+
+New developer is always an issue. If developer is beginner only you should not count on him until he proved to be able to deliver reliably. 
+
+Uncle Bob in one of the interview or link:http://cleancoders.com/[Clean Coders ] video talks about why there are not old programers. They are there but every year there are so many new freshly "graduated" programmer that you could not see them. The made a quick estimate and come up with eh following. __Worldwide 80% of developers has less then 5 years of experience.__ 
+
+What are you expecting from someone having only 5 years of experience in large scale? After how many years of experience can someone made brain surgery? or build a bridge over a river? or just simply construct a family hour without supervision? Hiring newbie developers is a risk you have to control. You have to invest into hiring more expensive but experienced developers. And to not forget the link:http://www.construx.com/10x_Software_Development/Productivity_Variations_Among_Software_Developers_and_Teams__The_Origin_of_10x/[10x effect of individual developers].
+
+
+The lack of business knowledge can be managed. It is not possible to have a whole development team without the business experience (of course it can be but in that case it is an extraordinary bad management decision). In this case that developer is responsible to estimate/split feature to task who has enough business experience in that area. And, of course, a business training is needed too. If none of them are working you must pay a big money to hire developer with the relevant business experience. Then you could return to the first solution.
+
+New technology. Hmmm... Do you really need to introduce new technology? If yes the solution is the same as described in the previous paragraph: experienced one is responsible for the estimates of the less experienced one; training; hire the master of technology.
+
+Crappy code: Sucker. I do not know how to deal with it effectively. This is not a problem when brand new code is written because it does not exists yet. But when you are altering existing shit around you.... From professional point of view I know how to improve the quality of shitty code but I do not know how to bypass unreliable estimates it is causing.
+
