@@ -1,10 +1,10 @@
 ---
 title: "Always working estimation techniques - reference to past data"
 kind: article
-created_at: 2015-03-11 21:31
+created_at: 2015-03-13 21:40
 book: management-stack
 book_page: 43
-publish: false
+publish: true
 tags:
   - estimation
   - management
@@ -15,9 +15,9 @@ tags:
 
 - How long does it take to put all the dirty place into dishwasher?
 - How long does it take to do the regular weekend shopping?
-- etc TODO. many more frustrating anad everyday experience.
+- How long does it take to got to work?
 
-What is common in all of the examples that you could give quite accurate estimate about then. But it was not true. You were not able to tell how long it takes to get to the school when you have just moved to the new town. You have to do it a few time to learn about it. 
+What is common in all of the examples that you could give quite accurate estimate about them. But it was not always true. You were not able to tell how long it takes to get to the school when you have just moved to the new town. You had to go a few times then you have collected enough real life experience to answer the question.
 
 And the same can be applied to software projects.
 
@@ -32,30 +32,46 @@ How long did it take last time:
 
 For the first time the answer is always: "I do no know." But _the second time you already have some reference you could use_. 
 
-[NOTE]
-====
-As we had to make customization of our main product to each of our client it was an essential implementation step for each of the new client. As development manager I was asked all the time how long it will take to customize the new client version? Most of the time this question is asked before knowing anything specific about their customization needs. But my estimation was always accurate because we did such a customization many times and I had my record. But each time I got this question I always answered: "as long as it is taken for client X"
-====
 
-Why it is not used?
+____
+Each time we introduced our product to new client there were a need for certain customization. 
+As development manager I was asked all the time how long it will take to customize the new client version? 
+Most of the time this question is asked before knowing anything specific about their needs. 
+But my estimation was always accurate because we did such a customization many times and I had my records. 
+When I got this question I answered: "as long as it is taken for client X"
+____
 
-- not collecting records about actual execution time
+Why is it not used more often?
+
+- no records about actual execution time
 - non-experienced developers either in business or technology
 - new technology
 - crappy code make estimates unpredictable
 
-If you do not have historical record about your executions you should start collecting them. Many times you do not really need precise bookkeeping about time spent. I am sure that you are remembering how long certain thinks are taken in the past, at least approximately.
+If you do not have historical record about your executions you should start collecting them. Many times you do not really need precise bookkeeping about time spent. I am sure that you are remembering how long certain thinks were taken in the past, at least approximately.
 
-New developer is always an issue. If developer is beginner only you should not count on him until he proved to be able to deliver reliably. 
+New developer is always an something unpredictable. If developer is beginner you should not count on him until he proved to be able to deliver reliably. 
 
-Uncle Bob in one of the interview or link:http://cleancoders.com/[Clean Coders ] video talks about why there are not old programers. They are there but every year there are so many new freshly "graduated" programmer that you could not see them. The made a quick estimate and come up with eh following. __Worldwide 80% of developers has less then 5 years of experience.__ 
+Uncle Bob in one of his interview or link:http://cleancoders.com/[Clean Coders ] video were talking about why there are not so many old and experienced programmers. They are there but every year there are so many new, freshly "graduated" programmer that you could not recognize them. 
+They made a quick estimate what is the approximate proportion of experienced developer available and they found that __80% of developers have less then 5 years of experience__, worldwide. 
 
-What are you expecting from someone having only 5 years of experience in large scale? After how many years of experience can someone made brain surgery? or build a bridge over a river? or just simply construct a family hour without supervision? Hiring newbie developers is a risk you have to control. You have to invest into hiring more expensive but experienced developers. And to not forget the link:http://www.construx.com/10x_Software_Development/Productivity_Variations_Among_Software_Developers_and_Teams__The_Origin_of_10x/[10x effect of individual developers].
+What are you expecting from someone having less 5 years of experience in large scale? 
+After how many years of experience can someone made brain surgery or build a bridge over a river, or just simply construct a family house without supervision? 
+_Hiring newbie developers is a risk you have to control._ 
+__You have to invest into hiring more expensive but experienced developers.__ 
+And do not forget the link:http://www.construx.com/10x_Software_Development/Productivity_Variations_Among_Software_Developers_and_Teams__The_Origin_of_10x/[10x effect of individual developers].
 
 
-The lack of business knowledge can be managed. It is not possible to have a whole development team without the business experience (of course it can be but in that case it is an extraordinary bad management decision). In this case that developer is responsible to estimate/split feature to task who has enough business experience in that area. And, of course, a business training is needed too. If none of them are working you must pay a big money to hire developer with the relevant business experience. Then you could return to the first solution.
+The lack of business knowledge can be controlled. 
+It is not possible to have a whole development team without the business experience (of course it can be but in that case it is an extraordinary bad management decision). 
+In this case experienced developer is responsible for estimation. 
+Of course, a business training is always needed too. 
+If none of these solutions are working you must pay a big money to hire developer with the relevant business experience. 
+Then you could return to the first solution.
 
-New technology. Hmmm... Do you really need to introduce new technology? If yes the solution is the same as described in the previous paragraph: experienced one is responsible for the estimates of the less experienced one; training; hire the master of technology.
+New technology. Hmmm... Do you really need to introduce new technology? As an example. Nowadays the so called link:http://en.wikipedia.org/wiki/Big_data[Big Data] problems triggering the use of so called NoSQL databases. But as I see most of the business does not have big data problem. Most of the business has simple database and SQL tuning problems. 
+
+If you say that new technology is a must then the solution is the same as described in the previous paragraphs: experienced one is responsible for the estimates of the less experienced one; training; hire the master of technology.
 
 Crappy code: Sucker. I do not know how to deal with it effectively. This is not a problem when brand new code is written because it does not exists yet. But when you are altering existing shit around you.... From professional point of view I know how to improve the quality of shitty code but I do not know how to bypass unreliable estimates it is causing.
 
