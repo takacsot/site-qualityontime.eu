@@ -1,0 +1,132 @@
+---
+title: "Musings on week 12"
+kind: article
+created_at: 2015-03-18 21:43
+---
+
+===== link:https://atilanevesoncode.wordpress.com/2015/03/12/the-importance-of-making-the-test-fail/[The importance of making the test fail]
+
+____
+Tests are code. Code is buggy. Ergo… tests will contain bugs. So can we trust our tests? Yes, and especially so if we’re careful. First of all, tests are usually a lot smaller than the code they test (they should be!). Less code means fewer bugs on average. If that doesn’t give you a sense of security, it shouldn’t. The important thing is making sure that *it’s very difficult to introduce simultaneous bugs in the test and production code that cancel each other out*. Unless the tests are tightly coupled with the production code, that comes essentially for free.
+____
+
+===== link:http://www.thomsett.com.au/library/item/estimation-games[Estimation Games]
+
+____
+The apparent inability of I.T. people to accurately estimate the effort, time and cost of I.T. projects has remained an insolvable problem. ... *poor estimation is one of the major factors in the breakdown of relationships between I.T. people and their clients.*
+
+However, in the age of outsourcing and increased competition, the need for I.T. people to more accurately estimate the costs and time-frames for new product delivery has emerged as a critical survival factor for many I.T. groups
+
+*Simply, poor estimates lead to a lack of credibility and poor business relationships.*
+
+almost all research into improving software estimation miss a vital point: _it is people who estimate not machines._
+
+our research has shown that within certain conditions, I.T. people are pretty good at estimating. ...  t the major precondition for improving estimation accuracy is the existence of an estimation environment free of inter-personal politics and political games.
+
+The good news is that I.T. can estimate better. The bad news is that there are lifetimes of games and refining of games that have to be avoided to do this. .
+
+*_Doubling and add some_*
+
+Simply, you figure out [however you can] what you think the task will take and then double it. So a 5 day task is quoted as a 10 day task
+
+Of course, the problem with this game is that everyone knows it why novice players are often caught out by bosses/clients ...  The other problem is that it never stops. In a version of bluffing as seen in poker, no one knows who has doubled or who have multiplied by eight and so on
+
+Much later, when I was researching material for project management, I found that time and motion studies in the 1950's had shown that the *average lost time [meetings, waiting, talking and so on] in office work was around 50%.* So the doubling game was based on some sound research.
+
+
+*_Reverse Doubling Option_*
+
+This is the reverse of the Doubling Game. Simply, the boss or client doubles the estimate that he or she is about to give management or business clients and informs the project manager or programmer analyst that the timeframe is half the timeframe that the boss has told the clients.
+
+*_The Price is Right/Guess the number I'm thinking of_*
+
+Boss:   "Hi, Mary. How long do you think it will take to add some additional customer enquiry screens to the Aardvark System?"
+ 
+Here the boss or client is being very nice almost friendly.
+
+Mary:   "Gee ..... I guess about 6 weeks or so."
+
+Boss:   "WHAAAT!!!! That long!!! You're joking right?"
+
+...
+
+Mary:   "Well, let me think ..... OK, I'll do it in 3 weeks."
+
+The reality is that the boss has already promised the client XX that the enhancement will be done in 3 weeks but the power of the game is to get the project manager or victim to guess the bosses estimate and then say the estimate [preferably in the presence of witnesses such as other team members]. Notice, it was Mary who said 3 weeks not the boss.
+
+This is a truly excellent game for bosses.
+
+*_Double Dummy Spit_*
+
+
+*_The X Plus Game_*
+
+This game is very important in all large organisations and is rooted in the hierarchical power base.
+
+Basically, the person who is either requesting an estimate or informing the team of an estimate/deadline that has been already decided, invokes or blames someone who is "higher up"in the organisation for the fact that the pressure is being put on the team.
+
+Boss:   "Look, people, I'm sorry to tell you that you have only 4 weeks to develop the new operating system but, Ms. Bigshot has demanded it by then."
+
+The key to his game is that the Boss is a Level 22 [X] and Ms Bigshot is a Level 32 and is much higher in the organisation [X Plus] than the boss.
+
+
+*_Spanish Inquisition_*
+
+meeting is called to discuss some innocuous topic such as what cookies are to be bought for the coffee breaks. The underlying purpose of the meeting is to get the victim into a room with lots of witnesses to provide the peer-group pressure.
+
+*_Low Bid/What are they prepared to pay_*
+
+Suspecting that the $10 million is going to be too much for the business group and wanting to undertake the project because it involves both a high organisation profile and interesting new technology, the project manager deliberately reduces the estimate to some number [say $4 million] that he or she believes the business client will accept.
+
+*_Gotcha/Playing the Pokies_*
+
+Extremely advanced estimation game players also learn that the best option when playing the Low Bid/Gotcha game is to delay telling the client that they need to spend additional money until the last moment and to repeat the process many times using smaller increments of $1 million instead of a big $4-6 million hit.
+
+Client:   "Hello Project Manager, will my project be delivered next week as promised? After all you have been telling me that things have been going well for the past year and the $4 million that I gave you has been used up?"
+
+PM:   "Well, I have some bad news and some good news."
+
+Client:   "Uh huh. Give me the bad news."
+
+PM:   "The bad news is that the system won't be ready next week."
+
+Client:   "WHAAAT! $$#@@@!!!!!"
+
+PM:   "Wait. The good news is that things are going well and if you can find another $1 million we will deliver in 2 months."
+
+Client:   "Well I guess so... I don't have much choice do I?"
+
+Repeat until $6 million is spent or the project manager and/or the client is fired - any way the client looses.
+
+While many people would think that project managers playing this game get fired a lot, the reality is that many organisations recognise that the loss of a project manager can lead to serious project problems. Given that this game is played by experienced project managers, they are often too clever at political games to be fired.
+
+*_Smoke & Mirrors/Blinding with science_*
+
+This advanced game is helped by the development of complex estimation techniques such as Boehm's COCOMO, Putnam's SLIM and Function Point techniques.
+
+Client:   "How long will the Aardvarker System take?"
+
+PM:   "Let me see. You have 22 External Inputs, 4 Logical Internal Files, 5 concatenated Enquiries ... hmm.. that's 8 by 24 plus 12 minus risk adjustment, add the Rayleigh Curve simulation, subtract because of the hole in the Ozone layer .... 50 weeks!"
+
+Client:   "Totally awesome!"
+
+*_False Precision_*
+
+Client:   "How long will the Aardvarker System take?"
+
+PM:   "Let me see. You have 22.1 External Inputs, 4.8 Logical Internal Files, 5.001 concatenated Enquiries ... hmm.. that's 8.02 by 24.002 plus 12.4 minus risk adjustment, add the Rayleigh Curve simulation, subtract because of the hole in the Ozone layer .... 49 weeks, 1 day and 3 hours plus or minus 1 hour !"
+
+Client:   "Totally awesome!"
+ 
+Of course, readers will understand that at the time the "scientific" estimate was made not even the client clearly understood their own requirements.
+
+
+*It's time to stop playing and start estimating*
+
+We must all become part of the elimination of these games. They hurt our reputation with our business clients [many of whom have also learnt to play them]. They result in our organisations investing money and time in projects that are not good investments. Most importantly, they screw up our projects and we all have to work hard and reduce quality to justify them.
+
+Even if you can't stop your managers and clients from playing estimation games you can certainly stop playing them with your colleagues and team members.
+
+Maybe there will be a new generation of project people who are not taught these games. It's up to you.
+____
+
