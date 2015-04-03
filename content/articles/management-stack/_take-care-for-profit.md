@@ -1,0 +1,1 @@
+Profit oriented organiyation is taking care of his men because of the profi aspect. Satisfied employee is more effective.

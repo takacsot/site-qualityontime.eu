@@ -1,0 +1,46 @@
+---
+title: "Always working estimation techniques: 90% confidential interval"
+kind: article
+created_at: 2015-04-03 11:13
+book: management-stack
+book_page: 44
+publish: true
+tags:
+  - en
+  - estimation
+  - anchor
+  - bias
+  - management
+  - development
+---
+By giving an upper and lower bound when estimating something you are explicitly entering into the field of risk management (and in parallel to the field of adult project management).
+
+The technique is very simple: Give two numbers. Give those numbers in which you are *90% confident that the real value (real time spent) will fall into*.
+
+Think it through that by having this range you just have much more information then having a single "ideal" number (e.g. ideal men days) or something uncalibrated and incomparable figure (story points). Have a look et the following examples:
+
+- developing the input form takes 3 story points
+- developing the input form takes 5 ideal days
+- developing the input form take from 4 to 6 days and I am 90 confident in it
+- developing the input form take from 2 to 8 days and I am 90 confident in it
+
+Which one of these 4 examples has more information about the delivery date of that feature? It is obvious and it is using the language of our client (none of the economic schools is teaching about story points but they are teaching statistics very deeply).
+
+Dead simple but not always easy. There are few issues, biases you have to keep in mind and try to avoid to make this technique effective. 
+
+*Anchoring bias*: Once we have a number in our head we tend to gravitate toward it. Even if the anchor number is completely unrelated. A typical example when manager says that he thinks that it will take approximately 2 weeks to complete you will come up something close to it especially when it is not impossible.  Without such a "anchor" you might come up with totally different figures.... (most probably more) (link:http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow[Thinking Fast and Slow - Daniel Kahneman])
+
+
+[quote, Douglas W. Hubbard, <a href="http://www.howtomeasureanything.com/">How to measure anything</a>]
+____
+Some estimators says hat when provide ranges, they think of a single number and then add and subtract an "error" to generate their range. It makes estimation too narrow so overconfident. Looking at each bound alone as a a separate binary question of "Are you sure 95% sure it is over/under this amount?" cures our tendency to anchor.
+____
+
+The solution what is working for me is to reversing the anchoring effect. The technique is very simple. Do not think about the number. *Instead of starting with a point estimate and then making it into a  range, start with an absurdly wide range and then start eliminating the values you know to be extremely unlikely.* It is called "absurdity test"
+
+Example: I want to estimate a simple form with a dozens of input and i want to input validate and store the content. I start with extreme lower bound 10 minutes and extreme upper bound of 1 month. Then I am asking a question to myself: "Am I absolutely (95%) sure that it takes minimum 10 minutes?" Of course the answer is no (just reading the story and test cases takes longer). So I stat calibrating. "What about 1 hours?", "What about 5 hours?". Sooner or later I will reach a figure I am not sure that it is not possible. And the same about the upper bound.
+
+
+If you want to know more about biases just read link:http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow[Thinking Fast and Slow - Daniel Kahneman] or link:http://www.howtomeasureanything.com/[How to measure anything]. 
+
+

@@ -41,6 +41,16 @@ But my estimation was always accurate because we did such a customization many t
 When I got this question I answered: "as long as it is taken for client X"
 ____
 
+Why is it so powerful? When you have at least 5 past data (at task level or User story level it is not even a big number; in larger scale it might be problematic) you can be sure that any future data will fall into the range of min and max of these samples with 90% confidentiality.
+
+[quote, Douglas W. Hubbard, How to measure anything]
+____
+*Rule of Five*
+
+There is a 93.75% chance that the median of a population is between the smallest and largest values in any sample of five from that population.
+____
+
+
 Why is it not used more often?
 
 - no records about actual execution time

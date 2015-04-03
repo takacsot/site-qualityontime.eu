@@ -1,1 +1,0 @@
-Profit oriented organiyation is taking care of his men

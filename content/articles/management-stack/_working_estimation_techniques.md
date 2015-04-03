@@ -82,3 +82,28 @@ Links:
 Vague definitions:
 
 - [http://www.infoq.com/articles/agile-estimating-why-how/](http://www.infoq.com/articles/agile-estimating-why-how/)
+
+
+--------------
+
+How to measure anything:
+
+SEctionL Calibrated Estimates: how to do your know NOW.
+
+Reverse the anchoring effect
+Instead of starting with a point estimate and then making ti into a  range, start with an absurdly wide range and then start eliminating tge values you know to be extremey unlikely. It is called "absurdity test"
+
+Consier two pros and two cons:
+Think of at least two reason why you should be confident in your assessment and thwo reason you should not
+
+
+Bisses: page 222
+Bias: Halo effect: whn you have a clear preference on certain values or disfavour an alternative. "I like to use some solution so my estimation will consider that I am using that technology solution". Or if a person you like you will promiss lower estimate then to somone who you dislike.
+
+Bias Bandwagon
+Bias Emerging preferences
+
+p135:
+Expectancy Bias: Seeing what you want to see
+SElection bias: 
+Observer bias: 
