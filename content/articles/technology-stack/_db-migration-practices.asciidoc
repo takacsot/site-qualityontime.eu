@@ -1,0 +1,65 @@
+1. How to start
+2. Daily developemtn practices
+3. Release specific activities.
+
+1. How to start
+
+Firts fo all we haev to qualify whihc part of database object are belonging to the subject of migration. Some part of them are fine to drop and recreate anytime. These are proedures, reference data tables and reference data content. Other has strict order. Data definition (DDL) and data migration.
+
+Once  you have separated you could apply different development practivces on both.
+
+Drop and recreate part of the db is easy to deal with. Just have it.
+
+The DDL part is split into two part. One is the "create all" part whihc is a collectionction s scripts to create thw whole database.
+
+Tips (Oracle)
+- disable all constraint so you do not need to take case to order os table createion.
+- in create all script separate ddl from sontraints and apply constraints after all ddl is ready
+- apply stored procedure the last step
+- use loader to fast table population (inserts are slower)
+- in metatables you could find invalid object and revalidate them from script
+
+2. Daily development practices
+
+Developing stored procedured are not a big issue. You have to apply the same paractice as for any otehr kind of source.
+- work from file (not in database directly)
+- and commit into subversion frequently
+
+If you do so any one who upgrade from subversion simply applu lates updated procedure files and go home.
+
+DDL are implemented in two places. Once in the create all scripts and one in increment folder. Bothe place ahs to be modified. It can be used to self verify each other. Commit both the same time. You could use some svn log check script to verify that both directory has commits the same time. If not you coudl commiter why do he has it. 
+
+Seaprate DDL from migration. If they are belonging to eahc other just have the frist script for the modification then have a second for data migration. Teh difference is obvious. DDL are not transactioned but DML are. Technically if migration si wrong you could fix and rerun migration part alone.
+
+Keep upgrade scripts small. MAny smaller ugrade is easier to keep under controll and easier to resolve any potential conflict when merging without modifying upgrade scripts.
+
+If you need a specific version of stored procedure for the data migration script be sure the scipt is ensuring it to be present. It can be serious if you are developing something for release 2.0 and use some sotred procedure to migrate date and in the meanwhile that procedure is changed in production 1.4 because of a maintenance change. So it would mean that you migration is potentially incorrect.  One way to ensure is the create neccesery scripts with a temporary name then drop them after data migration. You infrastructure could be prepared to run not inly sql but other languages. e.g Groovy is vell scriptable and you could you application API to do the migration. But the same problem with different version of API. You have to ensure. Prpobably it easier with java because you just have load from a given version of jar only. Of course your infrastrucutre must support it.
+
+If you chnage you mind related to data strucutre do not delete migration but add a new upgrade script. e.g. add columnet in script 1  then drop column in script 23.
+Upgrading environment after developed
+
+How to verify that upgrade and create all are in sync. 
+1. Code review. DB sript is code. So it work reviewing
+2. During overnight you coud create two databse: one from create all and one form increments. Then you could compare. Youd should not have any other changes but administrative data in metatables.
+
+To make increment script woiting easy you have to develop you set of templates. In those templates you could provide and example with lots of comments ad checklist.
+
+Do not modify increments. Of course sometimes it will be needed because we are himand we are making (eg. syntactic) mistakes. We have to fix it. But do not modify increment because you have chnaged your mind in a contex of data strucutre. Just create a new script.
+
+Take the latest changes and you apply on your local db.
+
+One strategy is to drop all you db and run create all. EAsy fine. And not even so slow as you might think (my experience: having a complex abd big db strucutre. It takes <5 m to create plus 20 minutes to compile and validate all stored procedure) But if you do it on daily basis or using overnight job there should be not problem.
+
+Other strategy is to execute lates upgrade scripts only. It must be fats. In case of large data volume and slow data migration it might be slow at the end. Upgrade infrastructure shoudl be able to keep track of incrememnt to know which one is applied an whoch one is not.
+
+You have to choose you strategy.  The best might be combination of both. e.g. During overnight just dorp and create db then during the day just apply upgrades.
+
+Stored procedures are not an issue. Just take then and apply changes.
+
+You do not need to use any existing infrastrcuture code. Developing your own is not really difficult. It is just a littel bit more then executing one script after the other.
+
+3. Release specific activities.
+
+- Branching for development aka feature bases branches
+- merging from upstream (e.g. bugfixes from production). DDL should be rare but having procedure upgrade with a set of data migration...
+- reseting increments.

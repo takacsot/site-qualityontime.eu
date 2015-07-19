@@ -43,4 +43,3 @@ Example: I want to estimate a simple form with a dozens of input and i want to i
 
 If you want to know more about biases just read link:http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow[Thinking Fast and Slow - Daniel Kahneman] or link:http://www.howtomeasureanything.com/[How to measure anything]. 
 
-
