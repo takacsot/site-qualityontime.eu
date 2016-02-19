@@ -1,0 +1,19 @@
+---
+title: "There is no architectur"
+publish: false
+kind: xarticle
+---
+
+One of my college told that the system does not have archotecture.
+This statement is obviously wrong because I could see several architectural aspects of the system. From deployment archtitecture point of view I see that it is a standard Java webapp. From subproject organiziation point ov view I see the separation of deployment (UI) layer separated from business code. Within business I see many different packages named according to business concept (mot like xxx.repositories, xxx.services but xxx.meeting, xxx.assessment - it has meaning in that business context :) ). WIthin packages I see Interactor objects (See Uncle Bob "architecture the list years" presentations) etc.
+
+Wo when somone say ther is not architecture is wrong.
+
+What is instead: He has some specific problems and he concluded that the root of all problem is the lack of architecture. On the other hand there might be many other reason:
+
+- missing knowledge what would make things clear (e.g. the lack of Design Pattern, SOLID principles, etc knowledges)
+- specific things are actually leading to other root cause once analised properly (nameing convention issues, incorrect separation of layers, etc)
+
+The problem is when you have to deal with Expert Beginner (see reference) who might not listen to such a relativelly abstract reasoning like in the previous pragraph. So Lets come up with an example.
+
+My usual statement the weather in Luxemburg is a shit. Obviously it is not true. it is just weather. So step back and see my real specific problems: in last July there were 25 raining days. What I really missed: sunshine and freedom to organize my spare time. I think the analogy is quite clear. If I want I could handle these cases by organizing my spare time to be prepared for rain and/or traveling to a place with more sunshine. So the "luxembourgish" problem become my private, manageable (!) problem.

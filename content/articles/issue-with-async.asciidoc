@@ -1,0 +1,15 @@
+---
+title: "Issue with asynchronity"
+publish: false
+---
+
+An interesting pattern I have discovered what can be quite general when we are talking about any kind of async action especially when the async is working like fire-and-forget way.
+
+Scenario. Given a business actions. We neeed to send an email (or any kind of fire and forget async).
+
+Naive implementation I have seen s many times is that the business action is putting some message into "notification" system (in this case email) the finishes its work. In the real life a business transaction involves database transactions too. What if there is an error after email sent, but the db transaction (and busioness transaction too) is rolled back? 
+Well the target got a notification but in practice it did not happened.
+
+So it is async, whats more fire-and-forget but still time bounded because you could not initialize the fizical send untill transaction is over (commit). Whats more if transactions failes the message should not be sent.
+
+Resolving the problem is not very complicated (in java and Spring you could use after commit hook; putting email sending one layar above transactional boundaries)  but nto being aware of the problem can be the source of strange system behaviour.
