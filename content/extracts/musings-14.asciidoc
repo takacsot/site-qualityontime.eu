@@ -1,0 +1,45 @@
+---
+title: "Musings 14"
+kind: articlex
+publish: false
+created_at: 2016-02-23 01:43
+---
+
+
+===== link:https://www.youtube.com/watch?index=4&v=KSEyIXnknoY&list=PL8B19C3040F6381A2[PatternCraft - Visitor Pattern]
+
+Design Patterns explained with StarCraft. Very cool!
+
+===== link:http://engineering.skybettingandgaming.com/2016/02/02/how-we-release-so-frequently/[How We Release So Frequently]
+
+____
+We have a lot of tests
+
+
+Forward-only Migrations
+
+We don’t roll back database migrations. 
+every database migration we do results in a schema that’s compatible with the new version of our code and the previous one. If we have to roll back a code release (that does happen sometimes) then the previous version is perfectly happy using the new version of the schema.
+
+How we acheive this isn’t with some magical technical solution, but purely by convention. Take dropping a column as an example; how do you release that change? Easy:
+
+- Release a version of the code that doesn’t use that column; ensure it is stable / won’t be rolled back.
+- Do a second release that has a migration to remove the column.
+
+New Code != New Features
+Customers should never notice a code release, unless perhaps there’s a dramatic improvement in performance.
+Every new feature is first released in a hidden state, ready to be turned on with a ‘feature toggle’.
+
+Small Releases
+With fast builds, lots of tests, less risky database migrations, and feature changes decoupled from code releases: there’s not much standing in the way of us releasing our code often, but there is a feeback loop here that helps us even further: the more often we release, the smaller the releases can be. Smaller releases carry less risk, letting us release even more often. Frequent releases don’t necessarily imply small releases though - it still requires a bit of convention.
+____
+
+
+
+===== Twitter
+
+"IT is a cost center you say? Ok, let's shut all the servers down until you figure out what part of revenue we contribute to." - @drunkcod
+
+Your mgrs want data about agile. You try to find some data. But data reinforces your own confirmation bias. @RisingLinda
+
+

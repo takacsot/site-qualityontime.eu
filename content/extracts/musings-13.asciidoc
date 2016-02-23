@@ -1,6 +1,8 @@
 ---
-kind: xarticle
-publish: false
+title: "Musings 13"
+kind: article
+publish: true
+created_at: 2016-02-26 01:43
 ---
 
 ____
@@ -9,7 +11,7 @@ ____
 
 ===== link:https://www.youtube.com/watch?v=QM1iUe6IofM[Object-Oriented Programming is Bad]
 
-A very good example of inproperly introduced concept. Strong oppinion and complete ignorance of OO advantages.
+A very good example of improperly introduced concept. Strong opinion and complete ignorance of OO advantages.
 
 And it has some obvious issues:
 
@@ -18,16 +20,16 @@ I think he is missing the point of splitting  a long function into many smaller 
 
 Summary: He has problem with encapsulation. So if you are not afraid of encapsulation you could save 45 minutes . :)﻿
 
-On the other hand I already doing mostly procedural/functional programming even in Java. I have data structures and "action" objects without any significant state. If needed I could compose them togahter into a third object. And it is working quite well.
+On the other hand I already doing mostly procedural/functional programming even in Java. I have data structures and "action" objects without any significant state. If needed I could compose them together into a third object. And it is working quite well.
 
 ===== link:http://martinfowler.com/articles/feature-toggles.html[Feature Toggles]
 
-Must have read of feature toggles. It is the new buzzword. Be avare of disadvantages. At the end it is just a few additiona IF in you system!
+Must have read of feature toggles. It is the new buzzword. Be aware of disadvantages. At the end it is just a few additional IF in you system!
 
 ===== link:http://swreflections.blogspot.lu/2014/08/feature-toggles-are-one-of-worst-kinds.html[Feature Toggles are one of the worst kinds of Technical Debt]
 
 ____
-build conditional branches into mainline code in order to make logic available only to some users or to skip or hide logic at run-time, including code that isn’t complete (the case for branching by abstraction).
+build conditional branches into mainline code in order to make logic available only to some users or to skip or hide logic at run-time, including code that isn't complete (the case for branching by abstraction).
 
 ...
 
@@ -67,7 +69,7 @@ More feature flags also make it harder to understand how and where to make fixes
 ____
 
 
-===== link:https://lostechies.com/jimmybogard/2012/10/23/feature-branches-and-toggles/[]
+===== link:https://lostechies.com/jimmybogard/2012/10/23/feature-branches-and-toggles/[Feature branches and toggles]
 
 Not everying is so wrong. Instead of feature toggles you could use proper branching strategies to eliminate feature branch weakness as much as possible.
 
@@ -103,45 +105,8 @@ Other readings
 
 ===== link:https://www.youtube.com/watch?v=pU1gXA0rfwc[Wait, what!? Our microservices have actual human users?]
 
-Pragmatic approach of micrservices. Build multiple websites which looks like being the same. Even multiple Single page application.
+Pragmatic approach of microservices. Build multiple websites which looks like being the same. Even multiple Single page application.
 
 - An article: link:http://www.infoq.com/news/2016/02/tilkov-microxchg-human-users[]
 - slides: link:https://speakerdeck.com/stilkov/wait-what-our-microservices-have-actual-human-users[]
-
-===== link:https://www.youtube.com/watch?index=4&v=KSEyIXnknoY&list=PL8B19C3040F6381A2[PatternCraft - Visitor Pattern]
-
-Design Patterns explained with StarCraft. Very cool!
-
-===== link:http://engineering.skybettingandgaming.com/2016/02/02/how-we-release-so-frequently/[How We Release So Frequently]
-
-____
-We have a lot of tests
-
-
-Forward-only Migrations
-
-We don’t roll back database migrations. 
-every database migration we do results in a schema that’s compatible with the new version of our code and the previous one. If we have to roll back a code release (that does happen sometimes) then the previous version is perfectly happy using the new version of the schema.
-
-How we acheive this isn’t with some magical technical solution, but purely by convention. Take dropping a column as an example; how do you release that change? Easy:
-
-- Release a version of the code that doesn’t use that column; ensure it is stable / won’t be rolled back.
-- Do a second release that has a migration to remove the column.
-
-New Code != New Features
-Customers should never notice a code release, unless perhaps there’s a dramatic improvement in performance.
-Every new feature is first released in a hidden state, ready to be turned on with a ‘feature toggle’.
-
-Small Releases
-With fast builds, lots of tests, less risky database migrations, and feature changes decoupled from code releases: there’s not much standing in the way of us releasing our code often, but there is a feeback loop here that helps us even further: the more often we release, the smaller the releases can be. Smaller releases carry less risk, letting us release even more often. Frequent releases don’t necessarily imply small releases though - it still requires a bit of convention.
-____
-
-
-
-===== Twitter
-
-"IT is a cost center you say? Ok, let's shut all the servers down until you figure out what part of revenue we contribute to." - @drunkcod
-
-Your mgrs want data about agile. You try to find some data. But data reinforces your own confirmation bias. @RisingLinda
-
 

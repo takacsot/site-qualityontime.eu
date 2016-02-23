@@ -1,10 +1,14 @@
 ---
 title: "Groovy pollozó megoldás"
 kind: article
-created_at: 2013-09-26 00:00:00
+created_at: 2016-02-23 21:00:00
 book: directory-watcher
 book_page: 7
 ---
+
+Original date: 2013-09-26
+
+Update: 2016-02-23 
 
 Azaz, ha jó eszközeid vannak, akkor mindenre van megoldás.
 
@@ -79,3 +83,29 @@ Egyszerűen nagyszerű.
 A következő lépés az lehetne, hogy az `anyChange()` metódus helyett is closure-t használunk.
 
 Ez az implementáció pollozást használ, ami nagyszerű kis projectek esetében, de egy nagyobb könyvtárhierarchiánál, már észrevehetően lelassúl.
+
+__Update:__ Mivel rengeteg helyen használom a mindennapokban kicsit letisztult. Itt egy másik implementáció, ami sokkal esszenciálisabb és persze rövidebb.
+
+~~~java
+import groovy.io.FileType
+long lastModified = 0
+File dir = new File('./content')
+while (true){
+  long max = 0;
+  dir.eachFileRecurse (FileType.FILES) { file ->
+    if(max < file.lastModified())
+      max = file.lastModified()
+  }
+  if(lastModified < max){
+    recompile()
+    lastModified = max
+  }
+  Thread.sleep(3000)
+}
+
+def recompile(){
+  println  "recompile ${new Date()}"
+  def proc = "c:\\environment\\apps\\ruby-1.9.3\\bin\\nanoc.bat  compile".execute()
+  println proc.text
+}
+~~~
