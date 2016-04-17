@@ -1,0 +1,63 @@
+---
+title: "Image merge into single PDF"
+kind: article
+created_at: 2016-04-17 09:26
+tags:
+  - java
+  - itext
+  - guava
+  - image
+---
+
+Recently I run into the problem of merging many images into a single PDF.
+
+I thought that it is a trivial problem so I have had a look at my possibilities on the internet.
+I have found many possibilities: online pdf generator sites and many-many offline applications doing the same job.
+
+What was really surprising that not everything was completely free and not even open sourced (what is more shareware!!!).
+I was wondering why? Ok, this is only a theoretical question because I know that not everyone is working in IT.
+On the other hand accepting the fact what such a simple problems are  not trivial to solve is frightening.
+
+Luckily I am a developer (among many other things) so I could write scripts for such a simple problem (actually stackoverflow.com could help a lot to any programmer in this case)
+
+Here it is the script I was using to merge many images in the folder into a single PDF.
+
+[source%nowrap, java]
+----
+import java.io.*;
+
+import org.junit.Test;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.io.Files;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
+
+public class MergePDF {
+  static ImmutableList<String> img_extensions = ImmutableList.<String> builder().add("jpg").build();
+  
+  public static void main(String[] args) throws Exception {
+    Document document = new Document(PageSize.A5);
+    // Kindle PDF 85x114mm seems to be fine.... 
+    PdfWriter.getInstance(document, new FileOutputStream("r:\\result.pdf"));
+    int indentation = 0;
+    document.open();
+    for (File f : Files.fileTreeTraverser().children(new File("r:\\bogyo-es-baboca"))) {
+      if (!img_extensions.contains(Files.getFileExtension(f.getName())))
+        continue;
+      Image image = Image.getInstance(f.getCanonicalPath());
+      float scaler = ((document.getPageSize().getWidth() - document.leftMargin()
+          - document.rightMargin() - indentation) / image.getWidth()) * 100;
+      image.scalePercent(scaler);
+      document.add(image);
+    }
+    document.close();
+  }
+}
+----
+
+Some notes about the source:
+
+- It is used link:http://code.google.com/p/guava-libraries/[Guava] and text as library dependency.
+- Document size should be varied depending on the size of target PDF. The default is A4. For Kindle you should use size of 85x114mm.
+- It doesn't take the case of rotating images, only for scaling to full page.
