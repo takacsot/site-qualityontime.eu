@@ -19,23 +19,6 @@ Instead of story points you should use calendar based estimates with proper risk
 Here are techniques which are working to me.
 
 
-### Technique: automatic estimation adjustment.
-
-1. Do estimate in single number
-2. during development collect effort spent
-3. after task completed adjust compute average deviation from estimate
-4. apply deviation to remaining task
-
-Adapting to experience change
-No re-estimation
-Simple
-Automatic
-Working very well in practice
-
-
-Variation:
-- adjust by task size categories. Adjust 1d of work based on completed 1d tasks only. works estomated to 5d is adjusted by completed work estimated to 5d. etc.
-- adjust by developer: compute developer to developer.
 
 
 MMRE: http://en.wikipedia.org/wiki/Software_development_effort_estimation (Assessing the accuracy of estimates)

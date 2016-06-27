@@ -1,0 +1,65 @@
+---
+title: "Always working estimation techniques: Automatic estimation adjustment"
+kind: article
+created_at: 2016-06-27 11:13
+book: management-stack
+book_page: 45
+publish: true
+tags:
+  - en
+  - estimation
+  - management
+  - development
+---
+
+In practice this tool is a re-estimation technique.
+
+
+. Estimate using any kind of technique you want
+. During development collect time spent on the task
+. After task completed compute calibration factor
+. apply deviation to remaining task
+
+Characteristic:
+
+- Adapting to experience change
+- No re-estimation is needed
+- Simple
+- Automatic
+- Surprisingly well working in practice
+- Extra administration to collect actual time spent is a must for this technique
+
+In details:
+
+Given the following tasks:
+
+
+
+[options="header", width="20%", grid=rows]
+|=======================
+|Task|Estimate|Actual
+|t1|e1    |a1 
+|t2|e2    |a2 
+|t3|e3    |a3 
+|t4|e5    | 
+|t5|e6    | 
+|t6|e7    | 
+|=======================
+
+At the moment we are at `t3` in development. Use the following formula to calculate calibration factor:
+
+image::../latex_calibration_factor.png[Calibration factor]
+
+// Latex code: Calibration factor = \frac{\sum_{now-1}^{now-n} e}{\sum_{now-1}^{now-n} a}
+
+Now we can use this calibration factor to predict how much time we need for future activities. It is normal to see calibration factor of 2 or more in the beginning of the project and then growing and stabilizing at 4 when the project is running at full speed. Keep in mind that it is not a qualification of estimates. Just because your calibration factor is high it do not mean that the team is wrong. All it means that we have more information what is more realistic work effort remaining until delivery.
+
+Note that we should not use these numbers mechanistically. We still have to judge the credibility of what the mathematics tell us and adjust our understanding accordingly. 
+
+Variation:
+
+- adjust by task size categories: intuitively we are expecting different calibration factor based on the size of task. We are expecting smaller factor when the size is small because smaller tasks are more predictable. It make sense to group tasks by size. E.g. Small task (estimation from - 0 to 2), middle and big (more than a week). Then compute and apply calibration factor to each of the category.
+- adjust by developer: same categorization could be done by individual developers or developer groups (expert, beginner, etc). 
+- adjust by task type: development tasks could be grouped by dominant activity type: server side development, front-end, database, documentation, etc.
+
+By these adjustment you could fine tune you calibration and you have an always updated and surprisingly effective estimate about the remaining.
