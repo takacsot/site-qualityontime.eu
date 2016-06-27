@@ -48,7 +48,9 @@ Given the following tasks:
 
 At the moment we are at `t3` in development. Use the following formula to calculate calibration factor:
 
-image::../latex_calibration_factor.png[Calibration factor]
+image::<%=item_by_identifier('/articles/management-stack/latex_calibration_factor/').path%>[Calibration factor]
+
+
 
 // Latex code: Calibration factor = \frac{\sum_{now-1}^{now-n} e}{\sum_{now-1}^{now-n} a}
 
