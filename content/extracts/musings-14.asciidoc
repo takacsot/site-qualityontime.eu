@@ -1,8 +1,14 @@
 ---
 title: "Musings 14"
-kind: articlex
-publish: false
-created_at: 2016-02-23 01:43
+kind: article
+publish: true
+created_at: 2016-08-29 01:43
+tags:
+  - design pattern
+  - release management
+  - continous integration
+  - ci
+  - it
 ---
 
 
@@ -18,22 +24,91 @@ We have a lot of tests
 
 Forward-only Migrations
 
-We don’t roll back database migrations. 
-every database migration we do results in a schema that’s compatible with the new version of our code and the previous one. If we have to roll back a code release (that does happen sometimes) then the previous version is perfectly happy using the new version of the schema.
+We don't roll back database migrations. 
+every database migration we do results in a schema that's compatible with the new version of our code and the previous one. If we have to roll back a code release (that does happen sometimes) then the previous version is perfectly happy using the new version of the schema.
 
-How we acheive this isn’t with some magical technical solution, but purely by convention. Take dropping a column as an example; how do you release that change? Easy:
+How we acheive this isn't with some magical technical solution, but purely by convention. Take dropping a column as an example; how do you release that change? Easy:
 
-- Release a version of the code that doesn’t use that column; ensure it is stable / won’t be rolled back.
+- Release a version of the code that doesn't use that column; ensure it is stable / won't be rolled back.
 - Do a second release that has a migration to remove the column.
 
 New Code != New Features
-Customers should never notice a code release, unless perhaps there’s a dramatic improvement in performance.
-Every new feature is first released in a hidden state, ready to be turned on with a ‘feature toggle’.
+
+Customers should never notice a code release, unless perhaps there's a dramatic improvement in performance.
+Every new feature is first released in a hidden state, ready to be turned on with a ‘feature toggle'.
 
 Small Releases
-With fast builds, lots of tests, less risky database migrations, and feature changes decoupled from code releases: there’s not much standing in the way of us releasing our code often, but there is a feeback loop here that helps us even further: the more often we release, the smaller the releases can be. Smaller releases carry less risk, letting us release even more often. Frequent releases don’t necessarily imply small releases though - it still requires a bit of convention.
+
+With fast builds, lots of tests, less risky database migrations, and feature changes decoupled from code releases: there's not much standing in the way of us releasing our code often, but there is a feeback loop here that helps us even further: the more often we release, the smaller the releases can be. Smaller releases carry less risk, letting us release even more often. Frequent releases don't necessarily imply small releases though - it still requires a bit of convention.
 ____
 
+===== link:http://www.daedtech.com/creating-code-review-checklist/[Creating Your Code Review Checklist]
+
+____
+If we brainstormed for an hour or two, we could probably flesh this out to be a comprehensive list with maybe 100 items on it.  And that’s what a lot of code review checklists look like — large lists of things for reviewers to go through and check.
+
+There are two problems with this.
+
+1. You can’t keep 100+ items in your head as you look at every method or clause in a code base, so you’re going to have to read the code over and over, looking for different things.
+2. None of the checks I listed above actually require human intervention. They can all be handled via static analysis.
+
+That morale boost is empowering, and it leads to an increased sense of professionalism in the approach to software development.  “We trust you to handle your business with code formatting” sends a much better message than, “Let’s see here, did you remember to prepend all of your fields with an underscore?”
+
+__there should really be two code review checklists: things the reviewee should do prior to submitting for review and things the reviewer should check. __
+
+First, here is an example checklist for a code author
+
+. Does my code compile without errors and run without exceptions in happy path conditions?
+. Have I checked this code to see if it triggers compiler or static analysis warnings?
+. Have I covered this code with appropriate tests, and are those tests currently green?
+. Have I run our performance/load/smoke tests to make sure nothing I’ve introduced is a performance killer?
+. Have I run our suite of security tests/checks to make sure I’m not opening vulnerabilities?
+
+Here is an example checklist for a code reviewer
+
+. Does this code read like prose?
+. Do the methods do what the name of the method claims that they'll do? Same for classes?
+. Can I get an understanding of the desired behavior just by doing quick scans through unit and acceptance tests?
+. Does the understanding of the desired behavior match the requirements/stories for this work?
+. Is this code introducing any new dependencies between classes/components/modules and, if so, is it necessary to do that?
+. Is this code idiomatic, taking full advantage of the language, frameworks, and tools that we use?
+. Is anything here a re-implementation of existing functionality the developer may not be aware of?
+
+It’s also very important that the lists remain relatively brief so that the reviews don’t turn into mind-numbing procedures.  You can always modify the checklist and add new things as they come up, but be sure to cull things that are solved problems as your team grows.  No matter how hard you try, it’s not going to be perfect.  The aim is to catch what mistakes you can and to get better – not to attempt perfection.
+
+____
+
+
+===== link:https://henrikwarne.com/2016/06/16/18-lessons-from-13-years-of-tricky-bugs/[18 Lessons From 13 Years of Tricky Bugs]
+
+CODING
+
+
+1. Event order. Can the events arrive in a different order? What if we never receive this event? What if this event happens twice in a row? Even if it would normally never happen, bugs in other parts of the system (or interacting systems) could cause it to happen.
+3. Silent failures.
+4. If. If-statements with several conditions 
+5. Else. Several bugs have been caused by not properly considering what should happen if a condition is false.
+6. Changing assumptions. Many of the bugs that were the hardest to prevent in the first place were caused by changing assumptions. 
+7. Logging.  Make sure to add enough (but not too much) logging, so you can tell why the program does what it does.
+
+
+TESTING
+
+8. Zero and null. Make sure to always test with zero and null (when applicable).
+9. Add and remove. 
+10. Error handling. The code that handles errors is often hard to test. 
+11. Random input. One way of testing that can often reveal bugs is to use random input.
+12. Check what shouldn’t happen.  to check that an action that shouldn’t happen actually didn’t happen.
+13. Own tools. Usually I have created my own small tools to make testing easier.
+
+
+DEBUGGING
+
+14. Discuss. The debugging technique that has helped me the most in the past is to discuss the problem with a colleague.
+15. Pay close attention. Often when debugging a problem took a long time, it was because I made false assumptions.
+16. Most recent change. When things that used to work stop working, it is often caused by the last thing that was changed.
+17. Believe the user. Sometimes when a user reports a problem, my instinctive reaction is: “That’s impossible. They must have done something wrong.”
+18. Test the fix.
 
 
 ===== Twitter
