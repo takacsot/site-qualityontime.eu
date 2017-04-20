@@ -1,0 +1,31 @@
+=== Something
+	
+[source,java]
+----
+	public AsynchronousProcessingStatusEnum getRequestStatus(final DataGroup dataGroup, final String requestId) {
+		final AsynchronousProcessingRequest request = dataAccessService.getAsynchronousProcessingDAO().getRequest(requestId);//!!!!
+		return getCurrentStatus(dataGroup, request);
+	}
+	//...
+	private AsynchronousProcessingStatusEnum getCurrentStatus(final DataGroup dataGroup, final AsynchronousProcessingRequest asyncRequest) {
+		//...
+		if(...){
+			//...
+			asyncRequest.setStatus(status);
+			dataAccessService.getAsynchronousProcessingDAO().update(asyncRequest);//!!!!!!
+
+			return asyncRequest.getStatus();
+		}
+
+		// The request was not found
+		return AsynchronousProcessingStatusEnum.UNKNOWN_REQUEST;
+	}
+	
+----
+
+
+Why is it bad? top level method is calling a repo what is OK then run a "query" method called `getCurrentStatus`.
+Unfortunately that query method is not only query based on input parameters but actually changing through a repository.
+So missleading name, mizzing up intends and simnply wrong. :) 
+
+
